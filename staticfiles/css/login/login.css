@@ -82,6 +82,28 @@ body {
   border-image: initial;
 }
 
+/* 이메일 입력창이 focus되었을 때 */
+.email-input:focus {
+  z-index: 2;
+  outline: 0;
+}
+
+/* 이메일 입력창이 focus되었을 때 추가되는 클래스로 인한 스타일 */
+.email-input.focus-visible {
+  box-shadow: 0 0 0 3px rgba(53, 197, 240, 0.3);
+}
+
+/* 이메일 입력 창이 각각 blur 되었을 때 */
+.email-blur {
+  border: 1px solid #f77;
+  z-index: 1;
+}
+
+/* 이메일 입력 창이 blur 된 다음, 다시 focus 되었을 때 */
+.email-blur.focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 119, 119, 0.3);
+}
+
 .email-input:hover:not(:focus) {
   background-color: #fafafa;
 }
@@ -108,6 +130,28 @@ body {
   border-style: solid;
   border-color: rgb(219, 219, 219);
   border-image: initial;
+}
+
+/* 비밀번호 입력창이 focus되었을 때 */
+.password-input:focus {
+  z-index: 2;
+  outline: 0;
+}
+
+/* 비밀번호 입력창이 focus되었을 때 추가되는 클래스로 인한 스타일 */
+.password-input.focus-visible {
+  box-shadow: 0 0 0 3px rgba(53, 197, 240, 0.3);
+}
+
+/* 이메일 입력 창이 각각 blur 되었을 때 */
+.password-blur {
+  border: 1px solid #f77;
+  z-index: 2;
+}
+
+/* 비밀번호 입력 창이 blur 된 다음, 다시 focus 되었을 때 */
+.password-blur.focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 119, 119, 0.3);
 }
 
 .password-input:hover:not(:focus) {
