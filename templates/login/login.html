@@ -177,6 +177,21 @@
                         <a class="any-problems" href="">
                             로그인에 문제가 있으신가요?
                         </a>
+                        <div class="non-member-wrap">
+                            <button class="non-member-select" type="button">
+                                비회원 주문 조회하기
+                            </button>
+                            <!--
+                                원래 위 버튼을 누르면 아래 div 태그에 innerHTML이 들어가지만,
+                                회원가입을 해야 패키지 상품을 구매할 수 있는 구조라
+                                비회원 주문조회가 필요 없기 때문에,
+                                버튼을 누르지 않았을 때를 기준으로 스타일 작성
+                            -->
+                            <div
+                                class="hidden-non-member"
+                                style="overflow: hidden"
+                            ></div>
+                        </div>
                     </div>
                 </div>
                 <footer></footer>

@@ -176,6 +176,31 @@
     line-height: 18px;
 }
 
+.non-member-wrap {
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #dbdbdb;
+}
+
+.non-member-select {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #424242;
+    margin-bottom: 20px;
+}
+
+.hidden-non-member {
+    padding: 3px;
+    margin: -3px;
+    box-sizing: border-box;
+}
+
 /* 화면 너비가 768px 이상일 때 적용할 미디어 쿼리 */
 @media (min-width: 768px) {
     body,
