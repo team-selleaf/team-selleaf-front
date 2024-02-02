@@ -53,18 +53,18 @@ passwordInput.addEventListener("blur", (e) => {
     다른 SNS 로그인 아이콘
 
     mouseover 되면 아이콘 색깔 뿌얘짐
-        -> svg 태그에 스타일 추가??
+        -> img 태그에 opacity 적용
 
     mouseout 되면 원상복구
 */
-const svgs = document.querySelectorAll(".login-with-sns-wrap > svg");
+const images = document.querySelectorAll(".login-with-sns-wrap > img");
 
-svgs.forEach((svg) => {
-  svg.addEventListener("mouseover", (e) => {
-    e.target.style.opacity = 0.7;
+images.forEach((image) => {
+  image.addEventListener("mouseover", (e) => {
+    e.target.style.opacity = 0.6;
   });
 
-  svg.addEventListener("mouseout", (e) => {
+  image.addEventListener("mouseout", (e) => {
     e.target.style.opacity = 1;
   });
 });
@@ -91,3 +91,5 @@ aNonDecoration.addEventListener("mouseout", (e) => {
 
 // 현재 남은 것들
 // 일부 텍스트 및 svg 아이콘 사이 간격
+// SNS 쪽 svg 이미지들 싹 다 img 로 변경
+// input 태그 쪽 z-index 조정

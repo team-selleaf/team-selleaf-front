@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 body {
   margin: 0;
 }
@@ -272,6 +274,10 @@ body {
   box-sizing: border-box;
   position: relative;
   display: block;
+}
+
+.login-footer a {
+  width: 90.35px;
 }
 
 /* 화면 너비가 768px 이상일 때 적용할 미디어 쿼리 */
