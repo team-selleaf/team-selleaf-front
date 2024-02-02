@@ -29,8 +29,12 @@ emailInput.addEventListener("click", (e) => {
 // email input이 blur 되었을 때의 이벤트 리스너
 // 위 클릭으로 추가된 클래스는 삭제되고, 새로운 클래스 추가
 emailInput.addEventListener("blur", (e) => {
+  // 만약 값이 아무것도 없으면
+  if (!e.target.value) {
+    e.target.classList.add("email-blur");
+  }
+  // 값 유무 상관 없이 blur 되면 삭제
   e.target.classList.remove("focus-visible");
-  e.target.classList.add("email-blur");
 });
 
 // password input도 같은 방식으로 진행
