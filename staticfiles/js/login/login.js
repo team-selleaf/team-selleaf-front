@@ -17,13 +17,40 @@
     이 상태에서 클릭했을 때에는 비밀번호 input 만 빨간색 굵은 반투명 테두리 추가 
 */
 
-// email input 객체를 상수에 할당
+// email, password input 객체를 상수에 할당
 const emailInput = document.querySelector(".email-input");
+const passwordInput = document.querySelector(".password-input");
+
+// 로그인 버튼(submit) 객체 가져옴
+const loginButton = document.querySelector(".login-button");
 
 // email input을 클릭했을 때의 이벤트 리스너
 // 스타일은 CSS쪽에서 클래스 선택자로 추가
 emailInput.addEventListener("click", (e) => {
-  e.target.classList.add("focus-visible");
+  e.target.classList.toggle("focus-visible");
+});
+
+// email input에 값을 입력했을 때의 이벤트 리스너
+// 스타일은 CSS쪽에서 클래스 선택자로 추가
+emailInput.addEventListener("keyup", (e) => {
+  // 값이 있는지 검사
+  if (e.target.value) {
+    // email-blur 클래스가 있는지(테두리 빨간색인지) 검사
+    if (e.target.classList.contains("email-blur")) {
+      e.target.classList.remove("email-blur");
+      e.target.classList.remove("focus-visible");
+      return;
+    }
+
+    // 없다면 focus-visible 클래스가 있는지 검사
+    if (!e.target.classList.contains("focus-visible")) {
+      // 없을 때 추가
+      e.target.classList.add("focus-visible");
+    }
+    return;
+  }
+
+  // 값이 없는(없어진) 경우, 엔터를 입력했는지 검사
 });
 
 // email input이 blur 되었을 때의 이벤트 리스너
@@ -31,18 +58,44 @@ emailInput.addEventListener("click", (e) => {
 emailInput.addEventListener("blur", (e) => {
   // 만약 값이 아무것도 없으면
   if (!e.target.value) {
-    e.target.classList.add("email-blur");
+    // email-blur 있는지 확인하고, 없을 때 추가
+    e.target.classList.contains("email-blur")
+      ? ""
+      : e.target.classList.add("email-blur");
   }
   // 값 유무 상관 없이 blur 되면 삭제
   e.target.classList.remove("focus-visible");
 });
 
-// password input도 같은 방식으로 진행
-const passwordInput = document.querySelector(".password-input");
-
-// password input을 클릭했을 때의 이벤트 리스너
+// password-input도 같은 방식으로 진행
+// password-input을 클릭했을 때의 이벤트 리스너
 passwordInput.addEventListener("click", (e) => {
-  e.target.classList.add("focus-visible");
+  e.target.classList.toggle("focus-visible");
+});
+
+// password-input에 입력했을 때의 이벤트 리스너
+passwordInput.addEventListener("keyup", (e) => {
+  // password-input에 값 있는지 검사 - 있다면 password-input에만 실행
+  if (e.target.value) {
+    // blur 있는지 검사 - 있다면 blur, focus 제거
+    if (e.target.classList.contains("password-blur")) {
+      e.target.classList.remove("password-blur");
+      e.target.classList.remove("focus-visible");
+      return;
+    }
+
+    // 만약 키를 뗀 시점에서 값이 없다면 blur 추가
+    e.target.classList.add("password-blur");
+
+    // 그리고 email-input에 값 있는지도 검사
+    if (!emailInput.value) {
+      // 없다면 email-blur 추가
+      emailInput.classList.add("email-blur");
+    }
+    return;
+  }
+
+  // 값이 없는(없어진) 경우, 엔터를 입력했는지 검사 -
 });
 
 // password input이 blur 되었을 때의 이벤트 리스너
