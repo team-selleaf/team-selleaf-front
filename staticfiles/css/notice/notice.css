@@ -50,11 +50,10 @@ div.notice-inner{
     flex: 0 0 auto;
 }
 
-@media (min-width: 1024px)
-{div.help-wrap{
+div.help-wrap{
     max-width: 850px;
     margin: 0px auto;
-}}
+}
 
 div.help-container{
     padding-bottom: 32px;
@@ -199,10 +198,9 @@ button.kakao{
     color: rgb(255, 255, 255);
 }
 
-@media (hover: hover) and (pointer: fine)
-{button.kakao:hover, .button.kakao:active {
+button.kakao:hover{
     background-color: rgb(0, 159, 206);
-}}
+}
 
 a.contact-email{
     background-color: rgb(255, 255, 255);
@@ -235,10 +233,9 @@ a.contact-email{
     border: 1px solid rgb(53, 197, 240);
 }
 
-@media (hover: hover) and (pointer: fine)
-{a.contact-email:hover, a.contact-email:active {
+a.contact-email:hover{
     background-color: rgb(239, 251, 255);
-}}
+}
 
 button.contact-email{
     background-color: rgb(255, 255, 255);
@@ -307,10 +304,9 @@ label.benner-inner-1{
     background-color: rgb(53, 197, 240);
 }
 
-@media (hover: hover) and (pointer: fine)
-{label.benner-inner-1:hover {
+label.benner-inner-1:hover {
     background-color: rgb(0, 159, 206);
-}}
+}
 
 label.benner-inner-1::before{
     content: "";
@@ -378,11 +374,10 @@ span.benner-button-2{
     cursor: inherit;
 }
 
-@media (min-width: 1024px)
-{div.list-wrap{
+div.list-wrap{
     max-width: 850px;
     margin: 0px auto;
-}}
+}
 
 ul.list-container{
     padding-top: 30px;
