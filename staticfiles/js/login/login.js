@@ -84,26 +84,58 @@ passwordInput.addEventListener("keyup", (e) => {
       return;
     }
 
-    // 만약 키를 뗀 시점에서 값이 없다면 blur 추가
-    e.target.classList.add("password-blur");
-
-    // 그리고 email-input에 값 있는지도 검사
-    if (!emailInput.value) {
-      // 없다면 email-blur 추가
-      emailInput.classList.add("email-blur");
+    // 만약 키를 뗀 시점에서 값이 없다면, focus-visible 있는지 확인
+    if (!e.target.classList.contains("focus-visible")) {
+      // 없으면 추가
+      e.target.classList.add("focus-visible");
+      return;
     }
-    return;
   }
 
-  // 값이 없는(없어진) 경우, 엔터를 입력했는지 검사 -
+  // 값이 없는(없어진) 경우, blur 있는지 검사 - 없으면 추가
+  if (e.target.classList.contains("password-blur")) {
+    e.target.classList.add("password-blur");
+  }
+  // 나중에 엔터 입력 이벤트 추가할 것
 });
 
 // password input이 blur 되었을 때의 이벤트 리스너
 // email input에도 blur 속성 추가!
 passwordInput.addEventListener("blur", (e) => {
+  // 일단 focus-visible 클래스 제거
   e.target.classList.remove("focus-visible");
-  e.target.classList.add("password-blur");
-  emailInput.classList.add("email-blur");
+
+  // 값 있는지 검사 필요 - 없을 때의 경우
+  if (!e.target.value) {
+    // password-blur 있는지 검사 - 없을 때만 추가
+    if (!e.target.classList.contains("password-blur")) {
+      e.target.classList.add("password-blur");
+    }
+
+    // 위와는 별개로(이벤트 리스너 함수 종료 안 하고) 이메일 input 쪽 값 있는지 검사
+    if (!emailInput.value) {
+      // 만약 값이 없으면 이쪽도 blur(기존에 없었으면) 추가
+      emailInput.classList.contains("email-blur")
+        ? ""
+        : emailInput.classList.add("email-blur");
+      return;
+    }
+    // 이메일 input에 값이 있으면 그냥 리턴 - email쪽 이벤트 리스너에서 처리
+    return;
+  }
+
+  // 비밀번호 input에 무슨 값이든 있을 때의 경우, 일단 blur 삭제
+  e.target.classList.remove("password-blur");
+
+  // 마찬가지로 이메일 input에 값 있는지 검사 - 없을 때만 blur 추가
+  if (!emailInput.value) {
+    // 기존 blur 여부 확인하고 - blur 없을 때만 추가
+    emailInput.classList.contains("email-blur")
+      ? ""
+      : emailInput.classList.add("email-blur");
+    return;
+  }
+  // 없으면 추가 작업 안 함
 });
 
 /*
@@ -148,5 +180,4 @@ aNonDecoration.addEventListener("mouseout", (e) => {
 
 // 현재 남은 것들
 // 일부 텍스트 및 svg 아이콘 사이 간격
-// SNS 쪽 svg 이미지들 싹 다 img 로 변경
-// input 태그 쪽 z-index 조정
+// 비회원 주문 조회 삭제
