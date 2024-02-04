@@ -463,15 +463,6 @@ min-height: 1px;
     background: rgba(0,0,0,.02);
 }
 
-.production-item-scrap-badge>.scrap-on {
-    opacity: 0;
-}
-.production-item-scrap-badge>.scrap-on .production-item-scrap-badge>.scrap-off {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity .1s;
-}
 /*  */
 .scrap-button {
     position: absolute;
@@ -490,7 +481,8 @@ min-height: 1px;
 }
 
 .scrap-button >.scrap-off{
-    position: absolute;
+    position: relative;
+    width: 24px;
     top: 0;
     left: 0;
     transition: opacity .1s; 
@@ -498,7 +490,7 @@ min-height: 1px;
 
 .scrap-button > .scrap-on{
     opacity: 0;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     transition: opacity .1s;
