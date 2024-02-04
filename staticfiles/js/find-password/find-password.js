@@ -20,8 +20,6 @@ const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
 
 // email-input의 keyup 이벤트
 emailInput.addEventListener("keyup", (e) => {
-  console.log(e.target);
-
   // 만약 input 창에 value가 없다면
   if (!e.target.value) {
     // 아래에서 새로운 div를 추가하기 전에, 해당 div가 기존에 있는지 확인
@@ -110,9 +108,13 @@ emailButton.addEventListener("click", (e) => {
     e.target.innerText = "확인완료";
 
     // input과 확인 버튼 부분 비활성화
-    // 배경색 안 바뀌면 바꿔줄 것
-    emailWrap.disabled = true;
-    // e.target.disabled = true;
+    // wrap, input 부분 배경색 변경
+    console.log(emailInput.style);
+    emailWrap.style.background = "rgb(247, 248, 250)";
+    emailInput.style.webkitBoxShadow = "0 0 0 30px rgb(247, 248, 250) inset";
+    e.target.disabled = true;
+    emailInput.disabled = true;
+
     return;
   }
 
