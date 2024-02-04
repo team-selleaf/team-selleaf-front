@@ -13,3 +13,19 @@ items.forEach((item) => {
     item4.classList.toggle("question-open");
   });
 });
+
+const benners = document.querySelector(".benner-container");
+const categoryBtn = document.querySelectorAll(".benner-inner-2");
+
+benners.addEventListener("click", (e) => {
+  if (e.target.closest(".benner-inner-2")) {
+    categoryBtn.forEach((item) => {
+      item.classList.contains("benner-inner-1") &&
+        item.classList.remove("benner-inner-1");
+    });
+    let choiceBtn = e.target.closest(".benner-inner-2");
+    if (choiceBtn) {
+      choiceBtn.classList.add("benner-inner-1");
+    }
+  }
+});
