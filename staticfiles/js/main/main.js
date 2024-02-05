@@ -58,7 +58,22 @@ searchAtag.forEach((atag, i) => {
 });
 
 // 이런 00 찾고 있나요에 스크랩을 누르면 색이 들어오고 다시 누르면 색이 없어져야함
+const scrapBtns = document.querySelectorAll(
+  ".realmain-plantRecommend-scrapbutton"
+);
+scrapBtns.forEach((item) => {
+  item.addEventListener("click", () => {
+    const img = item.querySelector("img");
+    const imgSrc = img.getAttribute("src");
+    console.log(imgSrc);
+    imgSrc === "../../staticfiles/images/scrap-off.png"
+      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
+      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+  });
+});
 
+// 이런 00 찾고 있나요? 부분에 슬라이드 바 구현
+const nextButton = document.querySelector(".realmain-nextbutton");
 // 원데이 클래스 부분에 사진 올리면 확대되고 내리면 축소되게 만들어야함
 const searchOnedayImg = document.querySelectorAll(".realmain-lecture-photo");
 const searchOnedayA = document.querySelectorAll(
@@ -74,5 +89,20 @@ searchOnedayA.forEach((atag, i) => {
 searchOnedayA.forEach((atag, i) => {
   atag.addEventListener("mouseout", () => {
     searchOnedayImg[i].style.transform = "scale(1)";
+  });
+});
+
+// 원데이 클래스 인기 콘텐츠 부분에 스크랩 on off 기능
+const scraplectureBtns = document.querySelectorAll(
+  ".realmain-lecture-scrapbutton"
+);
+scraplectureBtns.forEach((item) => {
+  item.addEventListener("click", () => {
+    const img = item.querySelector("img");
+    const imgSrc = img.getAttribute("src");
+    console.log(imgSrc);
+    imgSrc === "../../staticfiles/images/scrap-off.png"
+      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
+      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
   });
 });
