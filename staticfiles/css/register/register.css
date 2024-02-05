@@ -116,6 +116,11 @@ svg:not(:root) {
   color: rgb(194, 200, 204);
 }
 
+.email-form-control:hover {
+  background-color: #fafafa;
+  border-color: #bdbdbd;
+}
+
 /* 마찬가지로 공통 적용 */
 .email-form-control-blind {
   overflow: hidden;
@@ -238,6 +243,10 @@ svg:not(:root) {
   color: rgb(194, 200, 204);
 }
 
+.password-input:hover:not(:focus) {
+  background-color: #fafafa;
+}
+
 .password-hidden {
   overflow: hidden;
   position: absolute;
@@ -285,6 +294,10 @@ svg:not(:root) {
   color: rgb(194, 200, 204);
 }
 
+.password-verify-input:hover:not(:focus) {
+  background-color: #fafafa;
+}
+
 .password-verify-hidden {
   overflow: hidden;
   position: absolute;
@@ -318,6 +331,11 @@ svg:not(:root) {
   position: relative;
   -webkit-box-flex: 1;
   flex: 1 1 0px;
+}
+
+.region-form-control:hover {
+  background-color: #fafafa;
+  border-color: #bdbdbd;
 }
 
 .region-seperator {
@@ -365,6 +383,7 @@ svg:not(:root) {
   color: #424242;
 }
 
+.region-input-local .region-select-button,
 .region-input-domain .region-select-button {
   position: absolute;
   top: 10px;
@@ -430,6 +449,10 @@ svg:not(:root) {
   color: rgb(194, 200, 204);
 }
 
+.nickname-input:hover:not(:focus) {
+  background-color: #fafafa;
+}
+
 .nickname-hidden {
   overflow: hidden;
   position: absolute;
@@ -487,6 +510,11 @@ svg:not(:root) {
   flex-shrink: 0;
 }
 
+.all-check-wrap:hover {
+  background-color: #f7f9fa;
+  border-color: #dadde0;
+}
+
 .all-check-container {
   position: absolute;
   overflow: hidden;
@@ -512,14 +540,14 @@ svg:not(:root) {
   content: "\e958";
 }
 
-.all-check-input {
+.all-check-input[type="checkbox"] {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   opacity: 0;
   width: 100%;
   height: 100%;
-  margin: 0px;
+  margin: 0;
   cursor: pointer;
 }
 
@@ -583,6 +611,11 @@ svg:not(:root) {
   flex-shrink: 0;
 }
 
+.essential-check-wrap:hover {
+  background-color: #f7f9fa;
+  border-color: #dadde0;
+}
+
 .essential-check-container {
   position: absolute;
   overflow: hidden;
@@ -607,7 +640,7 @@ svg:not(:root) {
   content: "\e958";
 }
 
-.essential-check-input {
+.essential-check-input[type="checkbox"] {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -692,6 +725,11 @@ svg:not(:root) {
   flex-shrink: 0;
 }
 
+.optional-check-wrap:hover {
+  background-color: #f7f9fa;
+  border-color: #dadde0;
+}
+
 .optional-check-container {
   position: absolute;
   overflow: hidden;
@@ -716,7 +754,7 @@ svg:not(:root) {
   content: "\e958";
 }
 
-.optional-check-input {
+.optional-check-input[type="checkbox"] {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -802,6 +840,10 @@ svg:not(:root) {
   font-weight: bold;
   display: inline-block;
   padding-left: 10px;
+}
+
+.login-link:hover {
+  opacity: 0.7;
 }
 
 @media (min-width: 768px) {
