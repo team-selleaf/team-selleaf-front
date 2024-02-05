@@ -179,10 +179,10 @@ contentUploader.forEach((item) => {
 
 document.addEventListener("click", (e) => {
   const modalWrap = document.querySelector(".modal-wrap");
-  if (e.target.closest("button")) {
+  if (e.target.closest(".filter-btn")) {
     modalWrap.classList.toggle("model-open");
   }
-  if (!(e.target.closest("button") || e.target.closest(".modal-wrap"))) {
+  if (!(e.target.closest(".filter-btn") || e.target.closest(".modal-wrap"))) {
     modalWrap.classList.remove("model-open");
   }
   const filter = e.target.closest(".modal-content-item");
