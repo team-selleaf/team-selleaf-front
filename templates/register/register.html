@@ -31,7 +31,7 @@
     <!-- 여기까지는 무조건 고정으로 모든 페이지에 복붙하세요 -->
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link rel="stylesheet" href="../../staticfiles/css/register/register.css" />
-    <title>Document</title>
+    <title>회원가입 | Selleaf</title>
   </head>
   <body>
     <div class="register-wrap">
@@ -73,7 +73,7 @@
               <li class="sns-icon-wrap">
                 <a href="" class="sns-icon" title="구글로 가입하기">
                   <img
-                    src="../../staticfiles/images/register/google-logo.svg"
+                    src="../../staticfiles/images/other-sns-logos/google-logo.svg"
                     alt=""
                   />
                 </a>
@@ -82,7 +82,7 @@
               <li class="sns-icon-wrap">
                 <a href="" class="sns-icon" title="카카오로 가입하기">
                   <img
-                    src="../../staticfiles/images/register/kakao-logo.svg"
+                    src="../../staticfiles/images/other-sns-logos/kakao-logo.svg"
                     alt=""
                   />
                 </a>
@@ -91,7 +91,7 @@
               <li class="sns-icon-wrap">
                 <a href="" class="sns-icon" title="네이버로 가입하기">
                   <img
-                    src="../../staticfiles/images/register/naver-logo.png"
+                    src="../../staticfiles/images/other-sns-logos/naver-logo.png"
                     alt=""
                     style="width: 48px; height: 48px"
                   />
@@ -101,6 +101,7 @@
           </div>
           <!-- 개인정보 입력란 -->
           <form>
+            <!-- 이메일 입력란 -->
             <div class="email-input-wrap">
               <label class="email-input-text">이메일</label>
               <div class="email-input-container">
@@ -158,6 +159,7 @@
                 </div>
               </div>
             </div>
+            <!-- 이메일 인증 버튼 -->
             <div class="email-verify-button-wrap">
               <button
                 class="email-verify-button"
@@ -168,6 +170,7 @@
               </button>
             </div>
             <div class="hidden-tag"></div>
+            <!-- 비밀번호 입력 -->
             <div class="password-wrap">
               <label class="password-text">비밀번호</label>
               <div class="password-info">
@@ -183,6 +186,7 @@
                 <span class="password-hidden">비밀번호 입력하기</span>
               </label>
             </div>
+            <!-- 비밀번호 확인 -->
             <div class="password-verify">
               <label class="password-verify-text">비밀번호 확인</label>
               <label class="password-verify-wrap">
@@ -197,9 +201,9 @@
                 </span>
               </label>
             </div>
-            <!-- 여기에다 지역 입력란 넣기 -->
+            <!-- 지역 입력란 -->
             <div class="region-input-wrap">
-              <label class="region-input-text">주거래 지역</label>
+              <label class="region-input-text">주소지</label>
               <div class="region-input-container">
                 <div class="region-input-group">
                   <span class="region-input-local">
@@ -208,7 +212,7 @@
                       <!-- 나중에 form-control 클래스 가진 요소들 한 번에 조작하는 js 작업 필요할 수 있으니 참고 바람 -->
                       <input
                         class="region-form-control"
-                        placeholder="주거래 지역"
+                        placeholder="주소지"
                         size="1"
                       />
                       <span class="region-form-control-blind">
@@ -217,9 +221,10 @@
                     </label>
                   </span>
                   <span class="region-seperator">&nbsp;</span>
-                  <span class="email-input-domain">
+                  <span class="region-input-domain">
                     <label>
-                      <select class="email-form-control">
+                      <!--  -->
+                      <select class="region-form-control">
                         <option value="" disabled>선택해주세요</option>
                         <option value="naver.com">naver.com</option>
                         <option value="hanmail.net">hanmail.net</option>
@@ -229,14 +234,13 @@
                         <option value="hotmail.com">hotmail.com</option>
                         <option value="outlook.com">outlook.com</option>
                         <option value="icloud.com">icloud.com</option>
-                        <option value="_manual">직접입력</option>
                       </select>
-                      <span class="email-form-control-blind"
-                        >이메일 도메인 선택하기
+                      <span class="region-form-control-blind"
+                        >시, 군, 구 선택하기
                       </span>
                     </label>
                     <button
-                      class="domain-select-button"
+                      class="region-select-button"
                       aria-label="초기화"
                       type="button"
                       tabindex="-1"
@@ -270,6 +274,7 @@
                 <span class="nickname-hidden">닉네임 입력하기</span>
               </label>
             </div>
+            <!-- 약관동의 -->
             <div class="terms-wrap">
               <label class="terms-text">약관동의</label>
               <div class="terms-container">

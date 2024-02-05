@@ -13,6 +13,7 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+/* 페이지 전체를 감싸는 부분 */
 .register-wrap {
   height: 100%;
 }
@@ -23,6 +24,7 @@ svg:not(:root) {
   margin: auto;
 }
 
+/* 로고를 제외한 나머지를 감싸는 부분 */
 .except-logo-wrap {
   width: 100%;
   margin: 0px auto;
@@ -34,6 +36,7 @@ svg:not(:root) {
   font-weight: bold;
 }
 
+/* 다른 SNS 계정으로 가입 */
 .other-sns-wrap {
   margin: 30px 0px;
   padding-bottom: 30px;
@@ -61,6 +64,7 @@ svg:not(:root) {
   display: block;
 }
 
+/* 이메일 입력란 */
 .email-input-text {
   display: block;
   margin-bottom: 12px;
@@ -108,6 +112,10 @@ svg:not(:root) {
   -webkit-box-flex: 1;
 }
 
+.email-form-control::placeholder {
+  color: rgb(194, 200, 204);
+}
+
 /* 마찬가지로 공통 적용 */
 .email-form-control-blind {
   overflow: hidden;
@@ -129,7 +137,7 @@ svg:not(:root) {
   color: #424242;
 }
 
-.domain-select-button {
+.email-input-domain .domain-select-button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -147,6 +155,7 @@ svg:not(:root) {
   flex: 1 1 0px;
 }
 
+/* 이메일 확인 버튼 */
 .email-verify-button-wrap {
   margin-bottom: 30px;
   padding-top: 2px;
@@ -182,6 +191,7 @@ svg:not(:root) {
   border-color: rgb(218, 220, 224);
 }
 
+/* 비밀번호 입력란 */
 .password-wrap {
   margin-bottom: 30px;
 }
@@ -224,6 +234,10 @@ svg:not(:root) {
   -webkit-font-smoothing: antialiased;
 }
 
+.password-input::placeholder {
+  color: rgb(194, 200, 204);
+}
+
 .password-hidden {
   overflow: hidden;
   position: absolute;
@@ -232,6 +246,7 @@ svg:not(:root) {
   white-space: nowrap;
 }
 
+/* 비밀번호 확인 */
 .password-verify {
   margin-bottom: 30px;
 }
@@ -266,6 +281,10 @@ svg:not(:root) {
   -webkit-font-smoothing: antialiased;
 }
 
+.password-verify-input::placeholder {
+  color: rgb(194, 200, 204);
+}
+
 .password-verify-hidden {
   overflow: hidden;
   position: absolute;
@@ -274,7 +293,7 @@ svg:not(:root) {
   white-space: nowrap;
 }
 
-/* 주거래 지역 입력란에 대한 스타일 */
+/* 주거래 지역 입력란 */
 .region-input-wrap {
   margin-bottom: 20px;
 }
@@ -326,7 +345,6 @@ svg:not(:root) {
   -webkit-box-flex: 1;
 }
 
-/* 마찬가지로 공통 적용 */
 .region-form-control-blind {
   overflow: hidden;
   position: absolute;
@@ -347,7 +365,7 @@ svg:not(:root) {
   color: #424242;
 }
 
-.region-select-button {
+.region-input-domain .region-select-button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -359,13 +377,13 @@ svg:not(:root) {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.email-input-domain {
+.region-input-domain {
   position: relative;
   -webkit-box-flex: 1;
   flex: 1 1 0px;
 }
 
-/* 닉네임 입력란에 대한 스타일 */
+/* 닉네임 입력란 */
 .nickname-wrap {
   margin-bottom: 30px;
 }
@@ -408,6 +426,10 @@ svg:not(:root) {
   -webkit-font-smoothing: antialiased;
 }
 
+.nickname-input::placeholder {
+  color: rgb(194, 200, 204);
+}
+
 .nickname-hidden {
   overflow: hidden;
   position: absolute;
@@ -416,6 +438,7 @@ svg:not(:root) {
   white-space: nowrap;
 }
 
+/* 약관동의 */
 .terms-wrap {
   margin-bottom: 30px;
 }
@@ -531,6 +554,7 @@ svg:not(:root) {
   margin: 18px 0px;
 }
 
+/* 필수 동의사항 */
 .essential-terms-wrap {
   display: flex;
   -webkit-box-align: center;
@@ -639,7 +663,7 @@ svg:not(:root) {
   content: "\e969";
 }
 
-/* 여기서부터는 선택 동의사항에 대한 스타일 */
+/* 선택 동의사항 */
 .optional-terms-wrap {
   display: flex;
   -webkit-box-align: center;
@@ -734,6 +758,7 @@ svg:not(:root) {
   margin-top: 20px;
 }
 
+/* 회원가입 버튼 */
 .register-button {
   user-select: none;
   display: inline-block;
@@ -764,6 +789,7 @@ svg:not(:root) {
   background-color: #09addb;
 }
 
+/* 로그인 페이지로 이동 */
 .already-registered-wrap {
   color: rgb(66, 66, 66);
   font-size: 15px;
