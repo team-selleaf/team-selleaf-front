@@ -40,7 +40,7 @@
     <div class="layout">
       <header></header>
       <!-- 거래 카테고리 탭 -->
-      <div class="category-wrap" style="height: 52px">
+      <div class="category-wrap-" style="height: 52px">
         <div
           class="category-container"
           style="
@@ -65,55 +65,30 @@
                 </span>
               </nav>
             </div>
-            <div class="ranking-wrap">
-              <div class="ranking-container">
-                <div class="_ranking-container">
-                  <div class="ranking-inner">
-                    <div class="ranking-main-wrap">
-                      <div class="ranking-main-container">
-                        <a
-                          href="/staticfiles/images/blank-image.png"
-                          class="ranking-link"
-                        >
-                          <div class="ranking-inner">
-                            <span class="ranking-number">10</span>
-                            <span class="ranking-label-container">
-                              <span class="ranking-label">
-                                <svg
-                                  width="24"
-                                  height="24"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  preserveAspectRatio="xMidYMid meet"
-                                >
-                                  <path
-                                    d="M4.18639 15V11.0707H4.22334L6.99431 15H8.0206V9H6.83421V12.9085H6.80137L4.0345 9H3V15H4.18639Z"
-                                    fill="currentColor"
-                                  ></path>
-                                  <path
-                                    d="M12.7943 13.9605H10.1096V12.447H12.6425V11.4823H10.1096V10.0353H12.7943V9H8.86982V15H12.7943V13.9605Z"
-                                    fill="currentColor"
-                                  ></path>
-                                  <path
-                                    d="M17.096 10.9002H17.1329L18.2578 15H19.4277L21 9H19.7151L18.7791 13.3451H18.7463L17.6379 9H16.5911L15.4827 13.3451H15.4498L14.518 9H13.2331L14.8012 15H15.9712L17.096 10.9002Z"
-                                    fill="currentColor"
-                                  ></path>
-                                </svg>
-                              </span>
-                              <span class="ranking-tag"> 태그명 </span>
-                            </span>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-
+      <!-- 스크랩 팝업 -->
+      <div class="scrap-popup-wrap" style="display: none">
+        <div class="scrap-popup-container">
+          <div class="scrap-popup-inner">
+            <div class="scrap-popup-text">스크랩 했습니다.</div>
+          </div>
+          <div class="scrap-popup-button-container">
+            <button class="scrap-link-button" type="button">
+              스크랩북 보기
+            </button>
+            <button class="scrap-link-button" type="button">폴더에 담기</button>
+          </div>
+        </div>
+      </div>
+      <div class="scrap-popup-wrap" style="display: none">
+        <div class="scrap-popup-container">
+          <div class="scrap-popup-inner">
+            <div class="scrap-popup-text">스크랩을 취소하였습니다.</div>
+          </div>
+        </div>
+      </div>
       <!-- 거래 메인 탭 -->
       <div id="transaction-main-page">
         <section class="popular-wrap wrap-media">
@@ -143,10 +118,52 @@
                             alt
                             class="scrap-off"
                           />
+                        </button>
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <div class="post-content-mobile-reply">
+                        <p class="post-mobile-reply">리뷰 갯수</p>
+                      </div>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="page" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt
+                          class="image"
+                        />
+                        <button class="scrap-button" type="button">
                           <img
-                            src="/staticfiles/images/scrap-on.png"
+                            src="/staticfiles/images/scrap-off.png"
                             alt
-                            class="scrap-on"
+                            class="scrap-off"
                           />
                         </button>
                         <div class="image__dark-overlay"></div>
@@ -195,10 +212,52 @@
                             alt
                             class="scrap-off"
                           />
+                        </button>
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <div class="post-content-mobile-reply">
+                        <p class="post-mobile-reply">리뷰 갯수</p>
+                      </div>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="page" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt
+                          class="image"
+                        />
+                        <button class="scrap-button" type="button">
                           <img
-                            src="/staticfiles/images/scrap-on.png"
+                            src="/staticfiles/images/scrap-off.png"
                             alt
-                            class="scrap-on"
+                            class="scrap-off"
                           />
                         </button>
                         <div class="image__dark-overlay"></div>
@@ -247,10 +306,52 @@
                             alt
                             class="scrap-off"
                           />
+                        </button>
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <div class="post-content-mobile-reply">
+                        <p class="post-mobile-reply">리뷰 갯수</p>
+                      </div>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="page" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt
+                          class="image"
+                        />
+                        <button class="scrap-button" type="button">
                           <img
-                            src="/staticfiles/images/scrap-on.png"
+                            src="/staticfiles/images/scrap-off.png"
                             alt
-                            class="scrap-on"
+                            class="scrap-off"
                           />
                         </button>
                         <div class="image__dark-overlay"></div>
@@ -299,11 +400,6 @@
                             alt
                             class="scrap-off"
                           />
-                          <img
-                            src="/staticfiles/images/scrap-on.png"
-                            alt
-                            class="scrap-on"
-                          />
                         </button>
                         <div class="image__dark-overlay"></div>
                       </div>
@@ -350,167 +446,6 @@
                             src="/staticfiles/images/scrap-off.png"
                             alt
                             class="scrap-off"
-                          />
-                          <img
-                            src="/staticfiles/images/scrap-on.png"
-                            alt
-                            class="scrap-on"
-                          />
-                        </button>
-                        <div class="image__dark-overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="post-contents-wrap">
-                    <div class="post-contents-container">
-                      <h1 class="post-contents-header">
-                        <span class="post-contents-user">작성자입력</span>
-                        <span class="post-contents-banner">거래제품명</span>
-                      </h1>
-                      <div class="post-content-mobile-reply">
-                        <p class="post-mobile-reply">리뷰 갯수</p>
-                      </div>
-                      <span class="post-price">
-                        <span class="post-price-letter">35,000</span>
-                      </span>
-                      <div class="post-content-pc-reply">
-                        <p class="post-content-reply">리뷰 갯수</p>
-                      </div>
-                      <span class="post-tag">
-                        <span class="post-tag-icon">태그1</span>
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="post-container">
-              <div class="post-inner">
-                <article class="post">
-                  <a href="page" class="post-link"></a>
-                  <div class="post-image-wrap_">
-                    <div class="post-image-container">
-                      <div class="post-image-inner">
-                        <div class="post-image"></div>
-                        <img
-                          src="/staticfiles/images/blank-image.png"
-                          alt
-                          class="image"
-                        />
-                        <button class="scrap-button" type="button">
-                          <img
-                            src="/staticfiles/images/scrap-off.png"
-                            alt
-                            class="scrap-off"
-                          />
-                          <img
-                            src="/staticfiles/images/scrap-on.png"
-                            alt
-                            class="scrap-on"
-                          />
-                        </button>
-                        <div class="image__dark-overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="post-contents-wrap">
-                    <div class="post-contents-container">
-                      <h1 class="post-contents-header">
-                        <span class="post-contents-user">작성자입력</span>
-                        <span class="post-contents-banner">거래제품명</span>
-                      </h1>
-                      <div class="post-content-mobile-reply">
-                        <p class="post-mobile-reply">리뷰 갯수</p>
-                      </div>
-                      <span class="post-price">
-                        <span class="post-price-letter">35,000</span>
-                      </span>
-                      <div class="post-content-pc-reply">
-                        <p class="post-content-reply">리뷰 갯수</p>
-                      </div>
-                      <span class="post-tag">
-                        <span class="post-tag-icon">태그1</span>
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="post-container">
-              <div class="post-inner">
-                <article class="post">
-                  <a href="page" class="post-link"></a>
-                  <div class="post-image-wrap_">
-                    <div class="post-image-container">
-                      <div class="post-image-inner">
-                        <div class="post-image"></div>
-                        <img
-                          src="/staticfiles/images/blank-image.png"
-                          alt
-                          class="image"
-                        />
-                        <button class="scrap-button" type="button">
-                          <img
-                            src="/staticfiles/images/scrap-off.png"
-                            alt
-                            class="scrap-off"
-                          />
-                          <img
-                            src="/staticfiles/images/scrap-on.png"
-                            alt
-                            class="scrap-on"
-                          />
-                        </button>
-                        <div class="image__dark-overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="post-contents-wrap">
-                    <div class="post-contents-container">
-                      <h1 class="post-contents-header">
-                        <span class="post-contents-user">작성자입력</span>
-                        <span class="post-contents-banner">거래제품명</span>
-                      </h1>
-                      <div class="post-content-mobile-reply">
-                        <p class="post-mobile-reply">리뷰 갯수</p>
-                      </div>
-                      <span class="post-price">
-                        <span class="post-price-letter">35,000</span>
-                      </span>
-                      <div class="post-content-pc-reply">
-                        <p class="post-content-reply">리뷰 갯수</p>
-                      </div>
-                      <span class="post-tag">
-                        <span class="post-tag-icon">태그1</span>
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="post-container">
-              <div class="post-inner">
-                <article class="post">
-                  <a href="page" class="post-link"></a>
-                  <div class="post-image-wrap_">
-                    <div class="post-image-container">
-                      <div class="post-image-inner">
-                        <div class="post-image"></div>
-                        <img
-                          src="/staticfiles/images/blank-image.png"
-                          alt
-                          class="image"
-                        />
-                        <button class="scrap-button" type="button">
-                          <img
-                            src="/staticfiles/images/scrap-off.png"
-                            alt
-                            class="scrap-off"
-                          />
-                          <img
-                            src="/staticfiles/images/scrap-on.png"
-                            alt
-                            class="scrap-on"
                           />
                         </button>
                         <div class="image__dark-overlay"></div>
@@ -606,10 +541,44 @@
                       alt
                       class="scrap-off"
                     />
+                  </button>
+                  <div class="update-post__dark-overlay"></div>
+                </div>
+                <div class="post-contents-container">
+                  <h1 class="post-contents-header">
+                    <span class="post-contents-user">작성자입력</span>
+                    <span class="post-contents-banner">거래제품명</span>
+                  </h1>
+                  <div class="post-content-mobile-reply">
+                    <p class="post-mobile-reply">리뷰 갯수</p>
+                  </div>
+                  <span class="post-price">
+                    <span class="post-price-letter">35,000</span>
+                  </span>
+                  <div class="post-content-pc-reply">
+                    <p class="post-content-reply">리뷰 갯수</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="update-post-contents-wrap">
+              <article class="update-post-contents">
+                <a
+                  href="/staticfiles/images/blank-image.png"
+                  class="update-post__overlay"
+                ></a>
+                <div class="update-post-image">
+                  <div class="update-post"></div>
+                  <img
+                    class="image"
+                    src="/staticfiles/images/blank-image.png"
+                    alt=""
+                  />
+                  <button class="scrap-button" type="button">
                     <img
-                      src="/staticfiles/images/scrap-on.png"
+                      src="/staticfiles/images/scrap-off.png"
                       alt
-                      class="scrap-on"
+                      class="scrap-off"
                     />
                   </button>
                   <div class="update-post__dark-overlay"></div>
@@ -650,11 +619,6 @@
                       alt
                       class="scrap-off"
                     />
-                    <img
-                      src="/staticfiles/images/scrap-on.png"
-                      alt
-                      class="scrap-on"
-                    />
                   </button>
                   <div class="update-post__dark-overlay"></div>
                 </div>
@@ -693,55 +657,6 @@
                       src="/staticfiles/images/scrap-off.png"
                       alt
                       class="scrap-off"
-                    />
-                    <img
-                      src="/staticfiles/images/scrap-on.png"
-                      alt
-                      class="scrap-on"
-                    />
-                  </button>
-                  <div class="update-post__dark-overlay"></div>
-                </div>
-                <div class="post-contents-container">
-                  <h1 class="post-contents-header">
-                    <span class="post-contents-user">작성자입력</span>
-                    <span class="post-contents-banner">거래제품명</span>
-                  </h1>
-                  <div class="post-content-mobile-reply">
-                    <p class="post-mobile-reply">리뷰 갯수</p>
-                  </div>
-                  <span class="post-price">
-                    <span class="post-price-letter">35,000</span>
-                  </span>
-                  <div class="post-content-pc-reply">
-                    <p class="post-content-reply">리뷰 갯수</p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="update-post-contents-wrap">
-              <article class="update-post-contents">
-                <a
-                  href="/staticfiles/images/blank-image.png"
-                  class="update-post__overlay"
-                ></a>
-                <div class="update-post-image">
-                  <div class="update-post"></div>
-                  <img
-                    class="image"
-                    src="/staticfiles/images/blank-image.png"
-                    alt=""
-                  />
-                  <button class="scrap-button" type="button">
-                    <img
-                      src="/staticfiles/images/scrap-off.png"
-                      alt
-                      class="scrap-off"
-                    />
-                    <img
-                      src="/staticfiles/images/scrap-on.png"
-                      alt
-                      class="scrap-on"
                     />
                   </button>
                   <div class="update-post__dark-overlay"></div>
@@ -768,4 +683,5 @@
       </div>
     </div>
   </body>
+  <script src="/staticfiles/js/transaction/transaction.js"></script>
 </html>
