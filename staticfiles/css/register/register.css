@@ -76,6 +76,11 @@ svg:not(:root) {
   word-break: keep-all;
 }
 
+/* JS로 error 클래스가 추가되었을 때, 텍스트 색상 변화 */
+.email-input-text.error {
+  color: rgb(255, 119, 119);
+}
+
 .email-input-group {
   display: flex;
   -webkit-box-flex: 1;
@@ -110,6 +115,35 @@ svg:not(:root) {
   background-color: #fff;
   color: #424242;
   -webkit-box-flex: 1;
+}
+
+.email-form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(130, 224, 250, 0.5);
+}
+
+/* js로 error 클래스 추가 시 적용 */
+/* 이메일, 사이트 입력창 양쪽 다 적용 */
+.email-input-local .email-form-control.error,
+.email-input-domain .email-form-control.error {
+  border-color: #f77;
+}
+
+.email-input-local .email-form-control.error:focus,
+.email-input-domain .email-form-control.error:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 119, 119, 0.5);
+}
+
+/*
+  JS 이벤트로 error 클래스가 추가될 때,
+  각 입력칸 아래에 추가되는 div 요소에 적용
+*/
+.not-available {
+  padding-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(255, 119, 119);
 }
 
 .email-form-control::placeholder {
@@ -196,6 +230,17 @@ svg:not(:root) {
   border-color: rgb(218, 220, 224);
 }
 
+/* 이메일 양식 만족으로 인해 enabled 되었을 때 */
+.email-verify-button.enabled {
+  background-color: #fff;
+  border-color: #35c5f0;
+  color: #35c5f0;
+}
+
+.email-verify-button.enabled:hover {
+  background-color: #effbff;
+}
+
 /* 비밀번호 입력란 */
 .password-wrap {
   margin-bottom: 30px;
@@ -239,6 +284,25 @@ svg:not(:root) {
   -webkit-font-smoothing: antialiased;
 }
 
+.password-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(130, 224, 250, 0.5);
+}
+
+/* js로 error 클래스 추가 시 적용 */
+.password-text.error {
+  color: rgb(255, 119, 119);
+}
+
+.password-wrap .password-input.error {
+  border-color: #f77;
+}
+
+.password-wrap .password-input.error:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 119, 119, 0.5);
+}
+
 .password-input::placeholder {
   color: rgb(194, 200, 204);
 }
@@ -256,7 +320,7 @@ svg:not(:root) {
 }
 
 /* 비밀번호 확인 */
-.password-verify {
+.password-verify-wrap {
   margin-bottom: 30px;
 }
 
@@ -288,6 +352,25 @@ svg:not(:root) {
   resize: none;
   padding: 8px 15px 9px;
   -webkit-font-smoothing: antialiased;
+}
+
+.password-verify-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(130, 224, 250, 0.5);
+}
+
+/* js로 error 클래스 추가 시 적용 */
+.password-verify-text.error {
+  color: rgb(255, 119, 119);
+}
+
+.password-verify-wrap .password-verify-input.error {
+  border-color: #f77;
+}
+
+.password-verify-wrap .password-verify-input.error:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 119, 119, 0.5);
 }
 
 .password-verify-input::placeholder {

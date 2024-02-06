@@ -13,20 +13,21 @@
         .error에 대한 스타일 관리는 css에서
 
 
-        -> 입력창 위 h1 태그 텍스트와 border-color,
+        -> 입력창 위 label 태그 텍스트와 border-color,
            focus 되었을 때의 box-shadow 색 변경
            + 각 input의 wrap 아래에 빨간색 경고 텍스트(div) 추가
            
-           맨 아래 이용약관은 h1 텍스트와
+           맨 아래 이용약관은 label 텍스트와
            terms-container의 border 색만 변경
+*/
 
-
+/*
     ※ 이메일
 
     - keyup, blur
 
         앞쪽 직접 입력란과 뒤쪽 드롭박스(선택해주세요 or 직접 입력에 값 없을 때)중 하나라도 값이 없을 경우
-            -> 양쪽과 h1 텍스트에 .error toggle, 이메일 인증버튼에 .enabled 클래스 remove
+            -> 양쪽과 label 텍스트에 .error 추가, 이메일 인증버튼에 .enabled 클래스 remove
 
             * 나중에는 keyup 이벤트로 실시간으로 데이터 송수신해서 띄우기
 
@@ -37,49 +38,432 @@
         * 드롭박스 쪽 직접입력
             -> 이거 선택하면 input 창으로 바뀌는 건 어떻게 하는 건가...
                 해당 option 안에 input 태그를 넣나?
+*/
+// 이벤트에 사용할 상수 저장
+const emailText = document.querySelector(".email-input-text");
+const emailInput = document.querySelector(".email-form-control:nth-child(1)"); // 정확히 input 태그를 찍어줘야 됨
+const emailDrop = document.querySelector(".email-input-domain");
 
+// 오류 시 메시지(div) 추가에 필요 - wrap 아레의 마지막 요소로 추가 예정
+const emailWrap = document.querySelector(".email-input-wrap");
 
+// 이메일 인증 버튼도 조작해야되기 때문에 미리 가져옴
+const emailVerifyBtn = document.querySelector(".email-verify-button");
+
+// 양쪽 입력창 모두에 적용(forEach)하기 위한 상수
+const emailForm = document.querySelectorAll(".email-form-control");
+
+// 입력창 별로 error 발생 시, 추가되는 div에 넣을 텍스트들을 미리 저장
+const emailFormErrorMsg = "이메일 형식이 올바르지 않습니다."; // email input에 값 없을 때
+const alreadyRegisteredMsg =
+  "이미 가입한 이메일입니다. '이메일 로그인'으로 로그인해주세요."; // 기존 회원일 때
+const snsAlreadyRegisteredMsg =
+  "이미 간편가입으로 가입된 이메일입니다. 위쪽의 버튼을 눌러 로그인해주세요."; // 이미 간편가입 된 회원일 때
+
+// 이메일 입력창에 대한 keyup 이벤트 생성
+emailInput.addEventListener("keyup", (e) => {
+  // 만약 키가 눌린 시점에 아무런 값이 없다면
+  if (!e.target.value) {
+    // 입력창과 드롭박스 모두에 error 클래스 추가
+    emailForm.forEach((form) => {
+      // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+      if (!form.classList.contains("error")) {
+        form.classList.add("error");
+      }
+    });
+
+    // label 태그(텍스트)에도 error 클래스 없는 거 확인하고 추가
+    if (!emailText.classList.contains("error")) {
+      emailText.classList.add("error");
+    }
+
+    // 나중에 이메일 인증 버튼 작업할 때 여기에서 enabled 클래스 삭제
+    emailVerifyBtn.classList.remove("enabled");
+
+    // email-input-wrap의 맨 아래에 div 요소(에러 메세지 = not-avaliable 클래스) 추가
+    // 추가하기 전에 wrap 안에 .not-avaliable 요소 있는지 확인
+    if (!document.querySelector(".email-input-wrap .not-available")) {
+      // 새로운 div 요소 생성
+      const newDiv = document.createElement("div");
+
+      // 오류 메세지 추가 - 지금은 형식 오류만
+      newDiv.innerText = emailFormErrorMsg;
+
+      // 스타일을 받을 수 있게 클래스 추가
+      newDiv.classList.add("not-available");
+
+      // email-input-wrap의 맨 마지막에 추가
+      emailWrap.appendChild(newDiv);
+    }
+
+    // 아래쪽 경우의 수(값 있는 경우) 실행 안하고 함수 종료
+    return;
+  }
+  // 만약 어떤 값이라도 있는 경우
+  // 나중에는 DB랑 연결 - DB에 저장되지 않은 값일 경우
+
+  // 입력창과 드롭박스 모두 error 클래스 삭제
+  emailForm.forEach((form) => {
+    form.classList.remove("error");
+  });
+
+  // label 태그에서도 삭제
+  emailText.classList.remove("error");
+
+  // 나중에 이메일 인증 버튼 작업할 때 여기에서 enabled 클래스 추가
+  // 위에서 error 클래스 추가한 것처럼, 여기에서도 기존에 enabled 클래스가 있었는지 확인
+  if (!emailVerifyBtn.classList.contains("enabled")) {
+    // 기존에 없었을 경우에만 추가
+    emailVerifyBtn.classList.add("enabled");
+  }
+
+  // 입력창 아래의 에러 메세지(not-available 클래스 가진 div) 삭제
+  // 있을 경우에만 삭제 - 조건식 없으면 에러 발생
+  // 추가 - 어디 안에 있는 .not-available인지 정확하게 집어줘야 됨
+  if (document.querySelector(".email-input-wrap .not-available")) {
+    emailWrap.removeChild(
+      document.querySelector(".email-input-wrap .not-available")
+    );
+  }
+});
+
+// 이메일 입력창에 대한 blur 이벤트 생성
+emailInput.addEventListener("blur", (e) => {
+  // 만약 blur 된 시점에 아무런 값이 없다면
+  if (!e.target.value) {
+    // 입력창과 드롭박스 모두에 error 클래스 추가
+    emailForm.forEach((form) => {
+      // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+      if (!form.classList.contains("error")) {
+        form.classList.add("error");
+      }
+    });
+
+    // label 태그(텍스트)에도 error 클래스 없는 거 확인하고 추가
+    if (!emailText.classList.contains("error")) {
+      emailText.classList.add("error");
+    }
+
+    // 나중에 이메일 인증 버튼 작업할 때 여기에서 enabled 클래스 삭제
+    emailVerifyBtn.classList.remove("enabled");
+
+    // email-input-wrap의 맨 아래에 div 요소(에러 메세지 = not-avaliable 클래스) 추가
+    // 추가하기 전에 wrap 안에 .not-avaliable 요소 있는지 확인
+    if (!document.querySelector(".email-input-wrap .not-available")) {
+      // 새로운 div 요소 생성
+      const newDiv = document.createElement("div");
+
+      // 오류 메세지 추가 - 지금은 형식 오류만
+      newDiv.innerText = emailFormErrorMsg;
+
+      // 스타일을 받을 수 있게 클래스 추가
+      newDiv.classList.add("not-available");
+
+      // email-input-wrap의 맨 마지막에 추가
+      emailWrap.appendChild(newDiv);
+    }
+
+    // 아래쪽 경우의 수(값 있는 경우) 실행 안하고 함수 종료
+    return;
+  }
+  // 만약 어떤 값이라도 있는 경우
+  // 나중에는 DB랑 연결 - DB에 저장되지 않은 값일 경우
+
+  // 입력창과 드롭박스 모두 error 클래스 삭제
+  emailForm.forEach((form) => {
+    form.classList.remove("error");
+  });
+
+  // label 태그에서도 삭제
+  emailText.classList.remove("error");
+
+  // 나중에 이메일 인증 버튼 작업할 때 여기에서 enabled 클래스 추가
+  // 위에서 error 클래스 추가한 것처럼, 여기에서도 기존에 enabled 클래스가 있었는지 확인
+  if (!emailVerifyBtn.classList.contains("enabled")) {
+    // 기존에 없었을 경우에만 추가
+    emailVerifyBtn.classList.add("enabled");
+  }
+
+  // 입력창 아래의 에러 메세지(not-available 클래스 가진 div) 삭제
+  if (document.querySelector(".email-input-wrap .not-available")) {
+    emailWrap.removeChild(
+      document.querySelector(".email-input-wrap .not-available")
+    );
+  }
+});
+
+/*
     ※ 이메일 인증 버튼
 
         위 이메일 이벤트로 인해 .enabled 속성이 있을 경우에만(if) 이벤트 실행
+        -> 나중에 DB랑 통신할 때 작성? 
+*/
 
-
+/*
     ※ 비밀번호
 
     - keyup, blur
 
-        정규식(0-9,a-z,A-Z / 8자리 이상) 만족 안 하면 .error toggle
+        정규식(0-9,a-z,A-Z / 8자리 이상 + 15자리 이하) 만족 안 하면 .error 추가
         만족하는 즉시 .error 삭제
+*/
+// 이벤트 처리에 필요한 객체들을 상수에 저장
+const passwordInput = document.querySelector(".password-input");
+const passwordText = document.querySelector(".password-text");
+const passwordWrap = document.querySelector(".password-wrap");
 
+// 비밀번호 양식 선언
+const passwordRegex = /^[A-Za-z0-9]{8,15}$/;
 
+// 오류 메세지 저장
+const mustNeededMsg = "필수 입력 항목입니다."; // 미입력 오류
+const passwordErrorMsg =
+  "비밀번호는 영문, 숫자를 포함하여 8자 이상이어야 합니다."; // 비밀번호 양식 오류
+
+// 비밀번호 입력창에 대한 keyup 이벤트 생성
+passwordInput.addEventListener("keyup", (e) => {
+  // 만약 키가 눌린 시점에 비밀번호 양식이 안 지켜져 았다면
+  if (!passwordRegex.test(e.target.value)) {
+    // password-input에 error 클래스 추가
+    // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
+    }
+
+    // label 태그(텍스트)에도 error 클래스 없는 거 확인하고 추가
+    if (!passwordText.classList.contains("error")) {
+      passwordText.classList.add("error");
+    }
+
+    // password-input-wrap의 맨 아래에 div 요소(에러 메세지 = not-avaliable 클래스) 추가
+    // 추가하기 전에 wrap 안에 .not-avaliable 요소 있는지 확인
+    if (!document.querySelector(".password-wrap .not-available")) {
+      // 새로운 div 요소 생성
+      const newDiv = document.createElement("div");
+
+      // 오류 메세지 추가
+      // 값이 있으면 - 형식 오류
+      // 값이 없으면 - 미입력 오류
+      newDiv.innerText = !e.target.value ? mustNeededMsg : passwordErrorMsg;
+
+      // 스타일을 받을 수 있게 클래스 추가
+      newDiv.classList.add("not-available");
+
+      // password-input-wrap의 맨 마지막에 추가
+      passwordWrap.appendChild(newDiv);
+    }
+
+    // 아래쪽 경우의 수(값 있는 경우) 실행 안하고 함수 종료
+    return;
+  }
+  // 만약 어떤 값이라도 있는 경우
+  // 나중에는 DB랑 연결 - DB에 저장되지 않은 값일 경우
+
+  // password-input의 error 클래스 삭제
+  e.target.classList.remove("error");
+
+  // label 태그에서도 삭제
+  passwordText.classList.remove("error");
+
+  // 입력창 아래의 에러 메세지(not-available 클래스 가진 div) 삭제
+  // 있을 경우에만 삭제 - 조건식 없으면 에러 발생
+  if (document.querySelector(".password-wrap .not-available")) {
+    passwordWrap.removeChild(
+      document.querySelector(".password-wrap .not-available")
+    );
+  }
+});
+
+// 비밀번호 입력창에 대한 blur 이벤트 생성
+passwordInput.addEventListener("blur", (e) => {
+  // 만약 blur 시점에 비밀번호 양식이 안 지켜져 았다면
+  if (!passwordRegex.test(e.target.value)) {
+    // password-input에 error 클래스 추가
+    // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
+    }
+
+    // label 태그(텍스트)에도 error 클래스 없는 거 확인하고 추가
+    if (!passwordText.classList.contains("error")) {
+      passwordText.classList.add("error");
+    }
+
+    // password-input-wrap의 맨 아래에 div 요소(에러 메세지 = not-avaliable 클래스) 추가
+    // 추가하기 전에 wrap 안에 .not-avaliable 요소 있는지 확인
+    if (!document.querySelector(".password-wrap .not-available")) {
+      // 새로운 div 요소 생성
+      const newDiv = document.createElement("div");
+
+      // 오류 메세지 추가
+      // 값이 있으면 - 형식 오류
+      // 값이 없으면 - 미입력 오류
+      newDiv.innerText = !e.target.value ? mustNeededMsg : passwordErrorMsg;
+
+      // 스타일을 받을 수 있게 클래스 추가
+      newDiv.classList.add("not-available");
+
+      // password-input-wrap의 맨 마지막에 추가
+      passwordWrap.appendChild(newDiv);
+    }
+
+    // 아래쪽 경우의 수(값 있는 경우) 실행 안하고 함수 종료
+    return;
+  }
+  // 만약 어떤 값이라도 있는 경우
+  // 나중에는 DB랑 연결 - DB에 저장되지 않은 값일 경우
+
+  // password-input의 error 클래스 삭제
+  e.target.classList.remove("error");
+
+  // label 태그에서도 삭제
+  passwordText.classList.remove("error");
+
+  // 입력창 아래의 에러 메세지(not-available 클래스 가진 div) 삭제
+  if (document.querySelector(".password-wrap .not-available")) {
+    passwordWrap.removeChild(
+      document.querySelector(".password-wrap .not-available")
+    );
+  }
+});
+
+/*
     ※ 비밀번호 확인
 
         위쪽 비번 이벤트 + keyup 될 때 비밀번호 값 가지고 와서 비교
-            -> 불일치 시 .error toggle, 일치 시 .error 삭제
+            -> 불일치 시 .error 추가, 일치 시 .error 삭제
+*/
+// 이벤트 처리에 필요한 객체들을 상수에 저장
+const verifyInput = document.querySelector(".password-verify-input");
+const verifyText = document.querySelector(".password-verify-text");
+const verifyWrap = document.querySelector(".password-verify-wrap");
 
+// 오류 메세지 저장
+const mustVerifiedMsg = "확인을 위해 비밀번호를 한 번 더 입력해주세요."; // 미입력 오류
+const incorrectErrorMsg = "비밀번호가 일치하지 않습니다."; // 불일치 오류
 
+// 비밀번호 확인 입력창에 대한 keyup 이벤트 생성
+verifyInput.addEventListener("keyup", (e) => {
+  // 키 눌릴때마다 비밀번호 입력칸 안의 값 가져옴
+  let correctValue = passwordInput.value;
+
+  // 만약 키가 눌린 시점에 비밀번호 입력칸에 입력한 것과 값이 다르다면 or 값이 없다면
+  if (!e.target.value || e.target.value !== correctValue) {
+    // password-verify-input에 error 클래스 추가
+    // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
+    }
+
+    // label 태그(텍스트)에도 error 클래스 없는 거 확인하고 추가
+    if (!verifyText.classList.contains("error")) {
+      verifyText.classList.add("error");
+    }
+
+    // password-verify-wrap의 맨 아래에 div 요소(에러 메세지 = not-avaliable 클래스) 추가
+    // 추가하기 전에 wrap 안에 .not-avaliable 요소 있는지 확인
+    if (!document.querySelector(".password-verify-wrap .not-available")) {
+      // 새로운 div 요소 생성
+      const newDiv = document.createElement("div");
+
+      // 오류 메세지 추가
+      // 값이 있으면 - 불일치 오류
+      // 값이 없으면 - 미입력 오류
+      newDiv.innerText = !e.target.value ? mustVerifiedMsg : incorrectErrorMsg;
+
+      // 스타일을 받을 수 있게 클래스 추가
+      newDiv.classList.add("not-available");
+
+      // email-verify-wrap의 맨 마지막에 추가
+      verifyWrap.appendChild(newDiv);
+    }
+
+    // 아래쪽 경우의 수(값 있는 경우) 실행 안하고 함수 종료
+    return;
+  }
+  // 만약 어떤 값이라도 있는 경우
+  // password-verify-input의 error 클래스 삭제
+  e.target.classList.remove("error");
+
+  // label 태그에서도 삭제
+  verifyText.classList.remove("error");
+
+  // 입력창 아래의 에러 메세지(not-available 클래스 가진 div) 삭제
+  // 있을 경우에만 삭제 - 조건식 없으면 에러 발생
+  if (document.querySelector(".password-verify-wrap .not-available")) {
+    verifyWrap.removeChild(
+      document.querySelector(".password-verify-wrap .not-available")
+    );
+  }
+});
+
+// 비밀번호 확인 입력창에 대한 blur 이벤트 생성
+verifyInput.addEventListener("blur", (e) => {
+  // blur 될 때마다 비밀번호 입력칸 안의 값 가져옴
+  let correctValue = passwordInput.value;
+
+  // 만약 blur 시점에 비밀번호 입력칸에 입력한 것과 값이 다르다면
+  if (!e.target.value || e.target.value !== correctValue) {
+    // password-verify-input에 error 클래스 추가
+    // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
+    }
+
+    // label 태그(텍스트)에도 error 클래스 없는 거 확인하고 추가
+    if (!verifyText.classList.contains("error")) {
+      verifyText.classList.add("error");
+    }
+
+    // password-verify-wrap의 맨 아래에 div 요소(에러 메세지 = not-avaliable 클래스) 추가
+    // 추가하기 전에 wrap 안에 .not-avaliable 요소 있는지 확인
+    if (!document.querySelector(".password-verify-wrap .not-available")) {
+      // 새로운 div 요소 생성
+      const newDiv = document.createElement("div");
+
+      // 오류 메세지 추가
+      // 값이 있으면 - 불일치 오류
+      // 값이 없으면 - 미입력 오류
+      newDiv.innerText = !e.target.value ? mustVerifiedMsg : incorrectErrorMsg;
+
+      // 스타일을 받을 수 있게 클래스 추가
+      newDiv.classList.add("not-available");
+
+      // password-verify-wrap의 맨 마지막에 추가
+      verifyWrap.appendChild(newDiv);
+    }
+
+    // 아래쪽 경우의 수(값 있는 경우) 실행 안하고 함수 종료
+    return;
+  }
+  // 만약 어떤 값이라도 있는 경우
+  // 나중에는 DB랑 연결 - DB에 저장되지 않은 값일 경우
+
+  // password-verify-input의 error 클래스 삭제
+  e.target.classList.remove("error");
+
+  // label 태그에서도 삭제
+  verifyText.classList.remove("error");
+
+  // 입력창 아래의 에러 메세지(not-available 클래스 가진 div) 삭제
+  if (document.querySelector(".password-verify-wrap .not-available")) {
+    verifyWrap.removeChild(
+      document.querySelector(".password-verify-wrap .not-available")
+    );
+  }
+});
+
+/*
     ※ 주소지
-
-        이메일과 마찬가지로, 앞, 뒤 드롭박스 중 하나라도 미선택 시 양쪽에 .error 추가
-
 
         * 앞쪽 드롭박스(도 지역, 광역시, 서울, 제주)에 맞춰서
             뒤쪽 드롭박스 내용(도 지역이면 시/군/구, 나머지는 구/동 etc...)이 결정됨
 
             - 문제점들 -
 
-                1. 앞쪽 드롭박스 선택 안 되어 있는 상태면 뒤쪽은 disabled?
+                1. 그리고 앞쪽 선택에 따라 뒤쪽 내용이 바뀌는데, 이건 innerHTML 넣어서(=) 구현할까?
 
-                2. 보통 앞쪽 선택을 바꾸면, 뒤쪽은 다시 "선택해주세요" 로 바뀌는 사이트가 많은데,
-                    그걸 어떻게 구현하지?
-
-                3. 아니면 그냥 맨 위에 적은 걸 초기값으로 두고
-                    (예시 - '서울시' '강남구' 같이 각 드롭박스 별로 처음에 표시되는 걸 따로 설정하고) 
-                    앞쪽 선택 바뀌면, 그에 따라 뒤쪽 드롭박스의 첫번째 요소가 보이게?
-
-                4. 그리고 앞쪽 선택에 따라 뒤쪽 내용이 바뀌는데, 이건 innerHTML 넣어서(=) 구현할까?
-
-                5. 각 지역별 드롭박스 데이터는 어떻게?
+                2. 각 지역별 드롭박스 데이터는 어떻게?
                     option 태그 객체(createElement)랑 배열(세부지역) 만들어놓고
                     forEach 돌면서 select 태그 내에 option 태그 value랑 innerText 새로운 걸로 할당(=)?
 
@@ -90,55 +474,17 @@
 
                         이런 식으로 하면 될 듯?
 
+                3. 앞쪽 드롭박스 선택하면, 뒤쪽은 초기화됨
+                    이건 이 타이밍에 innerHTML 넣으면 해결될 듯
+
 
             - 결론 -
 
-                3에 적은 대로 "선택해주세요" 없이 초기값 따로 두는 게 작업하기 편할 듯.
+                "선택해주세요" 없이 초기값 따로 두는 게 작업하기 편할 듯.
                 그렇게 하는 사이트들이 많기도 하고.
-    
-                
-    ※ 닉네임
-
-    - keyup, blur
-
-        정규식(0-9,a-z,A-Z / 2자리 이상 15자리 이하) 만족 안 하면 .error toggle
-        만족하는 즉시 .error 삭제
-
-
-    ※ 약관동의
-
-    - click
-
-        체크됨 - .enabled 클래스 toggle + input value = true
-        체크 해제 - .enabled 클래스 삭제 + input value = false
-
-            -> 체크 on/off는 toggle만 써도 해결 가능?
-
-        전체동의 체크하면 나머지 모두 체크
-        하나라도 체크 안 되면 전체동의 체크 해제
-
-        나머지는 클릭하면 해당요소 체크, 체크된 채로 클릭하면 해제
-        
-        * 주의 : 색상 외에도 여러 가지 css 속성이 바뀜. 따로 선택자 만들어서 전부 집어넣을 것
-
-
-        필수 동의 사항은 span 태그 안 span 태그(체크박스 옆 글자)에 required 속성 붙어있음
-        click 이벤트 발생 시점에 이걸 가져와서 유효성 체크?
-        아니면 단순히 필수 체크박스(input) 전부 가져온 다음에, 하나라도 false인지 검사?
-
-        유효성에 어긋나면 h1 텍스트(이용약관)와 container에 .error를 toggle
-
-
-    ※ 회원가입 버튼(최종)
-
-    - click 이외에 필요 없음?
-
-        클릭하면 위 요소들 유효성 검사 실행 - 조건 불만족한 부분만 .error 추가
-            -> 위쪽 이벤트(addEventListener)들을 전부 변수에 담을 수 있나?
-                된다면 다 가져와서 검사하면 될 거 같은데...
 */
-
 // 지역 별 세부지역을 담을 배열들 - 주소지 파트에서 사용
+// 이쯤되면 따로 js 파일을 파는 게 좋지 않을까...
 // 서울특별시 내 세부지역
 const seoulList = [
   "종로구",
@@ -419,3 +765,47 @@ const gyeongNamList = [
 
 // 제주특별자치도 내 세부지역
 const jejuList = ["제주시", "서귀포시", "북제주군", "남제주군"];
+
+/*
+    ※ 닉네임
+
+    - keyup, blur
+
+        정규식(0-9,a-z,A-Z / 2자리 이상 15자리 이하) 만족 안 하면 .error toggle
+        만족하는 즉시 .error 삭제
+*/
+
+/*
+    ※ 약관동의
+
+    - click
+
+        체크됨 - .enabled 클래스 toggle + input value = true
+        체크 해제 - .enabled 클래스 삭제 + input value = false
+
+            -> 체크 on/off는 toggle만 써도 해결 가능?
+
+        전체동의 체크하면 나머지 모두 체크
+        하나라도 체크 안 되면 전체동의 체크 해제
+
+        나머지는 클릭하면 해당요소 체크, 체크된 채로 클릭하면 해제
+        
+        * 주의 : 색상 외에도 여러 가지 css 속성이 바뀜. 따로 선택자 만들어서 전부 집어넣을 것
+
+
+        필수 동의 사항은 span 태그 안 span 태그(체크박스 옆 글자)에 required 속성 붙어있음
+        click 이벤트 발생 시점에 이걸 가져와서 유효성 체크?
+        아니면 단순히 필수 체크박스(input) 전부 가져온 다음에, 하나라도 false인지 검사?
+
+        유효성에 어긋나면 h1 텍스트(이용약관)와 container에 .error를 toggle
+*/
+
+/*
+    ※ 회원가입 버튼(최종)
+
+    - click 이외에 필요 없음?
+
+        클릭하면 위 요소들 유효성 검사 실행 - 조건 불만족한 부분만 .error 추가
+            -> 위쪽 이벤트(addEventListener)들을 전부 변수에 담을 수 있나?
+                된다면 다 가져와서 검사하면 될 거 같은데...
+*/
