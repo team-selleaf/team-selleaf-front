@@ -570,7 +570,30 @@ const daejeonList = ["동구", "중구", "서구", "유성구", "대덕구"];
 const ulsanList = ["중구", "남구", "동구", "북구", "울주군"];
 
 // 세종특별자치시 내 세부지역
-const sejongList = [""];
+const sejongList = [
+  "조치원읍",
+  "금남면",
+  "부강면",
+  "소정면",
+  "연기면",
+  "연동면",
+  "연서면",
+  "장군면",
+  "전동면",
+  "전의면",
+  "고운동",
+  "다정동",
+  "대평동",
+  "도담동",
+  "반곡동",
+  "보람동",
+  "새롬동",
+  "소담동",
+  "아름동",
+  "종촌동",
+  "한솔동",
+  "해밀동",
+];
 
 // 경기도 내 세부지역
 const gyeonggiList = [
@@ -765,6 +788,113 @@ const gyeongNamList = [
 // 제주특별자치도 내 세부지역
 const jejuList = ["제주시", "서귀포시", "북제주군", "남제주군"];
 
+// 각 드롭박스 객체 가져옴
+// 앞쪽 드롭박스(시/도)
+const regionDropbox = document.querySelector(
+  ".region-input-local .region-form-control"
+);
+
+// 뒤쪽 드롭박스(세부 지역)
+const areaDropbox = document.querySelector(
+  ".region-input-domain .region-form-control"
+);
+
+// 앞쪽 드롭박스 - change 이벤트(값이 바뀌면 발생)
+regionDropbox.addEventListener("change", (e) => {
+  // 드롭박스의 값이 바뀔 때마다 현재 선택한 요소를 변수에 할당
+  let selectedRegion = e.target.options[e.target.selectedIndex].value;
+
+  // 아래의 switch-case 문에 따라 서로 다른 값(배열)을 받을 변수도 선언
+  let detailedArea = [];
+
+  // 선택한 지역에 따라 서로 다른 배열(세부 지역) 할당
+  switch (selectedRegion) {
+    case "서울특별시":
+      detailedArea = seoulList;
+      break;
+
+    case "인천광역시":
+      detailedArea = incheonList;
+      break;
+
+    case "대전광역시":
+      detailedArea = daejeonList;
+      break;
+
+    case "세종특별자치시":
+      detailedArea = sejongList;
+      break;
+
+    case "광주광역시":
+      detailedArea = gwangjuList;
+      break;
+
+    case "부산광역시":
+      detailedArea = busanList;
+      break;
+
+    case "대구광역시":
+      detailedArea = daeguList;
+      break;
+
+    case "울산광역시":
+      detailedArea = ulsanList;
+      break;
+
+    case "제주특별자치도":
+      detailedArea = jejuList;
+      break;
+
+    case "경기도":
+      detailedArea = gyeonggiList;
+      break;
+
+    case "강원도":
+      detailedArea = gangwonList;
+      break;
+
+    case "충청북도":
+      detailedArea = chungBukList;
+      break;
+
+    case "충청남도":
+      detailedArea = chungNamList;
+      break;
+
+    case "전라북도":
+      detailedArea = jeonBukList;
+      break;
+
+    case "전라남도":
+      detailedArea = jeonNamList;
+      break;
+
+    case "경상북도":
+      detailedArea = gyeongBukList;
+      break;
+
+    case "경상남도":
+      detailedArea = gyeongNamList;
+      break;
+  }
+
+  // 아래의 forEach문을 돌리기 전에
+  // 뒤쪽 드롭박스에 들어갈 html이 담길 변수 선언 및 초기화
+  let resultHTML = ``;
+
+  // 위에서 선택된 각 지역 별 세부 지역 리스트 순회
+  detailedArea.forEach((area) => {
+    // resultHTML에 쌓일 문자열(html 문법) 생성
+    let areaOption = `<option value=${area}>${area}</option>`;
+
+    // resultHTML에 위 html 구문을 하나씩 추가
+    resultHTML += areaOption;
+  });
+
+  // 뒤쪽 드롭박스의 내용을 완성된 resultHTML로 교체
+  areaDropbox.innerHTML = resultHTML;
+});
+
 /*
     ※ 닉네임
 
@@ -933,19 +1063,9 @@ const termsContainer = document.querySelector(".terms-container"); // 이용약�
 const termsText = document.querySelector(".terms-text");
 
 // 전체 동의 체크박스 객체
+const allCheckWrap = document.querySelector(".all-check-wrap");
+const allCheckContainer = document.querySelector(".all-check-container");
 const allCheckInput = document.querySelector(".all-check-input");
-
-// 모든 필수, 선택 동의 체크 박스 객체들
-// 전체 동의 체크박스의 on/off에 필요
-const everyBoxes = document.querySelectorAll(
-  ".essential-check-input, .optional-check-input"
-);
-
-// 위에서 체크된 요소들만 가져옴
-// 위 요소와 개수(NodeList 길이) 같으면 전체 체크박스 on
-const everyCheckedBoxes = document.querySelectorAll(
-  ".essential-check-input:checked, .optional-check-input:checked"
-);
 
 // 필수 동의 체크 박스 객체
 // 여러 개 있으니 All 로 가져와서 forEach
@@ -962,12 +1082,92 @@ const snsCheckInput = document.querySelector(
   ".optional-check-input[name=sns수신]"
 );
 
+// 전체 동의 체크박스 - click 이벤트
+// 클릭하면 자신 포함 모든 체크박스 value, checked = true
+// enabled 속성 추가로 스타일 변경
+allCheckInput.addEventListener("click", (e) => {
+  // 모든 필수, 선택 동의 체크 박스 객체들
+  // 일괄적 on, off 에 필요
+  const everyBoxes = document.querySelectorAll(
+    ".essential-check-input, .optional-check-input"
+  );
+
+  // 가장 가까운 wrap과 container에 enabled 클래스를 추가/삭제하기 위해
+  // 먼저 해당 객체들을 상수에 할당
+  const wrap = e.target.closest(".all-check-wrap");
+  const container = e.target.previousElementSibling; // 이전 형제요소로 검색
+
+  // 만약 체크되었다면
+  if (e.target.checked) {
+    // value = true
+    e.target.value = true;
+
+    // wrap에 enabled 클래스 없는지 확인하고, 없었을 경우에만 추가
+    if (!wrap.classList.contains("enabled")) {
+      wrap.classList.add("enabled");
+    }
+
+    // container도 마찬가지로 진행
+    if (!container.classList.contains("enabled")) {
+      container.classList.add("enabled");
+    }
+
+    // 모든 체크박스 객체를 가져온 다음
+    everyBoxes.forEach((checkbox) => {
+      // 해당 객체의 value와 checked를 true로
+      checkbox.value = true;
+      checkbox.checked = true;
+
+      // 각 객체의 부모(wrap) 및 형제(container)에 enabled 클래스 추가(기존에 없는 경우에만)
+      if (!checkbox.parentNode.classList.contains("enabled")) {
+        checkbox.parentNode.classList.add("enabled");
+      }
+
+      if (!checkbox.previousElementSibling.classList.contains("enabled")) {
+        checkbox.previousElementSibling.classList.add("enabled");
+      }
+    });
+
+    return;
+  }
+
+  // 체크 해제된 경우, value 값 false로 변경
+  e.target.value = false;
+
+  // wrap과 container에서 enabled 클래스 삭제
+  wrap.classList.remove("enabled");
+  container.classList.remove("enabled");
+
+  // 모든 체크박스 요소를 가져온 다음
+  everyBoxes.forEach((checkbox) => {
+    // 해당 요소의 value와 checked를 false로
+    checkbox.value = false;
+    checkbox.checked = false;
+
+    // 각 객체의 부모(wrap) 및 형제(container)에서 enabled 클래스 삭제
+    checkbox.parentNode.classList.remove("enabled");
+    checkbox.previousElementSibling.classList.remove("enabled");
+  });
+});
+
 // 필수 동의 체크 - click 이벤트
 // input 칸의 value를 true로 하고, 가장 가까운 조상 essential-check-wrap 과
 // 가장 가까운 container에 클래스(.enabled) 추가해서 스타일 변경
 essentialCheckInput.forEach((check) => {
   // 각 이벤트들에 대한 클릭 이벤트 생성
   check.addEventListener("click", (e) => {
+    // 모든 필수, 선택 동의 체크 박스 객체들
+    // 전체 동의 체크박스의 on/off에 필요
+    const everyBoxes = document.querySelectorAll(
+      ".essential-check-input, .optional-check-input"
+    );
+
+    // 위에서 체크된 요소들만 가져옴
+    // 위 요소와 개수(NodeList 길이) 같으면 전체 체크박스 on
+    const everyCheckedBoxes = document.querySelectorAll(
+      ".essential-check-input:checked, .optional-check-input:checked"
+    );
+
     // 가장 가까운 wrap과 container에 enabled 클래스를 추가/삭제하기 위해
     // 먼저 해당 객체들을 상수에 할당
     const wrap = e.target.closest(".essential-check-wrap");
@@ -989,6 +1189,23 @@ essentialCheckInput.forEach((check) => {
         container.classList.add("enabled");
       }
 
+      // 현재 체크된 체크박스의 개수를 센 다음
+      // 전부 checked 상태라면
+      if (everyBoxes.length == everyCheckedBoxes.length) {
+        //  전체 체크박스 value, checked = true
+        allCheckInput.value = true;
+        allCheckInput.checked = true;
+
+        // enabled 클래스 추가해서 스타일도 변경 - 기존에 해당 클래스가 없었을 때만
+        if (!allCheckWrap.classList.contains("enabled")) {
+          allCheckWrap.classList.add("enabled");
+        }
+
+        if (!allCheckContainer.classList.contains("enabled")) {
+          allCheckContainer.classList.add("enabled");
+        }
+      }
+
       return;
     }
     // 체크 해제된 경우, value 값 false로 변경
@@ -1002,11 +1219,20 @@ essentialCheckInput.forEach((check) => {
     if (!container.classList.contains("error")) {
       container.classList.add("error");
     }
+
+    // 체크 해제되면 무조건 전체 체크가 아니게 되므로
+    // 그에 따라 value, checked를 false로, enabled 클래스도 해제
+    allCheckInput.value = false;
+    allCheckInput.checked = false;
+
+    allCheckWrap.classList.remove("enabled");
+    allCheckContainer.classList.remove("enabled");
   });
 });
 
 // 필수 동의 체크 - blur 이벤트
 // blur 시점에서 하나라도 체크 안 되어있으면 에러 메세지 출력
+// terms-container 에 걸어도 될 듯?
 
 // 마케팅 동의(선택) 체크 - click 이벤트
 // sns수신 동의 객체와 on, off 동일하게 설정
@@ -1018,6 +1244,18 @@ marketingCheckInput.addEventListener("click", (e) => {
   // sns동의 객체의 wrap과 container도 동일하게 가져옴
   const snsWrap = snsCheckInput.closest(".optional-check-wrap");
   const snsContainer = snsCheckInput.previousElementSibling;
+
+  // 모든 필수, 선택 동의 체크 박스 객체들
+  // 전체 동의 체크박스의 on/off에 필요
+  const everyBoxes = document.querySelectorAll(
+    ".essential-check-input, .optional-check-input"
+  );
+
+  // 위에서 체크된 요소들만 가져옴
+  // 위 요소와 개수(NodeList 길이) 같으면 전체 체크박스 on
+  const everyCheckedBoxes = document.querySelectorAll(
+    ".essential-check-input:checked, .optional-check-input:checked"
+  );
 
   // if문 사용해서 value의 true - false 변환
   // checked는 클릭 시점에서 바뀌니 따로 바꿀 필요 없음
@@ -1050,6 +1288,28 @@ marketingCheckInput.addEventListener("click", (e) => {
       snsContainer.classList.add("enabled");
     }
 
+    // 정확한 계산을 위해 이 시점에서 check된 박스의 개수를 한 번 더 세줌
+    const everyCheckedBoxes = document.querySelectorAll(
+      ".essential-check-input:checked, .optional-check-input:checked"
+    );
+
+    // 현재 체크된 체크박스의 개수를 센 다음
+    // 전부 checked 상태라면
+    if (everyBoxes.length == everyCheckedBoxes.length) {
+      //  전체 체크박스 value, checked = true
+      allCheckInput.value = true;
+      allCheckInput.checked = true;
+
+      // enabled 클래스 추가해서 스타일도 변경 - 기존에 해당 클래스가 없었을 때만
+      if (!allCheckWrap.classList.contains("enabled")) {
+        allCheckWrap.classList.add("enabled");
+      }
+
+      if (!allCheckContainer.classList.contains("enabled")) {
+        allCheckContainer.classList.add("enabled");
+      }
+    }
+
     return;
   }
   // 체크 해제된 경우, 마케팅, sns 양쪽 모두 체크박스 value 값 false로 변경
@@ -1061,8 +1321,17 @@ marketingCheckInput.addEventListener("click", (e) => {
   // 마케팅, sns 양쪽의 wrap과 container에서 enabled 클래스 삭제
   marketingWrap.classList.remove("enabled");
   marketingContainer.classList.remove("enabled");
+
   snsWrap.classList.remove("enabled");
   snsContainer.classList.remove("enabled");
+
+  // 체크 해제되면 무조건 전체 체크가 아니게 되므로
+  // 그에 따라 value, checked를 false로, enabled 클래스도 해제
+  allCheckInput.value = false;
+  allCheckInput.checked = false;
+
+  allCheckWrap.classList.remove("enabled");
+  allCheckContainer.classList.remove("enabled");
 });
 
 // sns수신 동의 체크박스 - click 이벤트
@@ -1078,6 +1347,18 @@ snsCheckInput.addEventListener("click", (e) => {
   // 마케팅 동의 객체의 wrap과 container도 동일하게 가져옴
   const marketingWrap = marketingCheckInput.closest(".optional-check-wrap");
   const marketingContainer = marketingCheckInput.previousElementSibling;
+
+  // 모든 필수, 선택 동의 체크 박스 객체들
+  // 전체 동의 체크박스의 on/off에 필요
+  const everyBoxes = document.querySelectorAll(
+    ".essential-check-input, .optional-check-input"
+  );
+
+  // 위에서 체크된 요소들만 가져옴
+  // 위 요소와 개수(NodeList 길이) 같으면 전체 체크박스 on
+  const everyCheckedBoxes = document.querySelectorAll(
+    ".essential-check-input:checked, .optional-check-input:checked"
+  );
 
   // if문 사용해서 value의 true - false 변환
   // checked는 클릭 시점에서 바뀌니 따로 바꿀 필요 없음
@@ -1110,6 +1391,23 @@ snsCheckInput.addEventListener("click", (e) => {
       marketingContainer.classList.add("enabled");
     }
 
+    // 현재 체크된 체크박스의 개수를 센 다음
+    // 전부 checked 상태라면
+    if (everyBoxes.length == everyCheckedBoxes.length) {
+      //  전체 체크박스 value, checked = true
+      allCheckInput.value = true;
+      allCheckInput.checked = true;
+
+      // enabled 클래스 추가해서 스타일도 변경 - 기존에 해당 클래스가 없었을 때만
+      if (!allCheckWrap.classList.contains("enabled")) {
+        allCheckWrap.classList.add("enabled");
+      }
+
+      if (!allCheckContainer.classList.contains("enabled")) {
+        allCheckContainer.classList.add("enabled");
+      }
+    }
+
     return;
   }
   // 체크 해제된 경우, sns 수신쪽 체크박스만 value 값 false로 변경
@@ -1118,6 +1416,14 @@ snsCheckInput.addEventListener("click", (e) => {
   // sns 수신쪽 wrap과 container에서만 enabled 클래스 삭제
   snsWrap.classList.remove("enabled");
   snsContainer.classList.remove("enabled");
+
+  // 체크 해제되면 무조건 전체 체크가 아니게 되므로
+  // 그에 따라 value, checked를 false로, enabled 클래스도 해제
+  allCheckInput.value = false;
+  allCheckInput.checked = false;
+
+  allCheckWrap.classList.remove("enabled");
+  allCheckContainer.classList.remove("enabled");
 });
 
 /*
@@ -1131,6 +1437,5 @@ snsCheckInput.addEventListener("click", (e) => {
 */
 
 // 지금 남은 것들
-// 주소지 입력 - 앞쪽 드롭박스 선택에 따라 뒤쪽 드롭박스 내용 결정
-// 체크박스 - 필수 입력 체크박스 오류 처리와 blur 이벤트, 전체 동의(+ 모든 체크박스 다 체크되면 전체동의 자동 on, 아니면 off 실시간으로)
+// 이메일 칸 직접입력
 // 회원가입 버튼 - 유효성 검사
