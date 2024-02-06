@@ -363,3 +363,25 @@
   color: rgb(130, 140, 148);
   margin: 5px 0px;
 }
+.content-data {
+  font-size: 14px;
+  line-height: 18px;
+  position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 8px;
+  color: #828c94;
+}
+.content-data:last-child:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -4px;
+  bottom: 0;
+  width: 2px;
+  height: 2px;
+  margin: auto;
+  border-radius: 100%;
+  background: #828c94;
+}

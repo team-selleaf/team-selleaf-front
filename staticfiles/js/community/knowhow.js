@@ -104,6 +104,7 @@ filterItems.forEach((item) => {
         btn.classList.remove("choice");
       });
       e.target.closest(".modal-menu-btn").classList.add("choice");
+      
     });
   });
 });
