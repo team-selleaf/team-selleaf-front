@@ -223,7 +223,7 @@ const passwordErrorMsg =
 // 비밀번호 입력창에 대한 keyup 이벤트 생성
 passwordInput.addEventListener("keyup", (e) => {
   // 만약 키가 눌린 시점에 비밀번호 양식이 안 지켜져 았다면
-  if (!passwordRegex.test(e.target.value)) {
+  if (!e.target.value || !passwordRegex.test(e.target.value)) {
     // password-input에 error 클래스 추가
     // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
     if (!e.target.classList.contains("error")) {
@@ -277,7 +277,7 @@ passwordInput.addEventListener("keyup", (e) => {
 // 비밀번호 입력창에 대한 blur 이벤트 생성
 passwordInput.addEventListener("blur", (e) => {
   // 만약 blur 시점에 비밀번호 양식이 안 지켜져 았다면
-  if (!passwordRegex.test(e.target.value)) {
+  if (!e.target.value || !passwordRegex.test(e.target.value)) {
     // password-input에 error 클래스 추가
     // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
     if (!e.target.classList.contains("error")) {
@@ -484,7 +484,6 @@ verifyInput.addEventListener("blur", (e) => {
                 그렇게 하는 사이트들이 많기도 하고.
 */
 // 지역 별 세부지역을 담을 배열들 - 주소지 파트에서 사용
-// 이쯤되면 따로 js 파일을 파는 게 좋지 않을까...
 // 서울특별시 내 세부지역
 const seoulList = [
   "종로구",
@@ -771,16 +770,144 @@ const jejuList = ["제주시", "서귀포시", "북제주군", "남제주군"];
 
     - keyup, blur
 
-        정규식(0-9,a-z,A-Z / 2자리 이상 15자리 이하) 만족 안 하면 .error toggle
+        정규식(0-9,a-z,A-Z,가-힣 / 2자리 이상 15자리 이하) 만족 안 하면 .error 추가
         만족하는 즉시 .error 삭제
 */
+// 이벤트 처리에 필요한 객체들을 상수에 저장
+const nicknameInput = document.querySelector(".nickname-input");
+const nicknameText = document.querySelector(".nickname-text");
+const nicknameWrap = document.querySelector(".nickname-wrap");
+
+// 닉네임 양식 선언
+const nicknameRegex = /^[A-Za-z0-9ㄱ-ㅎㅏ-ㅣ가-힣]{2,15}$/;
+
+// 오류 메세지 저장
+// 미입력 오류(mustNeededMsg) 메세지는 위에 쓴 거 그대로 사용
+const lessThanTwoMsg = "2자 이상 입력해주세요."; // 2자 이하(1자) 오류
+const moreThanFifteenMsg = "15자 이하로 입력해주세요."; // 2자 이하(1자) 오류
+
+// 닉네임 입력창에 대한 keyup 이벤트 생성
+nicknameInput.addEventListener("keyup", (e) => {
+  // 만약 키가 눌린 시점에 닉네임 양식이 안 지켜져 았다면
+  if (!e.target.value || !nicknameRegex.test(e.target.value)) {
+    // nickname-input에 error 클래스 추가
+    // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
+    }
+
+    // label 태그(텍스트)에도 error 클래스 없는 거 확인하고 추가
+    if (!nicknameText.classList.contains("error")) {
+      nicknameText.classList.add("error");
+    }
+
+    // nickname-input-wrap의 맨 아래에 div 요소(에러 메세지 = not-avaliable 클래스) 추가
+    // 추가하기 전에 wrap 안에 .not-avaliable 요소 있는지 확인
+    if (!document.querySelector(".nickname-wrap .not-available")) {
+      // 새로운 div 요소 생성
+      const newDiv = document.createElement("div");
+
+      // 오류 메세지 추가
+      // 값이 없으면 - 미입력 오류
+      // 1글자면 - 2글자 미만 오류
+      // 16글자 이상이면 - 15글자 초과 오류
+      newDiv.innerText = !e.target.value
+        ? mustNeededMsg
+        : e.target.value.length < 2
+        ? lessThanTwoMsg
+        : moreThanFifteenMsg;
+
+      // 스타일을 받을 수 있게 클래스 추가
+      newDiv.classList.add("not-available");
+
+      // nickname-input-wrap의 맨 마지막에 추가
+      nicknameWrap.appendChild(newDiv);
+    }
+
+    // 아래쪽 경우의 수(값 있는 경우) 실행 안하고 함수 종료
+    return;
+  }
+  // 만약 어떤 값이라도 있는 경우
+
+  // nickname-input의 error 클래스 삭제
+  e.target.classList.remove("error");
+
+  // label 태그에서도 삭제
+  nicknameText.classList.remove("error");
+
+  // 입력창 아래의 에러 메세지(not-available 클래스 가진 div) 삭제
+  // 있을 경우에만 삭제 - 조건식 없으면 에러 발생
+  if (document.querySelector(".nickname-wrap .not-available")) {
+    nicknameWrap.removeChild(
+      document.querySelector(".nickname-wrap .not-available")
+    );
+  }
+});
+
+// 닉네임 입력창에 대한 blur 이벤트 생성
+nicknameInput.addEventListener("blur", (e) => {
+  // 만약 blue 된 시점에 닉네임 양식이 안 지켜져 았다면
+  if (!e.target.value || !nicknameRegex.test(e.target.value)) {
+    // nickname-input에 error 클래스 추가
+    // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
+    }
+
+    // label 태그(텍스트)에도 error 클래스 없는 거 확인하고 추가
+    if (!nicknameText.classList.contains("error")) {
+      nicknameText.classList.add("error");
+    }
+
+    // nickname-input-wrap의 맨 아래에 div 요소(에러 메세지 = not-avaliable 클래스) 추가
+    // 추가하기 전에 wrap 안에 .not-avaliable 요소 있는지 확인
+    if (!document.querySelector(".nickname-wrap .not-available")) {
+      // 새로운 div 요소 생성
+      const newDiv = document.createElement("div");
+
+      // 오류 메세지 추가
+      // 값이 없으면 - 미입력 오류
+      // 1글자면 - 2글자 미만 오류
+      // 16글자 이상이면 - 15글자 초과 오류
+      newDiv.innerText = !e.target.value
+        ? mustNeededMsg
+        : e.target.value.length < 2
+        ? lessThanTwoMsg
+        : moreThanFifteenMsg;
+
+      // 스타일을 받을 수 있게 클래스 추가
+      newDiv.classList.add("not-available");
+
+      // nickname-input-wrap의 맨 마지막에 추가
+      nicknameWrap.appendChild(newDiv);
+    }
+
+    // 아래쪽 경우의 수(값 있는 경우) 실행 안하고 함수 종료
+    return;
+  }
+  // 만약 어떤 값이라도 있는 경우
+
+  // nickname-input의 error 클래스 삭제
+  e.target.classList.remove("error");
+
+  // label 태그에서도 삭제
+  nicknameText.classList.remove("error");
+
+  // 입력창 아래의 에러 메세지(not-available 클래스 가진 div) 삭제
+  // 있을 경우에만 삭제 - 조건식 없으면 에러 발생
+  if (document.querySelector(".nickname-wrap .not-available")) {
+    nicknameWrap.removeChild(
+      document.querySelector(".nickname-wrap .not-available")
+    );
+  }
+});
 
 /*
     ※ 약관동의
 
     - click
 
-        체크됨 - .enabled 클래스 toggle + input value = true
+        체크됨 - .enabled 클래스 추가 + input value = true
         체크 해제 - .enabled 클래스 삭제 + input value = false
 
             -> 체크 on/off는 toggle만 써도 해결 가능?
@@ -797,8 +924,201 @@ const jejuList = ["제주시", "서귀포시", "북제주군", "남제주군"];
         click 이벤트 발생 시점에 이걸 가져와서 유효성 체크?
         아니면 단순히 필수 체크박스(input) 전부 가져온 다음에, 하나라도 false인지 검사?
 
-        유효성에 어긋나면 h1 텍스트(이용약관)와 container에 .error를 toggle
+        유효성에 어긋나면 label 텍스트(이용약관)와 container에 .error를 추가
 */
+// 이벤트 처리에 필요한 객체들을 상수에 저장
+// 이용약관 전체에 관한 객체
+const termsWrap = document.querySelector(".terms-wrap"); // 에러 텍스트를 붙이기 위함
+const termsContainer = document.querySelector(".terms-container"); // 이용약관 전체를 감싸는 테두리의 스타일을 변경하기 위함
+const termsText = document.querySelector(".terms-text");
+
+// 전체 동의 체크박스 객체
+const allCheckInput = document.querySelector(".all-check-input");
+
+// 모든 필수, 선택 동의 체크 박스 객체들
+// 전체 동의 체크박스의 on/off에 필요
+const everyBoxes = document.querySelectorAll(
+  ".essential-check-input, .optional-check-input"
+);
+
+// 위에서 체크된 요소들만 가져옴
+// 위 요소와 개수(NodeList 길이) 같으면 전체 체크박스 on
+const everyCheckedBoxes = document.querySelectorAll(
+  ".essential-check-input:checked, .optional-check-input:checked"
+);
+
+// 필수 동의 체크 박스 객체
+// 여러 개 있으니 All 로 가져와서 forEach
+const essentialCheckInput = document.querySelectorAll(".essential-check-input");
+
+// 선택 동의 체크박스 객체들
+// 마케팅 활용동의 - 아래 객체와 on-off 동일
+const marketingCheckInput = document.querySelector(
+  ".optional-check-input[name=마케팅동의]"
+);
+
+// sns수신 체크박스 객체
+const snsCheckInput = document.querySelector(
+  ".optional-check-input[name=sns수신]"
+);
+
+// 필수 동의 체크 - click 이벤트
+// input 칸의 value를 true로 하고, 가장 가까운 조상 essential-check-wrap 과
+// 가장 가까운 container에 클래스(.enabled) 추가해서 스타일 변경
+essentialCheckInput.forEach((check) => {
+  // 각 이벤트들에 대한 클릭 이벤트 생성
+  check.addEventListener("click", (e) => {
+    // 가장 가까운 wrap과 container에 enabled 클래스를 추가/삭제하기 위해
+    // 먼저 해당 객체들을 상수에 할당
+    const wrap = e.target.closest(".essential-check-wrap");
+    const container = e.target.previousElementSibling; // 이전 형제요소로 검색
+
+    // if문 사용해서 value의 true - false 변환
+    // checked는 클릭 시점에서 바뀌니 따로 바꿀 필요 없음
+    if (e.target.checked) {
+      // 체크된 경우, value 값 true로 변경
+      e.target.value = true;
+
+      // wrap에 enabled 클래스 없는지 확인하고, 없었을 경우에만 추가
+      if (!wrap.classList.contains("enabled")) {
+        wrap.classList.add("enabled");
+      }
+
+      // container도 마찬가지로 진행
+      if (!container.classList.contains("enabled")) {
+        container.classList.add("enabled");
+      }
+
+      return;
+    }
+    // 체크 해제된 경우, value 값 false로 변경
+    e.target.value = false;
+
+    // wrap과 container에서 enabled 클래스 삭제
+    wrap.classList.remove("enabled");
+    container.classList.remove("enabled");
+
+    // 그리고 terms-container랑 terms-text에 error 클래스 추가(없을 때만)
+    if (!container.classList.contains("error")) {
+      container.classList.add("error");
+    }
+  });
+});
+
+// 필수 동의 체크 - blur 이벤트
+// blur 시점에서 하나라도 체크 안 되어있으면 에러 메세지 출력
+
+// 마케팅 동의(선택) 체크 - click 이벤트
+// sns수신 동의 객체와 on, off 동일하게 설정
+marketingCheckInput.addEventListener("click", (e) => {
+  // 마케팅 동의 체크박스의 부모 wrap과 형제(이전) container 가져옴
+  const marketingWrap = e.target.closest(".optional-check-wrap");
+  const marketingContainer = e.target.previousElementSibling;
+
+  // sns동의 객체의 wrap과 container도 동일하게 가져옴
+  const snsWrap = snsCheckInput.closest(".optional-check-wrap");
+  const snsContainer = snsCheckInput.previousElementSibling;
+
+  // if문 사용해서 value의 true - false 변환
+  // checked는 클릭 시점에서 바뀌니 따로 바꿀 필요 없음
+  if (e.target.checked) {
+    // 체크된 경우, value 값 true로 변경
+    e.target.value = true;
+
+    // sns수신 체크박스의 value랑 checked 모두 true로 변경
+    // 안 하면 다음에 sns수신 체크박스 클릭할 때 오류 발생
+    snsCheckInput.value = true;
+    snsCheckInput.checked = true;
+
+    // 마케팅 wrap에 enabled 클래스 없는지 확인하고, 없었을 경우에만 추가
+    if (!marketingWrap.classList.contains("enabled")) {
+      marketingWrap.classList.add("enabled");
+    }
+
+    // 마케팅 container도 마찬가지로 진행
+    if (!marketingContainer.classList.contains("enabled")) {
+      marketingContainer.classList.add("enabled");
+    }
+
+    // sns수신쪽 체크박스 역시 동일하게 진행
+    if (!snsWrap.classList.contains("enabled")) {
+      snsWrap.classList.add("enabled");
+    }
+
+    // 마케팅 container도 마찬가지로 진행
+    if (!snsContainer.classList.contains("enabled")) {
+      snsContainer.classList.add("enabled");
+    }
+
+    return;
+  }
+  // 체크 해제된 경우, 마케팅, sns 양쪽 모두 체크박스 value 값 false로 변경
+  // sns 체크박스는 checked 도 false로 변경
+  e.target.value = false;
+  snsCheckInput.value = false;
+  snsCheckInput.checked = false;
+
+  // 마케팅, sns 양쪽의 wrap과 container에서 enabled 클래스 삭제
+  marketingWrap.classList.remove("enabled");
+  marketingContainer.classList.remove("enabled");
+  snsWrap.classList.remove("enabled");
+  snsContainer.classList.remove("enabled");
+});
+
+// sns수신 동의 체크박스 - click 이벤트
+/*
+  off -> on: 마케팅 수신 동의 체크박스도 true + wrap, container에 클래스 추가
+  on -> off: 이 체크박스만 false + 클래스 해제
+*/
+snsCheckInput.addEventListener("click", (e) => {
+  // sns수신 동의 체크박스의 부모 wrap과 형제(이전) container 가져옴
+  const snsWrap = e.target.closest(".optional-check-wrap");
+  const snsContainer = e.target.previousElementSibling;
+
+  // 마케팅 동의 객체의 wrap과 container도 동일하게 가져옴
+  const marketingWrap = marketingCheckInput.closest(".optional-check-wrap");
+  const marketingContainer = marketingCheckInput.previousElementSibling;
+
+  // if문 사용해서 value의 true - false 변환
+  // checked는 클릭 시점에서 바뀌니 따로 바꿀 필요 없음
+  if (e.target.checked) {
+    // 체크된 경우, value 값 true로 변경
+    e.target.value = true;
+
+    // 마케팅 동의 체크박스의 value랑 checked 모두 true로 변경
+    // checked = true 안 해주면 마케팅 수신 체크박스에서 오류 발생
+    marketingCheckInput.value = true;
+    marketingCheckInput.checked = true;
+
+    // sns수신 wrap에 enabled 클래스 없는지 확인하고, 없었을 경우에만 추가
+    if (!snsWrap.classList.contains("enabled")) {
+      snsWrap.classList.add("enabled");
+    }
+
+    // sns수신 container도 마찬가지로 진행
+    if (!snsContainer.classList.contains("enabled")) {
+      snsContainer.classList.add("enabled");
+    }
+
+    // 마케팅 동의쪽 체크박스 역시 동일하게 진행
+    if (!marketingWrap.classList.contains("enabled")) {
+      marketingWrap.classList.add("enabled");
+    }
+
+    // 마케팅 동의 container도 마찬가지로 진행
+    if (!marketingContainer.classList.contains("enabled")) {
+      marketingContainer.classList.add("enabled");
+    }
+
+    return;
+  }
+  // 체크 해제된 경우, sns 수신쪽 체크박스만 value 값 false로 변경
+  e.target.value = false;
+
+  // sns 수신쪽 wrap과 container에서만 enabled 클래스 삭제
+  snsWrap.classList.remove("enabled");
+  snsContainer.classList.remove("enabled");
+});
 
 /*
     ※ 회원가입 버튼(최종)
@@ -809,3 +1129,8 @@ const jejuList = ["제주시", "서귀포시", "북제주군", "남제주군"];
             -> 위쪽 이벤트(addEventListener)들을 전부 변수에 담을 수 있나?
                 된다면 다 가져와서 검사하면 될 거 같은데...
 */
+
+// 지금 남은 것들
+// 주소지 입력 - 앞쪽 드롭박스 선택에 따라 뒤쪽 드롭박스 내용 결정
+// 체크박스 - 필수 입력 체크박스 오류 처리와 blur 이벤트, 전체 동의(+ 모든 체크박스 다 체크되면 전체동의 자동 on, 아니면 off 실시간으로)
+// 회원가입 버튼 - 유효성 검사
