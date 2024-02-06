@@ -11,7 +11,7 @@ nav.addEventListener("click", (e) => {
     ptag.classList.contains("text-choice") &&
       ptag.classList.remove("text-choice");
   });
-  
+
   let itemWrap = e.target.closest(".nav-link");
   if (itemWrap) {
     const childPtag = itemWrap.querySelector(".link-text");
