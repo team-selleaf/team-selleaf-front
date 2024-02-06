@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+}
+
+.whole-page-wrap {
+  height: 100%;
+}
+
+.whole-page-container {
+  height: 100%;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.whole-page-container > * {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+.content-wrap {
+  position: relative;
+  padding: 0 0 40px;
+}
