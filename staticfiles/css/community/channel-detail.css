@@ -150,6 +150,12 @@
   position: relative;
   cursor: pointer;
 }
+.main-content-container:hover .content-img {
+  transform: scale(1.05);
+}
+.main-content-container:hover .content-content {
+  opacity: 0.5;
+}
 .main-content {
   position: relative;
   border-radius: 4px;
@@ -186,12 +192,7 @@
   display: inline-block;
   font-size: 24px;
   line-height: 1;
-  transform: translateZ(0px);
-}
-.scrap-btn-box {
-  display: inline-block;
-  font-size: 24px;
-  line-height: 1;
+
   transform: translateZ(0px);
 }
 .scrap-btn-box > img {
@@ -201,6 +202,7 @@
   left: 50%;
   width: 24px;
   height: 24px;
+  aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
 }
 .img-count-box {
@@ -250,6 +252,9 @@
   align-items: center;
   width: fit-content;
   max-width: 100%;
+}
+.content-uploader:hover {
+  opacity: 0.5;
 }
 .uploader-icon-box {
   display: inline-block;

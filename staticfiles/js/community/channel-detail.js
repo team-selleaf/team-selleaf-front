@@ -96,6 +96,7 @@ function appendItem(post) {
     </div>
   `;
   mainContentLine.appendChild(contentItem);
+  scrapEvent();
 }
 // 한번에 보여줄 리스트의 갯수를 정하고 차츰 페이지를 증가시킨다
 function showList() {
@@ -140,42 +141,19 @@ window.addEventListener("scroll", handleScroll);
 // 최초 실행하여 1페이지를 보여준다
 showList();
 
-const scrapBtns = document.querySelectorAll(".scrap-btn");
-scrapBtns.forEach((item) => {
-  item.addEventListener("click", () => {
-    const img = item.querySelector("img");
-    const imgSrc = img.getAttribute("src");
-    console.log(imgSrc);
-    imgSrc === "../../staticfiles/images/scrap-off.png"
-      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
-      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+function scrapEvent() {
+  const scrapBtns = document.querySelectorAll(".scrap-btn");
+  scrapBtns.forEach((item) => {
+    item.addEventListener("click", () => {
+      const img = item.querySelector("img");
+      const imgSrc = img.getAttribute("src");
+      imgSrc === "../../staticfiles/images/scrap-off.png"
+        ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
+        : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+    });
   });
-});
-
-const contentContainers = document.querySelectorAll(".main-content-container");
-contentContainers.forEach((item) => {
-  const contentImg = item.querySelector(".content-img");
-  const contentContent = item.querySelector(".content-content");
-
-  item.addEventListener("mouseenter", () => {
-    contentImg.style.transform = "scale(1.05)";
-    contentContent.style.opacity = "0.5";
-  });
-  item.addEventListener("mouseleave", () => {
-    contentImg.style.transform = "";
-    contentContent.style.opacity = "1";
-  });
-});
-
-const contentUploader = document.querySelectorAll(".content-uploader");
-contentUploader.forEach((item) => {
-  item.addEventListener("mouseenter", () => {
-    item.style.opacity = "0.5";
-  });
-  item.addEventListener("mouseleave", () => {
-    item.style.opacity = "1";
-  });
-});
+}
+scrapEvent();
 
 document.addEventListener("click", (e) => {
   const modalWrap = document.querySelector(".modal-wrap");

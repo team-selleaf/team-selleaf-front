@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style data-emotion="css-global" data-s="">
+      @import "https://assets.ohou.se/design-system/bbf3fca1e650ee6d.css";
+      @import "https://assets.ohou.se/fonts/pretendard/v1.3.8/pretendardvariable-dynamic-subset.css";
+      @font-face {
+        font-family: OhouseIcon;
+        src: url(https://assets.ohou.se/design-system/3298ed52addbc709.eot);
+        src: url(https://assets.ohou.se/design-system/3298ed52addbc709.eot#iefix)
+            format("embedded-opentype"),
+          url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2)
+            format("woff2"),
+          url(https://assets.ohou.se/design-system/9e79341d6a2fe0d2.woff)
+            format("woff"),
+          url(https://assets.ohou.se/design-system/5355f736e6a7bc5b.ttf)
+            format("truetype"),
+          url(https://assets.ohou.se/design-system/3ba7913eab100858.svg#OhouseIcon)
+            format("svg");
+      }
+      html {
+        font-family: "Pretendard Variable", sans-serif;
+        letter-spacing: -0.3px;
+        -webkit-font-smoothing: antialiased;
+      }
+    </style>
+    <link
+      rel="shortcut icon"
+      href="../../staticfiles/images/selleaf.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../../staticfiles/css/common.css" />
+    <link rel="stylesheet" href="../../staticfiles/css/community/knowhow.css" />
+    <title>노하우 커뮤니티</title>
+  </head>
+  <body>
+    <div class="knowhow-wrap" style="padding-top: 133px;">
+      <div class="knowhow-container">
+        <div class="knowhow-inner">
+          <div class="knowhow-box">
+            <div class="filter-wrap">
+              <div class="filter-container">
+                <div class="filter-item">
+                  <button type="button" class="filter-btn">
+                    정렬<span class="filter-btn-icon"></span>
+                  </button>
+                  <div
+                    class="filter-modal"
+                    style="
+                      position: absolute;
+                      top: -25px;
+                      transform: translate(-70px, 210px);
+                      z-index: 3;
+                    "
+                  >
+                    <div
+                      class="filter-modal-inner"
+                      style="
+                        position: absolute;
+                        left: 0px;
+                        transform: translate(93px, 0px);
+                      "
+                    ></div>
+                    <div>
+                      <div class="modal-menu">
+                        <div class="modal-menu-inner">
+                          <button type="button" class="modal-menu-btn choice">
+                            <div class="menu-choice">
+                              인기순
+                            </div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">스크랩순</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">최신순</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-item">
+                  <button type="button" class="filter-btn">
+                    식물 종류<span class="filter-btn-icon"></span>
+                  </button>
+                  <div
+                    class="filter-modal"
+                    style="
+                      position: absolute;
+                      top: -25px;
+                      transform: translate(-70px, 210px);
+                      z-index: 3;
+                    "
+                  >
+                    <div
+                      class="filter-modal-inner"
+                      style="
+                        position: absolute;
+                        left: 0px;
+                        transform: translate(93px, 0px);
+                      "
+                    ></div>
+                    <div>
+                      <div class="modal-menu">
+                        <div class="modal-menu-inner">
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">
+                              원룸&amp;오피스텔
+                            </div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">아파트</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">빌라&amp;연립</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">단독주택</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">사무공간</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">상업공간</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">기타</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-item">
+                  <button type="button" class="filter-btn">
+                    필터<span class="filter-btn-icon"></span>
+                  </button>
+                  <div
+                    class="filter-modal"
+                    style="
+                      position: absolute;
+                      top: -25px;
+                      transform: translate(-70px, 210px);
+                      z-index: 3;
+                    "
+                  >
+                    <div
+                      class="filter-modal-inner"
+                      style="
+                        position: absolute;
+                        left: 0px;
+                        transform: translate(93px, 0px);
+                      "
+                    ></div>
+                    <div>
+                      <div class="modal-menu">
+                        <div class="modal-menu-inner">
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">
+                              원룸&amp;오피스텔
+                            </div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">아파트</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">빌라&amp;연립</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">단독주택</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">사무공간</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">상업공간</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                          <button type="button" class="modal-menu-btn">
+                            <div class="menu-choice">기타</div>
+                            <div class="menu-margin"></div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="total-data">
+              전체 12,360
+            </div>
+            <div>
+              <div style="position: relative;" class="content-wrap">
+                <div
+                  style="width: 100%; height: 100%; position: absolute; top: 0;"
+                >
+                  <div
+                    style="
+                      box-sizing: border-box;
+                      padding-top: 0px;
+                      margin-top: 0px;
+                    "
+                  >
+                    <div style="overflow-anchor: none;">
+                      <div class="content-line-box">
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="content-item-wrap">
+                            <div class="content-item-container">
+                              <div class="content-img-box">
+                                <img
+                                  src="../../staticfiles/images/blank-image.png"
+                                  class="content-img"
+                                />
+                                <div class="new-icon-box">
+                                  <span type="fill" class="new-icon">NEW</span>
+                                </div>
+                                <div class="scrap-btn-box">
+                                  <button
+                                    type="button"
+                                    aria-label="scrap 토글 버튼"
+                                    class="scrap-btn"
+                                  >
+                                    <span class="scrap-icon-box">
+                                      <img
+                                        src="../../staticfiles/images/scrap-off.png"
+                                        alt=""
+                                      />
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                              <p class="content-title">
+                                집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+                              </p>
+                              <div class="content-uploader">
+                                <div class="uploader-img-box">
+                                  <img
+                                    src="../../staticfiles/images/blank-image.png"
+                                    class="uploader-img"
+                                  />
+                                </div>
+                                <span class="uploader-name">다채롭솔</span>
+                              </div>
+                              <div class="content-data-box">
+                                <span class="content-data"
+                                  >스크랩 <span>3</span></span
+                                >
+                                <span class="content-data"
+                                  >조회 <span>153</span></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../staticfiles/js/community/knowhow.js"></script>
+</html>
