@@ -39,10 +39,224 @@
       <div class="whole-page-container">
         <!-- 나중에 메인 페이지에서 작업하면 추가 -->
         <header style="height: 80.75px"></header>
-        <div class="content-wrap">
+        <div class="main-wrap">
           <!-- 마이페이지 내 네비게이션 바 -->
-
+          <div class="navigation-wrap">
+            <div class="main-category-wrap">
+              <ul
+                class="main-category-container"
+                style="transform: translateX(0px)"
+              >
+                <li class="main-category-item">
+                  <a href="" class="active">프로필</a>
+                </li>
+                <li class="main-category-item">
+                  <a href="">나의 쇼핑</a>
+                </li>
+                <li class="main-category-item">
+                  <a href="">나의 리뷰</a>
+                </li>
+                <li class="main-category-item">
+                  <a href="">설정</a>
+                </li>
+              </ul>
+            </div>
+            <div class="sub-category-wrap">
+              <ul
+                class="sub-category-container"
+                style="transform: translateX(0px)"
+              >
+                <li class="sub-category-item">
+                  <a href="" class="active">모두보기</a>
+                </li>
+                <li class="sub-category-item">
+                  <a href="">사진</a>
+                </li>
+                <li class="sub-category-item">
+                  <a href="">노하우</a>
+                </li>
+                <li class="sub-category-item">
+                  <a href="">질문과답변</a>
+                </li>
+                <li class="sub-category-item">
+                  <a href="">스크랩북</a>
+                </li>
+                <li class="sub-category-item">
+                  <a href="">좋아요</a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <!-- 마이페이지 내 탭 별 내용 - 이 탭은 모두보기 -->
+          <div class="content-wrap">
+            <div class="content-container">
+              <div class="sidebar-wrap">
+                <div
+                  class="sidebar-container"
+                  style="
+                    position: sticky;
+                    top: 80.75px;
+                    transition: top 0.1s ease 0s;
+                  "
+                >
+                  <div class="sidebar-content" style="position: relative">
+                    <div>
+                      <div class="my-info-wrap">
+                        <div class="share-drop-down-wrap">
+                          <div class="share-drop-down-container">
+                            <!-- 클릭하면 요소(모달창?) 추가. html 태그 위치는 footer 아래 -->
+                            <button
+                              class="share-drop-down-button"
+                              type="button"
+                              aria-pressed="false"
+                              aria-label="공유"
+                            >
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                preserveAspectRatio="xMidYMid meet"
+                              >
+                                <path
+                                  d="M9.64 14.646a4.5 4.5 0 1 1 0-5.292l4.54-2.476a4.5 4.5 0 1 1 .63.795l-4.675 2.55c.235.545.365 1.146.365 1.777s-.13 1.232-.365 1.777l4.675 2.55a4.5 4.5 0 1 1-.63.795l-4.54-2.476zM18 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM6 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM18 23a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="my-profile-wrap">
+                          <div class="profile-image-wrap">
+                            <img
+                              class="profile-image"
+                              src="../../staticfiles/images/profile/base-profile-image.avif"
+                            />
+                          </div>
+                          <div class="personal-info-wrap">
+                            <div class="user-nickname">Selleaf Test</div>
+                            <div class="follow-settings-wrap">
+                              <!-- 나중에 팔로우 페이지랑 연결 -->
+                              <dl class="follow-wrap">
+                                <dt class="follow-text">팔로워</dt>
+                                <dd class="follow-count">
+                                  <a href="" class="follow-num">123</a>
+                                </dd>
+                                <dt class="follow-text">팔로잉</dt>
+                                <dd class="follow-count">
+                                  <a href="" class="follow-num">45</a>
+                                </dd>
+                              </dl>
+                              <!-- 나중에 설정 페이지랑 연결 -->
+                              <div class="settings-button-wrap">
+                                <a class="settings-button" href="">설정</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 스크랩, 좋아요, 쿠폰 -->
+                        <div class="scraps-likes-wrap">
+                          <div class="scraps-likes-container">
+                            <!-- 스크랩 -->
+                            <a class="scraps-likes-content-wrap" href="">
+                              <div class="scraps-likes-icon">
+                                <img
+                                  src="../../staticfiles/images/scrap-off-blk.png"
+                                />
+                              </div>
+                              <div class="scraps-likes-text">스크랩북</div>
+                              <div class="scraps-likes-count">0</div>
+                            </a>
+                            <!-- 좋아요 -->
+                            <a class="scraps-likes-content-wrap" href="">
+                              <div class="scraps-likes-icon">
+                                <img
+                                  src="../../staticfiles/images/like-off.png"
+                                />
+                              </div>
+                              <div class="scraps-likes-text">좋아요</div>
+                              <div class="scraps-likes-count">0</div>
+                            </a>
+                            <!-- 내 쿠폰 -->
+                            <a class="scraps-likes-content-wrap" href="">
+                              <div class="scraps-likes-icon">
+                                <svg
+                                  width="24"
+                                  height="24"
+                                  viewBox="0 0 24 24"
+                                  preserveAspectRatio="xMidYMid meet"
+                                >
+                                  <path
+                                    fill="#424242"
+                                    fill-rule="nonzero"
+                                    d="M22.588 3H1.413C.633 3 0 3.638 0 4.426L0 9.53l.605-.088c.12-.017.243-.026.367-.026 1.413 0 2.558 1.157 2.558 2.584S2.385 14.584.972 14.584c-.124 0-.247-.009-.367-.026L0 14.47l.001 5.104C.001 20.362.633 21 1.413 21h21.175c.78 0 1.412-.638 1.412-1.426V4.426C24 3.638 23.368 3 22.588 3zM1.413 4.07h21.175c.195 0 .353.159.353.356v15.148c0 .197-.158.357-.353.357H1.413l-.071-.008c-.161-.033-.282-.176-.282-.349l-.002-3.923-.086.002c1.997 0 3.617-1.635 3.617-3.653l-.004-.182C4.493 9.945 3.006 8.443 1.152 8.35l-.094-.003.002-3.922c0-.197.158-.357.353-.357zm14.646 2.138c.293 0 .53.237.53.53v1.614c0 .292-.237.53-.53.53-.292 0-.53-.238-.53-.53V6.737c0-.292.238-.53.53-.53zm0 4.455c.293 0 .53.237.53.53v1.614c0 .293-.237.53-.53.53-.292 0-.53-.237-.53-.53v-1.614c0-.293.238-.53.53-.53zm0 4.456c.293 0 .53.237.53.53v1.614c0 .292-.237.53-.53.53-.292 0-.53-.238-.53-.53v-1.615c0-.292.238-.53.53-.53z"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <div class="scraps-likes-text">내 쿠폰</div>
+                              <div class="scraps-likes-count">0</div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="get-reward-wrap">
+                        <a class="get-reward-container" href="">
+                          <span>
+                            취향 공유하고
+                            <b class="get-reward-text">리워드 받기</b>
+                          </span>
+                          <span class="get-reward-arrow"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="seperator-wrap">
+                <div class="content-seperator"></div>
+              </div>
+              <!-- 사진 등의 내용물이 표시되는 공간 -->
+              <div class="main-content-wrap">
+                <div class="main-content-cotainer">
+                  <div class="main-content-area">
+                    <!-- 사진 -->
+                    <div class="content-section-wrap">
+                      <div class="content-title-wrap">
+                        <h1 class="content-title">
+                          사진
+                          <span class="content-count">0</span>
+                        </h1>
+                        <div class="title-empty-area"></div>
+                      </div>
+                      <a class="photo-upload-wrap" href="">
+                        <img
+                          class="add-icon"
+                          src="../../staticfiles/images/profile/add-icon.svg"
+                        />
+                        첫 번째 사진을 올려보세요
+                      </a>
+                    </div>
+                    <!-- 집들이 - 나중에 다른 걸로 수정 -->
+                    <div class="content-section-wrap">
+                      <div class="content-title-wrap">
+                        <h1 class="content-title">
+                          집들이
+                          <span class="content-count">0</span>
+                        </h1>
+                        <div class="title-empty-area"></div>
+                      </div>
+                      <a class="photo-upload-wrap" href="">
+                        <img
+                          class="add-icon"
+                          src="../../staticfiles/images/profile/add-icon.svg"
+                        />
+                        첫 번째 집들이를 올려보세요
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- 나중에 메인 페이지에서 작업하면 추가 -->
         <footer style="height: 320px"></footer>
