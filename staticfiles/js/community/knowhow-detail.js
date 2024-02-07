@@ -39,9 +39,6 @@ stickyBtns.forEach((item) => {
     }
   });
 });
-stickyBtns.forEach((item) => {
-  item.addEventListener("click", () => {});
-});
 
 const paginationBtn = document.querySelectorAll(".pagination-btn");
 const paginationBox = document.querySelector(".pagination-box");
