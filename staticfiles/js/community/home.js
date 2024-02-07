@@ -155,21 +155,14 @@ function scrapEvent() {
 }
 scrapEvent();
 
-document.addEventListener("click", (e) => {
-  const modalWrap = document.querySelector(".modal-wrap");
-  if (e.target.closest(".filter-btn")) {
-    modalWrap.classList.toggle("model-open");
-  }
-  if (!(e.target.closest(".filter-btn") || e.target.closest(".modal-wrap"))) {
-    modalWrap.classList.remove("model-open");
-  }
-  const filter = e.target.closest(".modal-content-item");
-  if (filter) {
-    const filterBtn = document.querySelector(".filter-btn");
-    const fliterIcon = '<span class="filter-drop-down-icon"></span>';
-    filter.innerText === "인기순"
-      ? (filterBtn.innerHTML = "인기순" + fliterIcon)
-      : (filterBtn.innerHTML = "최신순" + fliterIcon);
-    modalWrap.classList.remove("model-open");
-  }
+const filterBtnLabel = document.querySelectorAll(".filter-btn-label");
+filterBtnLabel.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    filterBtnLabel.forEach((item) => {
+      item.classList.remove("choice");
+    });
+    const filterBtn = e.target.closest(".filter-btn-label");
+    filterBtn.classList.toggle("choice");
+  });
 });

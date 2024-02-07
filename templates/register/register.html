@@ -124,7 +124,7 @@
                   <span class="email-input-domain">
                     <label>
                       <select class="email-form-control">
-                        <option value="" disabled>선택해주세요</option>
+                        <option value="" disabled selected>선택해주세요</option>
                         <option value="naver.com">naver.com</option>
                         <option value="hanmail.net">hanmail.net</option>
                         <option value="daum.net">daum.net</option>
@@ -187,9 +187,9 @@
               </label>
             </div>
             <!-- 비밀번호 확인 -->
-            <div class="password-verify">
+            <div class="password-verify-wrap">
               <label class="password-verify-text">비밀번호 확인</label>
-              <label class="password-verify-wrap">
+              <label class="password-verify">
                 <input
                   class="password-verify-input"
                   type="password"
@@ -206,37 +206,85 @@
               <label class="region-input-text">주소지</label>
               <div class="region-input-container">
                 <div class="region-input-group">
+                  <!-- "도" 지역이나 광역시, 서울, 제주 등을 선택하는 드롭박스 -->
                   <span class="region-input-local">
                     <label>
-                      <!-- 원본의 클래스명은 form-control -->
-                      <!-- 나중에 form-control 클래스 가진 요소들 한 번에 조작하는 js 작업 필요할 수 있으니 참고 바람 -->
-                      <input
-                        class="region-form-control"
-                        placeholder="주소지"
-                        size="1"
-                      />
+                      <!-- 기본값은 서울특별시 -->
+                      <select class="region-form-control">
+                        <option value="서울특별시">서울특별시</option>
+                        <option value="인천광역시">인천광역시</option>
+                        <option value="대전광역시">대전광역시</option>
+                        <option value="세종특별자치시">세종특별자치시</option>
+                        <option value="광주광역시">광주광역시</option>
+                        <option value="부산광역시">부산광역시</option>
+                        <option value="대구광역시">대구광역시</option>
+                        <option value="울산광역시">울산광역시</option>
+                        <option value="제주특별자치도">제주특별자치도</option>
+                        <option value="경기도">경기도</option>
+                        <option value="강원도">강원도</option>
+                        <option value="충청북도">충청북도</option>
+                        <option value="충청남도">충청남도</option>
+                        <option value="전라북도">전라북도</option>
+                        <option value="전라남도">전라남도</option>
+                        <option value="경상북도">경상북도</option>
+                        <option value="경상남도">경상남도</option>
+                      </select>
                       <span class="region-form-control-blind">
-                        이메일 앞 주소 입력하기
+                        시/도 선택하기
                       </span>
                     </label>
+                    <button
+                      class="region-select-button"
+                      aria-label="초기화"
+                      type="button"
+                      tabindex="-1"
+                    >
+                      <!-- 도메인 선택 버튼 -->
+                      <svg
+                        width="10"
+                        height="10"
+                        preserveAspectRatio="xMidYMid meet"
+                        style="fill: currentcolor"
+                      >
+                        <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
+                      </svg>
+                    </button>
                   </span>
                   <span class="region-seperator">&nbsp;</span>
+                  <!-- 위 드롭박스에서의 선택에 따라 서로 다른 세부 구역을 보여주는 드롭박스 -->
                   <span class="region-input-domain">
                     <label>
-                      <!--  -->
+                      <!-- 기본값은 서울을 기준으로 했지만, 위쪽 선택에 따라 다른 걸 보여줘야 됨(JS로) -->
+                      <!-- 아래의 서울 내 지역도 따로 배열로 제작 -->
                       <select class="region-form-control">
-                        <option value="" disabled>선택해주세요</option>
-                        <option value="naver.com">naver.com</option>
-                        <option value="hanmail.net">hanmail.net</option>
-                        <option value="daum.net">daum.net</option>
-                        <option value="gmail.com">gmail.com</option>
-                        <option value="nate.com">nate.com</option>
-                        <option value="hotmail.com">hotmail.com</option>
-                        <option value="outlook.com">outlook.com</option>
-                        <option value="icloud.com">icloud.com</option>
+                        <option value="종로구">종로구</option>
+                        <option value="중구">중구</option>
+                        <option value="용산구">용산구</option>
+                        <option value="성동구">성동구</option>
+                        <option value="광진구">광진구</option>
+                        <option value="동대문구">동대문구</option>
+                        <option value="중랑구">중랑구</option>
+                        <option value="성북구">성북구</option>
+                        <option value="강북구">강북구</option>
+                        <option value="도봉구">도봉구</option>
+                        <option value="노원구">노원구</option>
+                        <option value="은평구">은평구</option>
+                        <option value="서대문구">서대문구</option>
+                        <option value="마포구">마포구</option>
+                        <option value="양천구">양천구</option>
+                        <option value="강서구">강서구</option>
+                        <option value="구로구">구로구</option>
+                        <option value="금천구">금천구</option>
+                        <option value="영등포구">영등포구</option>
+                        <option value="동작구">동작구</option>
+                        <option value="관악구">관악구</option>
+                        <option value="서초구">서초구</option>
+                        <option value="강남구">강남구</option>
+                        <option value="송파구">송파구</option>
+                        <option value="강동구">강동구</option>
                       </select>
-                      <span class="region-form-control-blind"
-                        >시, 군, 구 선택하기
+                      <span class="region-form-control-blind">
+                        세부지역 선택
                       </span>
                     </label>
                     <button
@@ -383,7 +431,7 @@
                       <input
                         class="optional-check-input"
                         type="checkbox"
-                        name="선택항목1"
+                        name="마케팅동의"
                         value="false"
                       />
                     </div>
@@ -407,7 +455,7 @@
                       <input
                         class="optional-check-input"
                         type="checkbox"
-                        name="선택항목2"
+                        name="sns수신"
                         value="false"
                       />
                     </div>
@@ -420,7 +468,6 @@
                 </div>
               </div>
             </div>
-            <!-- 로봇이 아닙니다 -->
             <button class="register-button" type="submit">회원가입하기</button>
           </form>
           <!-- 나중에 로그인 페이지랑 연결 -->
