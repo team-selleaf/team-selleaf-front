@@ -64,8 +64,8 @@ const emptyValue = document.querySelector(".empty-value");
 tagInput.addEventListener("keyup", (e) => {
   let value = e.target.value;
   if (e.keyCode === 13 && e.target.value) {
-    const itemCount = tagList.querySelectorAll(".tag-list > span").length + 1;
-    if (itemCount <= 5) {
+    const items = tagList.querySelectorAll(".tag-list > span");
+    if (items.length + 1 <= 5) {
       e.target.value = "";
       const tagItem = document.createElement("span");
       tagItem.classList.add("tag");
@@ -90,17 +90,80 @@ tagInput.addEventListener("keyup", (e) => {
       });
     }
   }
-  if (!tagInput.value && itemCount == 0) {
-    tagInput.style.border = "1px solid red";
-    emptyValue.style.display = "block";
-  } else {
-    tagInput.style.border = "";
-    emptyValue.style.display = "none";
-  }
+  // if (!tagInput.value) {
+  //   tagInput.style.border = "1px solid red";
+  //   emptyValue.style.display = "block";
+  // } else {
+  //   tagInput.style.border = "";
+  //   emptyValue.style.display = "none";
+  // }
 });
 tagInput.addEventListener("focus", (e) => {
   e.target.style.boxShadow = "0 0 0 3px rgba(53,197,240,.3)";
 });
 tagInput.addEventListener("blur", (e) => {
   e.target.style.boxShadow = "";
+});
+
+const urlInput = document.querySelectorAll(".url-input");
+
+urlInput.forEach((item) => {
+  item.addEventListener("focus", (e) => {
+    e.target.style.boxShadow = "0 0 0 3px rgba(53,197,240,.3)";
+  });
+  item.addEventListener("blur", (e) => {
+    e.target.style.boxShadow = "";
+  });
+});
+const requiredInfoItemInner = document.querySelector(
+  ".required-info-item-inner"
+);
+const guideText = document.querySelector(".guide-text");
+const addAndDeleteBtn = document.querySelectorAll(".add-and-delete-btn");
+
+function appendItem() {
+  const insertItem = document.createElement("div");
+  insertItem.classList.add("double-item-box");
+  insertItem.innerHTML = `
+      <div class="double-input-wrap">
+        <div class="double-input-left-box">
+          <input
+            class="url-input"
+            value=""
+            placeholder="URL 주소를 입력해주세요."
+          />
+        </div>
+      </div>
+      <div class="tag-double-input-box">
+        <div class="tag-double-input-right-box">
+          <input
+            class="url-input"
+            value=""
+            placeholder="표시할 내용"
+          />
+        </div>
+      </div>
+    `;
+
+  const parentElement = guideText.parentNode;
+  parentElement.insertBefore(insertItem, guideText);
+}
+addAndDeleteBtn.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    const doubleItemBox = document.querySelectorAll(".double-item-box");
+    const itemCount = doubleItemBox.length - 1;
+    const btnItem = e.target.closest("button");
+    const itemTitle = btnItem.getAttribute("title");
+    if (itemTitle === "추가") {
+      if (itemCount <= 2) {
+        appendItem();
+      }
+    }
+    if (itemTitle === "삭제") {
+      if (itemCount >= 1) {
+        const lastElement = doubleItemBox[itemCount];
+        lastElement.parentNode.removeChild(lastElement);
+      }
+    }
+  });
 });

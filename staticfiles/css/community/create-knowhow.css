@@ -553,7 +553,7 @@ input.title-input {
   height: 0;
 }
 .open {
-  height: 436px;
+  height: 460px;
 }
 .cancel {
   display: none;
@@ -566,10 +566,10 @@ input.title-input {
   top: 15px;
 }
 .tag-list {
-  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 20px;
 }
 .tag {
   padding: 10px;
@@ -589,4 +589,120 @@ input.title-input {
   width: 18px;
   height: 18px;
   cursor: pointer;
+}
+.double-item-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: -5px 0;
+  margin-right: -20px;
+}
+.double-input-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 5px 6px 5px 0;
+}
+.double-input-left-box {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 220px;
+}
+.tag-double-input-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 5px 6px 5px 0;
+}
+.tag-double-input-right-box {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  max-width: 220px;
+}
+.add-and-delete-box {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0 -5px 0 15px;
+  white-space: nowrap;
+}
+.url-input {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 8px 15px 9px;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Noto Sans KR, Noto Sans CJK KR, 맑은 고딕, Malgun Gothic,
+    sans-serif;
+  font-size: 15px;
+  line-height: 21px;
+  transition: border-color 0.1s, background-color 0.1s;
+  resize: none;
+  -webkit-appearance: none;
+}
+.url-input[placeholder='표시할 내용'] {
+  width: 197.3px;
+}
+.add-and-delete-btn {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  margin: 0 5px;
+  box-sizing: border-box;
+  padding: 1px;
+  border: 1px solid #a4acb3;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0 rgba(194, 200, 204, 0.8);
+  color: #525b61;
+  line-height: 0;
+  vertical-align: bottom;
+  -webkit-transition: 0.1s opacity;
+  transition: 0.1s opacity;
+}
+.add-and-delete-btn:hover {
+  opacity: 0.7;
+}
+.icon {
+  width: 29;
+  height: 29;
+}
+input::placeholder {
+  color: #c2c2c2;
+}
+.guide-text {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 16px;
+  color: #c2c2c2;
 }

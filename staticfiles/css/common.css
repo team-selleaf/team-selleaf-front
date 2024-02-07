@@ -141,12 +141,6 @@ input[type="submit"] {
   touch-action: manipulation;
 }
 
-a,
-button:enabled {
-  cursor: pointer;
-  touch-action: manipulation;
-}
-
 footer,
 header,
 main {
