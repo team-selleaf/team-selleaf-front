@@ -3,31 +3,49 @@
 const searchInput = document.querySelector(".hearder-inner-thirddiv-input");
 const xbutton = document.querySelector(".hearder-inner-thirddiv-div");
 
-searchInput.addEventListener("keyup", (e) => {
+searchInput.addEventListener("keydown", (e) => {
   xbutton.style.display = "flex";
-
-  xbutton.addEventListener("click", (e) => {
-    searchInput.value = "";
+  // 입력한 값 가져오기
+  const realInput = searchInput.value.trim();
+  if (realInput !== "") {
+    xbutton.addEventListener("click", (e) => {
+      searchInput.value = "";
+      xbutton.style.display = "none";
+    });
+  } else {
     xbutton.style.display = "none";
-  });
+  }
 });
+const borderinput = document.querySelector(".header-fourth-inner-thirddiv");
+searchInput.addEventListener("focus", () => {
+  borderinput.style.border = "1px solid #97A38C";
+});
+searchInput.addEventListener("blur", () => {
+  borderinput.style.border = "1px solid #DADDE0";
+});
+
+// 헤더부분에 로그인 | 회원가입 | 고객센터를 로그인이 됬을땐 아이콘 아이콘 아이콘 이런식으로 보여야하기 때문에
+// 그 부분 구현 코드
+const userinfos = document.querySelectorAll(".header-info-each");
+const headerscrap = document.querySelector(".header-scrap-a");
+const headeralarm = document.querySelector(".header-alarm-a");
+const headerkakaoIcon = document.querySelector(".header-kakao-button");
+const isLogin = false;
+
+if (isLogin) {
+  userinfos.forEach((info) => {
+    info.style.display = "none";
+  });
+} else {
+  headerscrap.style.display = "none";
+  headeralarm.style.display = "none";
+  headerkakaoIcon.style.display = "none";
+}
 
 // 글쓰기 버튼을 클릭하면 모달이 생성되고 다시 클릭하면 모달이 없어져야함
 // 대신 화면의 다른 부분을 클릭해도 모달이 없어져야함
 const modalButton = document.querySelector(".header-write-wrap");
 const modal = document.querySelector(".header-post-wrap");
-
-// modalButton.addEventListener("click", (e) => {
-//   modal.classList.toggle("modalOpen");
-//   //   if (modal.classList.contains("modalOpen")) {
-//   //     document.addEventListener("click", (e) => {
-//   //       console.log(e.target.closest("modal"));
-//   //       if (!e.target.closest("modal") || modalButton.closest("modalButton")) {
-//   //         modal.classList.remove("modalOpen");
-//   //       }
-//   //     });
-//   //   }
-// });
 
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".header-post-wrap")) {
@@ -74,6 +92,26 @@ scrapBtns.forEach((item) => {
 
 // 이런 00 찾고 있나요? 부분에 슬라이드 바 구현
 const nextButton = document.querySelector(".realmain-nextbutton");
+const beforeButton = document.querySelector(".realmain-beforebutton");
+const beforeButtonDiv = document.querySelector(
+  ".realmain-plantRecommend-beforebuttonWrap"
+);
+const nextButtonUl = document.querySelector(".realmain-plantRecommend-photoul");
+
+nextButton.addEventListener("click", () => {
+  nextButtonUl.style.transition = `transform 0.5s`;
+  nextButtonUl.style.transform = `translateX(-963.34px)`;
+  nextButton.style.display = "none";
+  beforeButtonDiv.style.display = "block";
+});
+
+beforeButton.addEventListener("click", () => {
+  nextButtonUl.style.transition = `transform 0.5s`;
+  nextButtonUl.style.transform = `translateX(0px)`;
+  nextButton.style.display = "flex";
+  beforeButtonDiv.style.display = "none";
+});
+
 // 원데이 클래스 부분에 사진 올리면 확대되고 내리면 축소되게 만들어야함
 const searchOnedayImg = document.querySelectorAll(".realmain-lecture-photo");
 const searchOnedayA = document.querySelectorAll(
@@ -92,11 +130,97 @@ searchOnedayA.forEach((atag, i) => {
   });
 });
 
-// 원데이 클래스 인기 콘텐츠 부분에 스크랩 on off 기능
+// 인기 콘텐츠 부분에 스크랩 on off 기능
 const scraplectureBtns = document.querySelectorAll(
   ".realmain-lecture-scrapbutton"
 );
 scraplectureBtns.forEach((item) => {
+  item.addEventListener("click", () => {
+    const img = item.querySelector("img");
+    const imgSrc = img.getAttribute("src");
+    console.log(imgSrc);
+    imgSrc === "../../staticfiles/images/scrap-off.png"
+      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
+      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+  });
+});
+
+// 오늘의 딜부분에 스크랩 on off 기능
+const scraptodayHotBtns = document.querySelectorAll(
+  ".realmain-todayHotdeal-scrapbutton"
+);
+scraptodayHotBtns.forEach((item) => {
+  item.addEventListener("click", () => {
+    const img = item.querySelector("img");
+    const imgSrc = img.getAttribute("src");
+    console.log(imgSrc);
+    imgSrc === "../../staticfiles/images/scrap-off.png"
+      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
+      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+  });
+});
+
+// 오늘의 딜 부분 슬라이더바 구현
+const todayHotdealnextButton = document.querySelector(
+  ".realmain-todayHotdeal-nextbutton"
+);
+const todayHotdealbeforeButton = document.querySelector(
+  ".realmain-todayHotdeal-beforbutton"
+);
+
+const todayHotdealnextButtonUl = document.querySelector(
+  ".realmain-todayHotdeal-photoWrapUl"
+);
+
+todayHotdealnextButton.addEventListener("click", () => {
+  todayHotdealnextButtonUl.style.transition = `transform 0.5s`;
+  todayHotdealnextButtonUl.style.transform = `translateX(-867px)`;
+  todayHotdealnextButton.style.display = "none";
+  todayHotdealbeforeButton.style.display = "flex";
+});
+
+todayHotdealbeforeButton.addEventListener("click", () => {
+  todayHotdealnextButtonUl.style.transition = `transform 0.5s`;
+  todayHotdealnextButtonUl.style.transform = `translateX(0px)`;
+  todayHotdealnextButton.style.display = "flex";
+  todayHotdealbeforeButton.style.display = "none";
+});
+
+// 유저들의 강의 평가 부분 축소 확대 코드
+const userReviewImg = document.querySelectorAll(".realmain-userReview-img");
+const userReviewA = document.querySelectorAll(".realmain-userReview-contentA");
+
+userReviewA.forEach((atag, i) => {
+  atag.addEventListener("mouseover", () => {
+    userReviewImg[i].style.transform = "scale(1.05)";
+  });
+});
+
+userReviewA.forEach((atag, i) => {
+  atag.addEventListener("mouseout", () => {
+    userReviewImg[i].style.transform = "scale(1)";
+  });
+});
+
+// 베스트 상품의 카테고리 버튼 구현
+const categoryButtons = document.querySelectorAll("#btn");
+categoryButtons[0].parentNode.classList.add("active");
+console.log(categoryButtons);
+categoryButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    // 두번째 버튼을 클릭한 순간 반복문을 돌리면서 버튼들에 active 클래스가 있으면 지워줘야함
+    categoryButtons.forEach((btn) => {
+      btn.parentNode.classList.remove("active");
+    });
+    btn.parentNode.classList.add("active");
+  });
+});
+
+// 베스트 상품 부분에 스크랩 on off 기능
+const scrapbestProductBtns = document.querySelectorAll(
+  ".realmain-bestproduct-realPhotoScrapbtn"
+);
+scrapbestProductBtns.forEach((item) => {
   item.addEventListener("click", () => {
     const img = item.querySelector("img");
     const imgSrc = img.getAttribute("src");
