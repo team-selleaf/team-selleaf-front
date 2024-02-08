@@ -30,7 +30,7 @@ const userinfos = document.querySelectorAll(".header-info-each");
 const headerscrap = document.querySelector(".header-scrap-a");
 const headeralarm = document.querySelector(".header-alarm-a");
 const headerkakaoIcon = document.querySelector(".header-kakao-button");
-const isLogin = true;
+const isLogin = false;
 
 if (isLogin) {
   userinfos.forEach((info) => {
