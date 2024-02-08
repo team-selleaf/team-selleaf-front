@@ -1,0 +1,55 @@
+/* 회사소개 헤더 부분 */
+.header-wrap {
+    background-color: #fff;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-navigation {
+    -moz-align-items: center;
+    align-items: center;
+    box-sizing: border-box;
+    display: -moz-flex;
+    display: flex;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1195px;
+    padding: 34px 30px;
+    width: 100%;
+}
+
+.header-navigation-wrap>svg {
+    width: 74px;
+}
+
+.header-navigation-menu {
+    -moz-align-items: center;
+    align-items: center;
+    display: -moz-flex;
+    display: flex;
+}
+
+.header-navigation-menuAf {
+    color: #212529;
+    display: inline-block;
+    font-size: 17px;
+    letter-spacing: -.3px;
+    margin-left: 50px;
+    font-weight: 700;
+}
+
+.header-navigation-menuA {
+    color: #212529;
+    display: inline-block;
+    font-size: 17px;
+    letter-spacing: -.3px;
+    margin-left: 50px;
+}
+
+.header-navigation-menuA:hover{
+    font-weight: 700;
+}
