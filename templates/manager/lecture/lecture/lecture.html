@@ -29,18 +29,18 @@
     </style>
     <link
       rel="stylesheet"
-      href="../../../staticfiles/css/community/community.css"
+      href="../../../../staticfiles/css/community/community.css"
     />
     <!-- 여기까지는 무조건 고정으로 모든 페이지에 복붙하세요 -->
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
       rel="shortcut icon"
-      href="../../../staticfiles/images/selleaf.png"
+      href="../../../../staticfiles/images/selleaf.png"
       type="image/x-icon"
     />
     <link
       rel="stylesheet"
-      href="../../../staticfiles/css/manager/lecture/manager.css"
+      href="../../../../staticfiles/css/manager/lecture/lecture/lecture.css"
     />
     <title>강의 관리</title>
   </head>
@@ -53,7 +53,7 @@
               <a href="/">
                 <img
                   class="logo-img"
-                  src="../../../staticfiles/images/logo-lettering-blk.png"
+                  src="../../../../staticfiles/images/logo-lettering-blk.png"
                   alt=""
                 />
               </a>
@@ -385,42 +385,6 @@
                         </button>
                         <div class="lecture-underbar" id="under"></div>
                       </li>
-                      <li class="header-relative">
-                        <button
-                          class="lecture-info"
-                          aria-label="tab button"
-                          type="button"
-                          id="btn"
-                        >
-                          <div>
-                            <div class="flex">
-                              <p class="review-info">리뷰정보</p>
-                              <div class="review-info-num">
-                                <p class="review-info-num">0</p>
-                              </div>
-                            </div>
-                          </div>
-                        </button>
-                        <div class="lecture-underbar" id="under"></div>
-                      </li>
-                      <li class="header-relative">
-                        <button
-                          class="lecture-info"
-                          aria-label="tab button"
-                          type="button"
-                          id="btn"
-                        >
-                          <div>
-                            <div class="flex">
-                              <p class="review-info">수강생목록</p>
-                              <div class="review-info-num">
-                                <p class="review-info-num">0</p>
-                              </div>
-                            </div>
-                          </div>
-                        </button>
-                        <div class="lecture-underbar" id="under"></div>
-                      </li>
                     </ul>
                   </div>
                   <div class="all-list">
@@ -429,6 +393,31 @@
                       <span class="all-num">1</span>
                     </div>
                     <div class="list-order">
+                      <!-- 여기에 검색 창 추가 -->
+                      <div class="search-bar">
+                        <label class="search-bar">
+                          <input
+                            class="search-bar"
+                            placeholder="강의 검색"
+                            type="text"
+                            value
+                          />
+                          <button
+                            aria-label="search button"
+                            class="search-bar"
+                            type="button"
+                          >
+                            <img
+                              class="search-logo"
+                              src="../../../../staticfiles/images/search-logo/search_icon.png"
+                            />
+                            <img
+                              class="cancel-logo"
+                              src="../../../../staticfiles/images/cancel.png"
+                            />
+                          </button>
+                        </label>
+                      </div>
                       <div class="list-relative">
                         <button
                           class="list-order"
@@ -514,33 +503,7 @@
                         </div>
                       </div>
                     </button>
-                    <div class="content-open-wrap">
-                      <div class="content-open-container">
-                        <svg
-                          class="content-open"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <mask id="unlocked">
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M15.708 6.777c-.437.194-.94-.04-1.163-.463C14.04 5.35 13.18 4.5 12 4.5a2.9 2.9 0 0 0-2.9 2.9v1.9h7.3a3.6 3.6 0 0 1 3.6 3.6v4.8a3.6 3.6 0 0 1-3.6 3.6H7.6A3.6 3.6 0 0 1 4 17.7v-4.8a3.6 3.6 0 0 1 3.3-3.588V7.4a4.7 4.7 0 0 1 9.046-1.792c.181.44-.068.917-.502 1.11l-.136.06ZM12.8 14.4a.8.8 0 0 0-1.6 0v1.4a.8.8 0 0 0 1.6 0v-1.4Z"
-                            ></path>
-                          </mask>
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M15.708 6.777c-.437.194-.94-.04-1.163-.463C14.04 5.35 13.18 4.5 12 4.5a2.9 2.9 0 0 0-2.9 2.9v1.9h7.3a3.6 3.6 0 0 1 3.6 3.6v4.8a3.6 3.6 0 0 1-3.6 3.6H7.6A3.6 3.6 0 0 1 4 17.7v-4.8a3.6 3.6 0 0 1 3.3-3.588V7.4a4.7 4.7 0 0 1 9.046-1.792c.181.44-.068.917-.502 1.11l-.136.06ZM12.8 14.4a.8.8 0 0 0-1.6 0v1.4a.8.8 0 0 0 1.6 0v-1.4Z"
-                          ></path>
-                          <path
-                            d="m14.545 6.314 1.417-.744-1.417.744Zm1.163.463.649 1.463-.649-1.463ZM9.1 9.3H7.5v1.6h1.6V9.3Zm-1.8.013.131 1.594 1.469-.121V9.312H7.3Zm9.046-3.704 1.48-.61-1.48.61Zm-.502 1.11-.649-1.463.649 1.462Zm-2.715.34c.527 1.004 1.862 1.787 3.228 1.182L15.06 5.315a.773.773 0 0 1 .604-.014.585.585 0 0 1 .298.269l-2.833 1.487Zm-1.13-.958c.317 0 .747.23 1.13.957l2.833-1.487C15.333 4.372 14.044 2.9 12 2.9v3.2Zm-1.3 1.3A1.3 1.3 0 0 1 12 6.1V2.9a4.5 4.5 0 0 0-4.5 4.5h3.2Zm0 1.9V7.4H7.5v1.9h3.2ZM16.4 7.7H9.1v3.2h7.3V7.7Zm5.2 5.2a5.2 5.2 0 0 0-5.2-5.2v3.2a2 2 0 0 1 2 2h3.2Zm0 4.8v-4.8h-3.2v4.8h3.2Zm-5.2 5.2a5.2 5.2 0 0 0 5.2-5.2h-3.2a2 2 0 0 1-2 2v3.2Zm-8.8 0h8.8v-3.2H7.6v3.2Zm-5.2-5.2a5.2 5.2 0 0 0 5.2 5.2v-3.2a2 2 0 0 1-2-2H2.4Zm0-4.8v4.8h3.2v-4.8H2.4Zm4.768-5.183A5.2 5.2 0 0 0 2.4 12.9h3.2a2 2 0 0 1 1.831-1.993l-.263-3.189ZM5.7 7.4v1.912h3.2V7.4H5.7ZM12 1.1a6.3 6.3 0 0 0-6.3 6.3h3.2A3.1 3.1 0 0 1 12 4.3V1.1Zm5.825 3.897A6.302 6.302 0 0 0 12 1.1v3.2c1.29 0 2.401.79 2.867 1.918l2.958-1.22ZM16.492 8.18c1.055-.467 1.913-1.777 1.333-3.183l-2.958 1.221a.811.811 0 0 1 .013-.648.636.636 0 0 1 .315-.315l1.297 2.925Zm-.136.06.136-.06-1.297-2.925-.135.06 1.296 2.925ZM12 15.2a.8.8 0 0 1-.8-.8h3.2A2.4 2.4 0 0 0 12 12v3.2Zm.8-.8a.8.8 0 0 1-.8.8V12a2.4 2.4 0 0 0-2.4 2.4h3.2Zm0 1.4v-1.4H9.6v1.4h3.2ZM12 15a.8.8 0 0 1 .8.8H9.6a2.4 2.4 0 0 0 2.4 2.4V15Zm-.8.8a.8.8 0 0 1 .8-.8v3.2a2.4 2.4 0 0 0 2.4-2.4h-3.2Zm0-1.4v1.4h3.2v-1.4h-3.2Z"
-                            mask="url(#unlocked)"
-                          ></path>
-                        </svg>
-                        <span class="content-open">전체 공개</span>
-                      </div>
-                    </div>
+                    <div class="content-open-wrap"></div>
                     <div class="content-detail">
                       <div class="content-detail-a">
                         <p class="content-detail-num">1</p>
@@ -551,7 +514,7 @@
                         <p class="content-detail">좋아요</p>
                       </div>
                       <div class="content-detail-b">
-                        <p class="content-detail-num">2024.02.05.</p>
+                        <p class="content-detail-num">2024.02.05</p>
                         <p class="content-detail">게시일</p>
                       </div>
                       <div class="content-detail-c">
@@ -692,5 +655,5 @@
       </div>
     </div>
   </body>
-  <script src="../../../staticfiles/js/manager/lecture/manager.js"></script>
+  <script src="../../../../staticfiles/js/manager/lecture/lecture/lecture.js"></script>
 </html>
