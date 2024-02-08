@@ -31,10 +31,15 @@
     <!-- 여기까지는 무조건 고정으로 모든 페이지에 복붙하세요 -->
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
+      rel="shortcut icon"
+      href="/staticfiles/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link
       rel="stylesheet"
       href="../../staticfiles/css/transaction/transaction.css"
     />
-    <title>거래 카테고리</title>
+    <title>상품홈</title>
   </head>
   <body>
     <div class="layout">
@@ -58,7 +63,19 @@
                   <div class="button-space">
                     <a href="/transaction" class="button-link-click">
                       <div class="button">
-                        <p class="button-letter-click">상품</p>
+                        <p class="button-letter-click">상품홈</p>
+                      </div>
+                    </a>
+                  </div>
+                </span>
+                <span class="category-button">
+                  <div class="button-space">
+                    <a
+                      href="/templates/transaction/transaction-total.html"
+                      class="button-link-unclick"
+                    >
+                      <div class="button">
+                        <p class="button-letter-unclick">진행중인거래</p>
                       </div>
                     </a>
                   </div>
@@ -94,7 +111,9 @@
         <section class="popular-wrap wrap-media">
           <header class="popular-header">
             <h1 class="popular-title">내 주변 인기 상품</h1>
-            <a class="popular-detail-link" href="/templates/transaction/"
+            <a
+              class="popular-detail-link"
+              href="/templates/transaction/transaction-total.html"
               >더보기</a
             >
           </header>
@@ -478,7 +497,8 @@
           </div>
         </section>
         <section class="update-post-wrap wrap-media">
-          <div class="filter-container">
+          <!-- 필터 -->
+          <!-- <div class="filter-container">
             <div class="filter-inner">
               <button class="filter-button" type="button">
                 정렬
@@ -489,6 +509,48 @@
                   />
                 </span>
               </button>
+
+              <div
+                class="filter-arrange-wrap"
+                data-popper-reference-hidden="false"
+                data-popper-escaped="true"
+                data-popper-placement="bottom"
+                style="
+                  left: -50%;
+                  position: absolute;
+                  inset: 0px auto auto 0px;
+                  transform: translate(75px, 1070px);
+                  z-index: 3;
+                "
+              >
+                <div
+                  class="filter-dropdown-arrow"
+                  data-popper-arrow="true"
+                  style="
+                    position: absolute;
+                    left: 0px;
+                    transform: translate(93px, 0px);
+                  "
+                ></div>
+                <div class="filter-list-wrap">
+                  <div class="filter-list-container">
+                    <div class="filter-list-inner">
+                      <button class="filter-list-button" type="button">
+                        <div class="filter-name">최신순</div>
+                        <div class="filter-space"></div>
+                      </button>
+                      <button class="filter-list-button" type="button">
+                        <div class="filter-name">스크랩순</div>
+                        <div class="filter-space"></div>
+                      </button>
+                      <button class="filter-list-button" type="button">
+                        <div class="filter-name">댓글순</div>
+                        <div class="filter-space"></div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="filter-inner">
               <button class="filter-button" type="button">
@@ -500,6 +562,46 @@
                   />
                 </span>
               </button>
+              <div
+                class="filter-arrange-wrap"
+                data-popper-reference-hidden="false"
+                data-popper-escaped="true"
+                data-popper-placement="bottom"
+                style="
+                  position: absolute;
+                  inset: 0px auto auto 0px;
+                  transform: translate(150px, 1070px);
+                  z-index: 3;
+                "
+              >
+                <div
+                  class="filter-dropdown-arrow"
+                  data-popper-arrow="true"
+                  style="
+                    position: absolute;
+                    left: 0px;
+                    transform: translate(93px, 0px);
+                  "
+                ></div>
+                <div class="filter-list-wrap">
+                  <div class="filter-list-container">
+                    <div class="filter-list-inner">
+                      <button class="filter-list-button" type="button">
+                        <div class="filter-name">관엽</div>
+                        <div class="filter-space"></div>
+                      </button>
+                      <button class="filter-list-button" type="button">
+                        <div class="filter-name">다육</div>
+                        <div class="filter-space"></div>
+                      </button>
+                      <button class="filter-list-button" type="button">
+                        <div class="filter-name">침엽</div>
+                        <div class="filter-space"></div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="filter-inner">
               <button class="filter-button" type="button">
@@ -512,8 +614,18 @@
                 </span>
               </button>
             </div>
-          </div>
-          <h1>전체보기</h1>
+          </div> -->
+          <!-- 제목 -->
+          <header class="popular-header">
+            <h1 class="popular-title">최신 등록 상품</h1>
+            <a
+              class="popular-detail-link"
+              id="new-detail-link"
+              href="/templates/transaction/"
+              >더보기</a
+            >
+          </header>
+          <!-- 거래 게시글 목록 -->
           <div
             class="update-post-list row-media"
             style="

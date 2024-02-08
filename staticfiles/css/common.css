@@ -52,6 +52,10 @@ ul {
   padding: 0;
 }
 
+button, hr, input, textarea, select {
+  border: none;
+}
+
 html,
 body {
   height: 100%;

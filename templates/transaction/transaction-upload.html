@@ -34,7 +34,8 @@
       rel="stylesheet"
       href="../../staticfiles/css/transaction/transaction-upload.css"
     />
-    <title>거래 작성</title>
+    <link rel="shortcut icon" href="/staticfiles/images/favicon.png" type="image/x-icon">
+    <title>거래포스팅</title>
   </head>
 </html>
 <body> 
@@ -47,7 +48,7 @@
                             <a href="/main" aria-label='selleaf' class="logo-wrap">
                                 <img class="logo" src="/staticfiles/images/logo-lettering-blk.png" alt="">
                             </a>
-                            <div class="contents-button-container">
+                            <!-- <div class="contents-button-container">
                                 <div class="contents-button-inner">
                                     <button class="add-picture" aria-pressed="false" title="사진추가" type="button">
                                         <svg class="icon" viewBox="0 0 29 29" height="29" width="29" preserveAspectRatio="xMidYMid meet"><g fill-rule="evenodd" fill="none"><rect rx="4" height="29" width="29"></rect><g stroke-width="1.6" stroke="#525b61" transform="translate(4 4)"><rect rx="4" height="19.4" width="19.4" y=".8" x=".8"></rect><path stroke-linejoin="round" d="M.8 15.24L5.98 9.7l7.11 6.11 3.88-3.05 3.23 2.5"></path><circle r="2.03" cy="6.87" cx="14.13"></circle></g></g></svg>
@@ -98,7 +99,7 @@
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="save-button-wrap">
                                 <div class="save-button-container">
                                     <div class="temporary-save-wrap">
@@ -112,8 +113,6 @@
                                     <button type="button" class="establish">
                                         <span class="establish-ask-letter">등록하기</span>
                                         <span class="establish-letter">등록</span>
-                                    </button>
-
                                     </button>
                                 </div>
                             </div>
@@ -139,7 +138,7 @@
                             </button>
                             <div class style="overflow: hidden;">
                             </div>
-                            <!-- <div class="expended">
+                            <div class="off">
                                 <div class="guide-expended" role="region" id="guide-content">
                                     <ul class="guide-list">
                                         <li>에디터 컨택 없이 집들이를 작성하는 경우, <strong>집들이 피드나 홈에서는 공개되지 않을 수 있습니다.</strong></li>
@@ -160,7 +159,7 @@
                                         <li>온라인 집들이는 작성해주신 초안을 바탕으로 내부 에디터의 편집과 검수, 태그 작업을 거쳐서 발행되고 있습니다. 이에 따라 커버사진과 제목, 본문 구성 등이 변경될 수 있습니다.</li>
                                     </ul>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                         <div class="upload-guide-container">
                             <button type="button" id="required-info-header" aria-labelledby="required-info-content" aria-expanded="false" class="guide-button">
@@ -178,153 +177,111 @@
                             <div class style="overflow: hidden;">
                             </div>
                             <!-- class 수정, css 추가 -->
-                            <div class="open expanded" style="overflow: hidden;">
-                                <div role="region" id="136003188 -content" aria-labelledby="136003188-header" class="css-1i63qm1 et6ymrn1">
-                                    <div class="css-1d2rxna ep1y6ds2">
-                                        <div class="css-91icxf e1hi32cq5">
-                                            <div class="css-k7rs7x e1hi32cq4">거래상품
-                                                <span class="css-1glw6nv e1hi32cq3">*</span>
-                                            </div>
-                                            <div class="css-l0i7ez e1hi32cq2">
-                                                <div class="css-0 e1hi32cq1">
-                                                    <div class="css-1e9f3hj e3o0fgr0">
-                                                        <span class="css-me3hyb eh58j7j0">
-                                                            <div class="input-group select-input errored">
-                                                                <select name="metadata.housingType.type" class="form-control empty error">
-                                                                    <option value="" disabled="">선택해주세요.</option>
-                                                                    <option value="0">식물거래</option>
-                                                                    <option value="1">상품거래</option>
-                                                                    <option value="2">제품거래</option>
-                                                                    <option value="3">기타</option>
-                                                                </select>
-                                                                <span class="select-input__icon">
-                                                                    <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" style="fill: currentcolor;"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
-                                                                </span>
-                                                            </div>
-                                                        </span>
-                                                    </div>
+                            <div class="required-off">
+                                <div class="info-expended" style="overflow: hidden;">
+                                    <div role="hidden" id="info-contents" aria-labelledby="info-header" class="info-wrap">
+                                        <div class="info-container">
+                                            <div class="each-info">
+                                                <div class="info-title">
+                                                    상품구분
+                                                    <span class="required">*</span>
+                                                </div>
+                                                <div class="info-dropdown-wrap">
+                                                    <div class="info-dropdown-container">
+                                                        <div class="info-dropdown-inner">
+                                                            <span class="info-dropdown-box">
+                                                                <div class="info-list-wrap">
+                                                                    <select name="product-index" class="product-index">
+                                                                        <option value="unselected" disabled selected>선택해주세요.</option>
+                                                                        <option value="0">상품</option>
+                                                                        <option value="1">식물</option>
+                                                                        <option value="2">수공예품</option>
+                                                                        <option value="3">기타</option>
+                                                                    </select>
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    </div> 
+                                                    <span class="alert" style="display: none; color: #c06888">필수 입력창 입니다.</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="css-91icxf e1hi32cq5">
-                                            <div class="css-k7rs7x e1hi32cq4">식물종류
-                                                <span class="css-1glw6nv e1hi32cq3">*</span>
-                                            </div>
-                                            <div class="css-l0i7ez e1hi32cq2">
-                                                <div class="css-0 e1hi32cq1">
-                                                    <div class="css-1e9f3hj e3o0fgr0">
-                                                        <ul class="radio-group-input editor-metadata-form__input-radio">
-                                                            <li>
-                                                                <div class="form-radio">
-                                                                    <label class="form-radio-label">
-                                                                        <input class="form-radio" type="radio" name="metadata.area.type">
-                                                                        <span class="radio-img"></span>
-                                                                        관엽식물
-                                                                    </label>
+                                            <div class="each-info">
+                                                <div class="info-title">
+                                                    식물구분
+                                                    <span class="required">*</span>
+                                                </div>
+                                                <div class="info-dropdown-wrap">
+                                                    <div class="info-dropdown-container">
+                                                        <div class="info-dropdown-inner">
+                                                            <span class="info-dropdown-box">
+                                                                <div class="info-list-wrap">
+                                                                    <select name="product-index" class="product-index">
+                                                                        <option value="unselected" disabled selected>선택해주세요.</option>
+                                                                        <option value="0">관엽식물</option>
+                                                                        <option value="1">침엽식물</option>
+                                                                        <option value="2">희귀식물</option>
+                                                                        <option value="3">다육&#47선인장</option>
+                                                                        <option value="3">테라리움</option>
+                                                                        <option value="3">기타</option>
+                                                                    </select>
                                                                 </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="form-radio">
-                                                                    <label class="form-radio-label">
-                                                                        <input class="form-radio" type="radio" name="metadata.area.type">
-                                                                        <span class="radio-img"></span>침엽 식물
-                                                                    </label>
+                                                            </span>
+                                                        </div>
+                                                    </div> 
+                                                    <span class="alert" style="display: none; color: #c06888">필수 입력창 입니다.</span>
+                                                </div>
+                                            </div><div class="each-info">
+                                                <div class="info-title">
+                                                    거래지역
+                                                    <span class="required">*</span>
+                                                </div>
+                                                <div class="info-dropdown-wrap">
+                                                    <div class="info-dropdown-container">
+                                                        <div class="info-dropdown-inner">
+                                                            <span class="info-dropdown-box">
+                                                                <div class="info-list-wrap">
+                                                                    <select name="product-index" class="product-index">
+                                                                        <option value="unselected" disabled selected>선택해주세요.</option>
+                                                                        <option value="0">서울특별시</option>
+                                                                        <option value="1">부산광역시</option>
+                                                                        <option value="2">대구광역시</option>
+                                                                        <option value="3">인천광역시</option>
+                                                                        <option value="4">광주광역시</option>
+                                                                        <option value="5">대전광역시</option>
+                                                                        <option value="6">울산광역시</option>
+                                                                        <option value="7">강원도</option>
+                                                                        <option value="8">경기도</option>
+                                                                        <option value="9">경상남도</option>
+                                                                        <option value="10">경상북도</option>
+                                                                        <option value="11">전라남도</option>
+                                                                        <option value="12">전라북도</option>
+                                                                        <option value="13">충청남도</option>
+                                                                        <option value="14">충청북도</option>
+                                                                        <option value="15">세종특별자치시</option>
+                                                                        <option value="16">제주특별자치도</option>
+                                                                    </select>
                                                                 </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="form-radio">
-                                                                    <label class="form-radio-label">
-                                                                        <input class="form-radio" type="radio" name="metadata.area.type">
-                                                                        <span class="radio-img"></span>희귀식물
-                                                                    </label>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="form-radio">
-                                                                    <label class="form-radio-label">
-                                                                        <input class="form-radio" type="radio" name="metadata.area.type">
-                                                                        <span class="radio-img"></span>다육/선인장
-                                                                    </label>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="form-radio">
-                                                                    <label class="form-radio-label">
-                                                                        <input class="form-radio" type="radio" name="metadata.area.type">
-                                                                        <span class="radio-img"></span>열매식물
-                                                                    </label>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="form-radio"><label class="form-radio-label">
-                                                                    <input class="form-radio" type="radio" name="metadata.area.type">
-                                                                    <span class="radio-img"></span>
-                                                                    수경/행잉식물</label>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="form-radio">
-                                                                    <label class="form-radio-label">
-                                                                        <input class="form-radio" type="radio" name="metadata.area.type">
-                                                                        <span class="radio-img"></span>야생화/허브/씨앗
-                                                                    </label>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="form-radio">
-                                                                    <label class="form-radio-label"><input class="form-radio" type="radio" name="metadata.area.type">
-                                                                        <span class="radio-img"></span>테라리움
-                                                                    </label>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                                            </span>
+                                                        </div>
+                                                    </div> 
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="css-91icxf e1hi32cq5">
-                                            <div class="css-k7rs7x e1hi32cq4">거래 희망 지역</div>
-                                            <div class="css-l0i7ez e1hi32cq2">
-                                                <div class="css-0 e1hi32cq1">
-                                                    <div class="css-1e9f3hj e3o0fgr0">
-                                                        <span class="css-me3hyb eh58j7j0">
-                                                            <div class="panel-input">
-                                                                <div class="drop-down panel-drop-down panel-input__input-wrap">
-                                                                    <button class="panel-input__input form-control empty" type="button">선택해주세요.</button>
-                                                                    <span class="panel-input__icon">
-                                                                        <svg class="icon" width="10" height="10" preserveAspectRatio="xMidYMid meet" style="fill: currentcolor;"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
-                                                                    </span>
+                                            <div class="each-info">
+                                                <div class="info-title">
+                                                    가격
+                                                    <span class="required">*</span>
+                                                </div>
+                                                <div class="info-dropdown-wrap">
+                                                    <div class="info-dropdown-container">
+                                                        <div class="info-dropdown-inner">
+                                                            <span class="info-dropdown-box">
+                                                                <div class="info-list-wrap">
+                                                                    <input class="price-input" placeholder="가격을 입력하세요" name="price-input">
+                                                                    <span class="price-index">원</span>
                                                                 </div>
-                                                            </div>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="css-91icxf e1hi32cq5">
-                                            <div class="css-k7rs7x e1hi32cq4">가격</div>
-                                            <div class="css-l0i7ez e1hi32cq2">
-                                                <div class="css-0 e1hi32cq1">
-                                                    <div class="css-1e9f3hj e3o0fgr0">
-                                                        <span width="132" class="css-17v8m1f eh58j7j0">
-                                                            <div class="css-1nrevy2 ex4qjl91">
-                                                                <input class="_3ASDR _1qwAY" name="metadata.budget2.construction" value="">
-                                                                <span class="css-1quj80b ex4qjl90">만원</span>
-                                                            </div>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="css-91icxf e1hi32cq5">
-                                            <div class="css-k7rs7x e1hi32cq4">
-                                            저작권 표기(C)
-                                            </div>
-                                            <div class="css-l0i7ez e1hi32cq2">
-                                                <div class="css-0 e1hi32cq1">
-                                                    <span class="css-me3hyb eh58j7j0">
-                                                        <input class="_3ASDR _1qwAY" name="metadata.copyright" placeholder="사진 저작자를 입력해주세요." value="">
-                                                    </span>
+                                                            </span>
+                                                        </div>
+                                                    </div> 
                                                 </div>
                                             </div>
                                         </div>
@@ -332,10 +289,99 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="upload-wrap">
+                            <div class="prev-img-box">
+                              <img
+                                src="../../staticfiles/images/cancel.png"
+                                class="cancel"
+                                width="30px"
+                                height="30px"
+                                alt=""
+                              />
+                            </div>
+                            <div class="upload-container">
+                              <input
+                                type="file"
+                                id="img-file"
+                                name="img-file"
+                                style="display: none;"
+                              />
+                              <label
+                                for="img-file"
+                                style="cursor: pointer;"
+                                class="upload-btn"
+                              >
+                                <p class="top-text-box">
+                                  <span class="top-text">제품 사진을 업로드해주세요.</span>
+                                </p>
+                                <p class="bottom-text-box">
+                                  *권장 사이즈<br />모바일: 1920 x 1920, 최소 1400 x 1400(1:1
+                                  비율)<br />PC: 1920 x 1080, 최소 1400 x 787(16:9 비율)<br />
+                                </p>
+                                <div class="cover-add-coment">제품사진 추가하기</div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="title-input-box">
+                            <input
+                              type="text"
+                              placeholder="제목을 입력해주세요."
+                              maxlength="80"
+                              class="title-input"
+                              value=""
+                            />
+                            <div class="title-count"><span class="count">0</span> / 80</div>
+                          </div>
                     </div>   
                 </div>
+                <div class="content-text-input-wrap">
+                    <div class="content-text-input-container">
+                      <div class="content-text-input-inner">
+                        <div class="content-text-input-box">
+                          <div class="mark-icon-wrap">
+                            <div class="mark-icon-container">
+                              <div class="mark-icon-box">
+                                <button type="button" title="도구" class="mark-icon-btn">
+                                  <svg
+                                    class="svg-icon"
+                                    style="
+                                      width: 27px;
+                                      height: 27px;
+                                      vertical-align: middle;
+                                      fill: currentColor;
+                                      overflow: hidden;
+                                    "
+                                    viewBox="0 0 1024 1024"
+                                    version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M682.666667 533.333333a21.333333 21.333333 0 0 1-15.146667-6.186666l-298.666667-298.666667a21.333333 21.333333 0 0 1 30.293334-30.293333l298.666666 298.666666a21.333333 21.333333 0 0 1 0 30.293334A21.333333 21.333333 0 0 1 682.666667 533.333333z"
+                                      fill="#333333"
+                                    />
+                                    <path
+                                      d="M384 832a21.333333 21.333333 0 0 1-15.146667-6.186667 21.333333 21.333333 0 0 1 0-30.293333l298.666667-298.666667a21.333333 21.333333 0 0 1 30.293333 30.293334l-298.666666 298.666666A21.333333 21.333333 0 0 1 384 832z"
+                                      fill="#333333"
+                                    />
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <p
+                            class="content-text-area"
+                            contenteditable="true"
+                            data-ph="내용을 입력해주세요."
+                          ></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
             </div>
         </div>
     </div>
 </body>
+<script src="/staticfiles/js/transaction/transaction-upload.js"></script>
 </html>
+
