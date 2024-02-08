@@ -384,6 +384,7 @@ a * {
 .scraps-likes-wrap {
   border-top: 1px solid #eaebef;
   padding: 24px 0 6px;
+  margin: 0 -8px;
 }
 
 .scraps-likes-container {

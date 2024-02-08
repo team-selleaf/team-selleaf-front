@@ -1,0 +1,513 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+  font-size: 15px;
+}
+
+a * {
+  border: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+.whole-page-wrap {
+  height: 100%;
+}
+
+.whole-page-container {
+  height: 100%;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.whole-page-container > * {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+/* header, footer를 제외한 나머지 부분을 감싸는 부분 */
+.whole-content-wrap {
+  width: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+
+/* 유저 프로필 이미지와 닉네임, 공유 버튼이 있는 곳을 감싸는 부분(header 바로 밑) */
+.content-title-wrap {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.title-and-button-wrap {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title-text {
+  font-weight: 700;
+  color: #2f3438;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.share-button-wrap {
+  position: relative;
+  flex-shrink: 0;
+  height: 0;
+  margin-left: 16px;
+  transform: translateY(-50%);
+  top: 16px;
+}
+
+.share-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.share-button {
+  margin: 0;
+  background: none;
+  font: inherit;
+  font-size: 14px;
+  line-height: 18px;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: auto;
+  height: 40px;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-weight: 400;
+  box-sizing: border-box;
+  text-align: center;
+  color: #2f3438;
+  border: 1px solid #dadde0;
+  position: relative;
+  margin-left: 6px;
+  vertical-align: middle;
+  transform: translateY(-50%);
+}
+
+.share-button-icon {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.share-button-icon::before {
+  content: "\ef03";
+  font-family: OhouseIcon;
+  vertical-align: top;
+}
+
+.share-text {
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.user-profile-wrap {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.profile-image-wrap {
+  display: inline-block;
+  background: url(../../../images/mypage/base-profile-image.avif) 50% center /
+    cover no-repeat;
+  border-radius: 50%;
+  width: 86px;
+}
+
+.profile-image {
+  height: 0px;
+  display: block;
+  visibility: hidden;
+  padding-top: 100%;
+}
+
+.user-nickname {
+  display: block;
+  margin-top: 8px;
+  font-weight: 700;
+  color: #2f3438;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* 카테고리 네비게이션 */
+.category-nav-wrap {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.category-nav-container {
+  display: flex;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 0 -5px;
+  padding: 0 16px;
+  background: #ffffff;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.category-nav-container > * {
+  margin: 0 5px;
+}
+
+.nav-seperator {
+  margin: 0;
+  padding: 0;
+  height: 1px;
+  border: none;
+  background-color: #eaedef;
+}
+
+.category-button {
+  margin: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 12px 6px;
+}
+
+/* 활성화된 카테고리 메뉴에만 다른 텍스트 컬러 적용 */
+.category-button.active {
+  color: #35c5f0;
+}
+
+/* 활성화되지 않았어도 hover되면 텍스트 색 변경 */
+.category-button:not(.active):hover {
+  color: #35c5f0;
+}
+
+/* 각 카테고리 텍스트 아래에 추가되는 가상요소 */
+/* 줄이 그어지지만, scale이 0이라 평소에는 안 보임 */
+.category-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #35c5f0;
+  transition: color 0.2s, transform 0.2s;
+  transform: scale(0);
+}
+
+/* 마찬가지로 활성화된 메뉴만 아래에 줄이 보이게 함 */
+.category-button.active::after {
+  transform: scale(1);
+}
+
+/*비활성화 된 카테고리도 hover되면 줄이 보이게 됨 */
+.category-button:not(.active):hover::after {
+  transform: scale(1);
+}
+
+.category-name-wrap {
+  padding: 4px;
+  margin: -4px;
+}
+
+.category-name {
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+}
+
+.category-button * {
+  font-weight: 700;
+}
+
+.edit-menu-wrap {
+  display: flex;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  background: #ffffff;
+  margin: 2px 0 0;
+  padding: 10px 16px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* 카테고리 필터 */
+/* 편집 클릭하면 안 보이고, 취소 누르면 다시 보임 */
+.category-list {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  min-width: 0;
+  margin: 0 -2px;
+}
+
+/* 스크랩한 컨텐츠의 개수를 표시하는 부분 */
+/* 편집 버튼을 눌러야만 보임 */
+.content-count-wrap {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.content-count-wrap i {
+  font-style: normal;
+  color: rgb(53, 197, 240);
+}
+
+/* 페이지를 처음 열었을 때 표시되는 편집 버튼 */
+/* 누르면 이 부분 display가 none으로,  */
+.edit-button {
+  display: inline-block;
+  margin: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0 6px;
+  color: #35c5f0;
+  font-weight: 700;
+}
+
+.edit-button:hover {
+  background-color: #f7f9fa;
+}
+
+/* 편집을 눌러야 보이는 버튼들 */
+/* 취소 누르면 원복 */
+.edit-menu-button {
+  margin: 0px 0px 0px 6px;
+  border: none;
+  background: none;
+  font-style: inherit;
+  font-variant: inherit;
+  font-stretch: inherit;
+  font-family: inherit;
+  font-optical-sizing: inherit;
+  font-kerning: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0px 6px;
+  font-weight: 700;
+  color: rgb(130, 140, 148);
+}
+
+/* 비활성화 된 버튼에 적용 */
+.edit-menu-button:disabled {
+  color: rgb(194, 200, 204);
+  cursor: default;
+}
+
+/* 활성화된 버튼은 hover되면 배경색 변경 */
+.edit-menu-button:not(:disabled):hover {
+  background-color: rgb(247, 249, 250);
+}
+
+/* 스크랩한 정보들이 표시되는 부분 */
+.main-content {
+  width: 343px;
+  text-align: center;
+  margin: 60px auto 100px;
+}
+
+/* 스크랩한 게시물이 없으면 표시 */
+.no-scraps-yet {
+  font-size: 24px;
+  line-height: 32px;
+  color: #2f3438;
+  white-space: pre-wrap;
+}
+
+.scrap-if-you-want {
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 10px;
+  color: #828c94;
+  white-space: pre-wrap;
+}
+
+/* 스크롤을 어느 정도 내리면 우하단에 표시되는, 최상단으로 가기 버튼 */
+.top-button-wrap {
+  overflow: visible;
+  position: fixed;
+  right: 6px;
+  bottom: 10px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: env(safe-area-inset-bottom, 0);
+  padding: 10px;
+  border: 0px;
+  background: none;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.top-button {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background: none rgb(255, 255, 255);
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+  font-stretch: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-optical-sizing: inherit;
+  font-kerning: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  box-shadow: rgba(63, 71, 77, 0.25) 0px 2px 10px;
+  height: 48px;
+  line-height: 0;
+  color: rgb(47, 52, 56);
+  border-radius: 50%;
+  width: 48px;
+}
+
+.arrow-icon {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.arrow-icon::before {
+  content: "\e936";
+  font-family: OhouseIcon;
+  vertical-align: top;
+}
+
+/* 공유 버튼을 클릭하면 나오는 모달창 */
+.share-modal-wrap {
+  transform-origin: 50% 0;
+  box-sizing: border-box;
+  z-index: 1000;
+  position: relative;
+  pointer-events: auto;
+  margin-top: 17px;
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  visibility: hidden;
+}
+
+.share-modal-wrap.enabled {
+  transform-origin: 50% 0;
+  box-sizing: border-box;
+  z-index: 1000;
+  position: relative;
+  pointer-events: auto;
+  margin-top: 17px;
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  visibility: visible;
+}
+
+.share-modal-container {
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 -1px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 300px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px -6px;
+}
+
+.share-modal-container::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  top: -8px;
+  margin: 0 1px;
+  border-width: 0 9px 9px;
+  border-color: transparent transparent #fff;
+  left: 50%;
+  margin-left: 0;
+  transform: translateX(-50%);
+}
+
+.kakao-share-button,
+.cilpboard-button {
+  width: 40px;
+  height: 40px;
+  margin: 0px 6px;
+  padding: 0px;
+  border: 0px;
+  background: none;
+}
+
+.kakao-share-button > img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 평소 웹에서 보이는 형식 */
+@media (min-width: 768px) {
+  .main-content {
+    margin: 76px auto 120px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content * {
+    white-space: normal;
+  }
+}
+
+@media (min-width: 768px) {
+  .top-button-wrap {
+    right: 20px;
+  }
+}
