@@ -18,6 +18,10 @@ figure {
   margin: 0;
 }
 
+:focus {
+  outline: none;
+}
+
 .whole-page-wrap {
   height: 100%;
 }
@@ -276,6 +280,69 @@ figure {
   margin: 0 -2px;
 }
 
+.category-list-container {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.category-button-wrap {
+  display: inline-block;
+  margin: 0 2px;
+  vertical-align: bottom;
+  font-size: 0;
+  line-height: 0;
+}
+
+.category-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.category-list-button {
+  user-select: none;
+  display: inline-block;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  background: none;
+  font-family: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.1s, background-color 0.1s, border-color 0.1s;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
+  color: #757575;
+  padding: 7px 8px 6px;
+  border-radius: 4px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.category-list-button:hover {
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+}
+
+/* '전체 카테고리' 외 다른 요소를 선택하면 */
+/* sorted 클래스가 추가됨에 따라 버튼의 스타일 변경 */
+.category-list-button.sorted {
+  background-color: #e8f4fb;
+  border-color: #e8f4fb;
+  color: #35c5f0;
+}
+
+.category-list-button.sorted:hover {
+  background-color: #dff0f9;
+  border-color: #dff0f9;
+}
+
 /* 스크랩한 컨텐츠의 개수를 표시하는 부분 */
 /* 편집 버튼을 눌러야만 보임 */
 .content-count-wrap {
@@ -491,6 +558,244 @@ figure {
 .kakao-share-button > img {
   width: 40px;
   height: 40px;
+}
+
+/* 카테고리 버튼에 마우스 올리면 나오는 모달창 */
+.first-category-modal-wrap {
+  transform-origin: 50% 0;
+  box-sizing: border-box;
+  z-index: 1000;
+  position: relative;
+  pointer-events: auto;
+  margin-top: 17px;
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.first-category-modal-wrap::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  top: -8px;
+  margin: 0 1px;
+  border-width: 0 9px 9px;
+  border-color: transparent transparent #fff;
+  left: 50%;
+  margin-left: 0;
+  transform: translateX(-50%);
+}
+
+.first-category-modal-container {
+  margin: 0 -1px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 -1px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.first-category-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  width: 200px;
+  min-height: 50px;
+  max-height: 425px;
+  overflow: auto;
+}
+
+.first-categories-container {
+  user-select: none;
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  border: none;
+  background: #fff;
+  color: #424242;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.first-categories-container:hover {
+  background-color: #effbff;
+}
+
+.first-categories-container:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.first-categories-container.selected {
+  color: #35c5f0;
+  font-weight: 700;
+}
+
+.first-category-title-wrap {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding-right: 25px;
+}
+
+.first-caregory-title {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 20px;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+/* 첫 번째 카테고리 옆에 표시되는, 세부 카테고리에 포함되는 게시물의 개수 */
+.first-category-count {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 20px;
+  -webkit-box-flex: 0;
+  flex: 0 1 auto;
+  margin-left: 5px;
+  color: #35c5f0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.first-category-title-wrap > .sub-category-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 카테고리 모달창 내 각 카테고리에 mouseover 되면 나오는, 소카테고리 모달창 */
+.second-category-modal-wrap {
+  transform-origin: 50% 0;
+  box-sizing: border-box;
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.second-category-modal-container {
+  margin: 0 -1px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 -1px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.second-category-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  width: 200px;
+  min-height: 50px;
+  max-height: 425px;
+  overflow: auto;
+}
+
+.second-categories-container {
+  user-select: none;
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  border: none;
+  background: #fff;
+  color: #424242;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.second-categories-container.selected {
+  color: #35c5f0;
+  font-weight: 700;
+}
+
+.second-categories-container:hover {
+  background-color: #effbff;
+}
+
+.second-categories-container:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.second-category-title-wrap {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0 12px 0 8px;
+}
+
+.second-caregory-title {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 20px;
+  flex: 0 0 auto;
+}
+
+.second-category-count {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 20px;
+  -webkit-box-flex: 0;
+  flex: 0 1 auto;
+  margin-left: 5px;
+  color: #35c5f0;
+  font-weight: 700;
+  text-align: right;
 }
 
 /* 평소 웹에서 보이는 형식 */
