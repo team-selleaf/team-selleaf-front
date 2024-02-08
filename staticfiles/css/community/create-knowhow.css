@@ -667,7 +667,7 @@ input.title-input {
   resize: none;
   -webkit-appearance: none;
 }
-.url-input[placeholder='표시할 내용'] {
+.url-input[placeholder="표시할 내용"] {
   width: 197.3px;
 }
 .add-and-delete-btn {
@@ -706,3 +706,4 @@ input::placeholder {
   line-height: 16px;
   color: #c2c2c2;
 }
+
