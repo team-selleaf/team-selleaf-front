@@ -155,7 +155,7 @@ addAndDeleteBtn.forEach((item) => {
     const btnItem = e.target.closest("button");
     const itemTitle = btnItem.getAttribute("title");
     if (itemTitle === "추가") {
-      if (itemCount <= 2) {
+      if (itemCount <= 1) {
         appendItem();
       }
     }
