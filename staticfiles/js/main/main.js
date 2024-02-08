@@ -42,6 +42,20 @@ if (isLogin) {
   headerkakaoIcon.style.display = "none";
 }
 
+// 카카오 아이콘 눌렀을 때 모달창 구현 코드
+const myPagemodal = document.querySelector(".header-mymenumodal-wrap");
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".header-mymenumodal-wrap")) {
+    if (e.target.closest(".header-kakao-button")) {
+      console.log("들어옴");
+      myPagemodal.classList.toggle("myPagemodalOpen");
+      return;
+    }
+    myPagemodal.classList.remove("myPagemodalOpen");
+  }
+});
+
 // 글쓰기 버튼을 클릭하면 모달이 생성되고 다시 클릭하면 모달이 없어져야함
 // 대신 화면의 다른 부분을 클릭해도 모달이 없어져야함
 const modalButton = document.querySelector(".header-write-wrap");
