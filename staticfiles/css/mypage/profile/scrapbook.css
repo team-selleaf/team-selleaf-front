@@ -264,6 +264,18 @@ figure {
   padding-right: 0;
 }
 
+/* 카테고리 필터 */
+/* 편집 클릭하면 안 보이고, 취소 누르면 다시 보임 */
+.category-list {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  min-width: 0;
+  margin: 0 -2px;
+}
+
 /* 스크랩한 컨텐츠의 개수를 표시하는 부분 */
 /* 편집 버튼을 눌러야만 보임 */
 .content-count-wrap {
