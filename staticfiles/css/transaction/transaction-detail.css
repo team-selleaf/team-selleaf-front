@@ -2062,6 +2062,11 @@ li:first-child>.product-detail-nav-item{
     right: 12px;
 }
 
+.img-scrap-button>img{
+    width: 24px;
+    height: 24px;
+}
+
 .product_dark-overlay{
     position: absolute;
     top: 0;
@@ -2172,7 +2177,6 @@ li:first-child>.product-detail-nav-item{
 
 .scroller-ui-prev{
     left: 10px;
-    opacity: 0;
     transform: translate(-50%,-50%);
     position: absolute;
     top: 50%;
