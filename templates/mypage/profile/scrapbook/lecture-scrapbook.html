@@ -27,15 +27,15 @@
         -webkit-font-smoothing: antialiased;
       }
     </style>
-    <link rel="stylesheet" href="../../../staticfiles/css/common.css" />
+    <link rel="stylesheet" href="../../../../staticfiles/css/common.css" />
     <!-- 여기까지는 무조건 고정으로 모든 페이지에 복붙하세요 -->
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
       rel="stylesheet"
-      href="../../../staticfiles/css/mypage/profile/scrapbook.css"
+      href="../../../../staticfiles/css/mypage/profile/scrapbook/lecture-scrapbook.css"
     />
-    <!-- 나중에 DB, 서버 연동으로 (닉네임)님의 취향 스크랩북 으로 바꾸기 -->
-    <title>Selleaf | 나의 취향 스크랩북</title>
+    <!-- 나중에 DB, 서버 연동으로 (닉네임)님의 강의 스크랩북 으로 바꾸기 -->
+    <title>Selleaf | 나의 강의 스크랩북</title>
   </head>
   <body>
     <div class="whole-page-wrap">
@@ -64,7 +64,7 @@
                 <figure class="profile-image-wrap">
                   <img
                     class="profile-image"
-                    src="../../../staticfiles/images/mypage/base-profile-image.avif"
+                    src="../../../../staticfiles/images/mypage/base-profile-image.avif"
                     height="0"
                   />
                 </figure>
@@ -86,19 +86,19 @@
             <div class="sticky-container" style="position: relative">
               <div class="category-nav-wrap">
                 <div class="category-nav-container">
-                  <!-- 모두 -->
+                  <!-- 강의 -->
                   <a href="">
                     <button class="category-button active">
                       <div class="category-name-wrap">
-                        <p class="category-name">모두(0)</p>
+                        <p class="category-name">강의(0)</p>
                       </div>
                     </button>
                   </a>
-                  <!-- 상품 -->
+                  <!-- 거래 -->
                   <a href="">
                     <button class="category-button">
                       <div class="category-name-wrap">
-                        <p class="category-name">상품(0)</p>
+                        <p class="category-name">거래(0)</p>
                       </div>
                     </button>
                   </a>
@@ -120,41 +120,6 @@
           >
             <div class="sticky-container" style="position: relative">
               <div class="edit-menu-wrap">
-                <!-- 카테고리 필터를 표시하는 부분 -->
-                <!-- '모두' 페이지일 때는 버튼 표시 안 함 -->
-                <!-- 또한, JS의 클릭 이벤트로 이 부분의 display 속성이 변화 -->
-                <!-- 상품 페이지 내 + 편집 버튼까지 뜬 상태여야 display가 block이 됨 -->
-                <div class="category-filter-wrap">
-                  <div class="category-filter-container">
-                    <div class="category-filter">
-                      <div class="category-list-wrap">
-                        <ul class="category-list-container">
-                          <li class="category-button-wrap">
-                            <div class="category-button-container">
-                              <!-- JS 이벤트로 버튼 자체, 텍스트, 아이콘, hover 시 색깔 전부 변경 -->
-                              <!-- innerText는 JS 이벤트에서의 선택에 따라 변경 -->
-                              <button class="category-list-button">
-                                카테고리
-                                <svg
-                                  class="icon"
-                                  width="12"
-                                  height="12"
-                                  viewBox="0 0 12 12"
-                                  fill="currentColor"
-                                  preserveAspectRatio="xMidYMid meet"
-                                >
-                                  <path
-                                    d="M6.069 6.72l4.123-3.783 1.216 1.326-5.32 4.881L.603 4.273l1.196-1.346z"
-                                  ></path>
-                                </svg>
-                              </button>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <!-- 스크랩한 컨텐츠의 개수를 표시하는 부분 -->
                 <div class="content-count-wrap">
                   <!-- JS의 클릭 이벤트로 이 부분의 display 속성이 변화 - 평소에는 none -->
@@ -234,7 +199,7 @@
             <!-- 카카오 공유 버튼 -->
             <button type="button" class="kakao-share-button">
               <img
-                src="../../../staticfiles/images/other-sns-logos/kakao-logo.svg"
+                src="../../../../staticfiles/images/other-sns-logos/kakao-logo.svg"
               />
             </button>
             <!-- 클립보드 복사 버튼 -->
@@ -267,155 +232,6 @@
         </div>
       </div>
     </div>
-    <!-- 카테고리 버튼에 mouseover 되면 나오는 모달창 -->
-    <div class="modal-wrap" title="대카테고리 모달창">
-      <div
-        class="modal-container"
-        style="
-          position: absolute;
-          z-index: 1000;
-          left: 231.1px;
-          top: 414.75px;
-          transform: translateX(-50%);
-        "
-      >
-        <div class="first-category-modal-wrap">
-          <div class="first-category-modal-container" title="카테고리">
-            <ul class="first-category-list">
-              <!-- 전체 카테고리 -->
-              <li class="first-categories-wrap" title="전체 카테고리">
-                <button
-                  class="first-categories-container selected"
-                  type="button"
-                >
-                  <div class="first-category-title-wrap">
-                    <span class="first-caregory-title">전체 카테고리</span>
-                  </div>
-                </button>
-              </li>
-              <!-- 식물 카테고리 -->
-              <li class="first-categories-wrap" title="식물">
-                <button class="first-categories-container" type="button">
-                  <div class="first-category-title-wrap">
-                    <span class="first-caregory-title">식물</span>
-                    <span class="first-category-count">0</span>
-                    <svg
-                      class="sub-category-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      preserveAspectRatio="xMidYMid meet"
-                    >
-                      <path
-                        fill="currentColor"
-                        fill-rule="nonzero"
-                        d="M4 13.128l1.5 1.539L12 8 5.5 1.333 4 2.872 9 8z"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-              </li>
-              <!-- 수공예품 카테고리 -->
-              <li class="first-categories-wrap" title="수공예품">
-                <button class="first-categories-container" type="button">
-                  <div class="first-category-title-wrap">
-                    <span class="first-caregory-title">수공예품</span>
-                    <span class="first-category-count">0</span>
-                    <svg
-                      class="sub-category-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      preserveAspectRatio="xMidYMid meet"
-                    >
-                      <path
-                        fill="currentColor"
-                        fill-rule="nonzero"
-                        d="M4 13.128l1.5 1.539L12 8 5.5 1.333 4 2.872 9 8z"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-              </li>
-              <!-- 기타 카테고리 -->
-              <li class="first-categories-wrap" title="기타">
-                <button class="first-categories-container" type="button">
-                  <div class="first-category-title-wrap">
-                    <span class="first-caregory-title">기타</span>
-                    <span class="first-category-count">0</span>
-                    <svg
-                      class="sub-category-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      preserveAspectRatio="xMidYMid meet"
-                    >
-                      <path
-                        fill="currentColor"
-                        fill-rule="nonzero"
-                        d="M4 13.128l1.5 1.539L12 8 5.5 1.333 4 2.872 9 8z"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 위의 카테고리 모달 내 목록에 mouseover 되면 나오는 모달창 -->
-    <div class="modal-wrap" title="소카테고리 모달창">
-      <div
-        class="modal-container"
-        style="position: absolute; z-index: 1000; left: 325.3px; top: 481.75px"
-      >
-        <div class="second-category-modal-wrap">
-          <div class="second-category-modal-container" title="상품">
-            <ul class="second-category-list">
-              <!-- 소카테고리 리스트 -->
-              <!-- JS 이벤트로 리스트 내용 변경 -->
-              <!-- 관엽식물 -->
-              <li class="second-categories-wrap" title="관엽식물">
-                <button class="second-categories-container">
-                  <div class="second-category-title-wrap">
-                    <span class="second-caregory-title">관엽식물</span>
-                    <span class="second-category-count">0</span>
-                  </div>
-                </button>
-              </li>
-              <!-- 침엽식물 -->
-              <li class="second-categories-wrap" title="침엽식물">
-                <button class="second-categories-container">
-                  <div class="second-category-title-wrap">
-                    <span class="second-caregory-title">침엽식물</span>
-                    <span class="second-category-count">0</span>
-                  </div>
-                </button>
-              </li>
-              <!-- 희귀식물 -->
-              <li class="second-categories-wrap" title="희귀식물">
-                <button class="second-categories-container">
-                  <div class="second-category-title-wrap">
-                    <span class="second-caregory-title">희귀식물</span>
-                    <span class="second-category-count">0</span>
-                  </div>
-                </button>
-              </li>
-              <!-- 다육/선인장 -->
-              <li class="second-categories-wrap" title="다육/선인장">
-                <button class="second-categories-container">
-                  <div class="second-category-title-wrap">
-                    <span class="second-caregory-title">다육/선인장</span>
-                    <span class="second-category-count">0</span>
-                  </div>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
-  <script src="../../../staticfiles/js/mypage/profile/scrapbook.js"></script>
+  <script src="../../../../staticfiles/js/mypage/profile/scrapbook/lecture-scrapbook.js"></script>
 </html>
