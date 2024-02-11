@@ -503,17 +503,8 @@ figure {
 }
 
 .share-modal-wrap.enabled {
-  transform-origin: 50% 0;
-  box-sizing: border-box;
-  z-index: 1000;
-  position: relative;
-  pointer-events: auto;
-  margin-top: 17px;
   visibility: visible;
   opacity: 1;
-  transform: none;
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-  visibility: visible;
 }
 
 .share-modal-container {
@@ -568,10 +559,15 @@ figure {
   position: relative;
   pointer-events: auto;
   margin-top: 17px;
-  visibility: visible;
-  opacity: 1;
+  visibility: hidden;
+  opacity: 0;
   transform: none;
   transition: opacity 0.2s, transform 0.2s;
+}
+
+.first-category-modal-wrap.enabled {
+  visibility: visible;
+  opacity: 1;
 }
 
 .first-category-modal-wrap::after {

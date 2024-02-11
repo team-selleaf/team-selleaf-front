@@ -123,6 +123,38 @@ cancelButton.addEventListener("click", () => {
   카테고리 버튼(category-filter-wrap)에 mouseover 되면 대카테고리 모달창 표시
   mouseout 되면 다시 안 보이게 변경
 */
+/*
+  02/09
+  원래는 카테고리 버튼 or 대카테고리 모달창에 마우스 올리면
+  모달창이 떠있는 상태 그대로 유지되어야 하지만,
+
+  현재 카테고리 버튼 벗어나는 순간 모달창이 사라지는 문제가 있어서
+  임시로 원본 사이트의 mouseover 이벤트가 아닌, click 이벤트로 걸어놓음
+
+*/
+
+// 필요한 객체 가져오기 - 대카테고리 모달창
+const categoryModal = document.querySelector(".first-category-modal-wrap");
+
+// mouseover 이벤트 - 대카테고리 모달창 표시/숨김
+// 버튼 or 모달창 이외의 장소에 마우스 올리면 모달창 닫힘
+document.addEventListener("click", (e) => {
+  // 만약 대카테고리 모달창 이외의 장소에 마우스를 올린 경우
+  if (!e.target.closest(".first-category-modal-wrap")) {
+    // 카테고리 버튼 or 대카테고리 모달창에 마우스를 올렸다면
+    if (e.target.closest(".category-filter-wrap")) {
+      // 대카테고리 모달창에 enabled 클래스 추가함으로서 표시
+      // 카테고리 버튼 한 번 더 누르면 닫힘
+      categoryModal.classList.toggle("enabled");
+
+      // 아래쪽 실행 안 하고 함수 종료
+      return;
+    }
+    // 대카테고리 모달창, 카테고리 버튼 이외의 장소에 마우스를 올린 경우 대카테고리 모달창 숨김
+    categoryModal.classList.remove("enabled");
+  }
+  // 대카테고리 모달창에 마우스 올린 경우 아무 것도 실행 안함(상태 유지)
+});
 
 /*
   대카테고리 모달창 내 메뉴(first-categories-wrap)에 mouseover 되면
@@ -141,6 +173,92 @@ cancelButton.addEventListener("click", () => {
             이 방식으로 가져오기 가능!
 */
 
+// 필요한 객체 가져오기 - 소카테고리 모달창
+const subCategoryModal = document.querySelector(".second-category-modal-wrap");
+
+// 소카테고리 리스트 - 대카테고리에 따라 내용물 변경
+const subCategoryList = document.querySelector(".second-category-list");
+
+// 마우스 올린 메뉴에 따라 표시될 서로 다른 소카테고리들
+const plantList = ["관엽식물", "침엽식물", "희귀식물", "다육/선인장"]; // 식물 카테고리
+const handmadeList = ["분재", "테라리움", "기타"]; // 수공예품 카테고리
+const othersList = ["모종삽", "비료", "DIY키트"];
+
+// mouseover 이벤트 - 소카테고리 모달창 표시/숨김
+// 대카테고리 내 메뉴 or 소카테고리 모달창 이외의 장소에 마우스 올리면 모달창 닫힘
+document.addEventListener("mouseover", (e) => {
+  // 만약 소카테고리 모달창 이외의 장소에 마우스를 올린 경우
+  if (!e.target.closest(".second-category-modal-wrap")) {
+    // 대카테고리 모달창 내 메뉴에 마우스를 올렸다면
+    if (e.target.closest(".first-categories-wrap")) {
+      // 대카테고리 메뉴를 감싸는 최상단 태그의 title을 변수에 할당
+      const firstCategory = e.target.closest(".first-categories-wrap").title;
+
+      // 전체 카테고리에 마우스 올렸는지 확인
+      if (firstCategory == "전체 카테고리") {
+        // 모달창 띄우지 않음
+        subCategoryModal.style.display = "none";
+
+        // 아래쪽 실행 안하고 리스너 종료
+        return;
+      }
+
+      // 만약 다른 메뉴에 마우스를 올렸다면 이 부분 실행
+      // 소카테고리 리스트(ul) 안에 들어갈 정보를 담을 변수 선언
+      let resultHTML = ``;
+
+      // 대카테고리에 따라 다른 소카테고리 메뉴를 담을 빈 배열도 선언
+      let detailedList = [];
+
+      // 어떤 메뉴에 올렸는지에 따라 서로 다른 리스트 출력하게 설정 - title 속성 값에 따라서
+      switch (firstCategory) {
+        case "식물":
+          detailedList = plantList;
+          break;
+
+        case "수공예품":
+          detailedList = handmadeList;
+          break;
+
+        case "기타":
+          detailedList = othersList;
+          break;
+      }
+
+      // 리스트 선정이 끝나면 해당 리스트 내 항목들을 하나하나 li 태그 안에 담아줌
+      detailedList.forEach((item) => {
+        // 나중에 서버 연동 시에 받아올 각 요소 별 게시물 수(일단은 0)를 담은 변수 선언
+        let itemCount = 0;
+
+        // 리스트 내 요소의 정보가 담긴 html 태그 생성
+        let subCategoryItem = `<li class="second-categories-wrap" title="${item}">
+          <button class="second-categories-container">
+            <div class="second-category-title-wrap">
+              <span class="second-caregory-title">${item}</span>
+              <span class="second-category-count">${itemCount}</span>
+            </div>
+          </button>
+        </li>`;
+
+        // 리스트 하나 생성할 때마다 resultHTML에 추가
+        resultHTML += subCategoryItem;
+      });
+
+      // 소카테고리에 위 과정을 통해 얻은 전체 리스트 할당
+      subCategoryList.innerHTML = resultHTML;
+
+      // 소카테고리 모달창 표시
+      subCategoryModal.style.display = "block";
+
+      // 아래쪽 실행 안 하고 함수 종료
+      return;
+    }
+    // 모달창, 버튼 이외의 장소에 마우스를 올린 경우 소카테고리 모달창 display = none
+    subCategoryModal.style.display = "none";
+  }
+  // 모달에 마우스 올린 경우 아무 것도 실행 안함(상태 유지)
+});
+
 /*
   대/소카테고리 공통
 
@@ -149,6 +267,8 @@ cancelButton.addEventListener("click", () => {
 
   단, 전체 카테고리의 경우 원래의 '카테고리' 텍스트로 변경되고,
   색깔도 원래의 것으로 돌아옴(클래스 remove하기?)
+
+  02/09 - 이부분도 다른 사람들과 상의 후 추가바람
 */
 
 /*
@@ -184,6 +304,4 @@ cancelButton.addEventListener("click", () => {
 // 나중에 폴더이동, 삭제 버튼이랑 이 페이지에 표시되는 게시물에 대한 이벤트도
 // 이 페이지 내에서 처리할 게 있으면 추가할 것
 
-console.log(
-  document.querySelector(".first-categories-wrap[title='전체 카테고리']")
-);
+// console.log(document.querySelector(".first-categories-wrap[title='식물']"));
