@@ -19,7 +19,7 @@ function appendItem(post) {
       <div class="main-content-container">
         <div class="main-content">
           <img
-            src="../../staticfiles/images/blank-image.png"
+            src="../../../staticfiles/images/blank-image.png"
             alt="content-img"
             class="content-img"
           />
@@ -30,7 +30,7 @@ function appendItem(post) {
           >
             <span class="scrap-btn-box"
               ><img
-                src="../../staticfiles/images/scrap-off.png"
+                src="../../../staticfiles/images/scrap-off.png"
                 alt=""
               />
             </span>
@@ -65,7 +65,7 @@ function appendItem(post) {
         <a class="content-uploader" href="#">
           <figure class="uploader-icon-box">
             <img
-              src="../../staticfiles/images/blank-image.png"
+              src="../../../staticfiles/images/blank-image.png"
               height="0"
               class="uploader-icon"
             />
@@ -147,29 +147,22 @@ function scrapEvent() {
     item.addEventListener("click", () => {
       const img = item.querySelector("img");
       const imgSrc = img.getAttribute("src");
-      imgSrc === "../../staticfiles/images/scrap-off.png"
-        ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
-        : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+      imgSrc === "../../../staticfiles/images/scrap-off.png"
+        ? img.setAttribute("src", "../../../staticfiles/images/scrap-on.png")
+        : img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
     });
   });
 }
 scrapEvent();
 
-document.addEventListener("click", (e) => {
-  const modalWrap = document.querySelector(".modal-wrap");
-  if (e.target.closest(".filter-btn")) {
-    modalWrap.classList.toggle("model-open");
-  }
-  if (!(e.target.closest(".filter-btn") || e.target.closest(".modal-wrap"))) {
-    modalWrap.classList.remove("model-open");
-  }
-  const filter = e.target.closest(".modal-content-item");
-  if (filter) {
-    const filterBtn = document.querySelector(".filter-btn");
-    const fliterIcon = '<span class="filter-drop-down-icon"></span>';
-    filter.innerText === "인기순"
-      ? (filterBtn.innerHTML = "인기순" + fliterIcon)
-      : (filterBtn.innerHTML = "최신순" + fliterIcon);
-    modalWrap.classList.remove("model-open");
-  }
+const filterBtnLabel = document.querySelectorAll(".filter-btn-label");
+filterBtnLabel.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    filterBtnLabel.forEach((item) => {
+      item.classList.remove("choice");
+    });
+    const filterBtn = e.target.closest(".filter-btn-label");
+    filterBtn.classList.toggle("choice");
+  });
 });

@@ -28,66 +28,73 @@
     </style>
     <link
       rel="shortcut icon"
-      href="../../staticfiles/images/selleaf.png"
+      href="../../../staticfiles/images/selleaf.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="../../staticfiles/css/common.css" />
-    <link rel="stylesheet" href="../../staticfiles/css/community/home.css" />
+    <link rel="stylesheet" href="../../../staticfiles/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="../../../staticfiles/css/community/web/channel-detail.css"
+    />
     <title>채널 상세보기</title>
   </head>
   <body>
-    <div class="home-wrap">
-      <div class="home-container">
-        <div class="home-main-wrap">
-          <div
-            class="sticky-container"
-            style="
-              position: sticky;
-              top: 133px;
-              transition: top 0.1s ease 0s;
-              z-index: 10;
-            "
-          >
-            <div style="position: relative;">
-              <div class="filter-wrap">
-                <div class="filter-container">
-                  <div class="filter-inner">
-                    <span>
-                      <label class="filter-btn-label">
-                        <input type="checkbox" class="filter-btn" />
-                        <span class="filter-btn-text">거실</span>
-                      </label>
-                    </span>
-                    <span>
-                      <label class="filter-btn-label">
-                        <input type="checkbox" class="filter-btn" />
-                        <span class="filter-btn-text">수납꿀팁</span>
-                      </label>
-                    </span>
-                    <span>
-                      <label class="filter-btn-label">
-                        <input type="checkbox" class="filter-btn" />
-                        <span class="filter-btn-text">플랜테리어</span>
-                      </label>
-                    </span>
-                    <span>
-                      <label class="filter-btn-label">
-                        <input type="checkbox" class="filter-btn" />
-                        <span class="filter-btn-text">주방</span>
-                      </label>
-                    </span>
-                    <span>
-                      <label class="filter-btn-label">
-                        <input type="checkbox" class="filter-btn" />
-                        <span class="filter-btn-text">원룸</span>
-                      </label>
-                    </span>
+    <div class="channel-detail-wrap">
+      <div class="channel-detail-container">
+        <img
+          src="../../../staticfiles/images/blank-image.png"
+          class="channel-detail-main-img"
+        />
+        <div class="channel-detail-main-wrap">
+          <div class="channel-detail-main-container">
+            <div class="main-title-wrap">
+              <div>
+                <div class="main-title">
+                  #오늘의가든
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="main-title-icon"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M8.71 14.247a1 1 0 0 1-1.414 0L5.967 12.92h-1.88a1 1 0 0 1-1-1v-1.88L1.76 8.71a1 1 0 0 1 0-1.414l1.329-1.329v-1.88a1 1 0 0 1 1-1h1.879L7.296 1.76a1 1 0 0 1 1.414 0l1.33 1.329h1.879a1 1 0 0 1 1 1v1.88l1.328 1.328a1 1 0 0 1 0 1.414l-1.329 1.33v1.879a1 1 0 0 1-1 1H10.04L8.71 14.247Zm1.69-7.052a.75.75 0 0 0-1.066-1.056L7.246 8.247l-.694-.754a.75.75 0 0 0-1.104 1.015L6.673 9.84a.75.75 0 0 0 1.085.02L10.4 7.195Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="main-content-data">
+                  <span>
+                    <span class="main-text-style"> 3,759 </span>
+                    명 활동 중</span
+                  >
+                  <span>・</span>
+                  <span>
+                    <span class="main-text-style">3,142</span>
+                    개의 콘텐츠</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="main-sub-title">
+              오늘의가든 식집사 모집 중🌷 우리 아이 성장기부터 열심히 완주해서
+              받은 수확물도 마음껏 자랑해요 🪴
+            </div>
+            <hr class="split-bar" />
+            <div class="filter-box">
+              <button type="button" class="filter-btn">
+                인기순<span class="filter-drop-down-icon"></span>
+              </button>
+              <div class="modal-wrap">
+                <div>
+                  <div class="modal-container">
+                    <div class="modal-content-item">인기순</div>
+                    <div class="modal-content-item">최신순</div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="home-main-container">
             <div>
               <div class="main-content-wrap" style="position: relative;">
                 <div
@@ -95,7 +102,7 @@
                     width: 100%;
                     height: 100%;
                     position: absolute;
-                    top: 20px;
+                    top: 0px;
                   "
                 >
                   <div
@@ -114,7 +121,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 alt="content-img"
                                 class="content-img"
                               />
@@ -125,7 +132,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -160,7 +167,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -195,7 +202,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -205,7 +212,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -240,7 +247,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -275,7 +282,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -285,7 +292,7 @@
                               >
                                 <span class="scrap-btn-box">
                                   <img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -320,7 +327,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -355,7 +362,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -365,7 +372,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -400,7 +407,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -434,7 +441,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 alt="content-img"
                                 class="content-img"
                               />
@@ -445,7 +452,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -480,7 +487,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -515,7 +522,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -525,7 +532,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -560,7 +567,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -595,7 +602,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -605,7 +612,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -640,7 +647,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -675,7 +682,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -685,7 +692,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -720,7 +727,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -755,7 +762,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 alt="content-img"
                                 class="content-img"
                               />
@@ -766,7 +773,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -801,7 +808,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -836,7 +843,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -846,7 +853,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -881,7 +888,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -916,7 +923,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -926,7 +933,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -961,7 +968,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -996,7 +1003,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1006,7 +1013,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1041,7 +1048,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1075,7 +1082,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 alt="content-img"
                                 class="content-img"
                               />
@@ -1086,7 +1093,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1121,7 +1128,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1156,7 +1163,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1166,7 +1173,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1201,7 +1208,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1236,7 +1243,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1246,7 +1253,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1281,7 +1288,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1316,7 +1323,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1326,7 +1333,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1361,7 +1368,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1396,7 +1403,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 alt="content-img"
                                 class="content-img"
                               />
@@ -1407,7 +1414,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1442,7 +1449,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1477,7 +1484,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1487,7 +1494,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1522,7 +1529,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1557,7 +1564,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1567,7 +1574,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1602,7 +1609,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1637,7 +1644,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1647,7 +1654,7 @@
                               >
                                 <span class="scrap-btn-box">
                                   <img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1682,7 +1689,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1717,7 +1724,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 alt="content-img"
                                 class="content-img"
                               />
@@ -1728,7 +1735,7 @@
                               >
                                 <span class="scrap-btn-box">
                                   <img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1763,7 +1770,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1798,7 +1805,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1808,7 +1815,7 @@
                               >
                                 <span class="scrap-btn-box">
                                   <img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1843,7 +1850,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1878,7 +1885,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1888,7 +1895,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -1923,7 +1930,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -1958,7 +1965,7 @@
                           <div class="main-content-container">
                             <div class="main-content">
                               <img
-                                src="../../staticfiles/images/blank-image.png"
+                                src="../../../staticfiles/images/blank-image.png"
                                 class="content-img"
                               />
                               <button
@@ -1968,7 +1975,7 @@
                               >
                                 <span class="scrap-btn-box"
                                   ><img
-                                    src="../../staticfiles/images/scrap-off.png"
+                                    src="../../../staticfiles/images/scrap-off.png"
                                     alt=""
                                   />
                                 </span>
@@ -2003,7 +2010,7 @@
                             <a class="content-uploader" href="#">
                               <figure class="uploader-icon-box">
                                 <img
-                                  src="../../staticfiles/images/blank-image.png"
+                                  src="../../../staticfiles/images/blank-image.png"
                                   height="0"
                                   class="uploader-icon"
                                 />
@@ -2043,5 +2050,5 @@
       </div>
     </div>
   </body>
-  <script src="../../staticfiles/js/community/home.js"></script>
+  <script src="../../../staticfiles/js/community/web/channel-detail.js"></script>
 </html>

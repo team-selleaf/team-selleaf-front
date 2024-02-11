@@ -15,7 +15,7 @@ function appendItem(post) {
     <div class="content-item-container">
         <div class="content-img-box">
         <img
-            src="../../staticfiles/images/blank-image.png"
+            src="../../../staticfiles/images/blank-image.png"
             class="content-img"
         />
         <div class="scrap-btn-box">
@@ -26,7 +26,7 @@ function appendItem(post) {
             >
             <span class="scrap-icon-box">
                 <img
-                src="../../staticfiles/images/scrap-off.png"
+                src="../../../staticfiles/images/scrap-off.png"
                 alt=""
                 />
             </span>
@@ -39,7 +39,7 @@ function appendItem(post) {
         <div class="content-uploader">
         <div class="uploader-img-box">
             <img
-            src="../../staticfiles/images/blank-image.png"
+            src="../../../staticfiles/images/blank-image.png"
             class="uploader-img"
             />
         </div>
@@ -81,9 +81,9 @@ scrapBtns.forEach((item) => {
   item.addEventListener("click", (e) => {
     const img = item.querySelector("img");
     const imgSrc = img.getAttribute("src");
-    imgSrc === "../../staticfiles/images/scrap-off.png"
-      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
-      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+    imgSrc === "../../../staticfiles/images/scrap-off.png"
+      ? img.setAttribute("src", "../../../staticfiles/images/scrap-on.png")
+      : img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
   });
 });
 
