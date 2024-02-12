@@ -32,10 +32,11 @@
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
       rel="stylesheet"
-      href="../../../staticfiles/css/mypage/trade/my-purchases.css"
+      href="../../../staticfiles/css/mypage/lecture/my-lectures.css"
     />
-    <!-- '마이페이지' 부분은 나중에 DB, 서버 연동으로 (닉네임)님의 구매내역 으로 바꾸기 -->
-    <title>Selleaf | 나의 구매내역</title>
+    <!-- 나중에 DB, 서버 연동으로 (닉네임)님의 수강내역 으로 바꾸기 -->
+    <!-- 여기는 내가 들은 강의를 저장하는 페이지 -->
+    <title>Selleaf | 나의 수강내역</title>
   </head>
   <body>
     <div class="whole-page-wrap">
@@ -54,26 +55,13 @@
                   <a href="">내 활동</a>
                 </li>
                 <li class="main-category-item">
-                  <a href="" class="active">거래 내역</a>
+                  <a href="">거래 내역</a>
                 </li>
                 <li class="main-category-item">
-                  <a href="">강의 내역</a>
+                  <a href="" class="active">강의 내역</a>
                 </li>
                 <li class="main-category-item">
                   <a href="">설정</a>
-                </li>
-              </ul>
-            </div>
-            <div class="sub-category-wrap">
-              <ul
-                class="sub-category-container"
-                style="transform: translateX(0px)"
-              >
-                <li class="sub-category-item">
-                  <a href="" class="active">내 거래</a>
-                </li>
-                <li class="sub-category-item">
-                  <a href="">거래 스크랩북</a>
                 </li>
               </ul>
             </div>
@@ -218,18 +206,11 @@
               <!-- 사진 등의 내용물이 표시되는 공간 -->
               <!-- 이 부분은 복붙하면서 내용물 교체 -->
               <div class="main-content-wrap">
-                <!-- 프로필- 질문과답변 페이지 기반으로 제작 -->
-                <!-- 게시글은 질문과답변 페이지 들어가면 볼 수 있는 게시물들로 -->
                 <!-- 구매, 판매 페이지 서식은 공통 -->
                 <div class="main-content-container">
                   <div class="menu-bar-wrap">
-                    <!-- 구매, 판매 내역 탭 -->
-                    <div class="menu-bar-container">
-                      <a href="" class="trades-tab active">구매 내역</a>
-                      <a href="" class="trades-tab">판매 내역</a>
-                    </div>
-                    <div class="trade-page-link-wrap">
-                      <a href="" class="trade-page-link">거래 바로가기</a>
+                    <div class="lecture-page-link-wrap">
+                      <a href="" class="lecture-page-link">강의 바로가기</a>
                     </div>
                   </div>
                   <!-- 왜 있는 건지는 아직 모르겠음 -->
@@ -241,28 +222,28 @@
                       transform: translateY(0px);
                     "
                   ></div>
-                  <div class="trade-history-wrap">
+                  <div class="lecture-history-wrap">
                     <!-- 아무것도 없을 때 표시할 태그 -->
-                    <h1>아직 구매한 상품이 없어요.</h1>
-                    <p>더 많은 이용자들과 거래해보세요!</p>
+                    <h1>아직 신청한 강의가 없어요.</h1>
+                    <p>더 많은 강의를 들어보세요!</p>
                     <!-- 내역이 있을 때는 여기를 표시 -->
-                    <div class="trade-history-item-wrap">
-                      <a href="" class="trade-history-link"></a>
-                      <div class="trade-history-item-container">
-                        <div class="trade-item-image-wrap">
+                    <div class="lecture-history-item-wrap">
+                      <a href="" class="lecture-history-link"></a>
+                      <div class="lecture-history-item-container">
+                        <div class="lecture-item-image-wrap">
                           <img
-                            class="trade-item-image"
+                            class="lecture-item-image"
                             src="../../../staticfiles/images/blank-image.png"
                           />
                         </div>
-                        <div class="trade-item-title-wrap">
-                          <span>거래 내역 1</span>
+                        <div class="lecture-item-title-wrap">
+                          <span>강의 테스트 1</span>
                         </div>
-                        <div class="trade-item-article-wrap">
-                          <span>거래 내역 본문 예시입니다.</span>
+                        <div class="lecture-item-article-wrap">
+                          <span>강의 내역 본문 예시입니다.</span>
                         </div>
                         <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
-                        <div class="trade-item-info-wrap">
+                        <div class="lecture-item-info-wrap">
                           <div class="article-info-wrap">
                             <!-- 작성자 -->
                             <div class="user-info-wrap">
@@ -278,7 +259,7 @@
                             <div class="item-info-wrap">
                               <div class="item-infos">1시간 전</div>
                               <div class="item-infos">조회 3</div>
-                              <div class="item-infos">경기도 광주시</div>
+                              <div class="item-infos">경기도 성남시</div>
                             </div>
                           </div>
                           <!-- 태그 -->
@@ -290,7 +271,7 @@
                                     class="item-tags-button"
                                     type="button"
                                   >
-                                    침엽식물
+                                    테라리움
                                   </button>
                                 </div>
                               </li>
@@ -300,17 +281,7 @@
                                     class="item-tags-button"
                                     type="button"
                                   >
-                                    소나무
-                                  </button>
-                                </div>
-                              </li>
-                              <li class="item-tags">
-                                <div>
-                                  <button
-                                    class="item-tags-button"
-                                    type="button"
-                                  >
-                                    테스트 태그 1
+                                    DIY
                                   </button>
                                 </div>
                               </li>
@@ -322,23 +293,23 @@
                     <!-- 각 내역 사이의 구분선 -->
                     <hr class="items-seperator" />
                     <!-- 새로운 내역 -->
-                    <div class="trade-history-item-wrap">
-                      <a href="" class="trade-history-link"></a>
-                      <div class="trade-history-item-container">
-                        <div class="trade-item-image-wrap">
+                    <div class="lecture-history-item-wrap">
+                      <a href="" class="lecture-history-link"></a>
+                      <div class="lecture-history-item-container">
+                        <div class="lecture-item-image-wrap">
                           <img
-                            class="trade-item-image"
+                            class="lecture-item-image"
                             src="../../../staticfiles/images/blank-image.png"
                           />
                         </div>
-                        <div class="trade-item-title-wrap">
-                          <span>거래 내역 2</span>
+                        <div class="lecture-item-title-wrap">
+                          <span>강의 테스트 2</span>
                         </div>
-                        <div class="trade-item-article-wrap">
-                          <span>거래 내역 2 본문 예시입니다.</span>
+                        <div class="lecture-item-article-wrap">
+                          <span>강의 내역 2 본문 예시입니다.</span>
                         </div>
                         <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
-                        <div class="trade-item-info-wrap">
+                        <div class="lecture-item-info-wrap">
                           <div class="article-info-wrap">
                             <!-- 작성자 -->
                             <div class="user-info-wrap">
@@ -353,8 +324,8 @@
                             <!-- 올린 시간, 조회수, 지역 -->
                             <div class="item-info-wrap">
                               <div class="item-infos">20시간 전</div>
-                              <div class="item-infos">조회 7</div>
-                              <div class="item-infos">서울특별시 강남구</div>
+                              <div class="item-infos">조회 25</div>
+                              <div class="item-infos">서울특별시 송파구</div>
                             </div>
                           </div>
                           <!-- 태그 -->
@@ -366,7 +337,7 @@
                                     class="item-tags-button"
                                     type="button"
                                   >
-                                    다육/선인장
+                                    테스트 태그 1
                                   </button>
                                 </div>
                               </li>
@@ -449,5 +420,5 @@
       </div>
     </div>
   </body>
-  <script src="../../../staticfiles/js/mypage/trade/my-purchases.js"></script>
+  <script src="../../../staticfiles/js/mypage/lectures/my-lectures.js"></script>
 </html>
