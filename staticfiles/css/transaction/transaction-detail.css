@@ -2847,3 +2847,55 @@ li:first-child>.product-detail-nav-item{
     flex: 1 0 0px;
     margin: 0 3px;
 }
+
+.top-button-wrap{
+    overflow: visible;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: env(safe-area-inset-bottom, 0);
+    padding: 10px;
+    border: 0px;
+    background: none;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.top-button-container{
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none rgb(255, 255, 255);
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    box-shadow: rgba(63, 71, 77, 0.25) 0px 2px 10px;
+    height: 48px;
+    line-height: 0;
+    color: rgb(47, 52, 56);
+    border-radius: 50%;
+    width: 48px;
+}
+
+.arrow-up{
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.arrow-up>img {
+    width: 20px;
+    margin-bottom: 5px;
+    rotate: 180deg;
+}

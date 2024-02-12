@@ -38,9 +38,10 @@
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>오프라인강의 상세</title>
   </head>
   <body>
+    <a id="top"></a>
     <div class="product-selling-wrap">
       <div class="product-overview-wrap">
         <nav class="product-category-wrap">
@@ -674,7 +675,6 @@
               <li>
                 <a class="product-detail-nav-item" href="#product-ask">
                   문의
-                  <span class="ask-counting">32</span>
                 </a>
               </li>
               <li>
@@ -3333,7 +3333,7 @@
                           <div class="sidebar-select-opton-1 focused">
                             <select class="sidebar-option-list empty">
                               <option value="" disabled selected>
-                                필수옵션 1
+                                날짜 선택
                               </option>
                               <option value="0">옵션 1</option>
                               <option value="1">옵션 2</option>
@@ -3359,7 +3359,7 @@
                           <div class="sidebar-select-opton-2">
                             <select class="sidebar-option-list empty">
                               <option value="" disabled selected>
-                                필수옵션 2
+                                시간 선택
                               </option>
                               <option value="0">옵션 1</option>
                               <option value="1">옵션 2</option>
@@ -3385,7 +3385,7 @@
                           <div class="sidebar-select-opton-extra">
                             <select class="sidebar-option-list empty">
                               <option value="" disabled selected>
-                                추가옵션
+                                인원 선택
                               </option>
                               <option value="0">옵션 1</option>
                               <option value="1">옵션 2</option>
@@ -3488,7 +3488,16 @@
           </div>
         </div>
       </div>
+      <a href="#top">
+        <div class="top-button-wrap">
+          <button type="button" class="top-button-container">
+            <span class="arrow-up">
+              <img src="/staticfiles/images/button-down.png" alt="" />
+            </span>
+          </button>
+        </div>
+      </a>
     </div>
   </body>
-  <script src="/staticfiles/js/transaction/transaction-detail.js"></script>
+  <script src="/staticfiles/js/class/class-detail.js"></script>
 </html>
