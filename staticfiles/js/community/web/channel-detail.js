@@ -11,13 +11,13 @@ async function getPosts() {
 // 가져온 데이터로 li태그를 만들어 클래스 이름을 주고 안에 내용을 만들어
 // ul태그안에 작성하는 메소드(ul에 innerHtml할 경우 덮어쓰기가 되어 한개의 리스트만 작성된다)
 function appendItem(post) {
-  const mainContentLine = document.querySelector(".main-content-line");
+  const contentLine = document.querySelector(".content-line");
   const contentItem = document.createElement("span");
 
   contentItem.innerHTML = `
-  <div class="main-content-wrap">
-    <div class="main-content-container">
-      <div class="main-content">
+  <div class="content-wrap">
+    <div class="content-container">
+      <div class="content">
         <img
           src="../../../staticfiles/images/blank-image.png"
           alt="content-img"
@@ -95,7 +95,7 @@ function appendItem(post) {
     </div>
   </div>
   `;
-  mainContentLine.appendChild(contentItem);
+  contentLine.appendChild(contentItem);
 }
 // 한번에 보여줄 리스트의 갯수를 정하고 차츰 페이지를 증가시킨다
 function showList() {
@@ -140,8 +140,8 @@ window.addEventListener("scroll", handleScroll);
 // 최초 실행하여 1페이지를 보여준다
 showList();
 
-const mainContentLine = document.querySelector(".main-content-line");
-mainContentLine.addEventListener("click", (e) => {
+const contentLine = document.querySelector(".content-line");
+contentLine.addEventListener("click", (e) => {
   const clickedBtn = e.target.closest(".scrap-btn");
   const img = clickedBtn.querySelector("img");
   const imgSrc = img.getAttribute("src");

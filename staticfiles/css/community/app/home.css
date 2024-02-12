@@ -15,36 +15,34 @@
   flex: 1;
   width: 100%;
 }
+
 .home-main-wrap {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .home-main-container {
-  max-width: 1256px;
-  margin: 0px auto;
-  padding: 0px 60px;
+  padding: 0px 16px;
+  box-sizing: border-box;
+}
+.main-content-wrap {
+  margin: -8px -4px;
 }
 .filter-wrap {
   text-align: center;
   background: #ffffff;
 }
 .filter-container {
-  margin: 6px auto;
-  max-width: 1256px;
-  padding: 0 60px;
   box-sizing: border-box;
+  padding: 0px;
 }
 .filter-inner {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   gap: 4px;
-  overflow: hidden;
-  padding: 10px 0px;
+  padding: 10px 16px;
+  overflow-x: scroll;
 }
 .filter-btn-label {
   display: inline-block;
@@ -69,6 +67,7 @@
   background-color: rgb(239, 251, 255);
   border: 1px solid rgb(0, 159, 206);
 }
+
 .filter-btn {
   position: absolute;
   top: 0px;
@@ -84,16 +83,13 @@
   white-space: nowrap;
   cursor: inherit;
 }
-.main-content-wrap {
-  margin: -13px -10px 0px;
-}
 .content-line {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 .content-wrap {
-  padding: 13px 10px;
+  padding: 8px 4px;
 }
 .content-container {
   position: relative;
@@ -107,16 +103,15 @@
 }
 .content {
   position: relative;
-  border-radius: 4px;
+  aspect-ratio: 0.75 / 1;
+  margin-bottom: 8px;
   overflow: hidden;
-  margin-bottom: 10px;
-  aspect-ratio: 1 / 1;
+  border-radius: 4px;
 }
 .content-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px;
   transition: transform 0.2s ease 0s;
 }
 .scrap-btn {
@@ -141,7 +136,6 @@
   display: inline-block;
   font-size: 24px;
   line-height: 1;
-
   transform: translateZ(0px);
 }
 .scrap-btn-box > img {
@@ -156,16 +150,16 @@
 }
 
 .content-content {
-  text-align: left;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
-  display: -webkit-box;
+  color: rgb(47, 52, 56);
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
+  display: -webkit-box;
   -webkit-line-clamp: 2;
-  overflow-wrap: break-word;
-  margin-bottom: 2px;
+  -webkit-box-orient: vertical;
+  margin-bottom: 6px;
+  word-break: break-all;
 }
 .content-link {
   display: block;
@@ -209,15 +203,14 @@
   padding-top: 100%;
 }
 .uploader-name {
-  width: 85px;
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: 400;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 500;
   color: rgb(47, 52, 56);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  text-align: start;
+  width: 86px;
 }
 .like-btn {
   -webkit-box-align: center;
