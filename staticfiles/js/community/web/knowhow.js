@@ -76,15 +76,14 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 showList();
 
-const scrapBtns = document.querySelectorAll(".scrap-btn");
-scrapBtns.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    const img = item.querySelector("img");
-    const imgSrc = img.getAttribute("src");
-    imgSrc === "../../../staticfiles/images/scrap-off.png"
-      ? img.setAttribute("src", "../../../staticfiles/images/scrap-on.png")
-      : img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
-  });
+const contentLineBox = document.querySelector(".content-line-box");
+contentLineBox.addEventListener("click", (e) => {
+  const clickedBtn = e.target.closest(".scrap-btn");
+  const img = clickedBtn.querySelector("img");
+  const imgSrc = img.getAttribute("src");
+  imgSrc === "../../../staticfiles/images/scrap-off.png"
+    ? img.setAttribute("src", "../../../staticfiles/images/scrap-on.png")
+    : img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
 });
 
 const filterItems = document.querySelectorAll(".filter-item");
@@ -104,7 +103,6 @@ filterItems.forEach((item) => {
         btn.classList.remove("choice");
       });
       e.target.closest(".modal-menu-btn").classList.add("choice");
-      
     });
   });
 });
