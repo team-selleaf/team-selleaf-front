@@ -34,64 +34,19 @@
     />
     <link
       rel="stylesheet"
-      href="../../staticfiles/css/transaction/transaction-detail.css"
+      href="../../staticfiles/css/class/class-detail.css"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <header></header>
-    <!-- 거래 카테고리 -->
-    <div class="category-wrap-" style="height: 52px">
-      <div
-        class="category-container"
-        style="
-          position: fixed;
-          z-index: 1101;
-          transition: top 0.1s ease 0s;
-          top: auto;
-          width: 100%;
-        "
-      >
-        <div class="category-inner">
-          <div class="category-button-space">
-            <nav class="category-button-collection">
-              <span class="category-button">
-                <div class="button-space">
-                  <a href="/transaction" class="button-link-click">
-                    <div class="button">
-                      <p class="button-letter-click">상품홈</p>
-                    </div>
-                  </a>
-                </div>
-              </span>
-              <span class="category-button">
-                <div class="button-space">
-                  <a
-                    href="/templates/transaction/transaction-total.html"
-                    class="button-link-unclick"
-                  >
-                    <div class="button">
-                      <p class="button-letter-unclick">진행중인거래</p>
-                    </div>
-                  </a>
-                </div>
-              </span>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="product-selling-wrap">
       <div class="product-overview-wrap">
         <nav class="product-category-wrap">
           <ol class="product-category-container">
             <li class="product-category-inner">
-              <a
-                href="/templates/transaction/transaction-total.html"
-                class="link"
+              <a href="/templates/class/class-total.html" class="link"
                 >대구분</a
               >
               <svg
@@ -108,9 +63,7 @@
               </svg>
             </li>
             <li class="product-category-inner">
-              <a
-                href="/templates/transaction/transaction-total.html"
-                class="link"
+              <a href="/templates/class/class-total.html" class="link"
                 >중분류</a
               >
               <svg
@@ -127,9 +80,7 @@
               </svg>
             </li>
             <li class="product-category-inner">
-              <a
-                href="/templates/transaction/transaction-total.html"
-                class="link"
+              <a href="/templates/class/class-total.html" class="link"
                 >소분류</a
               >
               <svg
@@ -146,11 +97,7 @@
               </svg>
             </li>
             <li class="product-category-inner">
-              <a
-                href="/templates/transaction/transaction-total.html"
-                class="link"
-                >제품</a
-              >
+              <a href="/templates/class/class-total.html" class="link">제품</a>
             </li>
           </ol>
         </nav>
@@ -182,7 +129,7 @@
                         class="product-cover-image"
                         tabindex="0"
                         src="/staticfiles/images/blank-image.png"
-                        alt="상품서브이미지"
+                        alt="강의서브이미지"
                       />
                     </div>
                     <div
@@ -196,7 +143,7 @@
                         class="product-cover-image"
                         tabindex="0"
                         src="/staticfiles/images/blank-image.png"
-                        alt="상품서브이미지"
+                        alt="강의서브이미지"
                       />
                     </div>
                     <!-- <div
@@ -210,7 +157,7 @@
                         class="product-cover-image"
                         tabindex="0"
                         src="/staticfiles/images/blank-image.png"
-                        alt="상품서브이미지"
+                        alt="강의서브이미지"
                       />
                     </div>
                     <div
@@ -224,7 +171,7 @@
                         class="product-cover-image"
                         tabindex="0"
                         src="/staticfiles/images/blank-image.png"
-                        alt="상품서브이미지"
+                        alt="강의서브이미지"
                       />
                     </div> -->
                   </div>
@@ -239,7 +186,7 @@
                       <img
                         class="product-small-image"
                         src="/staticfiles/images/blank-image.png"
-                        alt="상품 이미지"
+                        alt="강의 이미지"
                       />
                     </button>
                   </li>
@@ -252,7 +199,7 @@
                       <img
                         class="product-small-image"
                         src="/staticfiles/images/blank-image.png"
-                        alt="상품 이미지"
+                        alt="강의 이미지"
                       />
                     </button>
                   </li>
@@ -265,7 +212,7 @@
                       <img
                         class="product-small-image"
                         src="/staticfiles/images/blank-image.png"
-                        alt="상품 이미지"
+                        alt="강의 이미지"
                       />
                     </button>
                   </li>
@@ -278,7 +225,7 @@
                       <img
                         class="product-small-image"
                         src="/staticfiles/images/blank-image.png"
-                        alt="상품 이미지"
+                        alt="강의 이미지"
                       />
                     </button>
                   </li>
@@ -463,16 +410,16 @@
                 </p>
                 <div class="product-contents-price-wrap">
                   <span class="product-contents-price-container">
-                    <!-- <span class="product-price-discount">
+                    <span class="product-price-discount">
                       <span class="discount-number">20</span>
                       <span class="percent">%</span>
-                    </span> -->
-                    <!-- <del class="product-price-original">
+                    </span>
+                    <del class="product-price-original">
                       <span class="original-price-number">35,000</span>
                       <span class="krw">원</span>
-                    </del> -->
+                    </del>
                     <span class="product-price-info">
-                      <!-- <button class="product-price-info-button">
+                      <button class="product-price-info-button">
                         <svg
                           class="information-icon"
                           width="16"
@@ -496,7 +443,7 @@
                             fill="#C2C8CC"
                           ></path>
                         </svg>
-                      </button> -->
+                      </button>
                     </span>
                     <span class="product-price-separator"></span>
                     <div class="product-final-price-wrap">
@@ -591,19 +538,13 @@
                 </div>
               </a>
             </div>
-            <div class="product-ask-link">
-              <button type="button" class="user-ask-button">
-                판매자 채팅연결
-                <a href="/판매자채팅링크"></a>
-              </button>
-            </div>
-            <!-- <div class="product-option-wrap">
+            <div class="product-option-wrap">
               <section class="product-option-container">
                 <div class="product-option-inner">
                   <div class="product-option-input">
                     <div class="product-option-first-wrap">
                       <select class="product-option-first">
-                        <option value disabled selected>필수 선택</option>
+                        <option value disabled selected>날짜 선택</option>
                         <option value="0">선택 1</option>
                         <option value="1">선택 2</option>
                         <option value="2">선택 3</option>
@@ -624,7 +565,7 @@
                     </div>
                     <div class="product-option-second-wrap">
                       <select class="product-option-second">
-                        <option value disabled selected>필수 선택</option>
+                        <option value disabled selected>시간 선택</option>
                         <option value="0">선택 1</option>
                         <option value="1">선택 2</option>
                         <option value="2">선택 3</option>
@@ -645,12 +586,9 @@
                     </div>
                     <div class="product-option-third-wrap">
                       <select class="product-option-third">
-                        <option value disabled selected>필수 선택</option>
+                        <option value disabled selected>키트 선택</option>
                         <option value="0">선택 1</option>
                         <option value="1">선택 2</option>
-                        <option value="2">선택 3</option>
-                        <option value="3">선택 4</option>
-                        <option value="4">선택 5</option>
                       </select>
                       <span class="select-input-icon">
                         <svg
@@ -708,7 +646,7 @@
                 <button class="add-cart-button" type="button">장바구니</button>
                 <button class="order-button" type="button">바로구매</button>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -721,30 +659,27 @@
             <ol class="product-detail-nav-list">
               <li>
                 <a class="product-detail-nav-item active" href="#detail-info">
-                  상품정보</a
+                  강의정보</a
                 >
               </li>
-              <!-- <li>
+              <li>
                 <a class="product-detail-nav-item" href="#product-review">
                   리뷰
                   <span class="review-counting">32</span>
                 </a>
-              </li> -->
-              <!-- <li>
+              </li>
+              <li>
                 <a class="product-detail-nav-item" href="#product-ask">
                   문의
-                  <span class="ask-counting">32</span>
                 </a>
-              </li> -->
+              </li>
               <li>
                 <a class="product-detail-nav-item" href="#product-extra-info">
                   환불/기타
                 </a>
               </li>
               <li>
-                <a class="product-detail-nav-item" href="#product-suggestion">
-                  추천
-                </a>
+                <a class="product-detail-nav-item" href="/강의정보"> 추천 </a>
               </li>
             </ol>
           </nav>
@@ -757,7 +692,7 @@
               <a id="detail-info"></a>
               <section class="detail-info-wrap">
                 <header class="detail-info-title">
-                  <h1 class="detail-info-title-text">상품정보</h1>
+                  <h1 class="detail-info-title-text">강의정보</h1>
                 </header>
                 <div class="detail-info-contents-wrap">
                   <div class="detail-info-contents-thumbnail">
@@ -800,7 +735,7 @@
                     <p>
                       <img
                         src="https://prs.ohou.se/apne2/any/uploads/productions/descriptions/url/v1-207409409667200.jpg"
-                        alt="상품의 상세 설명 이미지"
+                        alt="강의의 상세 설명 이미지"
                       />
                     </p>
                     <p>&nbsp;</p>
@@ -813,13 +748,13 @@
                     <p>
                       <img
                         src="https://prs.ohou.se/apne2/any/uploads/productions/descriptions/url/v1-207409409667200.jpg"
-                        alt="상품의 상세 설명 이미지"
+                        alt="강의의 상세 설명 이미지"
                       />
                     </p>
                     <p>
                       <img
                         src="https://prs.ohou.se/apne2/any/uploads/productions/descriptions/url/v1-207409409667200.jpg"
-                        alt="상품의 상세 설명 이미지"
+                        alt="강의의 상세 설명 이미지"
                       />
                     </p>
                     <p>&nbsp;</p>
@@ -869,7 +804,7 @@
                 </div>
               </section>
               <a id="product-review"></a>
-              <!-- <section class="product-review-wrap">
+              <section class="product-review-wrap">
                 <header class="detail-header">
                   <h1 class="detail-title-text">
                     리뷰
@@ -887,7 +822,7 @@
                       <div class="product-review-feed-total-rating">
                         <span class="icon" aria-label="별점 4.8점">
                           <svg
-                            fill="#35C5F0"
+                            fill="#97a38c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -912,7 +847,7 @@
                             ></use>
                           </svg>
                           <svg
-                            fill="#35C5F0"
+                            fill="#97a38c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -937,7 +872,7 @@
                             ></use>
                           </svg>
                           <svg
-                            fill="#35C5F0"
+                            fill="#97a38c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -962,7 +897,7 @@
                             ></use>
                           </svg>
                           <svg
-                            fill="#35C5F0"
+                            fill="#97a38c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -987,7 +922,7 @@
                             ></use>
                           </svg>
                           <svg
-                            fill="#35C5F0"
+                            fill="#97a38c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -1389,6 +1324,7 @@
                     </div>
                   </div>
                   <ul class="product-review-page-button">
+                    <!-- js추가 -->
                     <li class="prev-button-wrap">
                       <button class="prev-button" type="button">
                         <svg width="1em" height="1em" viewBox="0 0 24 24">
@@ -1459,9 +1395,9 @@
                     </li>
                   </ul>
                 </div>
-              </section> -->
+              </section>
               <a id="product-ask"></a>
-              <!-- <section class="product-ask-wrap">
+              <section class="product-ask-wrap">
                 <header class="product-ask-container">
                   <h1 class="product-ask-title">문의</h1>
                   <div class="product-ask-link">
@@ -1470,7 +1406,7 @@
                     </button>
                   </div>
                 </header>
-              </section> -->
+              </section>
               <a id="product-extra-info"></a>
               <section class="product-extra-info-wrap">
                 <header class="product-extra-info-title">
@@ -1502,17 +1438,17 @@
                   </h2>
                   <p class="product-detail-note">
                     반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
-                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
+                    반품지 주소 등을 협의하신 후 반품강의을 발송해 주시기
                     바랍니다.
                   </p>
                   <ol class="product-detail-list">
                     <li>
-                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
+                      구매자 단순 변심은 강의 수령 후 7일 이내&nbsp;<small
                         >(구매자 반품배송비 부담)</small
                       >
                     </li>
                     <li>
-                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
+                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 강의 수령
                       후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
                       30일 이내.<br />둘 중 하나 경과 시 반품/교환
                       불가&nbsp;<small>(판매자 반품배송비 부담)</small>
@@ -1523,17 +1459,17 @@
                   </h2>
                   <p class="product-detail-note">
                     반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
-                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
+                    반품지 주소 등을 협의하신 후 반품강의을 발송해 주시기
                     바랍니다.
                   </p>
                   <ol class="product-detail-list">
                     <li>
-                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
+                      구매자 단순 변심은 강의 수령 후 7일 이내&nbsp;<small
                         >(구매자 반품배송비 부담)</small
                       >
                     </li>
                     <li>
-                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
+                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 강의 수령
                       후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
                       30일 이내.<br />둘 중 하나 경과 시 반품/교환
                       불가&nbsp;<small>(판매자 반품배송비 부담)</small>
@@ -1572,9 +1508,7 @@
               <div>
                 <section class="product-suggestion-wrap">
                   <header class="product-suggestion-header">
-                    <h1 class="product-suggestion-title">
-                      판매자님이 판매중인상품
-                    </h1>
+                    <h1 class="product-suggestion-title">비슷한 강의추천</h1>
                   </header>
                   <div class="product-suggestion-scroller-wrap">
                     <div class="product-suggestion-scroller-container">
@@ -3371,7 +3305,7 @@
             </div>
           </div>
           <!-- 사이드바 -->
-          <!-- <div class="product-detail-sidebar-wrap">
+          <div class="product-detail-sidebar-wrap">
             <div
               class="product-detail-sidebar-container"
               style="height: 598.25px"
@@ -3395,7 +3329,7 @@
                           <div class="sidebar-select-opton-1 focused">
                             <select class="sidebar-option-list empty">
                               <option value="" disabled selected>
-                                필수옵션 1
+                                날짜 선택
                               </option>
                               <option value="0">옵션 1</option>
                               <option value="1">옵션 2</option>
@@ -3421,7 +3355,7 @@
                           <div class="sidebar-select-opton-2">
                             <select class="sidebar-option-list empty">
                               <option value="" disabled selected>
-                                필수옵션 2
+                                시간 선택
                               </option>
                               <option value="0">옵션 1</option>
                               <option value="1">옵션 2</option>
@@ -3447,13 +3381,10 @@
                           <div class="sidebar-select-opton-extra">
                             <select class="sidebar-option-list empty">
                               <option value="" disabled selected>
-                                추가옵션
+                                키트 선택
                               </option>
                               <option value="0">옵션 1</option>
                               <option value="1">옵션 2</option>
-                              <option value="2">옵션 3</option>
-                              <option value="3">옵션 4</option>
-                              <option value="4">옵션 5</option>
                             </select>
                             <span class="sidebar-option-list-icon">
                               <svg
@@ -3505,7 +3436,7 @@
                               </div>
                               <div class="sidebar-selected-price-wrap">
                                 <span class="sidebar-selected-price"
-                                  >82,900원</span
+                                  >32,000원</span
                                 >
                               </div>
                             </div>
@@ -3547,7 +3478,7 @@
                 </section>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>

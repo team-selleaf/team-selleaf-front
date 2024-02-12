@@ -1341,7 +1341,7 @@ li:first-child>.product-detail-nav-item{
 }
 
 .detail-title-text>.review-counting{
-    color: #35c5f0;
+    color: #97a38c;
     margin-left: 4px;
 }
 
@@ -1463,7 +1463,7 @@ li:first-child>.product-detail-nav-item{
     position: absolute;
     border-radius: 10px;
     display: inline-block;
-    background-color: #35c5f0;
+    background-color: #97a38c;
     height: 5px;
     top: 0;
     left: 0;
