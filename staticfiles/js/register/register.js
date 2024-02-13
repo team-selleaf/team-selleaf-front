@@ -914,11 +914,11 @@ const nicknameRegex = /^[A-Za-z0-9ㄱ-ㅎㅏ-ㅣ가-힣]{2,15}$/;
 // 오류 메세지 저장
 // 미입력 오류(mustNeededMsg) 메세지는 위에 쓴 거 그대로 사용
 const lessThanTwoMsg = "2자 이상 입력해주세요."; // 2자 이하(1자) 오류
-const moreThanFifteenMsg = "15자 이하로 입력해주세요."; // 2자 이하(1자) 오류
+const moreThanFifteenMsg = "15자 이하로 입력해주세요."; // 15자 초과 오류
 
 // 닉네임 입력창에 대한 keyup 이벤트 생성
 nicknameInput.addEventListener("keyup", (e) => {
-  // 만약 키가 눌린 시점에 닉네임 양식이 안 지켜져 았다면
+  // 만약 키가 눌린 시점에 닉네임 양식이 안 지켜져 있다면
   if (!e.target.value || !nicknameRegex.test(e.target.value)) {
     // nickname-input에 error 클래스 추가
     // error 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
@@ -945,7 +945,9 @@ nicknameInput.addEventListener("keyup", (e) => {
         ? mustNeededMsg
         : e.target.value.length < 2
         ? lessThanTwoMsg
-        : moreThanFifteenMsg;
+        : e.target.value.length > 15
+        ? moreThanFifteenMsg
+        : "";
 
       // 스타일을 받을 수 있게 클래스 추가
       newDiv.classList.add("not-available");
@@ -1003,7 +1005,9 @@ nicknameInput.addEventListener("blur", (e) => {
         ? mustNeededMsg
         : e.target.value.length < 2
         ? lessThanTwoMsg
-        : moreThanFifteenMsg;
+        : e.target.value.length > 15
+        ? moreThanFifteenMsg
+        : "";
 
       // 스타일을 받을 수 있게 클래스 추가
       newDiv.classList.add("not-available");
