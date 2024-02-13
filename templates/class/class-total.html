@@ -37,9 +37,9 @@
     />
     <link
       rel="stylesheet"
-      href="../../staticfiles/css/transaction/transaction-total.css"
+      href="../../staticfiles/css/class/class-total.css"
     />
-    <title>진행중인거래</title>
+    <title>진행중인강의</title>
   </head>
   <body>
     <div class="layout">
@@ -62,9 +62,9 @@
                 <nav class="category-button-collection">
                   <span class="category-button">
                     <div class="button-space">
-                      <a href="/templates/transaction/transaction-main.html" class="button-link-unclick">
+                      <a href="/templates/class/class-main.html" class="button-link-unclick">
                         <div class="button">
-                          <p class="button-letter-unclick">상품홈</p>
+                          <p class="button-letter-unclick">강의홈</p>
                         </div>
                       </a>
                     </div>
@@ -84,13 +84,12 @@
           </div>
         </div>
         <!-- 스크랩 팝업 -->
-        <div class="scrap-popup-wrap">
+        <div class="scrap-popup-wrap" style="display: none">
           <div class="scrap-popup-container">
             <div class="scrap-popup-inner">
               <div class="scrap-popup-text">스크랩 했습니다.</div>
             </div>
             <div class="scrap-popup-button-container">
-              <!-- 스크랩북 링크삽입 -->
               <button class="scrap-link-button" type="button">
                 스크랩북 보기
               </button>
@@ -98,7 +97,7 @@
             </div>
           </div>
         </div>
-        <div class="scrap-popup-cancel-wrap">
+        <div class="scrap-popup-wrap" style="display: none">
           <div class="scrap-popup-container">
             <div class="scrap-popup-inner">
               <div class="scrap-popup-text">스크랩을 취소하였습니다.</div>
@@ -139,42 +138,98 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="filter-button-inner" id="on-off-line">
+                              <button class="filter-button" type="button">구분
+                                  <span class="dropdown-icon">
+                                      <img src="/staticfiles/images/button-down.png" alt class="dropdown">
+                                  </span>
+                              </button>
+                          </div>
+                          <div class="filter-popup-wrap" id="arrange-list" data-popper-reference-hidden="false" data-popper-escaped="true" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(55px, 130px, 0px); z-index: 3;">
+                              <div class="filter-popup-arrow" data-popper-arrow="true" style="position: absolute; left: 0px; transform: translate3d(92.8px, 0px, 0px);"></div>
+                              <div class="filter-popup-list-wrap">
+                                  <div class="filter-popup-list-container">
+                                      <div class="filter-popup-list-inner">
+                                          <button class="filter-list-button" type="button" id="online">
+                                              <div class="button-name">온라인</div>
+                                              <div class="button-between-space"></div>
+                                          </button>
+                                          <button class="filter-list-button" type="button" id="offline">
+                                              <div class="button-name">오프라인</div>
+                                              <div class="button-between-space"></div>
+                                          </button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                             <div class="filter-button-inner" id="species">
-                                <button class="filter-button" type="button">식물종류
+                                <button class="filter-button" type="button">강의분류
                                     <span class="dropdown-icon">
                                         <img src="/staticfiles/images/button-down.png" alt class="dropdown">
                                     </span>
                                 </button>
                             </div>
-                            <div class="filter-popup-wrap" id="species-list" data-popper-reference-hidden="false" data-popper-escaped="true" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(130px, 130px, 0px); z-index: 3;">
+                            <div class="filter-popup-wrap" id="categoty-list" data-popper-reference-hidden="false" data-popper-escaped="true" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(130px, 130px, 0px); z-index: 3;">
                                 <div class="filter-popup-arrow" data-popper-arrow="true" style="position: absolute; left: 0px; transform: translate3d(92.8px, 0px, 0px);"></div>
                                 <div class="filter-popup-list-wrap" >
                                     <div class="filter-popup-list-container">
                                         <div class="filter-popup-list-inner">
-                                            <button class="filter-list-button" type="button" id="species1">
-                                                <div class="button-name">관엽식물</div>
+                                            <button class="filter-list-button" type="button" id="category1">
+                                                <div class="button-name">리스&#47트리</div>
                                                 <div class="button-between-space"></div>
                                             </button>
-                                            <button class="filter-list-button" type="button" id="species2">
-                                                <div class="button-name">침엽식물</div>
+                                            <button class="filter-list-button" type="button" id="category2">
+                                                <div class="button-name">바구니&#47센터피스&#47박스</div>
                                                 <div class="button-between-space"></div>
                                             </button>
-                                            <button class="filter-list-button" type="button" id="species3">
-                                                <div class="button-name">희귀식물</div>
+                                            <button class="filter-list-button" type="button" id="category3">
+                                                <div class="button-name">가드닝&#47테라리움</div>
                                                 <div class="button-between-space"></div>
                                             </button>
-                                            <button class="filter-list-button" type="button" id="species4">
-                                                <div class="button-name">다육&#47선인장</div>
-                                                <div class="button-between-space"></div>
-                                            </button>
-                                            <button class="filter-list-button" type="button" id="species5">
-                                                <div class="button-name">테라리움</div>
+                                            <button class="filter-list-button" type="button" id="category4">
+                                                <div class="button-name">기타</div>
                                                 <div class="button-between-space"></div>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="filter-button-inner" id="species">
+                              <button class="filter-button" type="button">식물종류
+                                  <span class="dropdown-icon">
+                                      <img src="/staticfiles/images/button-down.png" alt class="dropdown">
+                                  </span>
+                              </button>
+                          </div>
+                            <div class="filter-popup-wrap" id="species-list" data-popper-reference-hidden="false" data-popper-escaped="true" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(130px, 130px, 0px); z-index: 3;">
+                              <div class="filter-popup-arrow" data-popper-arrow="true" style="position: absolute; left: 0px; transform: translate3d(92.8px, 0px, 0px);"></div>
+                              <div class="filter-popup-list-wrap" >
+                                  <div class="filter-popup-list-container">
+                                      <div class="filter-popup-list-inner">
+                                          <button class="filter-list-button" type="button" id="species1">
+                                              <div class="button-name">관엽식물</div>
+                                              <div class="button-between-space"></div>
+                                          </button>
+                                          <button class="filter-list-button" type="button" id="species2">
+                                              <div class="button-name">침엽식물</div>
+                                              <div class="button-between-space"></div>
+                                          </button>
+                                          <button class="filter-list-button" type="button" id="species3">
+                                              <div class="button-name">희귀식물</div>
+                                              <div class="button-between-space"></div>
+                                          </button>
+                                          <button class="filter-list-button" type="button" id="species4">
+                                              <div class="button-name">다육&#47선인장</div>
+                                              <div class="button-between-space"></div>
+                                          </button>
+                                          <button class="filter-list-button" type="button" id="species5">
+                                              <div class="button-name">테라리움</div>
+                                              <div class="button-between-space"></div>
+                                          </button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                             <div class="filter-button-inner" id="city">
                                 <button class="filter-button" type="button">지역
                                     <span class="dropdown-icon">
@@ -319,7 +374,7 @@
             <div id="transaction-main-page" >
                 <section class="popular-wrap wrap-media">
                   <header class="popular-header">
-                    <h1 class="popular-title">판매중인상품</h1>
+                    <h1 class="popular-title">진행중인강의</h1>
                   </header>
                   <div class="post-wrap row-media">
                     <div class="post-container">
@@ -350,7 +405,7 @@
                             <div class="post-contents-container">
                               <h1 class="post-contents-header">
                                 <span class="post-contents-user">작성자입력</span>
-                                <span class="post-contents-banner">거래제품명</span>
+                                <span class="post-contents-banner">강의명</span>
                               </h1>
                               <span class="post-price">
                                 <span class="post-price-letter">35,000</span>
@@ -395,7 +450,7 @@
                             <div class="post-contents-container">
                               <h1 class="post-contents-header">
                                 <span class="post-contents-user">작성자입력</span>
-                                <span class="post-contents-banner">거래제품명</span>
+                                <span class="post-contents-banner">강의명</span>
                               </h1>
                               <span class="post-price">
                                 <span class="post-price-letter">35,000</span>
@@ -440,7 +495,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -485,7 +540,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -530,7 +585,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -575,7 +630,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -620,7 +675,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -665,7 +720,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -710,7 +765,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -755,7 +810,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -800,7 +855,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -845,7 +900,7 @@
                               <div class="post-contents-container">
                                 <h1 class="post-contents-header">
                                   <span class="post-contents-user">작성자입력</span>
-                                  <span class="post-contents-banner">거래제품명</span>
+                                  <span class="post-contents-banner">강의명</span>
                                 </h1>
                                 <span class="post-price">
                                   <span class="post-price-letter">35,000</span>
@@ -864,5 +919,5 @@
                       </div>
         </div>
     </body>
-    <script src="/staticfiles/js/transaction/transaction-total.js"></script>
+    <script src="/staticfiles/js/class/class-total.js"></script>
 </html>

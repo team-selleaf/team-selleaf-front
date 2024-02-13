@@ -183,6 +183,7 @@ div.category-container{
     left: calc(50% - 235px);
     bottom: 40px;
     z-index: 1400;
+    transform: translateY(200%);
 }
 
 .scrap-popup-cancel-wrap{
@@ -191,6 +192,7 @@ div.category-container{
     left: calc(50% - 235px);
     bottom: 40px;
     z-index: 1400;
+    transform: translateY(200%)
 }
 
 .scrap-popup-container{
@@ -203,10 +205,41 @@ div.category-container{
     border-radius: 4px;
     color: #000000;
     background-color: #F7F9FA;
-;
-    animation: 0.4s ease 0.1s 1 normal both running animation-473ney;
     margin-top: 15px;
 }
+
+@keyframes show-toast {
+    0% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+  }
+  @keyframes hide-toast {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+        
+    }
+    100% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+  }
+
+  .show-animation {
+    animation-name: show-toast;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .hide-animation {
+    animation-name: hide-toast;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+  }
 
 .scrap-popup-inner{
     flex: 1 0 0px;
@@ -551,18 +584,6 @@ min-height: 1px;
     -webkit-line-clamp: 2;
 }
 
-.post-content-mobile-reply{
-    display: none;
-}
-.post-mobile-reply {
-    margin-top: 6px;
-    font-size: 12px;
-    color: #9e9e9e;
-    line-height: 16px;
-    font-weight: 700;
-    margin-top: 5px;
-}
-
 .post-price{
     margin: 2px 0 0;
     display: flex;
@@ -578,11 +599,26 @@ min-height: 1px;
     margin-right: 4px;
 }
 .post-content-pc-reply{
-    display: none;
+    display: block;
+    margin-block-start: 0px;
+    margin-inline-end: 0px;
 }
 
 .post-content-reply{
-    margin-top: 5px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    display: inline-block;
+    font-size: 12px;
+    color: #9e9e9e;
+    line-height: 16px;
+    font-weight: 700;
+}
+
+.post-content-scrap{
+    display: inline-block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-left: 5px;
     font-size: 12px;
     color: #9e9e9e;
     line-height: 16px;

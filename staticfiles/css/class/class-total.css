@@ -182,7 +182,6 @@ div.category-container{
     left: calc(50% - 235px);
     bottom: 40px;
     z-index: 1400;
-    transform: translateY(200%);
 }
 
 .scrap-popup-cancel-wrap{
@@ -191,7 +190,6 @@ div.category-container{
     left: calc(50% - 235px);
     bottom: 40px;
     z-index: 1400;
-    transform: translateY(200%)
 }
 
 .scrap-popup-container{
@@ -204,41 +202,10 @@ div.category-container{
     border-radius: 4px;
     color: #000000;
     background-color: #F7F9FA;
+;
+    animation: 0.4s ease 0.1s 1 normal both running animation-473ney;
     margin-top: 15px;
 }
-
-@keyframes show-toast {
-    0% {
-        transform: translateY(200%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-  }
-  @keyframes hide-toast {
-    0% {
-        transform: translateY(0%);
-        opacity: 1;
-        
-    }
-    100% {
-        transform: translateY(200%);
-        opacity: 0;
-    }
-  }
-
-  .show-animation {
-    animation-name: show-toast;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-  }
-  .hide-animation {
-    animation-name: hide-toast;
-    animation-duration: 0.7s;
-    animation-fill-mode: forwards;
-  }
 
 .scrap-popup-inner{
     flex: 1 0 0px;
@@ -758,22 +725,21 @@ min-height: 1px;
     word-wrap: break-word;
 }
 
-.post-contents-banner {
+.post-contents-banner{
     margin-top: 5px;
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 600;
     line-height: 17px;
     max-height: 34px;
     -webkit-line-clamp: 2;
 }
-
 
 .post-price{
     margin: 2px 0 0;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 23px;
     font-weight: 700;
 }
@@ -790,8 +756,9 @@ min-height: 1px;
 
 .post-content-reply{
     margin-block-start: 0px;
-    margin-block-end: 0px;
+    margin-inline-end: 0px;
     display: inline-block;
+    margin-top: 5px;
     font-size: 12px;
     color: #9e9e9e;
     line-height: 16px;
@@ -799,16 +766,15 @@ min-height: 1px;
 }
 
 .post-content-scrap{
-    display: inline-block;
     margin-block-start: 0px;
-    margin-block-end: 0px;
+    margin-inline-end: 0px;
+    display: inline-block;
     margin-left: 5px;
     font-size: 12px;
     color: #9e9e9e;
     line-height: 16px;
     font-weight: 700;
 }
-
 
 .post-tag{
     margin-top: 6px;
