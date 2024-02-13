@@ -28,13 +28,13 @@
     </style>
     <link
       rel="shortcut icon"
-      href="../../staticfiles/images/selleaf.png"
+      href="../../../staticfiles/images/selleaf.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="../../staticfiles/css/common.css" />
+    <link rel="stylesheet" href="../../../staticfiles/css/common.css" />
     <link
       rel="stylesheet"
-      href="../../staticfiles/css/community/create-post.css"
+      href="../../../staticfiles/css/community/app/create-knowhow.css"
     />
     <title>게시물 만들기</title>
   </head>
@@ -53,27 +53,31 @@
           <div class="header-wrap" style="position: relative;">
             <div class="header-container">
               <div class="nav-wrap">
-                <a href="#" class="nav-logo">
-                  <img
-                    src="../../staticfiles/images/logo-lettering-blk.png"
-                    width="72px"
-                    height="32px"
-                    alt=""
-                  />
-                </a>
-                <div class="save-wrap">
-                  <div class="save-container">
-                    <div class="storage-btn-wrap">
-                      <div class="storage-btn-container">
-                        <button type="button" class="storage-btn">
-                          <span class="storage-btn-text">임시저장</span>
-                        </button>
-                      </div>
-                    </div>
-                    <button type="button" class="publish-btn">
-                      <span class="publish-btn-text">발행신청</span>
-                    </button>
-                  </div>
+                <div class="nav-back-btn-box">
+                  <button type="button" title="뒤로" class="back-btn">
+                    <svg
+                      width="24"
+                      height="24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon css-0 epfj33z0"
+                    >
+                      <path
+                        d="M3.7 12.5h18.8v-1H3.7l7.8-7.8-.7-.7L2 11.7l.3.3-.3.3 8.8 8.7.7-.7-7.8-7.8z"
+                        fill="#000"
+                        fill-opacity="0.7"
+                        fill-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <h1 class="nav-text">글쓰기</h1>
+                <div class="publish-save-btn-box">
+                  <button type="button" class="save-btn">
+                    저장
+                  </button>
+                  <button type="button" class="publish-btn">
+                    발행
+                  </button>
                 </div>
               </div>
             </div>
@@ -106,10 +110,7 @@
                         </g>
                       </svg>
                     </div>
-                    <div class="slide-text-top">게시물 작성 가이드</div>
-                    <div class="slide-text-bottom">
-                      원활한 게시물 작성을 위해 꼭 읽어주세요.
-                    </div>
+                    <div class="slide-text">게시물 작성 가이드</div>
                   </div>
                   <div class="down-arrow-box">
                     <svg
@@ -129,33 +130,20 @@
                 </button>
                 <div class="expanded" style="overflow: hidden;">
                   <div class="guide-content-wrap">
-                    <ul class="guide-content-container">
+                    <ul class="guide-content-list">
                       <li>
-                        <strong
-                          >집들이 피드나 홈에서는 공개되지 않을 수
-                          있습니다.</strong
-                        >
+                        홈 가드닝과 관련하여 정보를 나누고 공유하는 모든
+                        게시물을 환영합니다.
                       </li>
                       <li>
-                        에디터의 제안으로 작성한 글이나, 내부에서 선정한 글만
-                        피드나 홈을 통해 노출되며, 선정 여부는&nbsp;<strong
-                          >14일 이내에 댓글</strong
-                        >로 안내드립니다.
-                        <strong>선정 기준은 공개하지 않습니다.</strong>
+                        게시물에는 홈 가드닝과 관련된 다양한 주제에 대한 정보,
+                        팁, 경험 등을 자유롭게 작성할 수 있습니다.
                       </li>
                       <li>
-                        집들이 작성 관련 가이드는 아래 링크를 참고해 주세요.
+                        게시물 작성 시 필수 정보를 꼼꼼히 입력해주세요.
                         <ul>
                           <li>
-                            원룸·오피스텔·방을 소개하는 경우 (<a
-                              href="#"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              >바로가기</a
-                            >)
-                          </li>
-                          <li>
-                            아파트·빌라·주택 전체를 소개하는 경우 (<a
+                            게시물 작성 가이드 (<a
                               href="#"
                               target="_blank"
                               rel="noopener noreferrer"
@@ -165,30 +153,17 @@
                         </ul>
                       </li>
                       <li>
-                        사진 속 제품 정보는 [태그] 기능을 이용해 등록해 주세요.
-                        <ul>
-                          <li>
-                            제품 정보 등록 가이드 (<a
-                              href="#"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              >바로가기</a
-                            >)
-                          </li>
-                        </ul>
+                        사진 첨부 시 용량은 장당 최대 20MB까지 업로드할 수
+                        있으며, jpg, png, webp, heif, heic, gif 포맷을
+                        지원합니다.
                       </li>
                       <li>
-                        사진 첨부 시 용량은 장당 최대 20MB까지 업로드할 수 있고,
-                        jpg, png, webp, heif, heic, gif 포맷을 지원합니다.
+                        게시물 작성과 이미지 업로드 시, 타인의 지식재산권을
+                        존중하여 주세요.
                       </li>
                       <li>
-                        글 작성과 이미지 업로드 시, 타인의 지식재산권을 침해하지
-                        않도록 유의해 주세요.
-                      </li>
-                      <li>
-                        온라인 집들이는 작성해주신 초안을 바탕으로 내부 에디터의
-                        편집과 검수, 태그 작업을 거쳐서 발행되고 있습니다. 이에
-                        따라 커버사진과 제목, 본문 구성 등이 변경될 수 있습니다.
+                        게시물은 커뮤니티의 풍요로움을 높이는데 기여할 수 있도록
+                        자유롭게 작성해주세요.
                       </li>
                     </ul>
                   </div>
@@ -225,10 +200,7 @@
                         </g>
                       </svg>
                     </div>
-                    <div class="slide-text-top">필수 정보 입력</div>
-                    <div class="slide-text-bottom">
-                      게시물을 이해하는데 필요한 정보이니 꼼꼼하게 입력해주세요
-                    </div>
+                    <div class="slide-text">필수 정보 입력</div>
                   </div>
                   <div class="down-arrow-box">
                     <svg
@@ -246,9 +218,47 @@
                     </svg>
                   </div>
                 </button>
-                <div class="expanded open" style="overflow: hidden;">
+                <div class="expanded" style="overflow: hidden;">
                   <div class="required-info-wrap">
                     <div class="required-info-container">
+                      <div class="required-info-item">
+                        <div class="required-info-item-title-box">
+                          카테고리<span class="required-info-item-title"
+                            >*</span
+                          >
+                        </div>
+                        <div class="required-info-item-wrap">
+                          <div class="required-info-item">
+                            <div class="required-info-item-inner">
+                              <span class="required-info-item-box">
+                                <div class="input-group select-input">
+                                  <select name="plant" class="form-control">
+                                    <option value="" disabled selected
+                                      >선택해주세요.</option
+                                    >
+                                    <option value="0">식물 키우기</option>
+                                    <option value="1">관련 제품</option>
+                                    <option value="2">스타일링</option>
+                                  </select>
+                                  <span class="select-input__icon">
+                                    <svg
+                                      width="10"
+                                      height="10"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      style="fill: currentcolor;"
+                                    >
+                                      <path
+                                        fill-rule="evenodd"
+                                        d="M0 3l5 5 5-5z"
+                                      ></path>
+                                    </svg>
+                                  </span>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                       <div class="required-info-item">
                         <div class="required-info-item-title-box">
                           식물 종류<span class="required-info-item-title"
@@ -256,7 +266,7 @@
                           >
                         </div>
                         <div class="required-info-item-wrap">
-                          <div class="required-info-item">
+                          <div class="required-info-item-container">
                             <div class="required-info-item-inner">
                               <span class="required-info-item-box">
                                 <div class="input-group select-input">
@@ -292,10 +302,35 @@
                       </div>
                       <div class="required-info-item">
                         <div class="required-info-item-title-box">
-                          태그<span class="required-info-item-title">*</span>
+                          인스타
                         </div>
                         <div class="required-info-item-wrap">
-                          <div class="required-info-item">
+                          <div class="required-info-item-container">
+                            <div class="required-info-item-inner">
+                              <span class="required-info-item-box">
+                                <div class="instar-input-box">
+                                  <input
+                                    class="instar-input"
+                                    placeholder="인스타 아이디"
+                                    name="instar"
+                                    maxlength="10"
+                                    value=""
+                                  />
+                                </div>
+                              </span>
+                              <span class="empty-value" style="display: none;">
+                                필수 항목 입니다.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="required-info-item">
+                        <div class="required-info-item-title-box">
+                          태그
+                        </div>
+                        <div class="required-info-item-wrap">
+                          <div class="required-info-item-container">
                             <div class="required-info-item-inner">
                               <span class="required-info-item-box">
                                 <div class="tag-input-box">
@@ -303,21 +338,99 @@
                                     class="tag-input"
                                     placeholder="# 태그"
                                     name="tags"
-                                    maxlength="25"
+                                    maxlength="10"
                                     value=""
                                   />
                                 </div>
                               </span>
-                              <span class="empty-value" style="display: none;"
-                                >필수 항목 입니다.</span
-                              >
+                              <span class="empty-value" style="display: none;">
+                                필수 항목 입니다.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="required-info-item">
+                        <div class="tag-list"></div>
+                      </div>
+                      <div class="required-info-item">
+                        <div class="required-info-item-title-box">
+                          추천 상품 링크
+                        </div>
+                        <div class="required-info-item-wrap">
+                          <div class="required-info-item-container">
+                            <div class="required-info-item-inner">
+                              <div class="double-info-item-box">
+                                <div class="double-input-wrap">
+                                  <div class="double-input-left-box">
+                                    <input
+                                      class="url-input"
+                                      value=""
+                                      placeholder="URL 주소를 입력해주세요."
+                                    />
+                                  </div>
+                                </div>
+                                <div class="double-input-wrap">
+                                  <div class="link-input-box">
+                                    <input
+                                      class="url-input"
+                                      value=""
+                                      placeholder="표시할 내용"
+                                    />
+                                  </div>
+                                  <div class="add-delete-btn-box">
+                                    <button
+                                      type="button"
+                                      title="추가"
+                                      class="add-and-delete-btn"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="29"
+                                        height="29"
+                                        viewBox="-3 -5 29 29"
+                                        class="icon"
+                                      >
+                                        <path
+                                          d="M10.8 3.8v5H5.7c-.4 0-.7.3-.7.7 0 .4.3.7.7.7h5.1v5c0 .4.3.7.7.7.4 0 .7-.3.7-.7v-5h5.1c.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7h-5.1v-5c0-.4-.3-.7-.7-.7-.4 0-.7.3-.7.7z"
+                                          fill="#525B61"
+                                          stroke="#525B61"
+                                          stroke-width="0.5"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                    <button
+                                      type="button"
+                                      title="삭제"
+                                      class="add-and-delete-btn"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="29"
+                                        height="29"
+                                        viewBox="-3 -11 29 29"
+                                        class="icon"
+                                      >
+                                        <path
+                                          d="M10.8 2.8H5.7c-.4 0-.7.3-.7.7 0 .4.3.7.7.7h11.6c.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7h-6.5z"
+                                          fill="#525B61"
+                                          stroke="#525B61"
+                                          stroke-width="0.5"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <p class="guide-text">
+                                URL은 최대 3개까지 입력할 수 있습니다.
+                              </p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="tag-list"></div>
                 </div>
               </div>
             </div>
@@ -413,5 +526,5 @@
       </div>
     </div>
   </body>
-  <script src="../../staticfiles/js/community/create-knowhow.js"></script>
+  <script src="../../../staticfiles/js/community/app/create-knowhow.js"></script>
 </html>

@@ -15,7 +15,7 @@ function appendItem(post) {
     <div class="content-item-container">
         <div class="content-img-box">
         <img
-            src="../../staticfiles/images/blank-image.png"
+            src="../../../staticfiles/images/blank-image.png"
             class="content-img"
         />
         <div class="scrap-btn-box">
@@ -26,7 +26,7 @@ function appendItem(post) {
             >
             <span class="scrap-icon-box">
                 <img
-                src="../../staticfiles/images/scrap-off.png"
+                src="../../../staticfiles/images/scrap-off.png"
                 alt=""
                 />
             </span>
@@ -39,7 +39,7 @@ function appendItem(post) {
         <div class="content-uploader">
         <div class="uploader-img-box">
             <img
-            src="../../staticfiles/images/blank-image.png"
+            src="../../../staticfiles/images/blank-image.png"
             class="uploader-img"
             />
         </div>
@@ -76,15 +76,31 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 showList();
 
-const scrapBtns = document.querySelectorAll(".scrap-btn");
-scrapBtns.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    const img = item.querySelector("img");
-    const imgSrc = img.getAttribute("src");
-    imgSrc === "../../staticfiles/images/scrap-off.png"
-      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
-      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
-  });
+let timeoutId;
+let animationTarget;
+const contentLineBox = document.querySelector(".content-line-box");
+const scrapPopupWrap = document.querySelector(".scrap-popup-wrap");
+const scrapPopupCancelWrap = document.querySelector(".scrap-popup-cancel-wrap");
+contentLineBox.addEventListener("click", (e) => {
+  const clickedBtn = e.target.closest(".scrap-btn");
+  const img = clickedBtn.querySelector("img");
+  const imgSrc = img.getAttribute("src");
+  if (imgSrc === "../../../staticfiles/images/scrap-off.png") {
+    img.setAttribute("src", "../../../staticfiles/images/scrap-on.png");
+    animationTarget && animationTarget.classList.remove("show-animation");
+    animationTarget = scrapPopupWrap;
+  } else if (imgSrc != "../../../staticfiles/images/scrap-off.png") {
+    img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
+    animationTarget.classList.remove("show-animation");
+    animationTarget = scrapPopupCancelWrap;
+  }
+  animationTarget.classList.remove("hide-animation");
+  animationTarget.classList.add("show-animation");
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    animationTarget.classList.remove("show-animation");
+    animationTarget.classList.add("hide-animation");
+  }, 3000);
 });
 
 const filterItems = document.querySelectorAll(".filter-item");
@@ -103,8 +119,10 @@ filterItems.forEach((item) => {
       modalMenuBtns.forEach((btn) => {
         btn.classList.remove("choice");
       });
+      const filterIcon = `<span class="filter-btn-icon"></span>`;
+      e.target.closest(".filter-modal").previousElementSibling.innerHTML =
+        btn.innerText + filterIcon;
       e.target.closest(".modal-menu-btn").classList.add("choice");
-      
     });
   });
 });
