@@ -428,3 +428,82 @@
     width: 45px;
     display: none;
 }
+
+/* 푸터 시작 */
+.footer-Wrap {
+    border-top: 1px solid #dadce0;
+    width: 100%;
+}
+
+.footer-contentWrap {
+    background-color: #fff;
+    color: #828c94;
+    margin: 0 auto;
+    max-width: 1175px;
+    padding: 77px 20px;
+}
+
+.footer-title {
+    color: #3f474d;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -.36px;
+    margin-bottom: 16px;
+}
+
+.footer-info {
+    color: #828c94;
+    font-size: 14px;
+    letter-spacing: -.28px;
+    line-height: 22px;
+}
+
+.footer-contactWrap {
+    display: -moz-flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    margin-top: 24px;
+}
+
+.footer-contactWrap-firstli {
+    color: #828c94;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: -.28px;
+    line-height: 2;
+    margin-right: 24px;
+    font-weight: 700;
+}
+
+.footer-contactWrap-li {
+    color: #828c94;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: -.28px;
+    line-height: 2;
+    margin-right: 24px;
+}
+
+.footer-snsWrap {
+    display: -moz-flex;
+    display: flex;
+}
+
+.footer-sns-item {
+    margin-right: 20px;
+}
+
+.footer-sns-item>a {
+    color: #c2c8cc;
+    transition: color .25s;
+}
+
+.footer-sns-item>a:hover{
+    color: #a4acb3;
+}
+
+.footer-sns-item svg {
+    height: 26px;
+    width: 26px;
+}
