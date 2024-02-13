@@ -30,7 +30,7 @@ const userinfos = document.querySelectorAll(".header-info-each");
 const headerscrap = document.querySelector(".header-scrap-a");
 const headeralarm = document.querySelector(".header-alarm-a");
 const headerkakaoIcon = document.querySelector(".header-kakao-button");
-const isLogin = false;
+const isLogin = true;
 
 if (isLogin) {
   userinfos.forEach((info) => {
@@ -89,21 +89,6 @@ searchAtag.forEach((atag, i) => {
   });
 });
 
-// 이런 00 찾고 있나요에 스크랩을 누르면 색이 들어오고 다시 누르면 색이 없어져야함
-const scrapBtns = document.querySelectorAll(
-  ".realmain-plantRecommend-scrapbutton"
-);
-scrapBtns.forEach((item) => {
-  item.addEventListener("click", () => {
-    const img = item.querySelector("img");
-    const imgSrc = img.getAttribute("src");
-    console.log(imgSrc);
-    imgSrc === "../../staticfiles/images/scrap-off.png"
-      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
-      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
-  });
-});
-
 // 이런 00 찾고 있나요? 부분에 슬라이드 바 구현
 const nextButton = document.querySelector(".realmain-nextbutton");
 const beforeButton = document.querySelector(".realmain-beforebutton");
@@ -141,36 +126,6 @@ searchOnedayA.forEach((atag, i) => {
 searchOnedayA.forEach((atag, i) => {
   atag.addEventListener("mouseout", () => {
     searchOnedayImg[i].style.transform = "scale(1)";
-  });
-});
-
-// 인기 콘텐츠 부분에 스크랩 on off 기능
-const scraplectureBtns = document.querySelectorAll(
-  ".realmain-lecture-scrapbutton"
-);
-scraplectureBtns.forEach((item) => {
-  item.addEventListener("click", () => {
-    const img = item.querySelector("img");
-    const imgSrc = img.getAttribute("src");
-    console.log(imgSrc);
-    imgSrc === "../../staticfiles/images/scrap-off.png"
-      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
-      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
-  });
-});
-
-// 오늘의 딜부분에 스크랩 on off 기능
-const scraptodayHotBtns = document.querySelectorAll(
-  ".realmain-todayHotdeal-scrapbutton"
-);
-scraptodayHotBtns.forEach((item) => {
-  item.addEventListener("click", () => {
-    const img = item.querySelector("img");
-    const imgSrc = img.getAttribute("src");
-    console.log(imgSrc);
-    imgSrc === "../../staticfiles/images/scrap-off.png"
-      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
-      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
   });
 });
 
@@ -230,17 +185,119 @@ categoryButtons.forEach((btn) => {
   });
 });
 
+// 이런 00 찾고 있나요에 스크랩을 누르면 색이 들어오고 다시 누르면 색이 없어져야함
+const scrapPopup = document.querySelector(".scrap-popup-wrap");
+const scrapCancel = document.querySelector(".scrap-popup-cancel-wrap");
+let timeoutId;
+let animationTarget;
+
+const recommendScrapButton = document.querySelectorAll(
+  ".realmain-plantRecommend-scrapbutton"
+);
+
+recommendScrapButton.forEach((scrap) => {
+  scrap.addEventListener("click", () => {
+    const img = scrap.querySelector("img");
+    const imgSrc = img.getAttribute("src");
+    if (imgSrc === "../../staticfiles/images/scrap-off.png") {
+      img.setAttribute("src", "../../staticfiles/images/scrap-on.png");
+      animationTarget && animationTarget.classList.remove("show-animation");
+      animationTarget = scrapPopup;
+    } else {
+      img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+      animationTarget.classList.remove("show-animation");
+      animationTarget = scrapCancel;
+    }
+    animationTarget.classList.remove("hide-animation");
+    animationTarget.classList.add("show-animation");
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      animationTarget.classList.remove("show-animation");
+      animationTarget.classList.add("hide-animation");
+    }, 3000);
+  });
+});
+
+// 원데이 클래스, 인기 콘텐츠 부분에 스크랩 on off 기능
+const popularScrapButton = document.querySelectorAll(
+  ".realmain-lecture-scrapbutton"
+);
+
+popularScrapButton.forEach((scrap) => {
+  scrap.addEventListener("click", () => {
+    const img = scrap.querySelector("img");
+    const imgSrc = img.getAttribute("src");
+    if (imgSrc === "../../staticfiles/images/scrap-off.png") {
+      img.setAttribute("src", "../../staticfiles/images/scrap-on.png");
+      animationTarget && animationTarget.classList.remove("show-animation");
+      animationTarget = scrapPopup;
+    } else {
+      img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+      animationTarget.classList.remove("show-animation");
+      animationTarget = scrapCancel;
+    }
+    animationTarget.classList.remove("hide-animation");
+    animationTarget.classList.add("show-animation");
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      animationTarget.classList.remove("show-animation");
+      animationTarget.classList.add("hide-animation");
+    }, 3000);
+  });
+});
+
+// 오늘의 딜부분에 스크랩 on off 기능
+const todayScrapButton = document.querySelectorAll(
+  ".realmain-todayHotdeal-scrapbutton"
+);
+
+todayScrapButton.forEach((scrap) => {
+  scrap.addEventListener("click", () => {
+    const img = scrap.querySelector("img");
+    const imgSrc = img.getAttribute("src");
+    if (imgSrc === "../../staticfiles/images/scrap-off.png") {
+      img.setAttribute("src", "../../staticfiles/images/scrap-on.png");
+      animationTarget && animationTarget.classList.remove("show-animation");
+      animationTarget = scrapPopup;
+    } else {
+      img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+      animationTarget.classList.remove("show-animation");
+      animationTarget = scrapCancel;
+    }
+    animationTarget.classList.remove("hide-animation");
+    animationTarget.classList.add("show-animation");
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      animationTarget.classList.remove("show-animation");
+      animationTarget.classList.add("hide-animation");
+    }, 3000);
+  });
+});
+
 // 베스트 상품 부분에 스크랩 on off 기능
-const scrapbestProductBtns = document.querySelectorAll(
+const bestproductScrapButton = document.querySelectorAll(
   ".realmain-bestproduct-realPhotoScrapbtn"
 );
-scrapbestProductBtns.forEach((item) => {
-  item.addEventListener("click", () => {
-    const img = item.querySelector("img");
+
+bestproductScrapButton.forEach((scrap) => {
+  scrap.addEventListener("click", () => {
+    const img = scrap.querySelector("img");
     const imgSrc = img.getAttribute("src");
-    console.log(imgSrc);
-    imgSrc === "../../staticfiles/images/scrap-off.png"
-      ? img.setAttribute("src", "../../staticfiles/images/scrap-on.png")
-      : img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+    if (imgSrc === "../../staticfiles/images/scrap-off.png") {
+      img.setAttribute("src", "../../staticfiles/images/scrap-on.png");
+      animationTarget && animationTarget.classList.remove("show-animation");
+      animationTarget = scrapPopup;
+    } else {
+      img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+      animationTarget.classList.remove("show-animation");
+      animationTarget = scrapCancel;
+    }
+    animationTarget.classList.remove("hide-animation");
+    animationTarget.classList.add("show-animation");
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      animationTarget.classList.remove("show-animation");
+      animationTarget.classList.add("hide-animation");
+    }, 3000);
   });
 });
