@@ -215,22 +215,28 @@
                   </div>
                 </div>
               </div>
-              <!-- 프로필 이미지 변경 -->
+              <!-- 프로필 이미지 입력창 -->
               <!-- 전에 배웠던 이미지 넣기 이벤트 추가 필요 -->
               <div class="info-items-wrap">
                 <div class="info-items-title">프로필 이미지</div>
                 <div class="user-info-items-wrap">
                   <div class="user-info-items-container profile">
+                    <!-- 여기를 클릭하면 새 이미지를 불러오는 JS 이벤트 발생 -->
                     <div class="user-profile-image-wrap">
                       <ul class="user-profile-image-container">
-                        <li class="new-image-button-wrap">
-                          <button class="new-image-button" type="button">
-                            <!-- 새 이미지 넣으면 src가 변경 -->
-                            <img
-                              class="current-profile-image"
-                              src="../../../staticfiles/images/mypage/base-profile-image.avif"
-                            />
-                          </button>
+                        <li class="new-image-wrap">
+                          <div class="new-image-container">
+                            <label for="new-image">
+                              <!-- 새 이미지 넣으면 이미지 url이 변경 -->
+                              <div class="current-profile-image"></div>
+                            </label>
+                          </div>
+                          <input
+                            type="file"
+                            id="new-image"
+                            style="display: none"
+                            accept="image/*"
+                          />
                         </li>
                       </ul>
                     </div>
