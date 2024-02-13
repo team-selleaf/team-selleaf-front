@@ -32,10 +32,11 @@
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
       rel="stylesheet"
-      href="../../../staticfiles/css/mypage/profile/see-all.css"
+      href="../../../staticfiles/css/mypage/my-classes/past-classes.css"
     />
-    <!-- '마이페이지' 부분은 나중에 DB, 서버 연동으로 (닉네임)의 공간~ 으로 바꾸기 -->
-    <title>Selleaf | 마이페이지에 오신 것을 환영합니다.</title>
+    <!-- 나중에 DB, 서버 연동으로 (닉네임)님의 지난 강의들 으로 바꾸기 -->
+    <!-- 여기는 내가 진행했던 강의들을 저장하는 페이지 -->
+    <title>Selleaf | 나의 지난 강의들</title>
   </head>
   <body>
     <div class="whole-page-wrap">
@@ -51,13 +52,16 @@
                 style="transform: translateX(0px)"
               >
                 <li class="main-category-item">
-                  <a href="" class="active">내 활동</a>
+                  <a href="">내 활동</a>
                 </li>
                 <li class="main-category-item">
                   <a href="">거래 내역</a>
                 </li>
                 <li class="main-category-item">
                   <a href="">강의 내역</a>
+                </li>
+                <li class="main-category-item">
+                  <a href="" class="active">강의 현황</a>
                 </li>
                 <li class="main-category-item">
                   <a href="">설정</a>
@@ -70,27 +74,15 @@
                 style="transform: translateX(0px)"
               >
                 <li class="sub-category-item">
-                  <a href="" class="active">모두보기</a>
+                  <a href="" class="active">지난 강의</a>
                 </li>
                 <li class="sub-category-item">
-                  <a href="">내 게시글</a>
-                </li>
-                <li class="sub-category-item">
-                  <a href="">내 댓글</a>
-                </li>
-                <li class="sub-category-item">
-                  <a href="">내 리뷰</a>
-                </li>
-                <li class="sub-category-item">
-                  <a href="">좋아요</a>
-                </li>
-                <li class="sub-category-item">
-                  <a href="">스크랩북</a>
+                  <a href="">예정 강의</a>
                 </li>
               </ul>
             </div>
           </div>
-          <!-- 마이페이지 내 탭 별 내용 - 이 탭은 모두보기 -->
+          <!-- 이 탭은 내 강의 현황 -->
           <div class="content-wrap">
             <div class="content-container">
               <div class="sidebar-wrap">
@@ -230,42 +222,154 @@
               <!-- 사진 등의 내용물이 표시되는 공간 -->
               <!-- 이 부분은 복붙하면서 내용물 교체 -->
               <div class="main-content-wrap">
-                <div class="main-content-cotainer">
-                  <div class="main-content-area">
-                    <!-- 사진 -->
-                    <div class="content-section-wrap">
-                      <div class="content-title-wrap">
-                        <h1 class="content-title">
-                          게시글
-                          <span class="content-count">0</span>
-                        </h1>
-                        <div class="title-empty-area"></div>
+                <div class="main-content-container">
+                  <div class="classes-history-wrap">
+                    <!-- 아무것도 없을 때 표시할 태그 -->
+                    <h1>아직 진행한 강의가 없어요.</h1>
+                    <p>나만의 강의를 개설해보세요!</p>
+                    <!-- 내역이 있을 때는 여기를 표시 -->
+                    <div class="classes-history-item-wrap">
+                      <a href="" class="classes-history-link"></a>
+                      <div class="classes-history-item-container">
+                        <div class="classes-item-image-wrap">
+                          <img
+                            class="classes-item-image"
+                            src="../../../staticfiles/images/blank-image.png"
+                          />
+                        </div>
+                        <div class="classes-item-title-wrap">
+                          <span>강의 테스트 1</span>
+                        </div>
+                        <div class="classes-item-article-wrap">
+                          <span>강의 내역 본문 예시입니다.</span>
+                        </div>
+                        <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
+                        <div class="classes-item-info-wrap">
+                          <div class="article-info-wrap">
+                            <!-- 작성자 -->
+                            <div class="user-info-wrap">
+                              <div class="user-profile-wrap">
+                                <img
+                                  class="user-profile-image"
+                                  src="../../../staticfiles/images/mypage/base-profile-image.avif"
+                                />
+                              </div>
+                              Selleaf Test
+                            </div>
+                            <!-- 올린 시간, 조회수, 지역 -->
+                            <div class="item-info-wrap">
+                              <div class="item-infos">1일 전</div>
+                              <div class="item-infos">조회 8</div>
+                              <div class="item-infos">경기도 용인시</div>
+                            </div>
+                          </div>
+                          <!-- 태그 -->
+                          <div class="item-tags-wrap">
+                            <ul class="item-tags-container">
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    온라인
+                                  </button>
+                                </div>
+                              </li>
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    테라리움
+                                  </button>
+                                </div>
+                              </li>
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    DIY 키트
+                                  </button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
-                      <a class="photo-upload-wrap" href="">
-                        <img
-                          class="add-icon"
-                          src="../../../staticfiles/images/mypage/add-icon.svg"
-                        />
-                        첫 번째 게시글을 올려보세요
-                      </a>
                     </div>
-                    <!-- 집들이 - 나중에 다른 걸로 수정 -->
-                    <div class="content-section-wrap">
-                      <div class="content-title-wrap">
-                        <h1 class="content-title">
-                          리뷰
-                          <span class="content-count">0</span>
-                        </h1>
-                        <div class="title-empty-area"></div>
+                    <!-- 각 내역 사이의 구분선 -->
+                    <hr class="items-seperator" />
+                    <!-- 새로운 내역 -->
+                    <div class="classes-history-item-wrap">
+                      <a href="" class="classes-history-link"></a>
+                      <div class="classes-history-item-container">
+                        <div class="classes-item-image-wrap">
+                          <img
+                            class="classes-item-image"
+                            src="../../../staticfiles/images/blank-image.png"
+                          />
+                        </div>
+                        <div class="classes-item-title-wrap">
+                          <span>강의 테스트 2</span>
+                        </div>
+                        <div class="classes-item-article-wrap">
+                          <span>강의 내역 2 본문 예시입니다.</span>
+                        </div>
+                        <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
+                        <div class="classes-item-info-wrap">
+                          <div class="article-info-wrap">
+                            <!-- 작성자 -->
+                            <div class="user-info-wrap">
+                              <div class="user-profile-wrap">
+                                <img
+                                  class="user-profile-image"
+                                  src="../../../staticfiles/images/mypage/base-profile-image.avif"
+                                />
+                              </div>
+                              Selleaf Test
+                            </div>
+                            <!-- 올린 시간, 조회수, 지역 -->
+                            <div class="item-info-wrap">
+                              <div class="item-infos">2달 전</div>
+                              <div class="item-infos">조회 100</div>
+                              <div class="item-infos">경기도 용인시</div>
+                            </div>
+                          </div>
+                          <!-- 태그 -->
+                          <div class="item-tags-wrap">
+                            <ul class="item-tags-container">
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    테스트 태그 1
+                                  </button>
+                                </div>
+                              </li>
+
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    테스트 태그 2
+                                  </button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
-                      <a class="photo-upload-wrap" href="">
-                        <img
-                          class="add-icon"
-                          src="../../../staticfiles/images/mypage/add-icon.svg"
-                        />
-                        첫 번째 리뷰를 올려보세요
-                      </a>
                     </div>
+                    <!-- 각 내역 사이의 구분선 -->
+                    <hr class="items-seperator" />
                   </div>
                 </div>
               </div>
@@ -327,5 +431,5 @@
       </div>
     </div>
   </body>
-  <script src="../../../staticfiles/js/mypage/profile/see-all.js"></script>
+  <script src="../../../staticfiles/js/mypage/my-classes/past-classes.js"></script>
 </html>

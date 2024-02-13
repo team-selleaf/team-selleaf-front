@@ -32,10 +32,10 @@
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
       rel="stylesheet"
-      href="../../../staticfiles/css/mypage/profile/see-all.css"
+      href="../../../staticfiles/css/mypage/profile/my-reviews.css"
     />
-    <!-- '마이페이지' 부분은 나중에 DB, 서버 연동으로 (닉네임)의 공간~ 으로 바꾸기 -->
-    <title>Selleaf | 마이페이지에 오신 것을 환영합니다.</title>
+    <!-- '마이페이지' 부분은 나중에 DB, 서버 연동으로 (닉네임)님의 리뷰 로 바꾸기 -->
+    <title>Selleaf | 리뷰 페이지</title>
   </head>
   <body>
     <div class="whole-page-wrap">
@@ -70,7 +70,7 @@
                 style="transform: translateX(0px)"
               >
                 <li class="sub-category-item">
-                  <a href="" class="active">모두보기</a>
+                  <a href="">모두보기</a>
                 </li>
                 <li class="sub-category-item">
                   <a href="">내 게시글</a>
@@ -79,7 +79,7 @@
                   <a href="">내 댓글</a>
                 </li>
                 <li class="sub-category-item">
-                  <a href="">내 리뷰</a>
+                  <a href="" class="active">내 리뷰</a>
                 </li>
                 <li class="sub-category-item">
                   <a href="">좋아요</a>
@@ -90,7 +90,7 @@
               </ul>
             </div>
           </div>
-          <!-- 마이페이지 내 탭 별 내용 - 이 탭은 모두보기 -->
+          <!-- 마이페이지 내 탭 별 내용 - 이 탭은 리뷰 -->
           <div class="content-wrap">
             <div class="content-container">
               <div class="sidebar-wrap">
@@ -230,43 +230,18 @@
               <!-- 사진 등의 내용물이 표시되는 공간 -->
               <!-- 이 부분은 복붙하면서 내용물 교체 -->
               <div class="main-content-wrap">
-                <div class="main-content-cotainer">
-                  <div class="main-content-area">
-                    <!-- 사진 -->
-                    <div class="content-section-wrap">
-                      <div class="content-title-wrap">
-                        <h1 class="content-title">
-                          게시글
-                          <span class="content-count">0</span>
-                        </h1>
-                        <div class="title-empty-area"></div>
-                      </div>
-                      <a class="photo-upload-wrap" href="">
-                        <img
-                          class="add-icon"
-                          src="../../../staticfiles/images/mypage/add-icon.svg"
-                        />
-                        첫 번째 게시글을 올려보세요
-                      </a>
-                    </div>
-                    <!-- 집들이 - 나중에 다른 걸로 수정 -->
-                    <div class="content-section-wrap">
-                      <div class="content-title-wrap">
-                        <h1 class="content-title">
-                          리뷰
-                          <span class="content-count">0</span>
-                        </h1>
-                        <div class="title-empty-area"></div>
-                      </div>
-                      <a class="photo-upload-wrap" href="">
-                        <img
-                          class="add-icon"
-                          src="../../../staticfiles/images/mypage/add-icon.svg"
-                        />
-                        첫 번째 리뷰를 올려보세요
-                      </a>
-                    </div>
-                  </div>
+                <!-- 아무것도 없을 때 표시할 태그 -->
+                <!-- 내용물 생기면 이 부분이 수정될 것으로 보임 -->
+                <div class="user-feed-wrap">
+                  <div
+                    class="user-feed-content"
+                    style="
+                      padding-top: 0px;
+                      padding-bottom: 0px;
+                      transform: translateY(0px);
+                    "
+                  ></div>
+                  <p class="user-feed-empty">올린 리뷰가 없어요.</p>
                 </div>
               </div>
             </div>
@@ -327,5 +302,5 @@
       </div>
     </div>
   </body>
-  <script src="../../../staticfiles/js/mypage/profile/see-all.js"></script>
+  <script src="../../../staticfiles/js/mypage/profile/my-reviews.js"></script>
 </html>
