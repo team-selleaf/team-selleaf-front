@@ -93,141 +93,44 @@ contentLineBox.addEventListener("click", (e) => {
     : img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
 });
 
-const modalWrap = document.querySelector(".modal-wrap");
+const modalWraps = document.querySelectorAll(".modal-wrap");
 const filterBtns = document.querySelectorAll(".filter-btn");
-modalWrap.addEventListener("click", (e) => {
-  if (!e.target.closest(".modal-container")) {
-    modalWrap.classList.remove("modal-open");
-  }
+modalWraps.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    if (!e.target.closest(".modal-container")) {
+      item.classList.remove("modal-open");
+    }
+  });
 });
+
+let targetBtn;
 filterBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    targetBtn = e.target;
     if (e.target.getAttribute("name") === "sort") {
-      modalWrap.innerHTML = `
-      <div class="modal-container">
-        <div class="modal-inner">
-          <div class="modal-box">
-            <div class="modal-title-box">
-              <div class="modal-title">정렬</div>
-            </div>
-            <div class="modal-content-wrap">
-              <div class="modal-content-container">
-                <button
-                  type="button"
-                  class="modal-content-btn modal-btn-choice"
-                  name="latest"
-                >
-                  <div class="modal-btn-text-box">
-                    <div class="modal-btn-text">최신순</div>
-                  </div>
-                </button>
-                <button type="button" class="modal-content-btn" name="popularity">
-                  <div class="modal-btn-text-box">
-                    <div class="modal-btn-text">최근 인기순</div>
-                  </div>
-                </button>
-                <button type="button" class="modal-content-btn" name="past">
-                  <div class="modal-btn-text-box">
-                    <div class="modal-btn-text">과거순</div>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
+      modalWraps[0].classList.add("modal-open");
     } else if (e.target.getAttribute("name") === "plant") {
-      modalWrap.innerHTML = `
-      <div class="modal-container">
-      <div class="modal-inner">
-        <div class="modal-box">
-          <div class="modal-title-box">
-            <div class="modal-title">식물 종류</div>
-          </div>
-          <div class="modal-content-wrap">
-            <div class="modal-content-container">
-              <button type="button" class="modal-content-btn" name="foliage">
-                <div class="modal-btn-text-box">
-                  <div class="modal-btn-text">관엽식물</div>
-                </div>
-              </button>
-              <button type="button" class="modal-content-btn" name="coniferous">
-                <div class="modal-btn-text-box">
-                  <div class="modal-btn-text">침엽식물</div>
-                </div>
-              </button>
-              <button type="button" class="modal-content-btn" name="rare">
-                <div class="modal-btn-text-box">
-                  <div class="modal-btn-text">희귀식물</div>
-                </div>
-              </button>
-              <button type="button" class="modal-content-btn" name="cactus">
-                <div class="modal-btn-text-box">
-                  <div class="modal-btn-text">다육 선인장</div>
-                </div>
-              </button>
-              <button type="button" class="modal-content-btn" name="terrarium">
-                <div class="modal-btn-text-box">
-                  <div class="modal-btn-text">테라리움</div>
-                </div>
-              </button>
-              <button type="button" class="modal-content-btn" name="any">
-                <div class="modal-btn-text-box">
-                  <div class="modal-btn-text">기타</div>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
+      modalWraps[1].classList.add("modal-open");
     } else if (e.target.getAttribute("name") === "field") {
-      modalWrap.innerHTML = `
-      <div class="modal-container">
-        <div class="modal-inner">
-          <div class="modal-box">
-            <div class="modal-title-box">
-              <div class="modal-title">분야</div>
-            </div>
-            <div class="modal-content-wrap">
-              <div class="modal-content-container">
-                <button type="button" class="modal-content-btn" name="foliage">
-                  <div class="modal-btn-text-box">
-                    <div class="modal-btn-text">식물 키우기</div>
-                  </div>
-                </button>
-                <button type="button" class="modal-content-btn" name="coniferous">
-                  <div class="modal-btn-text-box">
-                    <div class="modal-btn-text">제품 추천</div>
-                  </div>
-                </button>
-                <button type="button" class="modal-content-btn" name="rare">
-                  <div class="modal-btn-text-box">
-                    <div class="modal-btn-text">스타일링</div>
-                  </div>
-                </button>
-                <button type="button" class="modal-content-btn" name="cactus">
-                  <div class="modal-btn-text-box">
-                    <div class="modal-btn-text">기타</div>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
+      modalWraps[2].classList.add("modal-open");
     }
-    modalWrap.classList.add("modal-open");
-    const modalContentBtns = modalWrap.querySelectorAll(".modal-content-btn");
-    modalContentBtns.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        const filterIcon = `<span class="filter-btn-icon"></span>`;
-        btn.innerHTML =
-          e.target.querySelector(".modal-btn-text").innerText + filterIcon;
-        modalWrap.classList.remove("modal-open");
+    modalWraps.forEach((item) => {
+      const modalContentBtns = item.querySelectorAll(".modal-content-btn");
+      modalContentBtns.forEach((modalBtn) => {
+        modalBtn.addEventListener("click", (e) => {
+          const filterIcon = `<span class="filter-btn-icon"></span>`;
+          const targetBtnText = e.target
+            .closest("button")
+            .querySelector(".modal-btn-text");
+          targetBtn.innerHTML = targetBtnText.innerText + filterIcon;
+          modalContentBtns.forEach((prev) => {
+            prev.classList.remove("modal-btn-choice");
+          });
+          e.target.closest("button").classList.add("modal-btn-choice");
+          modalWraps.forEach((modal) => {
+            modal.classList.remove("modal-open");
+          });
+        });
       });
     });
   });

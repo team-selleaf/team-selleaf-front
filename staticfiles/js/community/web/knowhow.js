@@ -76,14 +76,31 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 showList();
 
+let timeoutId;
+let animationTarget;
 const contentLineBox = document.querySelector(".content-line-box");
+const scrapPopupWrap = document.querySelector(".scrap-popup-wrap");
+const scrapPopupCancelWrap = document.querySelector(".scrap-popup-cancel-wrap");
 contentLineBox.addEventListener("click", (e) => {
   const clickedBtn = e.target.closest(".scrap-btn");
   const img = clickedBtn.querySelector("img");
   const imgSrc = img.getAttribute("src");
-  imgSrc === "../../../staticfiles/images/scrap-off.png"
-    ? img.setAttribute("src", "../../../staticfiles/images/scrap-on.png")
-    : img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
+  if (imgSrc === "../../../staticfiles/images/scrap-off.png") {
+    img.setAttribute("src", "../../../staticfiles/images/scrap-on.png");
+    animationTarget && animationTarget.classList.remove("show-animation");
+    animationTarget = scrapPopupWrap;
+  } else if (imgSrc != "../../../staticfiles/images/scrap-off.png") {
+    img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
+    animationTarget.classList.remove("show-animation");
+    animationTarget = scrapPopupCancelWrap;
+  }
+  animationTarget.classList.remove("hide-animation");
+  animationTarget.classList.add("show-animation");
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    animationTarget.classList.remove("show-animation");
+    animationTarget.classList.add("hide-animation");
+  }, 3000);
 });
 
 const filterItems = document.querySelectorAll(".filter-item");
@@ -102,6 +119,9 @@ filterItems.forEach((item) => {
       modalMenuBtns.forEach((btn) => {
         btn.classList.remove("choice");
       });
+      const filterIcon = `<span class="filter-btn-icon"></span>`;
+      e.target.closest(".filter-modal").previousElementSibling.innerHTML =
+        btn.innerText + filterIcon;
       e.target.closest(".modal-menu-btn").classList.add("choice");
     });
   });

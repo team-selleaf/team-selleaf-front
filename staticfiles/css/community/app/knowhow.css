@@ -346,12 +346,12 @@
   max-height: 90%;
   height: 440px;
   border-radius: 8px 8px 0 0;
-  display: inline-flex;
   flex-direction: column;
   color: rgb(47, 52, 56);
   background-color: rgb(255, 255, 255);
   position: absolute;
   left: 0;
+  display: none;
   bottom: 0;
 }
 .modal-inner {
@@ -427,4 +427,7 @@
 }
 .modal-open {
   display: block;
+}
+.modal-open .modal-container {
+  display: inline-flex;
 }
