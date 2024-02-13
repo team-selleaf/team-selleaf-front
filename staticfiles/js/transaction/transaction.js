@@ -13,9 +13,11 @@ scrapButton.forEach((scrap) => {
     const imgSrc = img.getAttribute("src");
     if (imgSrc === "/staticfiles/images/scrap-off.png") {
       img.setAttribute("src", "/staticfiles/images/scrap-on.png");
+      animationTarget && animationTarget.classList.remove("show-animation");
       animationTarget = scrapPopup;
     } else {
       img.setAttribute("src", "/staticfiles/images/scrap-off.png");
+      animationTarget.classList.remove("show-animation");
       animationTarget = scrapCancel;
     }
     animationTarget.classList.remove("hide-animation");

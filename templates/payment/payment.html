@@ -237,7 +237,8 @@
                 <button type="button" class="use-all">전액 사용</button>
               </div>
               <div class="available-mileage-wrap">
-                사용 가능 마일리지<span class="mileage"> 195 M</span>
+                사용 가능 마일리지<span class="mileage"> 195</span>
+                <span> M</span>
               </div>
             </article>
           </section>
@@ -513,5 +514,91 @@
         </aside>
       </form>
     </div>
+    <!-- 주소 모달 -->
+    <div class="address-modal">
+      <div class="address-modal-wrap" style="display: none">
+        <div class="address-modal-container">
+          <div class="address-modal-title-wrap">
+            <span class="adress-modal-title">배송지 선택</span>
+            <button type="button" class="close-button">
+              <span class="cancel-image-wrap">
+                <img src="/staticfiles/images/cancel.png" alt="" />
+              </span>
+            </button>
+          </div>
+          <div class="address-modal-main-wrap">
+            <div class="address-modal-main-container">
+              <div class="address-wrap">
+                <div class="address-title-wrap">
+                  <div class="address-title">집</div>
+                  <div class="address-tag">기본배송지</div>
+                </div>
+                <div class="address-text">
+                  경기 하남시 감일순환로 170 (감이동), 감일 스타힐스 301동 503호
+                </div>
+                <div class="address-user-info">
+                  <div class="address-user-name">강희주</div>
+                  <div class="address-user-phone">010-4849-6691</div>
+                </div>
+                <div class="address-button-wrap">
+                  <div class="address-button-container">
+                    <button type="button" class="delete-button">삭제</button
+                    ><button type="button" class="update-button">수정</button>
+                  </div>
+                  <div class="select-button-wrap">
+                    <button class="select-button">선택</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="address-modal-main-wrap">
+            <div class="address-modal-main-container">
+              <div class="address-wrap">
+                <div class="address-title-wrap">
+                  <div class="address-title">집1</div>
+                  <div class="address-tag">기본배송지</div>
+                </div>
+                <div class="address-text">
+                  경기 하남시 감일순환로 170 (감이동), 감일 스타힐스 301동 503호
+                </div>
+                <div class="address-user-info">
+                  <div class="address-user-name">강희주</div>
+                  <div class="address-user-phone">010-4849-6691</div>
+                </div>
+                <div class="address-button-wrap">
+                  <div class="address-button-container">
+                    <button type="button" class="delete-button">삭제</button
+                    ><button type="button" class="update-button">수정</button>
+                  </div>
+                  <div class="select-button-wrap">
+                    <button class="select-button">선택</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="add-button-wrap">
+            <div class="add-button-container">
+              <button class="add-button">배송지 추가</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="confirm-total-wrap" style="display: none">
+        <div class="confirm-wrap">
+          <div class="confirm-title-container">
+            <p class="confirm-title">배송지를 삭제하시겠습니까?</p>
+          </div>
+          <div class="confirm-button-wrap">
+            <div class="confirm-button-container">
+              <button class="confirm-cancel">취소</button
+              ><button class="confirm">확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="/staticfiles/js/payment/payment.js"></script>
 </html>
