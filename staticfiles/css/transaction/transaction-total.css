@@ -182,6 +182,7 @@ div.category-container{
     left: calc(50% - 235px);
     bottom: 40px;
     z-index: 1400;
+    transform: translateY(200%);
 }
 
 .scrap-popup-cancel-wrap{
@@ -190,6 +191,7 @@ div.category-container{
     left: calc(50% - 235px);
     bottom: 40px;
     z-index: 1400;
+    transform: translateY(200%)
 }
 
 .scrap-popup-container{
@@ -202,10 +204,41 @@ div.category-container{
     border-radius: 4px;
     color: #000000;
     background-color: #F7F9FA;
-;
-    animation: 0.4s ease 0.1s 1 normal both running animation-473ney;
     margin-top: 15px;
 }
+
+@keyframes show-toast {
+    0% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+  }
+  @keyframes hide-toast {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+        
+    }
+    100% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+  }
+
+  .show-animation {
+    animation-name: show-toast;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .hide-animation {
+    animation-name: hide-toast;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+  }
 
 .scrap-popup-inner{
     flex: 1 0 0px;

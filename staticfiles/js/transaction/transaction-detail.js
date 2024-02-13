@@ -32,35 +32,56 @@ prevButton.addEventListener("click", (e) => {
 });
 
 //스크랩 버튼
-const scrapBtn = document.querySelector(".scrap-button");
+const scrapBtn = document.querySelectorAll(".scrap-button");
+const scrapPopup = document.querySelector(".scrap-popup-wrap");
+const scrapCancel = document.querySelector(".scrap-popup-cancel-wrap");
 
-scrapBtn.addEventListener("click", () => {
-  const img = scrapBtn.querySelector("img");
-  const imgSrc = img.getAttribute("src");
-  if (imgSrc === "/staticfiles/images/scrap-off-blk.png") {
-    img.setAttribute("src", "/staticfiles/images/scrap-on.png");
-  } else {
-    img.setAttribute("src", "/staticfiles/images/scrap-off-blk.png");
-  }
+let timeoutId;
+let animationTarget;
+
+scrapBtn.forEach((scrap) => {
+  scrap.addEventListener("click", () => {
+    const img = scrap.querySelector("img");
+    const imgSrc = img.getAttribute("src");
+    if (imgSrc === "/staticfiles/images/scrap-off.png") {
+      img.setAttribute("src", "/staticfiles/images/scrap-on.png");
+      animationTarget = scrapPopup;
+    } else {
+      img.setAttribute("src", "/staticfiles/images/scrap-off.png");
+      animationTarget = scrapCancel;
+    }
+    animationTarget.classList.remove("hide-animation");
+    animationTarget.classList.add("show-animation");
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      animationTarget.classList.remove("show-animation");
+      animationTarget.classList.add("hide-animation");
+    }, 3000);
+  });
 });
 
 // 비슷한 제품 스크랩 버튼
 
 const scrapButton = document.querySelectorAll(".img-scrap-button");
-// const scrapPopup = document.querySelector(".scrap-popup-wrap");
-// const scrapCancel = document.querySelector(".scrap-popup-cancel-wrap");
+
 scrapButton.forEach((scrap) => {
   scrap.addEventListener("click", () => {
     const img = scrap.querySelector("img");
     const imgSrc = img.getAttribute("src");
     if (imgSrc === "/staticfiles/images/scrap-off.png") {
       img.setAttribute("src", "/staticfiles/images/scrap-on.png");
+      animationTarget = scrapPopup;
     } else {
       img.setAttribute("src", "/staticfiles/images/scrap-off.png");
+      animationTarget = scrapCancel;
     }
-    // scrapPopup.style.display == "none"
-    //   ? (scrapPopup.style.display = "block")
-    //   : (scrapPopup.style.display = "none");
+    animationTarget.classList.remove("hide-animation");
+    animationTarget.classList.add("show-animation");
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      animationTarget.classList.remove("show-animation");
+      animationTarget.classList.add("hide-animation");
+    }, 3000);
   });
 });
 

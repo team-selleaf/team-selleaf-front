@@ -43,6 +43,26 @@
   <body>
     <header></header>
     <a id="top"></a>
+    <!-- 스크랩 팝업 -->
+    <div class="scrap-popup-wrap">
+      <div class="scrap-popup-container">
+        <div class="scrap-popup-inner">
+          <div class="scrap-popup-text">스크랩 했습니다.</div>
+        </div>
+        <div class="scrap-popup-button-container">
+          <!-- 스크랩북 링크삽입 -->
+          <button class="scrap-link-button" type="button">스크랩북 보기</button>
+          <button class="scrap-link-button" type="button">폴더에 담기</button>
+        </div>
+      </div>
+    </div>
+    <div class="scrap-popup-cancel-wrap">
+      <div class="scrap-popup-container">
+        <div class="scrap-popup-inner">
+          <div class="scrap-popup-text">스크랩을 취소하였습니다.</div>
+        </div>
+      </div>
+    </div>
     <!-- 거래 카테고리 -->
     <div class="category-wrap-" style="height: 52px">
       <div
@@ -602,6 +622,7 @@
                 <header class="detail-info-title">
                   <h1 class="detail-info-title-text">상품정보</h1>
                 </header>
+                <!-- 나중에 데이터 받아서 와야하는 부분 -->
                 <div class="detail-info-contents-wrap">
                   <div class="detail-info-contents-thumbnail">
                     <button class="expended-info" type="button">
@@ -669,6 +690,7 @@
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                   </div>
+                  <!-- 테이블 구성 동일, 내용은 데이터에서 받아야함 -->
                   <table class="detail-info-table">
                     <tbody>
                       <tr>
