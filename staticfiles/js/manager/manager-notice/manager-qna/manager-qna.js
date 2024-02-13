@@ -80,8 +80,8 @@ cancelButton.addEventListener("click", handleCancelClick);
 // 공지사항, 자주묻는 질문 목록 선택하는 js
 const catebtns = document.querySelectorAll("#btn");
 const cateUnder = document.querySelectorAll("#under");
-cateUnder[0].classList.add("underbar-checked");
-catebtns[0].classList.add("lecture-checked");
+cateUnder[1].classList.add("underbar-checked");
+catebtns[1].classList.add("lecture-checked");
 
 catebtns.forEach((btn, i) => {
   btn.addEventListener("click", () => {
