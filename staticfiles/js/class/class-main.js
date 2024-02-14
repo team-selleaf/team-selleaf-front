@@ -1,21 +1,56 @@
-// 스크랩 버튼
-
-const scrapButton = document.querySelectorAll(".scrap-button");
+//스크랩 버튼
+const scrapBtn = document.querySelector(".post-wrap");
 const scrapPopup = document.querySelector(".scrap-popup-wrap");
 const scrapCancel = document.querySelector(".scrap-popup-cancel-wrap");
-scrapButton.forEach((scrap) => {
-  scrap.addEventListener("click", () => {
-    const img = scrap.querySelector("img");
-    const imgSrc = img.getAttribute("src");
-    if (imgSrc === "/staticfiles/images/scrap-off.png") {
-      img.setAttribute("src", "/staticfiles/images/scrap-on.png");
-    } else {
-      img.setAttribute("src", "/staticfiles/images/scrap-off.png");
-    }
-    scrapPopup.style.display == "none"
-      ? (scrapPopup.style.display = "block")
-      : (scrapPopup.style.display = "none");
-  });
+
+let timeoutId;
+let animationTarget;
+
+scrapBtn.addEventListener("click", (e) => {
+  const target = e.target.closest(".scrap-button");
+  const img = target.querySelector("img");
+  const imgSrc = img.getAttribute("src");
+  if (imgSrc === "/staticfiles/images/scrap-off.png") {
+    img.setAttribute("src", "/staticfiles/images/scrap-on.png");
+    animationTarget && animationTarget.classList.remove("show-animation");
+    animationTarget = scrapPopup;
+  } else {
+    img.setAttribute("src", "/staticfiles/images/scrap-off.png");
+    animationTarget.classList.remove("show-animation");
+    animationTarget = scrapCancel;
+  }
+  animationTarget.classList.remove("hide-animation");
+  animationTarget.classList.add("show-animation");
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    animationTarget.classList.remove("show-animation");
+    animationTarget.classList.add("hide-animation");
+  }, 3000);
+});
+
+//스크랩 버튼
+const scrapButton = document.querySelector(".update-post-list");
+
+scrapButton.addEventListener("click", (e) => {
+  const target = e.target.closest(".scrap-button");
+  const img = target.querySelector("img");
+  const imgSrc = img.getAttribute("src");
+  if (imgSrc === "/staticfiles/images/scrap-off.png") {
+    img.setAttribute("src", "/staticfiles/images/scrap-on.png");
+    animationTarget && animationTarget.classList.remove("show-animation");
+    animationTarget = scrapPopup;
+  } else {
+    img.setAttribute("src", "/staticfiles/images/scrap-off.png");
+    animationTarget.classList.remove("show-animation");
+    animationTarget = scrapCancel;
+  }
+  animationTarget.classList.remove("hide-animation");
+  animationTarget.classList.add("show-animation");
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    animationTarget.classList.remove("show-animation");
+    animationTarget.classList.add("hide-animation");
+  }, 3000);
 });
 
 //더보기 글씨 흐려지기
