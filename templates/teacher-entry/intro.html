@@ -43,7 +43,7 @@
   </head>
   <body>
     <!-- 강사 신청 안내 페이지 내용 -->
-    <div class="whole-page-wrap">
+    <div class="whole-page-wrap" id="introduce">
       <header>
         <div class="sticky-header-wrap">
           <div class="sticky-header-container">
@@ -61,17 +61,26 @@
               </div>
               <!-- 페이지 내 빠른 이동 메뉴 - JS 이벤트 처리 대상 -->
               <div class="quick-menu-wrap">
-                <a href="#" class="quick-menus">
-                  <span class="quick-menu-text">강사 신청 소개</span>
+                <a href="#introduce" class="quick-menus">
+                  <span class="quick-menu-text" title="강사 신청 소개">
+                    강사 신청 소개
+                  </span>
                 </a>
-                <a href="#" class="quick-menus">
-                  <span class="quick-menu-text">자주 묻는 질문</span>
+                <a href="#faq" class="quick-menus">
+                  <span class="quick-menu-text" title="자주 묻는 질문">
+                    자주 묻는 질문
+                  </span>
+                </a>
+                <a href="#terms" class="quick-menus">
+                  <span class="quick-menu-text" title="신청약관">
+                    신청약관
+                  </span>
                 </a>
               </div>
               <!-- 강사 신청 버튼 -->
               <div class="header-entry-button-wrap">
                 <div class="header-entry-button-container">
-                  <a href="#">
+                  <a href="#entry">
                     <button class="header-entry-button">강사자격 신청</button>
                   </a>
                 </div>
@@ -129,6 +138,7 @@
                 </div>
               </div>
               <!-- 수강 페이지 링크 - 팀 회의 후 제거 여부 결정 -->
+              <div id="faq"></div>
               <a href="#" class="class-page-link">수강 페이지 보러가기</a>
             </div>
           </div>
@@ -224,11 +234,28 @@
                   자세한 내용은 추후에 수정 바랍니다.
                 </div>
               </div>
+              <div id="terms"></div>
+            </div>
+          </div>
+        </div>
+        <!-- 신청약관 -->
+        <div class="terms-wrap">
+          <div class="terms-container">
+            <h2 class="terms-title">신청약관</h2>
+            <div class="terms-content">
+              <h1>제 1장 기본 사항</h1>
+              <h2>제 1조 (목적)</h2>
+              <p>
+                본 약관은 앞으로의 약관 작성에 대한 예시로서 제작되었습니다.
+                약관에 필요한 CSS 스타일들은 미리 작성되어 있지만, 만약 스타일의
+                추가 또는 변경이 필요하신 경우 페이지 담당자에게 문의 주시기
+                바랍니다.
+              </p>
             </div>
           </div>
         </div>
         <!-- 페이지 마지막의 강사자격 신청 section -->
-        <div class="teacher-entry-section-wrap">
+        <div class="teacher-entry-section-wrap" id="entry">
           <div class="teacher-entry-section-container">
             <div class="entry-title-wrap">
               <div class="entry-title">
