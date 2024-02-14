@@ -199,12 +199,12 @@ recommendScrapButton.forEach((scrap) => {
   scrap.addEventListener("click", () => {
     const img = scrap.querySelector("img");
     const imgSrc = img.getAttribute("src");
-    if (imgSrc === "../../staticfiles/images/scrap-off.png") {
-      img.setAttribute("src", "../../staticfiles/images/scrap-on.png");
+    if (imgSrc === "../../../staticfiles/images/scrap-off.png") {
+      img.setAttribute("src", "../../../staticfiles/images/scrap-on.png");
       animationTarget && animationTarget.classList.remove("show-animation");
       animationTarget = scrapPopup;
     } else {
-      img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+      img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
       animationTarget.classList.remove("show-animation");
       animationTarget = scrapCancel;
     }
@@ -227,12 +227,12 @@ popularScrapButton.forEach((scrap) => {
   scrap.addEventListener("click", () => {
     const img = scrap.querySelector("img");
     const imgSrc = img.getAttribute("src");
-    if (imgSrc === "../../staticfiles/images/scrap-off.png") {
-      img.setAttribute("src", "../../staticfiles/images/scrap-on.png");
+    if (imgSrc === "../../../staticfiles/images/scrap-off.png") {
+      img.setAttribute("src", "../../../staticfiles/images/scrap-on.png");
       animationTarget && animationTarget.classList.remove("show-animation");
       animationTarget = scrapPopup;
     } else {
-      img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+      img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
       animationTarget.classList.remove("show-animation");
       animationTarget = scrapCancel;
     }
@@ -255,12 +255,12 @@ todayScrapButton.forEach((scrap) => {
   scrap.addEventListener("click", () => {
     const img = scrap.querySelector("img");
     const imgSrc = img.getAttribute("src");
-    if (imgSrc === "../../staticfiles/images/scrap-off.png") {
-      img.setAttribute("src", "../../staticfiles/images/scrap-on.png");
+    if (imgSrc === "../../../staticfiles/images/scrap-off.png") {
+      img.setAttribute("src", "../../../staticfiles/images/scrap-on.png");
       animationTarget && animationTarget.classList.remove("show-animation");
       animationTarget = scrapPopup;
     } else {
-      img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+      img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
       animationTarget.classList.remove("show-animation");
       animationTarget = scrapCancel;
     }
@@ -283,12 +283,12 @@ bestproductScrapButton.forEach((scrap) => {
   scrap.addEventListener("click", () => {
     const img = scrap.querySelector("img");
     const imgSrc = img.getAttribute("src");
-    if (imgSrc === "../../staticfiles/images/scrap-off.png") {
-      img.setAttribute("src", "../../staticfiles/images/scrap-on.png");
+    if (imgSrc === "../../../staticfiles/images/scrap-off.png") {
+      img.setAttribute("src", "../../../staticfiles/images/scrap-on.png");
       animationTarget && animationTarget.classList.remove("show-animation");
       animationTarget = scrapPopup;
     } else {
-      img.setAttribute("src", "../../staticfiles/images/scrap-off.png");
+      img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
       animationTarget.classList.remove("show-animation");
       animationTarget = scrapCancel;
     }
