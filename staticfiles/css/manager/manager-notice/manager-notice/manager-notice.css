@@ -460,7 +460,11 @@ ul.header-function-inner{
     border-color: rgba(0,0,0,.1);
 }
 
-li.header-relative{
+li.header-relative-1{
+    position: relative;
+}
+
+li.header-relative-2{
     position: relative;
 }
 
@@ -740,6 +744,17 @@ div.modify-remove{
 }
 
 button.edit-button{
+    border-width: 1px;
+    border-radius: 9999px;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    border-color: #e6e6e7;
+}
+
+button.delete-button{
     border-width: 1px;
     border-radius: 9999px;
     justify-content: center;
