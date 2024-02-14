@@ -317,6 +317,31 @@ span.benner-button-1{
     cursor: inherit;
 }
 
+label.benner-inner-1{
+    cursor: pointer;
+    margin-right: 8px;
+    display: inline-block;
+    position: relative;
+    height: 38px;
+    border-radius: 19px;
+    padding-left: 14px;
+    padding-right: 14px;
+    line-height: 0;
+    color: rgb(47, 52, 56);
+    background-color: rgb(247, 249, 250);
+}
+
+label.benner-inner-1:hover {
+    background-color: rgb(234, 237, 239);
+}
+
+label.benner-inner-1::before{
+    content: "";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 label.benner-inner-2{
     cursor: pointer;
     margin-right: 8px;
@@ -342,7 +367,7 @@ label.benner-inner-2::before{
     vertical-align: middle;
 }
 
-label.benner-inner-1{
+label.benner-inner-checked{
     cursor: pointer;
     margin-right: 8px;
     display: inline-block;
@@ -356,11 +381,11 @@ label.benner-inner-1{
     background-color: #97A38C;
 }
 
-label.benner-inner-1:hover {
+label.benner-inner-checked:hover {
     background-color: #6e7667;
 }
 
-label.benner-inner-1::before{
+label.benner-inner-checked::before{
     content: "";
     height: 100%;
     display: inline-block;

@@ -14,18 +14,24 @@ items.forEach((item) => {
   });
 });
 
-const benners = document.querySelector(".benner-container");
-const categoryBtn = document.querySelectorAll(".benner-inner-2");
+// 공지사항, Q&A 눌렀을때 버튼 색이 바뀜
+const qnaButton = document.getElementById("Q&A");
+const noticeButton = document.getElementById("공지사항");
 
-benners.addEventListener("click", (e) => {
-  if (e.target.closest(".benner-inner-2")) {
-    categoryBtn.forEach((item) => {
-      item.classList.contains("benner-inner-1") &&
-        item.classList.remove("benner-inner-1");
-    });
-    let choiceBtn = e.target.closest(".benner-inner-2");
-    if (choiceBtn) {
-      choiceBtn.classList.add("benner-inner-1");
-    }
+// Q&A 버튼을 클릭했을 때의 이벤트 처리 함수를 정의
+qnaButton.addEventListener("click", function () {
+  if (qnaButton.checked) {
+    noticeButton.checked = false;
   }
+  qnaButton.parentElement.classList.add("benner-inner-checked");
+  noticeButton.parentElement.classList.remove("benner-inner-checked");
+});
+
+// 공지사항 버튼을 클릭했을 때의 이벤트 처리 함수를 정의
+noticeButton.addEventListener("click", function () {
+  if (noticeButton.checked) {
+    qnaButton.checked = false;
+  }
+  noticeButton.parentElement.classList.add("benner-inner-checked");
+  qnaButton.parentElement.classList.remove("benner-inner-checked");
 });
