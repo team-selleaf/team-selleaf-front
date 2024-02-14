@@ -37,7 +37,7 @@
     />
     <link
       rel="stylesheet"
-      href="../../staticfiles/css/teacher-entry/intro.css"
+      href="../../staticfiles/css/teacher-entry/teacher-entry.css"
     />
     <title>Selleaf | 강사 신청</title>
   </head>
@@ -80,7 +80,7 @@
               <!-- 강사 신청 버튼 -->
               <div class="header-entry-button-wrap">
                 <div class="header-entry-button-container">
-                  <a href="#entry">
+                  <a href="#">
                     <button class="header-entry-button">강사자격 신청</button>
                   </a>
                 </div>
@@ -107,7 +107,7 @@
             </div>
           </div>
         </div>
-        <!-- 혜택 소개 - 팀 회의 후 제거 여부 결정 -->
+        <!-- 혜택 소개 -->
         <div class="benefit-section-wrap">
           <div class="benefit-section-container">
             <h2 class="benefit-title">
@@ -255,7 +255,7 @@
           </div>
         </div>
         <!-- 페이지 마지막의 강사자격 신청 section -->
-        <div class="teacher-entry-section-wrap" id="entry">
+        <div class="teacher-entry-section-wrap">
           <div class="teacher-entry-section-container">
             <div class="entry-title-wrap">
               <div class="entry-title">
@@ -271,6 +271,96 @@
       <!-- 나중에 메인페이지 쪽에서 받아오기 -->
       <footer style="height: 252px"></footer>
     </div>
+    <!-- 신청에 필요한 모달창 모음 -->
+    <div class="entry-modal">
+      <!-- 강사자격 신청하면 나오는 모달창 -->
+      <div class="entry-modal-wrap" style="display: none">
+        <div class="entry-modal-container">
+          <div class="entry-modal-title-wrap">
+            <span class="entry-modal-title">이용자 확인</span>
+            <button type="button" class="close-button">
+              <span class="cancel-image-wrap">
+                <img src="/staticfiles/images/cancel.png" alt="" />
+              </span>
+            </button>
+          </div>
+          <!-- 아이디, 비밀번호 입력창 -->
+          <div class="entry-modal-main-wrap">
+            <div class="entry-modal-main-container">
+              <div class="entry-input-wrap">
+                <!-- 이메일 -->
+                <div class="email-input-area">
+                  <div class="entry-input-title-wrap">
+                    <div class="entry-input-title">이메일</div>
+                  </div>
+                  <div class="email-input-wrap">
+                    <span class="email-input-local">
+                      <input
+                        class="local-input-form"
+                        placeholder="이메일"
+                        size="1"
+                      />
+                    </span>
+                    <span class="email-seperator">@</span>
+                    <span class="email-input-domain">
+                      <select class="domain-input-form">
+                        <option value="naver.com">naver.com</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="hotmail.com">hotmail.com</option>
+                        <option value="outlook.com">outlook.com</option>
+                        <option value="icloud.com">icloud.com</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="error-text" style="display: none">
+                    필수 입력 사항입니다.
+                  </div>
+                </div>
+                <!-- 비밀번호 -->
+                <div class="password-input-area">
+                  <div class="entry-input-title-wrap">
+                    <div class="entry-input-title">비밀번호</div>
+                  </div>
+                  <div class="password-input-wrap">
+                    <input
+                      class="password-input-form"
+                      type="password"
+                      placeholder="비밀번호"
+                    />
+                  </div>
+                  <div class="error-text" style="display: none">
+                    필수 입력 사항입니다.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 강사자격 신청 버튼 -->
+          <div class="entry-button-wrap">
+            <div class="entry-button-container">
+              <button class="entry-button">강사자격 신청</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 아이디, 비번 인증 버튼 누르면 나오는 최종 확인 모달창 -->
+      <div class="entry-confirm-total-wrap" style="display: none">
+        <div class="entry-confirm-wrap">
+          <div class="entry-confirm-title-container">
+            <p class="entry-confirm-title">강사자격을 신청하시겠습니까?</p>
+          </div>
+          <div class="entry-confirm-button-wrap">
+            <div class="entry-confirm-button-container">
+              <button class="entry-confirm-cancel">취소</button>
+              <button class="entry-confirm">확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-  <script src="../../staticfiles/js/teacher-entry/intro.js"></script>
+  <script src="../../staticfiles/js/teacher-entry/teacher-entry.js"></script>
 </html>
