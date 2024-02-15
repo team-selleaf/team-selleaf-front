@@ -2577,13 +2577,6 @@ li:first-child>.product-detail-nav-item{
     width: 55px;
 }
 
-.product-detail-scrap-button>.icon-stroke{
-    fill: transparent;
-    stroke: #424242;
-    stroke-width: 1px;
-    transition: fill .1s,stroke .1s;
-    vertical-align: -5px;
-}
 
 .sidebar-addcart-button{
     -moz-user-select: -moz-none;

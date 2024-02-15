@@ -83,3 +83,37 @@ deleteBtns.forEach((deleteBtn) => {
     selection.style.display = "none";
   });
 });
+
+const number = document.querySelector(".counted-number");
+const add = document.querySelector(".add-count");
+const sub = document.querySelector(".sub-count");
+
+const sidebarNumber = document.querySelector(".sidebar-count-number");
+const sidebarAdd = document.querySelector(".sidebar-add-count");
+const sidebarSub = document.querySelector(".sidebar-sub-count");
+
+var count = 0;
+
+add.addEventListener("click", (e) => {
+  count++;
+  number.innerHTML = `${count}`;
+  sidebarNumber.innerHTML = `${count}`;
+});
+
+sub.addEventListener("click", (e) => {
+  count == 0 ? (count = 0) : count--;
+  number.innerHTML = `${count}`;
+  sidebarNumber.innerHTML = `${count}`;
+});
+
+sidebarAdd.addEventListener("click", (e) => {
+  count++;
+  number.innerHTML = `${count}`;
+  sidebarNumber.innerHTML = `${count}`;
+});
+
+sidebarSub.addEventListener("click", (e) => {
+  count == 0 ? (count = 0) : count--;
+  number.innerHTML = `${count}`;
+  sidebarNumber.innerHTML = `${count}`;
+});

@@ -83,12 +83,13 @@
         </div>
       </div>
       <!-- 스크랩 팝업 -->
-      <div class="scrap-popup-wrap" style="display: none">
+      <div class="scrap-popup-wrap">
         <div class="scrap-popup-container">
           <div class="scrap-popup-inner">
             <div class="scrap-popup-text">스크랩 했습니다.</div>
           </div>
           <div class="scrap-popup-button-container">
+            <!-- 스크랩북 링크삽입 -->
             <button class="scrap-link-button" type="button">
               스크랩북 보기
             </button>
@@ -96,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class="scrap-popup-wrap" style="display: none">
+      <div class="scrap-popup-cancel-wrap">
         <div class="scrap-popup-container">
           <div class="scrap-popup-inner">
             <div class="scrap-popup-text">스크랩을 취소하였습니다.</div>
@@ -108,17 +109,13 @@
         <section class="popular-wrap wrap-media">
           <header class="popular-header">
             <h1 class="popular-title">내 주변 인기 강의</h1>
-            <a
-              class="popular-detail-link"
-              href="/templates/transaction/transaction-total.html"
-              >더보기</a
-            >
+            <a class="popular-detail-link" href="#">더보기</a>
           </header>
           <div class="post-wrap row-media">
             <div class="post-container">
               <div class="post-inner">
                 <article class="post">
-                  <a href="page" class="post-link"></a>
+                  <a href="#" class="post-link"></a>
                   <div class="post-image-wrap_">
                     <div class="post-image-container">
                       <div class="post-image-inner">
@@ -163,7 +160,7 @@
             <div class="post-container">
               <div class="post-inner">
                 <article class="post">
-                  <a href="page" class="post-link"></a>
+                  <a href="#" class="post-link"></a>
                   <div class="post-image-wrap_">
                     <div class="post-image-container">
                       <div class="post-image-inner">
@@ -208,7 +205,7 @@
             <div class="post-container">
               <div class="post-inner">
                 <article class="post">
-                  <a href="page" class="post-link"></a>
+                  <a href="#" class="post-link"></a>
                   <div class="post-image-wrap_">
                     <div class="post-image-container">
                       <div class="post-image-inner">
@@ -253,7 +250,7 @@
             <div class="post-container">
               <div class="post-inner">
                 <article class="post">
-                  <a href="page" class="post-link"></a>
+                  <a href="#" class="post-link"></a>
                   <div class="post-image-wrap_">
                     <div class="post-image-container">
                       <div class="post-image-inner">
@@ -298,7 +295,7 @@
             <div class="post-container">
               <div class="post-inner">
                 <article class="post">
-                  <a href="page" class="post-link"></a>
+                  <a href="#" class="post-link"></a>
                   <div class="post-image-wrap_">
                     <div class="post-image-container">
                       <div class="post-image-inner">
@@ -343,7 +340,7 @@
             <div class="post-container">
               <div class="post-inner">
                 <article class="post">
-                  <a href="page" class="post-link"></a>
+                  <a href="#" class="post-link"></a>
                   <div class="post-image-wrap_">
                     <div class="post-image-container">
                       <div class="post-image-inner">
@@ -388,7 +385,7 @@
             <div class="post-container">
               <div class="post-inner">
                 <article class="post">
-                  <a href="page" class="post-link"></a>
+                  <a href="#" class="post-link"></a>
                   <div class="post-image-wrap_">
                     <div class="post-image-container">
                       <div class="post-image-inner">
@@ -433,7 +430,7 @@
             <div class="post-container">
               <div class="post-inner">
                 <article class="post">
-                  <a href="page" class="post-link"></a>
+                  <a href="#" class="post-link"></a>
                   <div class="post-image-wrap_">
                     <div class="post-image-container">
                       <div class="post-image-inner">
@@ -478,131 +475,10 @@
           </div>
         </section>
         <section class="update-post-wrap wrap-media">
-          <!-- 필터 -->
-          <!-- <div class="filter-container">
-            <div class="filter-inner">
-              <button class="filter-button" type="button">
-                정렬
-                <span class="dropdown-icon">
-                  <img
-                    src="/staticfiles//images/button-down.png"
-                    style="width: 13px"
-                  />
-                </span>
-              </button>
-
-              <div
-                class="filter-arrange-wrap"
-                data-popper-reference-hidden="false"
-                data-popper-escaped="true"
-                data-popper-placement="bottom"
-                style="
-                  left: -50%;
-                  position: absolute;
-                  inset: 0px auto auto 0px;
-                  transform: translate(75px, 1070px);
-                  z-index: 3;
-                "
-              >
-                <div
-                  class="filter-dropdown-arrow"
-                  data-popper-arrow="true"
-                  style="
-                    position: absolute;
-                    left: 0px;
-                    transform: translate(93px, 0px);
-                  "
-                ></div>
-                <div class="filter-list-wrap">
-                  <div class="filter-list-container">
-                    <div class="filter-list-inner">
-                      <button class="filter-list-button" type="button">
-                        <div class="filter-name">최신순</div>
-                        <div class="filter-space"></div>
-                      </button>
-                      <button class="filter-list-button" type="button">
-                        <div class="filter-name">스크랩순</div>
-                        <div class="filter-space"></div>
-                      </button>
-                      <button class="filter-list-button" type="button">
-                        <div class="filter-name">댓글순</div>
-                        <div class="filter-space"></div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="filter-inner">
-              <button class="filter-button" type="button">
-                식물종류
-                <span class="dropdown-icon">
-                  <img
-                    src="/staticfiles//images/button-down.png"
-                    style="width: 13px"
-                  />
-                </span>
-              </button>
-              <div
-                class="filter-arrange-wrap"
-                data-popper-reference-hidden="false"
-                data-popper-escaped="true"
-                data-popper-placement="bottom"
-                style="
-                  position: absolute;
-                  inset: 0px auto auto 0px;
-                  transform: translate(150px, 1070px);
-                  z-index: 3;
-                "
-              >
-                <div
-                  class="filter-dropdown-arrow"
-                  data-popper-arrow="true"
-                  style="
-                    position: absolute;
-                    left: 0px;
-                    transform: translate(93px, 0px);
-                  "
-                ></div>
-                <div class="filter-list-wrap">
-                  <div class="filter-list-container">
-                    <div class="filter-list-inner">
-                      <button class="filter-list-button" type="button">
-                        <div class="filter-name">관엽</div>
-                        <div class="filter-space"></div>
-                      </button>
-                      <button class="filter-list-button" type="button">
-                        <div class="filter-name">다육</div>
-                        <div class="filter-space"></div>
-                      </button>
-                      <button class="filter-list-button" type="button">
-                        <div class="filter-name">침엽</div>
-                        <div class="filter-space"></div>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="filter-inner">
-              <button class="filter-button" type="button">
-                거래지역
-                <span class="dropdown-icon">
-                  <img
-                    src="/staticfiles//images/button-down.png"
-                    style="width: 13px"
-                  />
-                </span>
-              </button>
-            </div>
-          </div> -->
           <!-- 제목 -->
           <header class="popular-header">
             <h1 class="popular-title">최신 등록 강의</h1>
-            <a
-              class="popular-detail-link"
-              id="new-detail-link"
-              href="/templates/transaction/"
+            <a class="popular-detail-link" id="new-detail-link" href="#"
               >더보기</a
             >
           </header>
@@ -617,10 +493,7 @@
           >
             <div class="update-post-contents-wrap">
               <article class="update-post-contents">
-                <a
-                  href="/staticfiles/images/blank-image.png"
-                  class="update-post__overlay"
-                ></a>
+                <a href="#" class="update-post__overlay"></a>
                 <div class="update-post-image">
                   <div class="update-post"></div>
                   <img
@@ -654,10 +527,7 @@
             </div>
             <div class="update-post-contents-wrap">
               <article class="update-post-contents">
-                <a
-                  href="/staticfiles/images/blank-image.png"
-                  class="update-post__overlay"
-                ></a>
+                <a href="#" class="update-post__overlay"></a>
                 <div class="update-post-image">
                   <div class="update-post"></div>
                   <img
@@ -692,10 +562,7 @@
             </div>
             <div class="update-post-contents-wrap">
               <article class="update-post-contents">
-                <a
-                  href="/staticfiles/images/blank-image.png"
-                  class="update-post__overlay"
-                ></a>
+                <a href="#" class="update-post__overlay"></a>
                 <div class="update-post-image">
                   <div class="update-post"></div>
                   <img
@@ -727,10 +594,7 @@
             </div>
             <div class="update-post-contents-wrap">
               <article class="update-post-contents">
-                <a
-                  href="/staticfiles/images/blank-image.png"
-                  class="update-post__overlay"
-                ></a>
+                <a href="#" class="update-post__overlay"></a>
                 <div class="update-post-image">
                   <div class="update-post"></div>
                   <img

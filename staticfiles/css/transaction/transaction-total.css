@@ -300,7 +300,7 @@ div.category-container{
 .product-main-inner{
     margin-top: 15px;
 }
-
+/* 
 .filter-button-wrap{
     margin: 20px 0 40px;
 }
@@ -455,7 +455,7 @@ div.category-container{
     line-height: 16px;
     color: rgb(224, 224, 224);
     margin: 5px 0px;
-}
+} */
 
 
 /*  */
@@ -938,4 +938,128 @@ div.update-post-contents-wrap {
     top: 0;
     left: 0;
     right: 0;
+}
+
+
+.filter-item {
+    line-height: 0;
+    display: inline-block;
+}
+
+.filter-btn {
+width: -webkit-max-content;
+width: -moz-max-content;
+width: max-content;
+background: #f7f9fa;
+color: #828c94;
+border-radius: 4px;
+font-size: 15px;
+line-height: 24px;
+font-size: 15px;
+font-weight: 700;
+height: 34px;
+padding: 0 8px;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-align-items: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+gap: 5px;
+border: none;
+}
+
+.filter-btn-icon {
+display: inline-block;
+font-size: 12px;
+line-height: 1;
+}
+
+.filter-btn-icon::before {
+font-family: OhouseIcon;
+vertical-align: top;
+}
+
+.filter-btn-icon:before {
+content: "\e96c";
+}
+
+.filter-modal {
+display: none;
+padding-top: 18px;
+}
+
+.modal-open {
+display: block;
+} 
+
+.filter-modal-inner {
+width: 14px;
+height: 10px;
+}
+
+.filter-modal-inner::after {
+content: "";
+position: absolute;
+width: 0px;
+left: 0px;
+border-bottom: 10px solid rgb(255, 255, 255);
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+top: -10px;
+}
+
+.modal-menu {
+border-radius: 10px;
+overflow: hidden;
+background: rgb(255, 255, 255);
+box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 16px;
+}
+
+.modal-menu-inner {
+position: relative;
+z-index: 1;
+text-align: start;
+max-height: 425px;
+overflow: auto;
+color: rgb(47, 52, 56);
+}
+
+.modal-menu-btn {
+background-color: #fff;
+width: 100%;
+max-width: 375px;
+min-width: 200px;
+display: block;
+padding: 13px 15px;
+color: inherit;
+text-align: left;
+cursor: pointer;
+border: none;
+}
+
+.modal-menu-btn:hover {
+background: rgb(239, 251, 255);
+}
+
+.menu-choice {
+width: 100%;
+font-size: 15px;
+line-height: 24px;
+color: inherit;
+}
+
+.choice {
+color: rgb(53, 197, 240);
+font-weight: 600;
+}
+
+.menu-margin {
+width: 100%;
+font-size: 12px;
+line-height: 16px;
+color: rgb(130, 140, 148);
+margin: 5px 0px;
 }
