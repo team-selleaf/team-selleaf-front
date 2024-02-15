@@ -92,7 +92,7 @@ body {
 
 /* 이메일 입력창이 focus되었을 때 추가되는 클래스로 인한 스타일 */
 .email-input.focus-visible {
-  box-shadow: 0 0 0 3px rgba(53, 197, 240, 0.3);
+  box-shadow: 0 0 0 3px rgba(90, 112, 88, 0.3);
 }
 
 /* 이메일 입력 창이 각각 blur 되었을 때 */
@@ -150,7 +150,7 @@ body {
 
 /* 비밀번호 입력창이 focus되었을 때 추가되는 클래스로 인한 스타일 */
 .password-input.focus-visible {
-  box-shadow: 0 0 0 3px rgba(53, 197, 240, 0.3);
+  box-shadow: 0 0 0 3px rgba(90, 112, 88, 0.3);
 }
 
 /* 이메일 입력 창이 각각 blur 되었을 때 */
@@ -177,8 +177,8 @@ body {
   line-height: 20px;
   font-size: 17px;
   min-height: 50px;
-  background-color: #35c5f0;
-  border-color: #35c5f0;
+  background-color: #97a38c;
+  border-color: #97a38c;
   color: #fff;
   user-select: none;
   position: relative;
@@ -199,8 +199,8 @@ body {
 }
 
 .login-button:hover {
-  border-color: #09addb;
-  background-color: #09addb;
+  border-color: rgb(99, 112, 88);
+  background-color: rgb(99, 112, 88);
 }
 
 .find-and-sign-up-wrap {
