@@ -438,7 +438,27 @@ ul.header-function-inner{
     border-color: rgba(0,0,0,.1);
 }
 
-li.header-relative{
+li.header-relative-1{
+    position: relative;
+}
+
+li.header-relative-2{
+    position: relative;
+}
+
+li.header-relative-3{
+    position: relative;
+}
+
+li.header-relative-4{
+    position: relative;
+}
+
+li.header-relative-5{
+    position: relative;
+}
+
+li.header-relative-6{
     position: relative;
 }
 
@@ -881,7 +901,7 @@ div.modify-remove{
     display: flex;
 }
 
-button.edit-button{
+button.delete-button{
     border-width: 1px;
     border-radius: 9999px;
     justify-content: center;

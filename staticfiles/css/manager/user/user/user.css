@@ -862,6 +862,17 @@ button.edit-button{
     border-color: #e6e6e7;
 }
 
+button.delete-button{
+    border-width: 1px;
+    border-radius: 9999px;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    border-color: #e6e6e7;
+}
+
 svg.edit-button{
     width: 20px;
     height: 20px;
