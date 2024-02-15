@@ -182,82 +182,79 @@ payments.forEach((payment) => {
   });
 });
 
-// NodeList.prototype.filter = Array.prototype.filter;
+NodeList.prototype.filter = Array.prototype.filter;
 
-// const allCheckBox = document.querySelector(".total-agree-checkbox-wrap");
-// const checkBoxes = document.querySelectorAll(".term-checkbox-wrap");
+const allCheckBox = document.querySelector(".total-agree-checkbox-wrap");
+const checkBoxes = document.querySelectorAll(".term-checkbox-wrap");
 
-// // allCheckBox.addEventListener("click", (e) => {
-// //   allCheckBox.classList.toggle("checked");
-// //   checkBoxes.forEach((checkBox) => {
-// //     checkBox.classList.toggle("checked");
-// //   });
-// // });
-
-// allCheckBox.addEventListener("change", (e) => {
-//   if (allCheckBox.checked) {
-//     allCheckBox.checked = false;
-//     allCheckBox.classList.remove("checked");
-//     checkBoxes.forEach((checkBox) => {
-//       checkBox.checked = false;
-//       checkBox.classList.remove("checked");
-//     });
-//   } else {
-//     allCheckBox.checked = true;
-//     allCheckBox.classList.add("checked");
-//     checkBoxes.forEach((checkBox) => {
-//       checkBox.checked = true;
-//       checkBox.classList.add("checked");
-//     });
-//   }
+// allCheckBox.addEventListener("click", (e) => {
+//   allCheckBox.classList.toggle("checked");
+//   checkBoxes.forEach((checkBox) => {
+//     checkBox.classList.toggle("checked");
+//   });
 // });
 
-// checkBoxes.forEach((checkBox) => {
-//   checkBox.addEventListener("change", (e) => {
-//     let checkedBoxes = document.querySelectorAll(".check1:checked");
-//     console.log(checkBox.checked);
-//     console.log(checkedBoxes.value);
-//     if (checkBox.checked) {
-//       checkBox.checked = false;
-//       checkBox.classList.remove("checked");
+allCheckBox.addEventListener("change", (e) => {
+  if (allCheckBox.checked) {
+    allCheckBox.checked = false;
+    allCheckBox.classList.remove("checked");
+    checkBoxes.forEach((checkBox) => {
+      checkBox.checked = false;
+      checkBox.classList.remove("checked");
+    });
+  } else {
+    allCheckBox.checked = true;
+    allCheckBox.classList.add("checked");
+    checkBoxes.forEach((checkBox) => {
+      checkBox.checked = true;
+      checkBox.classList.add("checked");
+    });
+  }
+});
 
-//       console.log(checkedBoxes.value);
-//       //   if(){
-//       //       allCheckBox.classList.remove("checked");
-//       //   }
+checkBoxes.forEach((checkBox) => {
+  checkBox.addEventListener("change", (e) => {
+    let checkedBoxes = document.querySelectorAll(".check1:checked");
+    console.log(checkedBoxes[0]);
+    if (checkBox.checked) {
+      checkBox.checked = false;
+      checkBox.classList.remove("checked");
+      //   if(){
+      //       allCheckBox.classList.remove("checked");
+      //   }
+    } else {
+      checkBox.checked = true;
+      checkBox.classList.add("checked");
+    }
+  });
+});
+
+// checkBoxes.forEach((checkBox) => {
+//   checkBox.addEventListener("click", (e) => {
+//     if (checkBox.classList.contains("checked")) {
+//       checkBox.classList.remove("checked");
+//       allCheckBox.classList.remove("checked");
 //     } else {
-//       checkBox.checked = true;
 //       checkBox.classList.add("checked");
+//     }
+
+//     if (console.log(checkBox.classList.contains("checked")) === "ture") {
+//       allCheckBox.classList.add("checked");
 //     }
 //   });
 // });
 
-// // checkBoxes.forEach((checkBox) => {
-// //   checkBox.addEventListener("click", (e) => {
-// //     if (checkBox.classList.contains("checked")) {
-// //       checkBox.classList.remove("checked");
-// //       allCheckBox.classList.remove("checked");
-// //     } else {
-// //       checkBox.classList.add("checked");
-// //     }
+// const all = document.querySelector("input.all");
+// const terms = document.querySelectorAll("input.term");
 
-// //     if (console.log(checkBox.classList.contains("checked")) === "ture") {
-// //       allCheckBox.classList.add("checked");
-// //     }
-// //   });
-// // });
+// termAll.addEventListener("click", (e) => {
+//   checkBoxes.forEach((checkBox) => {
+//     checkBox.checked = e.target.checked;
+//   });
+// });
 
-// // const all = document.querySelector("input.all");
-// // const terms = document.querySelectorAll("input.term");
-
-// // termAll.addEventListener("click", (e) => {
-// //   checkBoxes.forEach((checkBox) => {
-// //     checkBox.checked = e.target.checked;
-// //   });
-// // });
-
-// // terms.forEach((term) => {
-// //   term.addEventListener("click", (e) => {
-// //     all.checked = terms.filter((term) => term.checked).length === 3;
-// //   });
-// // });
+// terms.forEach((term) => {
+//   term.addEventListener("click", (e) => {
+//     all.checked = terms.filter((term) => term.checked).length === 3;
+//   });
+// });
