@@ -1,20 +1,24 @@
 // 삭제 버튼 누르면 뜨는 모달창
 document.addEventListener("DOMContentLoaded", function () {
-  const editButton = document.querySelectorAll(".edit-button");
+  const deleteButtons = document.querySelectorAll(".delete-button");
   const modalWrap = document.querySelector(".delete-modal-wrap");
 
-  editButton[2].addEventListener("click", function () {
-    modalWrap.style.display = "flex";
+  console.log(deleteButtons);
+
+  deleteButtons.forEach(function (deleteButton) {
+    deleteButton.addEventListener("click", (e) => {
+      modalWrap.style.display = "flex";
+    });
   });
 
   const cancelButton = document.querySelector(".modal-cancel button");
   const confirmButton = document.querySelector(".modal-confirm button");
 
-  cancelButton.addEventListener("click", function () {
+  cancelButton.addEventListener("click", (e) => {
     modalWrap.style.display = "none";
   });
 
-  confirmButton.addEventListener("click", function () {
+  confirmButton.addEventListener("click", (e) => {
     modalWrap.style.display = "none";
   });
 });

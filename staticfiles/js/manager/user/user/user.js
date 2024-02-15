@@ -1,32 +1,44 @@
 // 삭제 버튼 누르면 뜨는 모달창
 document.addEventListener("DOMContentLoaded", function () {
-  const editButtons = document.querySelectorAll("button.edit-button");
+  const deleteButtons = document.querySelectorAll(".delete-button");
   const modalWrap = document.querySelector(".delete-modal-wrap");
+
+  console.log(deleteButtons);
+
+  deleteButtons.forEach(function (deleteButton) {
+    deleteButton.addEventListener("click", (e) => {
+      modalWrap.style.display = "flex";
+    });
+  });
+
+  const cancelButton = document.querySelector(".modal-cancel button");
+  const confirmButton = document.querySelector(".modal-confirm button");
+
+  cancelButton.addEventListener("click", (e) => {
+    modalWrap.style.display = "none";
+  });
+
+  confirmButton.addEventListener("click", (e) => {
+    modalWrap.style.display = "none";
+  });
+});
+
+//마일리지 수정 버튼 누르면 뜨는 모달창
+document.addEventListener("DOMContentLoaded", function () {
+  const editButtons = document.querySelectorAll("button.edit-button");
   const mileageInput = document.querySelector("input.content-detail-num");
   editButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const btnAttribute = e.target
         .closest("button")
         .getAttribute("aria-label");
-      if (btnAttribute == "delete button") {
-        modalWrap.style.display = "flex";
-      }
       if (btnAttribute == "mileage button") {
         mileageInput.disabled = false;
         mileageInput.style.outline = "1px solid #c06888";
       }
-      const cancelButton = document.querySelector(".modal-cancel button");
-      const confirmButton = document.querySelector(".modal-confirm button");
-
-      cancelButton.addEventListener("click", function () {
-        modalWrap.style.display = "none";
-      });
-
-      confirmButton.addEventListener("click", function () {
-        modalWrap.style.display = "none";
-      });
     });
   });
+
   mileageInput.addEventListener("blur", () => {
     // input disabled 시키는 로직
     mileageInput.disabled = true;
@@ -72,32 +84,30 @@ const inputField = document.querySelector(".search-bar input");
 const cancelButton = document.querySelector(".search-bar .cancel-logo");
 const searchButton = document.querySelector(".search-bar .search-logo");
 
-// 입력 필드에 입력 내용이 변경될 때마다 실행될 함수를 정의합니다.
+// 입력 필드에 입력 내용이 변경될 때마다 실행될 함수를 정의
 function handleInputChange() {
-  const inputValue = inputField.value.trim(); // 입력 내용을 가져옵니다.
+  const inputValue = inputField.value.trim();
 
-  // 입력 내용이 있을 때
   if (inputValue !== "") {
-    cancelButton.style.display = "flex"; // cancel-logo를 보여줍니다.
-    searchButton.style.display = "none"; // search-logo를 숨깁니다.
+    cancelButton.style.display = "flex";
+    searchButton.style.display = "none";
   } else {
-    // 입력 내용이 없을 때
-    cancelButton.style.display = "none"; // cancel-logo를 숨깁니다.
-    searchButton.style.display = "flex"; // search-logo를 보여줍니다.
+    cancelButton.style.display = "none";
+    searchButton.style.display = "flex";
   }
 }
 
-// cancel-logo를 클릭했을 때 실행될 함수를 정의합니다.
+// cancel-logo를 클릭했을 때 실행될 함수를 정의
 function handleCancelClick() {
-  inputField.value = ""; // 입력 필드 내용을 지웁니다.
-  cancelButton.style.display = "none"; // cancel-logo를 숨깁니다.
-  searchButton.style.display = "flex"; // search-logo를 보여줍니다.
+  inputField.value = "";
+  cancelButton.style.display = "none";
+  searchButton.style.display = "flex";
 }
 
-// 입력 필드에 이벤트 리스너를 추가합니다.
+// 입력 필드에 이벤트 리스너를 추가
 inputField.addEventListener("input", handleInputChange);
 
-// cancel-logo에 클릭 이벤트 리스너를 추가합니다.
+// cancel-logo에 클릭 이벤트 리스너를 추가
 cancelButton.addEventListener("click", handleCancelClick);
 
 // 강의 정보, 리뷰 정보, 수강생 목록 선택하기
