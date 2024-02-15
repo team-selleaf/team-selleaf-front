@@ -1358,12 +1358,6 @@ snsCheckInput.addEventListener("click", (e) => {
     ".essential-check-input, .optional-check-input"
   );
 
-  // 위에서 체크된 요소들만 가져옴
-  // 위 요소와 개수(NodeList 길이) 같으면 전체 체크박스 on
-  const everyCheckedBoxes = document.querySelectorAll(
-    ".essential-check-input:checked, .optional-check-input:checked"
-  );
-
   // if문 사용해서 value의 true - false 변환
   // checked는 클릭 시점에서 바뀌니 따로 바꿀 필요 없음
   if (e.target.checked) {
@@ -1394,6 +1388,12 @@ snsCheckInput.addEventListener("click", (e) => {
     if (!marketingContainer.classList.contains("enabled")) {
       marketingContainer.classList.add("enabled");
     }
+
+    // 위에서 체크된 요소들만 가져옴
+    // 위 요소와 개수(NodeList 길이) 같으면 전체 체크박스 on
+    const everyCheckedBoxes = document.querySelectorAll(
+      ".essential-check-input:checked, .optional-check-input:checked"
+    );
 
     // 현재 체크된 체크박스의 개수를 센 다음
     // 전부 checked 상태라면
@@ -1429,17 +1429,3 @@ snsCheckInput.addEventListener("click", (e) => {
   allCheckWrap.classList.remove("enabled");
   allCheckContainer.classList.remove("enabled");
 });
-
-/*
-    ※ 회원가입 버튼(최종)
-
-    - click 이외에 필요 없음?
-
-        클릭하면 위 요소들 유효성 검사 실행 - 조건 불만족한 부분만 .error 추가
-            -> 위쪽 이벤트(addEventListener)들을 전부 변수에 담을 수 있나?
-                된다면 다 가져와서 검사하면 될 거 같은데...
-*/
-
-// 지금 남은 것들
-// 이메일 칸 직접입력
-// 회원가입 버튼 - 유효성 검사

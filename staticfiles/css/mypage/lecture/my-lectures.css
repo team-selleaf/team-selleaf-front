@@ -70,12 +70,12 @@ a * {
 
 /* 메인 카테고리 중에서 현재 active 클래스를 가진 요소에 적용 */
 .main-category-item > a.active {
-  color: #35c5f0;
+  color: #97a38c;
 }
 
 /* active 클래스를 가지지 않은 요소들은 hover되면 같은 스타일 적용 */
 .main-category-item > a:not(.active):hover {
-  color: #35c5f0;
+  color: #97a38c;
 }
 
 /* 메인 카테고리들 중 첫 번째 요소(프로필)이 아닌 객체들에 적용 */
@@ -476,8 +476,8 @@ a * {
   transition: color 0.1s ease 0s, background-color 0.1s ease 0s,
     border-color 0.1s ease 0s;
   border-radius: 4px;
-  background-color: #35c5f0;
-  border-color: #35c5f0;
+  background-color: #97a38c;
+  border-color: #97a38c;
   color: #fff;
   padding: 9px 10px;
   font-size: 15px;
@@ -488,8 +488,8 @@ a * {
 }
 
 .lecture-page-link:hover {
-  border-color: #09addb;
-  background-color: #09addb;
+  border-color: rgb(99, 112, 88);
+  background-color: rgb(99, 112, 88);
 }
 
 .lecture-history-wrap {

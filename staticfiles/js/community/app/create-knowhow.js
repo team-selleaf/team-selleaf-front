@@ -9,7 +9,6 @@ const textInputContainer = document.querySelector(
   ".content-text-input-container"
 );
 
-const markIconWrap = document.querySelector(".mark-icon-wrap");
 
 dropBoxGuide.addEventListener("click", () => {
   downArrowIcon[0].classList.toggle("down-arrow-open");
@@ -30,10 +29,6 @@ textInputContainer.addEventListener("click", () => {
   contentTextArea.focus();
 });
 
-contentTextArea.addEventListener("click", () => {
-  markIconWrap.classList.add("wrap-open");
-});
-
 const imgFileInput = document.querySelector("#img-file");
 const prevImgBox = document.querySelector(".prev-img-box");
 const cancel = document.querySelector(".cancel");
@@ -50,6 +45,7 @@ imgFileInput.addEventListener("change", (e) => {
       : (prevImgBox.style.backgroundImage = `url('images/attach.png')`);
   });
 });
+
 cancel.addEventListener("click", (e) => {
   prevImgBox.style.backgroundImage = "";
   prevImgBox.style.zIndex = "-5";
@@ -74,7 +70,7 @@ tagInput.addEventListener("keyup", (e) => {
         ${value}
       </span>
       <img
-        src="../../../staticfiles/images/cancel.png"
+        src="/staticfiles/images/cancel.png"
         class="tag-cancel"
         width="15px"
         height="15px"
@@ -90,13 +86,6 @@ tagInput.addEventListener("keyup", (e) => {
       });
     }
   }
-  // if (!tagInput.value) {
-  //   tagInput.style.border = "1px solid red";
-  //   emptyValue.style.display = "block";
-  // } else {
-  //   tagInput.style.border = "";
-  //   emptyValue.style.display = "none";
-  // }
 });
 tagInput.addEventListener("focus", (e) => {
   e.target.style.boxShadow = "0 0 0 3px rgba(53,197,240,.3)";

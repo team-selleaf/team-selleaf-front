@@ -258,7 +258,8 @@
 }
 .uploader-icon-box {
   display: inline-block;
-  background: url("../../../images/blank-image.png") 50% center / cover no-repeat;
+  background: url("../../../images/blank-image.png") 50% center / cover
+    no-repeat;
   border-radius: 50%;
   width: 18px;
   flex-shrink: 0;
@@ -299,4 +300,102 @@
   font-size: 12px;
   line-height: 20px;
   color: rgb(47, 52, 56);
+}
+
+.scrap-popup-wrap {
+  position: fixed;
+  width: 470px;
+  left: calc(50% - 235px);
+  bottom: 40px;
+  z-index: 1400;
+  transform: translateY(200%);
+}
+.scrap-popup-cancel-wrap {
+  position: fixed;
+  width: 470px;
+  left: calc(50% - 235px);
+  bottom: 40px;
+  z-index: 1400;
+  transform: translateY(200%);
+}
+.scrap-popup-container {
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 4px;
+  color: #f7f9fa;
+  background-color: rgb(47, 52, 56);
+  margin-top: 15px;
+}
+@keyframes show-toast {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes hide-toast {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+}
+.show-animation {
+  animation-name: show-toast;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.hide-animation {
+  animation-name: hide-toast;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+.scrap-popup-inner {
+  flex: 1 0 0px;
+  display: flex;
+  min-width: 0px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.scrap-popup-text {
+  flex: 1 0 0px;
+  min-width: 0px;
+  margin: 0px;
+  text-align: left;
+  white-space: pre-line;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.scrap-popup-button-container {
+  text-align: right;
+  margin: 0px -3px;
+}
+.scrap-link-button {
+  display: inline-block;
+  border: none;
+  background: none;
+  font-style: inherit;
+  font-variant: inherit;
+  font-stretch: inherit;
+  font-family: inherit;
+  font-optical-sizing: inherit;
+  font-kerning: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  margin: -5px 3px;
+  padding: 5px 8px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #97a38c;
+  font-weight: 700;
 }

@@ -467,39 +467,10 @@ input.title-input {
   display: block;
   color: rgb(204, 204, 204);
 }
-.mark-icon-wrap {
-  visibility: hidden;
-  position: absolute;
-  top: 0px;
-  right: 100%;
-  margin-top: -2px;
-  margin-right: 10px;
-  border: 1px solid rgb(164, 172, 179);
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-  box-shadow: rgba(194, 200, 204, 0.8) 0px 2px 4px 0px;
-  transition: opacity 0.2s ease 0s, visibility 0.2s ease 0s;
-  opacity: 0;
-}
 .wrap-open {
   visibility: visible;
   opacity: 1;
 }
-.mark-icon-box {
-  display: inline-block;
-  position: relative;
-}
-.mark-icon-btn {
-  display: inline-block;
-  margin: 0px;
-  padding: 1px;
-  border: none;
-  background: none;
-  color: rgb(82, 91, 97);
-  font-size: 0px;
-  line-height: 0;
-}
-
 .expanded {
   transition: height 0.2s ease 0s;
   height: 0;

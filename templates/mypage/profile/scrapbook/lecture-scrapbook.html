@@ -65,11 +65,11 @@
             <!-- 이용자 프로필 이미지 및 닉네임 -->
             <div class="user-profile-wrap">
               <!-- 나중에 프로필 - 모두보기 페이지와 연결 -->
-              <a href="">
+              <a href="#">
                 <figure class="profile-image-wrap">
                   <img
                     class="profile-image"
-                    src="../../../../staticfiles/images/mypage/base-profile-image.avif"
+                    src="/staticfiles/images/mypage/base-profile-image.avif"
                     height="0"
                   />
                 </figure>
@@ -92,18 +92,18 @@
               <div class="category-nav-wrap">
                 <div class="category-nav-container">
                   <!-- 강의 -->
-                  <a href="">
+                  <a href="#">
                     <button class="category-button active">
                       <div class="category-name-wrap">
-                        <p class="category-name">강의(0)</p>
+                        <p class="category-name">강의(8)</p>
                       </div>
                     </button>
                   </a>
                   <!-- 거래 -->
-                  <a href="">
+                  <a href="#">
                     <button class="category-button">
                       <div class="category-name-wrap">
-                        <p class="category-name">거래(0)</p>
+                        <p class="category-name">거래(8)</p>
                       </div>
                     </button>
                   </a>
@@ -140,7 +140,7 @@
                   <!-- 편집 버튼 누르면 이 부분이 표시 -->
                   <!-- 취소 버튼 누르면 원복 -->
                   <button
-                    class="edit-menu-button"
+                    class="edit-menu-button content-move"
                     type="button"
                     style="display: none"
                     disabled
@@ -148,7 +148,7 @@
                     폴더이동
                   </button>
                   <button
-                    class="edit-menu-button"
+                    class="edit-menu-button content-delete"
                     type="button"
                     style="display: none"
                     disabled
@@ -156,7 +156,7 @@
                     삭제
                   </button>
                   <button
-                    class="edit-menu-button"
+                    class="edit-menu-button cancel"
                     type="button"
                     style="display: none"
                   >
@@ -167,13 +167,399 @@
             </div>
           </div>
           <!-- 스크랩한 정보들이 표시되는 부분 -->
-          <div class="main-content">
+          <div class="no-content-wrap">
             <!-- 스크랩한 게시물이 없으면 표시되는 부분 -->
             <p class="no-scraps-yet">아직 스크랩한 콘텐츠가 없네요.</p>
             <p class="scrap-if-you-want">
               마음에 드는 콘텐츠를 발견하면 스크랩해보세요.
             </p>
-            <!-- 뭔가를 스크랩 했다면 여기에 표시될 듯 -->
+          </div>
+          <!-- 스크랩 한 강의는 여기에 표시 -->
+          <div class="post-wrap">
+            <!-- 각 거래 내용 -->
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="#" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt=""
+                          class="image"
+                        />
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                    <!-- 편집 버튼 누르면 나오는 삭제 체크박스 -->
+                    <div class="delete-box-wrap" style="display: none">
+                      <div class="delete-box-container">
+                        <div class="visual-box-wrap">
+                          <span class="visual-box"></span>
+                        </div>
+                        <input type="checkbox" class="delete-box-input" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                        <p class="post-content-scrap">스크랩 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!-- 각 거래 내용 -->
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="#" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt=""
+                          class="image"
+                        />
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                    <!-- 편집 버튼 누르면 나오는 삭제 체크박스 -->
+                    <div class="delete-box-wrap" style="display: none">
+                      <div class="delete-box-container">
+                        <div class="visual-box-wrap">
+                          <span class="visual-box"></span>
+                        </div>
+                        <input type="checkbox" class="delete-box-input" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                        <p class="post-content-scrap">스크랩 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!-- 각 거래 내용 -->
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="#" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt=""
+                          class="image"
+                        />
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                    <!-- 편집 버튼 누르면 나오는 삭제 체크박스 -->
+                    <div class="delete-box-wrap" style="display: none">
+                      <div class="delete-box-container">
+                        <div class="visual-box-wrap">
+                          <span class="visual-box"></span>
+                        </div>
+                        <input type="checkbox" class="delete-box-input" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                        <p class="post-content-scrap">스크랩 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!-- 각 거래 내용 -->
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="#" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt=""
+                          class="image"
+                        />
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                    <!-- 편집 버튼 누르면 나오는 삭제 체크박스 -->
+                    <div class="delete-box-wrap" style="display: none">
+                      <div class="delete-box-container">
+                        <div class="visual-box-wrap">
+                          <span class="visual-box"></span>
+                        </div>
+                        <input type="checkbox" class="delete-box-input" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                        <p class="post-content-scrap">스크랩 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!-- 각 거래 내용 -->
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="#" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt=""
+                          class="image"
+                        />
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                    <!-- 편집 버튼 누르면 나오는 삭제 체크박스 -->
+                    <div class="delete-box-wrap" style="display: none">
+                      <div class="delete-box-container">
+                        <div class="visual-box-wrap">
+                          <span class="visual-box"></span>
+                        </div>
+                        <input type="checkbox" class="delete-box-input" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                        <p class="post-content-scrap">스크랩 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!-- 각 거래 내용 -->
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="#" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt=""
+                          class="image"
+                        />
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                    <!-- 편집 버튼 누르면 나오는 삭제 체크박스 -->
+                    <div class="delete-box-wrap" style="display: none">
+                      <div class="delete-box-container">
+                        <div class="visual-box-wrap">
+                          <span class="visual-box"></span>
+                        </div>
+                        <input type="checkbox" class="delete-box-input" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                        <p class="post-content-scrap">스크랩 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!-- 각 거래 내용 -->
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="#" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt=""
+                          class="image"
+                        />
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                    <!-- 편집 버튼 누르면 나오는 삭제 체크박스 -->
+                    <div class="delete-box-wrap" style="display: none">
+                      <div class="delete-box-container">
+                        <div class="visual-box-wrap">
+                          <span class="visual-box"></span>
+                        </div>
+                        <input type="checkbox" class="delete-box-input" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                        <p class="post-content-scrap">스크랩 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <!-- 각 거래 내용 -->
+            <div class="post-container">
+              <div class="post-inner">
+                <article class="post">
+                  <a href="#" class="post-link"></a>
+                  <div class="post-image-wrap_">
+                    <div class="post-image-container">
+                      <div class="post-image-inner">
+                        <div class="post-image"></div>
+                        <img
+                          src="/staticfiles/images/blank-image.png"
+                          alt=""
+                          class="image"
+                        />
+                        <div class="image__dark-overlay"></div>
+                      </div>
+                    </div>
+                    <!-- 편집 버튼 누르면 나오는 삭제 체크박스 -->
+                    <div class="delete-box-wrap" style="display: none">
+                      <div class="delete-box-container">
+                        <div class="visual-box-wrap">
+                          <span class="visual-box"></span>
+                        </div>
+                        <input type="checkbox" class="delete-box-input" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post-contents-wrap">
+                    <div class="post-contents-container">
+                      <h1 class="post-contents-header">
+                        <span class="post-contents-user">작성자입력</span>
+                        <span class="post-contents-banner">거래제품명</span>
+                      </h1>
+                      <span class="post-price">
+                        <span class="post-price-letter">35,000</span>
+                      </span>
+                      <div class="post-content-pc-reply">
+                        <p class="post-content-reply">리뷰 갯수</p>
+                        <p class="post-content-scrap">스크랩 갯수</p>
+                      </div>
+                      <span class="post-tag">
+                        <span class="post-tag-icon">태그1</span>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
           <!-- 페이지 최상단으로 가기 버튼 -->
           <!-- 스크롤을 어느 정도 내려야 표시 -->
