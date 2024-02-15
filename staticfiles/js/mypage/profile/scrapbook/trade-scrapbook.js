@@ -74,6 +74,7 @@ window.addEventListener("scroll", () => {
 // 편집 버튼 눌렀을 때
 // 현재 스크랩한 게시물 수와 폴더이동, 삭제, 취소 버튼을 보이게하고
 // 편집 버튼과 카테고리 메뉴는 안 보이게(display: none) 하는 이벤트
+// 2/15 추가 - 편집 버튼 누르면 삭제 체크박스 표시
 
 // 필요한 객체 가져오기
 // 편집 버튼 클릭하면 숨겨지는 요소들
@@ -83,6 +84,7 @@ const categoryFilter = document.querySelector(".category-filter-wrap");
 // 편집 버튼 클릭하면 보이게 되는 요소들
 const contentCount = document.querySelector(".content-count-container");
 const editButtonGroup = document.querySelectorAll(".edit-menu-button");
+const deleteBoxes = document.querySelectorAll(".delete-box-wrap");
 
 // 편집 버튼 - click 이벤트
 editButton.addEventListener("click", (e) => {
@@ -95,12 +97,18 @@ editButton.addEventListener("click", (e) => {
     button.style.display = "inline-block";
   });
 
+  // 2/15 추가 - 각 거래의 삭제 체크박스 표시
+  deleteBoxes.forEach((box) => {
+    box.style.display = "block";
+  });
+
   // 기존 편집 버튼과 카테고리 리스트 숨김
   e.target.style.display = "none";
   categoryFilter.style.display = "none";
 });
 
 // 취소 버튼 눌렀을 때 다시 편집 버튼과 카테고리 메뉴를 보이게 하는 이벤트
+
 // 취소 버튼 객체 가져옴
 const cancelButton = document.querySelector(".edit-menu-button:last-child");
 
@@ -112,6 +120,11 @@ cancelButton.addEventListener("click", () => {
   // 폴더이동, 삭제, 취소 버튼도 숨김
   editButtonGroup.forEach((button) => {
     button.style.display = "none";
+  });
+
+  // 2/15 추가 - 각 거래의 삭제 체크박스 숨김
+  deleteBoxes.forEach((box) => {
+    box.style.display = "none";
   });
 
   // 편집 버튼 표시
@@ -145,13 +158,14 @@ document.addEventListener("click", (e) => {
     if (e.target.closest(".category-filter-wrap")) {
       // 대카테고리 모달창에 enabled 클래스 추가함으로서 표시
       // 카테고리 버튼 한 번 더 누르면 닫힘
-      categoryModal.classList.toggle("enabled");
+      categoryModal.style.display =
+        categoryModal.style.display == "none" ? "block" : "none";
 
       // 아래쪽 실행 안 하고 함수 종료
       return;
     }
     // 대카테고리 모달창, 카테고리 버튼 이외의 장소에 마우스를 올린 경우 대카테고리 모달창 숨김
-    categoryModal.classList.remove("enabled");
+    categoryModal.style.display = "none";
   }
   // 대카테고리 모달창에 마우스 올린 경우 아무 것도 실행 안함(상태 유지)
 });
@@ -260,48 +274,87 @@ document.addEventListener("mouseover", (e) => {
 });
 
 /*
-  대/소카테고리 공통
+  스크랩 한 거래 유무에 따라 표시되는 내용 변경
 
-  특정 카테고리를 클릭하면 카테고리 버튼 색깔이 파란색으로(클래스 붙여서 구현?),
-  카테고리 버튼(category-list-button) 내 텍스트가 클릭한 카테고리랑 같은 이름으로 변경
-
-  단, 전체 카테고리의 경우 원래의 '카테고리' 텍스트로 변경되고,
-  색깔도 원래의 것으로 돌아옴(클래스 remove하기?)
-
-  02/09 - 이부분도 다른 사람들과 상의 후 추가바람
+  거래 있음: post-wrap - flex, no-content-wrap - none
+  거래 없음: post-wrap - none, no-content-wrap - block
 */
+
+// 조건에 따라 표시할 div 태그들
+const postWrap = document.querySelector(".post-wrap");
+const noContentWrap = document.querySelector(".no-content-wrap");
+
+// 스크랩 한 거래 개수
+let tradePosts = document.querySelectorAll(".post-wrap .post-container");
+
+// 거래 없으면 내용 없음 표시
+if (tradePosts.length == 0) {
+  postWrap.style.display = "none";
+  noContentWrap.style.display = "block";
+}
+// 거래가 하나라도 있으면 거래 게시물 표시
+else {
+  postWrap.style.display = "flex";
+  noContentWrap.style.display = "none";
+}
 
 /*
-  반응형에서의 모달창
+  2/15 추가 - 삭제 체크박스(delete-box-input) click하면 체크
 
-  원래 페이지에서는 페이지의 현재 너비, 높이 및 스크롤에 따라
-  모달창 위치도 그에 맞춰서 이동함.
+  delete-box-container(부모)와 visual-box-wrap(형제)에
+  enabled 클래스를 부여함으로서 표시함
 
-  이 덕분에 모달창은 극단적으로 페이지 면적이 바뀌는 게 아닌 이상
-  항상 모달창을 뜨게 한 버튼 아래에 위치한 것처럼 보임.
-  
-
-  ※ 의문점들
-
-    1. 원래 페이지에서의 모달창은 왜, 이벤트를 유발한 객체에 하위요소 같은 걸로 붙은 게 아닌
-      body 태그 내의 가장 마지막에, 원래 없던 상태에서 추가되는 것인가?
-
-      이벤트 발생 객체의 하위에 붙으면 position relative-absolute 같은 걸로 위치 유지 가능하지 않나?
-      아니면 이것도 JS로 해결하는 방법이 있나?
-
-
-    2. 개발자 모드 뜯어보니까, 페이지 너비가 변경됨에 따라
-      모달을 감싸는 것으로 추정되는 div 태그 내 style에서 left 속성의 값이 실시간으로 바뀌는 것을 확인함.
-
-      아마 이것도 JS 써서 window.addEventListener("scroll"/"resize" ...) 가지고
-      화면 크기가 조정되거나, 화면이 스크롤되면 실시간으로 모달 내 style 태그의
-      top/left 속성 값을 바꿔주는 것으로 보임.
-
-      만약 이 방식대로 모달 위치를 실시간으로 바꾸는 게 된다고 하더라도,
-      정확한 위치를 구하는 방법은?
+  + 만약 클릭 시점에서 체크된 input이 하나 이상이라면 폴더이동, 삭제 버튼 활성화
+  + 현재 체크된 박스 개수를 화면에 표시(.content-count-container > i)
 */
 
-// 나중에 폴더이동, 삭제 버튼이랑 이 페이지에 표시되는 게시물에 대한 이벤트도
-// 이 페이지 내에서 처리할 게 있으면 추가할 것
+// 각 삭제 체크박스의 input을 전부 가져옴
+const deleteInputs = document.querySelectorAll(".delete-box-input");
 
-// console.log(document.querySelector(".first-categories-wrap[title='식물']"));
+// 취소 버튼 옆 폴더이동, 삭제 버튼
+const deleteButton = document.querySelector(".content-delete");
+const moveButton = document.querySelector(".content-move");
+
+// 현재 체크된 박스 개수를 표시할 태그
+const checkedCount = document.querySelector(".content-count-container > i");
+
+// 각 삭제 체크박스에 click 이벤트 부여
+deleteInputs.forEach((input) => {
+  input.addEventListener("click", (e) => {
+    // 각 체크박스의 부모와 형제 요소
+    const boxContainer = e.target.closest(".delete-box-container");
+    const visualBox = e.target.previousElementSibling;
+
+    // 클릭으로 체크박스가 체크된 경우, 위 요소들에 enabled 클래스 추가
+    if (e.target.checked) {
+      // 추가 전에, 기존에 enabled 클래스가 있었는지 검사
+      if (!boxContainer.classList.contains("enabled")) {
+        boxContainer.classList.add("enabled");
+      }
+
+      if (!visualBox.classList.contains("enabled")) {
+        visualBox.classList.add("enabled");
+      }
+    }
+    // 클릭으로 체크가 해제된 경우, enabled 클래스 삭제
+    else {
+      boxContainer.classList.remove("enabled");
+      visualBox.classList.remove("enabled");
+    }
+
+    // 체크된 박스 전부를 가져옴
+    const checkedBoxes = document.querySelectorAll(".delete-box-input:checked");
+
+    // 만약 체크된 박스가 없다면 폴더이동 및 삭제 버튼 비활성화, 있으면 활성화
+    if (checkedBoxes.length >= 1) {
+      deleteButton.disabled = false;
+      moveButton.disabled = false;
+    } else {
+      deleteButton.disabled = true;
+      moveButton.disabled = true;
+    }
+
+    // 현재 체크된 박스 개수를 실제 화면에 표시 (innerText)
+    checkedCount.innerText = checkedBoxes.length;
+  });
+});
