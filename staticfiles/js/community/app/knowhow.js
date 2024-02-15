@@ -82,16 +82,52 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 showList();
 
+// 스크랩 버튼
 const contentLineBox = document.querySelector(".content-line-box");
-contentLineBox.addEventListener("click", (e) => {
-  e.preventDefault();
-  const clickedBtn = e.target.closest(".scrap-btn");
-  const img = clickedBtn.querySelector("img");
+const scrapPopup = document.querySelector(".scrap-popup-wrap");
+const scrapCancel = document.querySelector(".scrap-popup-cancel-wrap");
+
+let timeoutId;
+let animationTarget;
+
+contentLineBox.addEventListener("click", handleScrapButtonClick);
+
+function handleScrapButtonClick(e) {
+  const target = e.target.closest(".scrap-btn");
+  if (!target) return; // 스크랩 버튼이 아닌 경우 무시
+
+  const img = target.querySelector("img");
   const imgSrc = img.getAttribute("src");
-  imgSrc === "../../../staticfiles/images/scrap-off.png"
-    ? img.setAttribute("src", "../../../staticfiles/images/scrap-on.png")
-    : img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
-});
+
+  if (imgSrc === "../../../staticfiles/images/scrap-off.png") {
+    img.setAttribute("src", "../../../staticfiles/images/scrap-on.png");
+    showPopup(scrapPopup);
+  } else {
+    img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
+    showPopup(scrapCancel);
+  }
+}
+
+// 팝업 보여주기
+function showPopup(target) {
+  clearTimeout(timeoutId);
+  if (animationTarget) animationTarget.classList.remove("show-animation");
+  animationTarget = target;
+  animationTarget.classList.remove("hide-animation");
+  animationTarget.classList.add("show-animation");
+
+  // 일정 시간 후 팝업 숨기기
+  timeoutId = setTimeout(() => {
+    hidePopup();
+  }, 3000);
+}
+
+// 팝업 숨기기
+function hidePopup() {
+  if (!animationTarget) return;
+  animationTarget.classList.remove("show-animation");
+  animationTarget.classList.add("hide-animation");
+}
 
 const modalWraps = document.querySelectorAll(".modal-wrap");
 const filterBtns = document.querySelectorAll(".filter-btn");

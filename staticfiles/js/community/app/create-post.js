@@ -9,7 +9,6 @@ const textInputContainer = document.querySelector(
   ".content-text-input-container"
 );
 
-
 dropBoxGuide.addEventListener("click", () => {
   downArrowIcon[0].classList.toggle("down-arrow-open");
   dropBoxes[0].classList.toggle("guide-open");
@@ -94,66 +93,8 @@ tagInput.addEventListener("blur", (e) => {
   e.target.style.boxShadow = "";
 });
 
-const urlInput = document.querySelectorAll(".url-input");
-urlInput.forEach((item) => {
-  item.addEventListener("focus", (e) => {
-    e.target.style.boxShadow = "0 0 0 3px rgba(53,197,240,.3)";
-  });
-  item.addEventListener("blur", (e) => {
-    e.target.style.boxShadow = "";
-  });
-});
-
 const requiredInfoItemInner = document.querySelector(
   ".required-info-item-inner"
 );
 const guideText = document.querySelector(".guide-text");
 const addAndDeleteBtn = document.querySelectorAll(".add-delete-btn-box");
-
-function appendItem() {
-  const insertItem = document.createElement("div");
-  insertItem.classList.add("double-info-item-box");
-  insertItem.innerHTML = `
-      <div class="double-input-wrap">
-        <div class="double-input-left-box">
-          <input
-            class="url-input"
-            value=""
-            placeholder="URL 주소를 입력해주세요."
-          />
-        </div>
-      </div>
-      <div class="double-input-wrap">
-        <div class="link-input-box">
-          <input
-            class="url-input"
-            value=""
-            placeholder="표시할 내용"
-          />
-        </div>
-      </div>
-    `;
-
-  const parentElement = guideText.parentNode;
-  parentElement.insertBefore(insertItem, guideText);
-}
-addAndDeleteBtn.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    const doubleItemBox = document.querySelectorAll(".double-info-item-box");
-    const itemCount = doubleItemBox.length - 1;
-    const btnItem = e.target.closest("button");
-    const itemTitle = btnItem.getAttribute("title");
-    console.log(itemCount);
-    if (itemTitle === "추가") {
-      if (itemCount <= 1) {
-        appendItem();
-      }
-    }
-    if (itemTitle === "삭제") {
-      if (itemCount >= 1) {
-        const lastElement = doubleItemBox[itemCount];
-        lastElement.parentNode.removeChild(lastElement);
-      }
-    }
-  });
-});
