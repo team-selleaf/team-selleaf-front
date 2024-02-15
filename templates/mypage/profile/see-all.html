@@ -27,7 +27,7 @@
         -webkit-font-smoothing: antialiased;
       }
     </style>
-    <link rel="stylesheet" href="../../../staticfiles/css/common.css" />
+    <link rel="stylesheet" href="/staticfiles/css/common.css" />
     <!-- 여기까지는 무조건 고정으로 모든 페이지에 복붙하세요 -->
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
@@ -35,10 +35,7 @@
       href="/staticfiles/images/favicon.png"
       type="image/x-icon"
     />
-    <link
-      rel="stylesheet"
-      href="../../../staticfiles/css/mypage/profile/see-all.css"
-    />
+    <link rel="stylesheet" href="/staticfiles/css/mypage/profile/see-all.css" />
     <!-- '마이페이지' 부분은 나중에 DB, 서버 연동으로 (닉네임)의 공간~ 으로 바꾸기 -->
     <title>Selleaf | 마이페이지에 오신 것을 환영합니다.</title>
   </head>
@@ -140,7 +137,7 @@
                           <div class="profile-image-wrap">
                             <img
                               class="profile-image"
-                              src="../../../staticfiles/images/mypage/base-profile-image.avif"
+                              src="/staticfiles/images/mypage/base-profile-image.avif"
                             />
                           </div>
                           <div class="personal-info-wrap">
@@ -171,7 +168,7 @@
                             <a class="scraps-likes-content-wrap" href="#">
                               <div class="scraps-likes-icon">
                                 <img
-                                  src="../../../staticfiles/images/scrap-off-blk.png"
+                                  src="/staticfiles/images/scrap-off-blk.png"
                                 />
                               </div>
                               <div class="scraps-likes-text">스크랩북</div>
@@ -180,9 +177,7 @@
                             <!-- 좋아요 -->
                             <a class="scraps-likes-content-wrap" href="#">
                               <div class="scraps-likes-icon">
-                                <img
-                                  src="../../../staticfiles/images/like-off.png"
-                                />
+                                <img src="/staticfiles/images/like-off.png" />
                               </div>
                               <div class="scraps-likes-text">좋아요</div>
                               <div class="scraps-likes-count">0</div>
@@ -191,7 +186,7 @@
                             <a class="scraps-likes-content-wrap" href="#">
                               <div class="scraps-likes-icon">
                                 <img
-                                  src="../../../staticfiles/images/maileage/mileage.png"
+                                  src="/staticfiles/images/maileage/mileage.png"
                                 />
                               </div>
                               <div class="scraps-likes-text">마일리지</div>
@@ -226,44 +221,764 @@
               <div class="seperator-wrap">
                 <div class="content-seperator"></div>
               </div>
-              <!-- 사진 등의 내용물이 표시되는 공간 -->
-              <!-- 이 부분은 복붙하면서 내용물 교체 -->
+              <!-- 게시글 등의 내용물이 표시되는 공간 -->
               <div class="main-content-wrap">
                 <div class="main-content-cotainer">
                   <div class="main-content-area">
-                    <!-- 사진 -->
+                    <!-- 게시글 -->
                     <div class="content-section-wrap">
                       <div class="content-title-wrap">
                         <h1 class="content-title">
                           게시글
-                          <span class="content-count">0</span>
+                          <span class="content-count post-count">0</span>
                         </h1>
                         <div class="title-empty-area"></div>
                       </div>
-                      <a class="photo-upload-wrap" href="#">
+                      <!-- 게시글 없을 때 표시 -->
+                      <a class="photo-upload-wrap no-posts" href="#">
                         <img
                           class="add-icon"
-                          src="../../../staticfiles/images/mypage/add-icon.svg"
+                          src="/staticfiles/images/mypage/add-icon.svg"
                         />
                         첫 번째 게시글을 올려보세요
                       </a>
+                      <!-- 게시글 있을 때 표시 -->
+                      <div class="post-wrap">
+                        <!-- 각 게시글 내용 -->
+                        <div class="post-container">
+                          <div class="post-inner">
+                            <article class="post">
+                              <a href="#" class="post-link"></a>
+                              <div class="post-image-wrap_">
+                                <div class="post-image-container">
+                                  <div class="post-image-inner">
+                                    <div class="post-image"></div>
+                                    <img
+                                      src="/staticfiles/images/blank-image.png"
+                                      alt=""
+                                      class="image"
+                                    />
+                                    <div class="image__dark-overlay"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="post-contents-wrap">
+                                <div class="post-contents-container">
+                                  <h1 class="post-contents-header">
+                                    <span class="post-contents-user"
+                                      >작성자입력</span
+                                    >
+                                    <span class="post-contents-banner"
+                                      >게시글명</span
+                                    >
+                                  </h1>
+                                  <span class="post-price">
+                                    <span class="post-price-letter"
+                                      >35,000</span
+                                    >
+                                  </span>
+                                  <div class="post-content-pc-reply">
+                                    <p class="post-content-reply">댓글 갯수</p>
+                                    <p class="post-content-scrap">
+                                      스크랩 갯수
+                                    </p>
+                                  </div>
+                                  <span class="post-tag">
+                                    <span class="post-tag-icon">태그1</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                        <!-- 각 게시글 내용 -->
+                        <div class="post-container">
+                          <div class="post-inner">
+                            <article class="post">
+                              <a href="#" class="post-link"></a>
+                              <div class="post-image-wrap_">
+                                <div class="post-image-container">
+                                  <div class="post-image-inner">
+                                    <div class="post-image"></div>
+                                    <img
+                                      src="/staticfiles/images/blank-image.png"
+                                      alt=""
+                                      class="image"
+                                    />
+                                    <div class="image__dark-overlay"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="post-contents-wrap">
+                                <div class="post-contents-container">
+                                  <h1 class="post-contents-header">
+                                    <span class="post-contents-user"
+                                      >작성자입력</span
+                                    >
+                                    <span class="post-contents-banner"
+                                      >게시글명</span
+                                    >
+                                  </h1>
+                                  <span class="post-price">
+                                    <span class="post-price-letter"
+                                      >35,000</span
+                                    >
+                                  </span>
+                                  <div class="post-content-pc-reply">
+                                    <p class="post-content-reply">댓글 갯수</p>
+                                    <p class="post-content-scrap">
+                                      스크랩 갯수
+                                    </p>
+                                  </div>
+                                  <span class="post-tag">
+                                    <span class="post-tag-icon">태그1</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                        <!-- 각 게시글 내용 -->
+                        <div class="post-container">
+                          <div class="post-inner">
+                            <article class="post">
+                              <a href="#" class="post-link"></a>
+                              <div class="post-image-wrap_">
+                                <div class="post-image-container">
+                                  <div class="post-image-inner">
+                                    <div class="post-image"></div>
+                                    <img
+                                      src="/staticfiles/images/blank-image.png"
+                                      alt=""
+                                      class="image"
+                                    />
+                                    <div class="image__dark-overlay"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="post-contents-wrap">
+                                <div class="post-contents-container">
+                                  <h1 class="post-contents-header">
+                                    <span class="post-contents-user"
+                                      >작성자입력</span
+                                    >
+                                    <span class="post-contents-banner"
+                                      >게시글명</span
+                                    >
+                                  </h1>
+                                  <span class="post-price">
+                                    <span class="post-price-letter"
+                                      >35,000</span
+                                    >
+                                  </span>
+                                  <div class="post-content-pc-reply">
+                                    <p class="post-content-reply">댓글 갯수</p>
+                                    <p class="post-content-scrap">
+                                      스크랩 갯수
+                                    </p>
+                                  </div>
+                                  <span class="post-tag">
+                                    <span class="post-tag-icon">태그1</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                        <!-- 각 게시글 내용 -->
+                        <div class="post-container">
+                          <div class="post-inner">
+                            <article class="post">
+                              <a href="#" class="post-link"></a>
+                              <div class="post-image-wrap_">
+                                <div class="post-image-container">
+                                  <div class="post-image-inner">
+                                    <div class="post-image"></div>
+                                    <img
+                                      src="/staticfiles/images/blank-image.png"
+                                      alt=""
+                                      class="image"
+                                    />
+                                    <div class="image__dark-overlay"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="post-contents-wrap">
+                                <div class="post-contents-container">
+                                  <h1 class="post-contents-header">
+                                    <span class="post-contents-user"
+                                      >작성자입력</span
+                                    >
+                                    <span class="post-contents-banner"
+                                      >게시글명</span
+                                    >
+                                  </h1>
+                                  <span class="post-price">
+                                    <span class="post-price-letter"
+                                      >35,000</span
+                                    >
+                                  </span>
+                                  <div class="post-content-pc-reply">
+                                    <p class="post-content-reply">댓글 갯수</p>
+                                    <p class="post-content-scrap">
+                                      스크랩 갯수
+                                    </p>
+                                  </div>
+                                  <span class="post-tag">
+                                    <span class="post-tag-icon">태그1</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                        <!-- 각 게시글 내용 -->
+                        <div class="post-container">
+                          <div class="post-inner">
+                            <article class="post">
+                              <a href="#" class="post-link"></a>
+                              <div class="post-image-wrap_">
+                                <div class="post-image-container">
+                                  <div class="post-image-inner">
+                                    <div class="post-image"></div>
+                                    <img
+                                      src="/staticfiles/images/blank-image.png"
+                                      alt=""
+                                      class="image"
+                                    />
+                                    <div class="image__dark-overlay"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="post-contents-wrap">
+                                <div class="post-contents-container">
+                                  <h1 class="post-contents-header">
+                                    <span class="post-contents-user"
+                                      >작성자입력</span
+                                    >
+                                    <span class="post-contents-banner"
+                                      >게시글명</span
+                                    >
+                                  </h1>
+                                  <span class="post-price">
+                                    <span class="post-price-letter"
+                                      >35,000</span
+                                    >
+                                  </span>
+                                  <div class="post-content-pc-reply">
+                                    <p class="post-content-reply">댓글 갯수</p>
+                                    <p class="post-content-scrap">
+                                      스크랩 갯수
+                                    </p>
+                                  </div>
+                                  <span class="post-tag">
+                                    <span class="post-tag-icon">태그1</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                        <!-- 각 게시글 내용 -->
+                        <div class="post-container">
+                          <div class="post-inner">
+                            <article class="post">
+                              <a href="#" class="post-link"></a>
+                              <div class="post-image-wrap_">
+                                <div class="post-image-container">
+                                  <div class="post-image-inner">
+                                    <div class="post-image"></div>
+                                    <img
+                                      src="/staticfiles/images/blank-image.png"
+                                      alt=""
+                                      class="image"
+                                    />
+                                    <div class="image__dark-overlay"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="post-contents-wrap">
+                                <div class="post-contents-container">
+                                  <h1 class="post-contents-header">
+                                    <span class="post-contents-user"
+                                      >작성자입력</span
+                                    >
+                                    <span class="post-contents-banner"
+                                      >게시글명</span
+                                    >
+                                  </h1>
+                                  <span class="post-price">
+                                    <span class="post-price-letter"
+                                      >35,000</span
+                                    >
+                                  </span>
+                                  <div class="post-content-pc-reply">
+                                    <p class="post-content-reply">댓글 갯수</p>
+                                    <p class="post-content-scrap">
+                                      스크랩 갯수
+                                    </p>
+                                  </div>
+                                  <span class="post-tag">
+                                    <span class="post-tag-icon">태그1</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                        <!-- 각 게시글 내용 -->
+                        <div class="post-container">
+                          <div class="post-inner">
+                            <article class="post">
+                              <a href="#" class="post-link"></a>
+                              <div class="post-image-wrap_">
+                                <div class="post-image-container">
+                                  <div class="post-image-inner">
+                                    <div class="post-image"></div>
+                                    <img
+                                      src="/staticfiles/images/blank-image.png"
+                                      alt=""
+                                      class="image"
+                                    />
+                                    <div class="image__dark-overlay"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="post-contents-wrap">
+                                <div class="post-contents-container">
+                                  <h1 class="post-contents-header">
+                                    <span class="post-contents-user"
+                                      >작성자입력</span
+                                    >
+                                    <span class="post-contents-banner"
+                                      >게시글명</span
+                                    >
+                                  </h1>
+                                  <span class="post-price">
+                                    <span class="post-price-letter"
+                                      >35,000</span
+                                    >
+                                  </span>
+                                  <div class="post-content-pc-reply">
+                                    <p class="post-content-reply">댓글 갯수</p>
+                                    <p class="post-content-scrap">
+                                      스크랩 갯수
+                                    </p>
+                                  </div>
+                                  <span class="post-tag">
+                                    <span class="post-tag-icon">태그1</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                        <!-- 각 게시글 내용 -->
+                        <div class="post-container">
+                          <div class="post-inner">
+                            <article class="post">
+                              <a href="#" class="post-link"></a>
+                              <div class="post-image-wrap_">
+                                <div class="post-image-container">
+                                  <div class="post-image-inner">
+                                    <div class="post-image"></div>
+                                    <img
+                                      src="/staticfiles/images/blank-image.png"
+                                      alt=""
+                                      class="image"
+                                    />
+                                    <div class="image__dark-overlay"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="post-contents-wrap">
+                                <div class="post-contents-container">
+                                  <h1 class="post-contents-header">
+                                    <span class="post-contents-user"
+                                      >작성자입력</span
+                                    >
+                                    <span class="post-contents-banner"
+                                      >게시글명</span
+                                    >
+                                  </h1>
+                                  <span class="post-price">
+                                    <span class="post-price-letter"
+                                      >35,000</span
+                                    >
+                                  </span>
+                                  <div class="post-content-pc-reply">
+                                    <p class="post-content-reply">댓글 갯수</p>
+                                    <p class="post-content-scrap">
+                                      스크랩 갯수
+                                    </p>
+                                  </div>
+                                  <span class="post-tag">
+                                    <span class="post-tag-icon">태그1</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <!-- 집들이 - 나중에 다른 걸로 수정 -->
+                    <!-- 리뷰 -->
                     <div class="content-section-wrap">
                       <div class="content-title-wrap">
                         <h1 class="content-title">
                           리뷰
-                          <span class="content-count">0</span>
+                          <span class="content-count review-count">0</span>
                         </h1>
                         <div class="title-empty-area"></div>
                       </div>
-                      <a class="photo-upload-wrap" href="#">
+                      <!-- 리뷰 없을 때 표시 -->
+                      <a class="photo-upload-wrap no-reviews" href="#">
                         <img
                           class="add-icon"
-                          src="../../../staticfiles/images/mypage/add-icon.svg"
+                          src="/staticfiles/images/mypage/add-icon.svg"
                         />
                         첫 번째 리뷰를 올려보세요
                       </a>
+                      <!-- 리뷰 있을 때 표시 -->
+                      <div class="reviews-history-item-wrap">
+                        <a href="#" class="reviews-history-link"></a>
+                        <div class="reviews-history-item-container">
+                          <div
+                            class="reviews-item-image-wrap"
+                            style="opacity: 1"
+                          >
+                            <img
+                              class="reviews-item-image"
+                              src="/staticfiles/images/blank-image.png"
+                            />
+                          </div>
+                          <div
+                            class="reviews-item-title-wrap"
+                            style="opacity: 1"
+                          >
+                            <span>리뷰 테스트</span>
+                          </div>
+                          <div
+                            class="reviews-item-article-wrap"
+                            style="opacity: 1"
+                          >
+                            <span>리뷰 본문 예시입니다.</span>
+                          </div>
+                          <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
+                          <div class="reviews-item-info-wrap">
+                            <div class="article-info-wrap">
+                              <!-- 작성자 -->
+                              <div class="user-info-wrap">
+                                <div class="user-profile-wrap">
+                                  <img
+                                    class="user-profile-image"
+                                    src="/staticfiles/images/mypage/base-profile-image.avif"
+                                  />
+                                </div>
+                                Selleaf Test
+                              </div>
+                              <!-- 올린 시간, 조회수, 지역 -->
+                              <div class="item-info-wrap">
+                                <div class="item-infos">1일 전</div>
+                                <div class="item-infos">조회 8</div>
+                                <div class="item-infos">경기도 광주시</div>
+                              </div>
+                            </div>
+                            <!-- 태그 -->
+                            <div class="item-tags-wrap">
+                              <ul class="item-tags-container">
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      온라인
+                                    </button>
+                                  </div>
+                                </li>
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      테라리움
+                                    </button>
+                                  </div>
+                                </li>
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      DIY 키트
+                                    </button>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 각 내역 사이의 구분선 -->
+                      <hr class="items-seperator" />
+                      <!-- 리뷰 생기면 이 부분이 표시 -->
+                      <div class="reviews-history-item-wrap">
+                        <a href="#" class="reviews-history-link"></a>
+                        <div class="reviews-history-item-container">
+                          <div
+                            class="reviews-item-image-wrap"
+                            style="opacity: 1"
+                          >
+                            <img
+                              class="reviews-item-image"
+                              src="/staticfiles/images/blank-image.png"
+                            />
+                          </div>
+                          <div
+                            class="reviews-item-title-wrap"
+                            style="opacity: 1"
+                          >
+                            <span>리뷰 테스트</span>
+                          </div>
+                          <div
+                            class="reviews-item-article-wrap"
+                            style="opacity: 1"
+                          >
+                            <span>리뷰 본문 예시입니다.</span>
+                          </div>
+                          <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
+                          <div class="reviews-item-info-wrap">
+                            <div class="article-info-wrap">
+                              <!-- 작성자 -->
+                              <div class="user-info-wrap">
+                                <div class="user-profile-wrap">
+                                  <img
+                                    class="user-profile-image"
+                                    src="/staticfiles/images/mypage/base-profile-image.avif"
+                                  />
+                                </div>
+                                Selleaf Test
+                              </div>
+                              <!-- 올린 시간, 조회수, 지역 -->
+                              <div class="item-info-wrap">
+                                <div class="item-infos">1일 전</div>
+                                <div class="item-infos">조회 8</div>
+                                <div class="item-infos">경기도 광주시</div>
+                              </div>
+                            </div>
+                            <!-- 태그 -->
+                            <div class="item-tags-wrap">
+                              <ul class="item-tags-container">
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      온라인
+                                    </button>
+                                  </div>
+                                </li>
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      테라리움
+                                    </button>
+                                  </div>
+                                </li>
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      DIY 키트
+                                    </button>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 각 내역 사이의 구분선 -->
+                      <hr class="items-seperator" />
+                      <!-- 리뷰 생기면 이 부분이 표시 -->
+                      <div class="reviews-history-item-wrap">
+                        <a href="#" class="reviews-history-link"></a>
+                        <div class="reviews-history-item-container">
+                          <div
+                            class="reviews-item-image-wrap"
+                            style="opacity: 1"
+                          >
+                            <img
+                              class="reviews-item-image"
+                              src="/staticfiles/images/blank-image.png"
+                            />
+                          </div>
+                          <div
+                            class="reviews-item-title-wrap"
+                            style="opacity: 1"
+                          >
+                            <span>리뷰 테스트</span>
+                          </div>
+                          <div
+                            class="reviews-item-article-wrap"
+                            style="opacity: 1"
+                          >
+                            <span>리뷰 본문 예시입니다.</span>
+                          </div>
+                          <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
+                          <div class="reviews-item-info-wrap">
+                            <div class="article-info-wrap">
+                              <!-- 작성자 -->
+                              <div class="user-info-wrap">
+                                <div class="user-profile-wrap">
+                                  <img
+                                    class="user-profile-image"
+                                    src="/staticfiles/images/mypage/base-profile-image.avif"
+                                  />
+                                </div>
+                                Selleaf Test
+                              </div>
+                              <!-- 올린 시간, 조회수, 지역 -->
+                              <div class="item-info-wrap">
+                                <div class="item-infos">1일 전</div>
+                                <div class="item-infos">조회 8</div>
+                                <div class="item-infos">경기도 광주시</div>
+                              </div>
+                            </div>
+                            <!-- 태그 -->
+                            <div class="item-tags-wrap">
+                              <ul class="item-tags-container">
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      온라인
+                                    </button>
+                                  </div>
+                                </li>
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      테라리움
+                                    </button>
+                                  </div>
+                                </li>
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      DIY 키트
+                                    </button>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 각 내역 사이의 구분선 -->
+                      <hr class="items-seperator" />
+                      <!-- 리뷰 생기면 이 부분이 표시 -->
+                      <div class="reviews-history-item-wrap">
+                        <a href="#" class="reviews-history-link"></a>
+                        <div class="reviews-history-item-container">
+                          <div
+                            class="reviews-item-image-wrap"
+                            style="opacity: 1"
+                          >
+                            <img
+                              class="reviews-item-image"
+                              src="/staticfiles/images/blank-image.png"
+                            />
+                          </div>
+                          <div
+                            class="reviews-item-title-wrap"
+                            style="opacity: 1"
+                          >
+                            <span>리뷰 테스트</span>
+                          </div>
+                          <div
+                            class="reviews-item-article-wrap"
+                            style="opacity: 1"
+                          >
+                            <span>리뷰 본문 예시입니다.</span>
+                          </div>
+                          <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
+                          <div class="reviews-item-info-wrap">
+                            <div class="article-info-wrap">
+                              <!-- 작성자 -->
+                              <div class="user-info-wrap">
+                                <div class="user-profile-wrap">
+                                  <img
+                                    class="user-profile-image"
+                                    src="/staticfiles/images/mypage/base-profile-image.avif"
+                                  />
+                                </div>
+                                Selleaf Test
+                              </div>
+                              <!-- 올린 시간, 조회수, 지역 -->
+                              <div class="item-info-wrap">
+                                <div class="item-infos">1일 전</div>
+                                <div class="item-infos">조회 8</div>
+                                <div class="item-infos">경기도 광주시</div>
+                              </div>
+                            </div>
+                            <!-- 태그 -->
+                            <div class="item-tags-wrap">
+                              <ul class="item-tags-container">
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      온라인
+                                    </button>
+                                  </div>
+                                </li>
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      테라리움
+                                    </button>
+                                  </div>
+                                </li>
+                                <li class="item-tags">
+                                  <div>
+                                    <button
+                                      class="item-tags-button"
+                                      type="button"
+                                    >
+                                      DIY 키트
+                                    </button>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 각 내역 사이의 구분선 -->
+                      <hr class="items-seperator" />
                     </div>
                   </div>
                 </div>
@@ -291,9 +1006,7 @@
           <div class="share-modal-container">
             <!-- 카카오 공유 버튼 -->
             <button type="button" class="kakao-share-button">
-              <img
-                src="../../../staticfiles/images/other-sns-logos/kakao-logo.svg"
-              />
+              <img src="/staticfiles/images/other-sns-logos/kakao-logo.svg" />
             </button>
             <!-- 클립보드 복사 버튼 -->
             <button type="button" class="cilpboard-button">
@@ -326,5 +1039,5 @@
       </div>
     </div>
   </body>
-  <script src="../../../staticfiles/js/mypage/profile/see-all.js"></script>
+  <script src="/staticfiles/js/mypage/profile/see-all.js"></script>
 </html>

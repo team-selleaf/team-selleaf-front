@@ -102,7 +102,7 @@ else {
   nothingText.style.display = "block";
 
   // 각 강의내역 숨김
-  classesdItems.forEach((item) => {
+  classesItems.forEach((item) => {
     item.style.display = "none";
   });
 

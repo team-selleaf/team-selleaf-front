@@ -49,3 +49,28 @@ if (isTeacher) {
 } else {
   myClassMenu.style.display = "none";
 }
+
+/*
+  게시글 유무에 따라 표시되는 내용 변경
+
+  게시글 있음: post-wrap - flex, no-content-wrap - none
+  게시글 없음: post-wrap - none, no-content-wrap - block
+*/
+
+// 조건에 따라 표시할 div 태그들
+const postWrap = document.querySelector(".post-wrap");
+const noContentWrap = document.querySelector(".no-content-wrap");
+
+// 스크랩 한 게시글 개수
+let likedPosts = document.querySelectorAll(".post-wrap .post-container");
+
+// 게시글 없으면 내용 없음 표시
+if (likedPosts.length == 0) {
+  postWrap.style.display = "none";
+  noContentWrap.style.display = "block";
+}
+// 게시글이 하나라도 있으면 게시글 묶음 표시
+else {
+  postWrap.style.display = "flex";
+  noContentWrap.style.display = "none";
+}

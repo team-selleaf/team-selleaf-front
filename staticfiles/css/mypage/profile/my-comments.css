@@ -497,7 +497,7 @@ a * {
   width: 66.6667%;
 }
 
-.user-feed-wrap {
+.no-content-wrap {
   position: relative;
 }
 
@@ -508,13 +508,190 @@ a * {
   color: rgb(117, 117, 117);
 }
 
-.user-feed-content {
+.no-contents {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   margin-right: -10px;
   margin-left: -10px;
   margin-top: 30px;
+}
+
+/* 각 리뷰글들 */
+.comments-history-item-wrap {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding: 30px 16px;
+}
+
+.comments-history-item-wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.comments-history-link {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+/* 거래 내역 이미지 */
+.comments-item-image-wrap {
+  float: right;
+  background-color: #f7f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 5px -16px 0 30px;
+  width: 110px;
+  height: 110px;
+}
+
+.comments-item-image {
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.1s opacity;
+}
+
+/* 거래 내역 제목 */
+.comments-item-title-wrap {
+  font-weight: bold;
+  color: #2f3438;
+  transition: 0.1s color;
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: initial;
+}
+
+/* 거래 내역 본문 */
+.comments-item-article-wrap {
+  font-size: 14px;
+  line-height: 20px;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #2f3438;
+  transition: 0.1s color;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 0 0 6px;
+  text-align: initial;
+}
+
+/* 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 */
+.comments-item-info-wrap {
+  font-size: 12px;
+  line-height: 16px;
+  color: #828c94;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 작성자, 조회수, 지역을 감싸는 부분 */
+.article-info-wrap {
+  display: block;
+  margin: 16px 8px -5px 0;
+}
+
+.user-info-wrap {
+  display: inline-block;
+  margin: 0 0 5px;
+  color: #2f3438;
+  margin-right: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.user-profile-wrap {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  border-radius: 100%;
+  vertical-align: -5px;
+  background-color: #f7f9fa;
+  overflow: hidden;
+}
+
+.user-profile-image {
+  width: 100%;
+}
+
+/* 올린 시간, 조회수, 지역을 감싸는 부분 */
+.item-info-wrap {
+  display: inline-block;
+  margin: 0 0 5px;
+}
+
+/* 올린 시간, 조회수, 지역 정보 각각에 적용 */
+.item-infos {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* 위 요소들 중 마지막이 아닌 것들은 뒤쪽에 가상요소 추가 */
+.item-infos:not(:last-child)::after {
+  content: "·";
+  margin-left: 8px;
+}
+
+/* 태그 전체를 감싸는 부분 */
+.item-tags-container {
+  display: inline-block;
+  margin: 16px -3px -6px;
+}
+
+.item-tags {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.item-tags-button {
+  background: none;
+  font: inherit;
+  display: inline-block;
+  margin: 0 3px 6px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #2f3438;
+  background-color: #ffffff;
+  border: 1px solid #eaedef;
+  border-radius: 50px;
+  transition: 0.1s opacity;
+  padding: 4px 11px;
+}
+
+/* 태그 각각에 마우스 올리면 스타일 변경 */
+.item-tags-button:hover {
+  opacity: 0.6;
+}
+
+/* 태그 각각에 가상요소로 # 표시 붙여줌 */
+.item-tags-button::before {
+  content: "#";
+  color: #c2c8cc;
+  margin-right: 3px;
+}
+
+/* 각 내역 사이의 구분선 */
+.items-seperator {
+  margin: 0px;
+  padding: 0px;
+  height: 1px;
+  border: none;
+  background-color: rgb(234, 237, 239);
 }
 
 /* 사이드 바의 공유 버튼을 클릭하면 나오는 모달창 */

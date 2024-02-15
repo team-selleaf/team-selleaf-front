@@ -562,6 +562,388 @@ a * {
   margin: 0 5px -2px 0;
 }
 
+/* 각각의 게시글 */
+.post-wrap {
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 60px auto 100px;
+  row-gap: 16px;
+}
+
+.post-container {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  box-sizing: border-box;
+  -webkit-box-flex: 0;
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.post-inner {
+  border-bottom: 1px solid #eaedef;
+  border-bottom: none;
+}
+
+.post {
+  position: relative;
+  display: block;
+  padding: 0 10px 15px;
+}
+
+.post-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.post-link:hover ~ .post-image-wrap_ .image {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.post-image-wrap_ {
+  position: relative;
+  -webkit-box-flex: 0;
+  width: auto;
+  margin: 0 -10px;
+}
+
+.post-image-inner {
+  position: relative;
+  background-color: #f5f5f5;
+  padding-bottom: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.post-image-inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.post-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+}
+
+.image__dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.2s;
+}
+
+.post-contents-wrap {
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 0px;
+  -moz-box-flex: 1;
+  -moz-flex: 1 0 0px;
+  -ms-flex: 1 0 0px;
+  flex: 1 0 0px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  margin-left: 12px;
+  margin: 0;
+}
+
+.post-contents-header {
+  margin-top: 9px;
+}
+
+.post-contents-user {
+  display: block;
+  font-size: 11px;
+  color: #828c94;
+}
+
+.post-contents-banner {
+  color: #424242;
+  transition: opacity 0.1s;
+  max-height: 57px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  margin-top: 5px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 17px;
+  max-height: 34px;
+  -webkit-line-clamp: 2;
+  margin-bottom: 4px;
+}
+
+.post-price {
+  margin: 2px 0 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: 700;
+}
+
+.post-price-letter {
+  color: #000;
+  margin-right: 4px;
+}
+
+.post-content-pc-reply {
+  display: block;
+  margin-block-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.post-content-reply {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  display: inline-block;
+  font-size: 12px;
+  color: #9e9e9e;
+  line-height: 16px;
+  font-weight: 700;
+}
+
+.post-content-scrap {
+  display: inline-block;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-left: 5px;
+  font-size: 12px;
+  color: #9e9e9e;
+  line-height: 16px;
+  font-weight: 700;
+}
+
+.post-tag {
+  margin-top: 6px;
+  display: flex;
+}
+
+.post-tag-icon {
+  border-radius: 4px;
+  border: 4px solid #97a38c;
+  background-color: #97a38c;
+  color: white;
+  font-size: 11px;
+  overflow-clip-margin: content-box;
+  overflow: hidden;
+  margin-right: 4px;
+}
+
+/* 각 리뷰글들 */
+.reviews-history-item-wrap {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding: 30px 16px;
+}
+
+.reviews-history-item-wrap::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.reviews-history-link {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+/* 거래 내역 이미지 */
+.reviews-item-image-wrap {
+  float: right;
+  background-color: #f7f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 5px -16px 0 30px;
+  width: 110px;
+  height: 110px;
+}
+
+.reviews-item-image {
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.1s opacity;
+}
+
+/* 거래 내역 제목 */
+.reviews-item-title-wrap {
+  font-weight: bold;
+  color: #2f3438;
+  transition: 0.1s color;
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: initial;
+}
+
+/* 거래 내역 본문 */
+.reviews-item-article-wrap {
+  font-size: 14px;
+  line-height: 20px;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #2f3438;
+  transition: 0.1s color;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 0 0 6px;
+  text-align: initial;
+}
+
+/* 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 */
+.reviews-item-info-wrap {
+  font-size: 12px;
+  line-height: 16px;
+  color: #828c94;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 작성자, 조회수, 지역을 감싸는 부분 */
+.article-info-wrap {
+  display: block;
+  margin: 16px 8px -5px 0;
+}
+
+.user-info-wrap {
+  display: inline-block;
+  margin: 0 0 5px;
+  color: #2f3438;
+  margin-right: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.user-profile-wrap {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  border-radius: 100%;
+  vertical-align: -5px;
+  background-color: #f7f9fa;
+  overflow: hidden;
+}
+
+.user-profile-image {
+  width: 100%;
+}
+
+/* 올린 시간, 조회수, 지역을 감싸는 부분 */
+.item-info-wrap {
+  display: inline-block;
+  margin: 0 0 5px;
+}
+
+/* 올린 시간, 조회수, 지역 정보 각각에 적용 */
+.item-infos {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* 위 요소들 중 마지막이 아닌 것들은 뒤쪽에 가상요소 추가 */
+.item-infos:not(:last-child)::after {
+  content: "·";
+  margin-left: 8px;
+}
+
+/* 태그 전체를 감싸는 부분 */
+.item-tags-container {
+  display: inline-block;
+  margin: 16px -3px -6px;
+}
+
+.item-tags {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.item-tags-button {
+  background: none;
+  font: inherit;
+  display: inline-block;
+  margin: 0 3px 6px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #2f3438;
+  background-color: #ffffff;
+  border: 1px solid #eaedef;
+  border-radius: 50px;
+  transition: 0.1s opacity;
+  padding: 4px 11px;
+}
+
+/* 태그 각각에 마우스 올리면 스타일 변경 */
+.item-tags-button:hover {
+  opacity: 0.6;
+}
+
+/* 태그 각각에 가상요소로 # 표시 붙여줌 */
+.item-tags-button::before {
+  content: "#";
+  color: #c2c8cc;
+  margin-right: 3px;
+}
+
+/* 각 내역 사이의 구분선 */
+.items-seperator {
+  margin: 0px;
+  padding: 0px;
+  height: 1px;
+  border: none;
+  background-color: rgb(234, 237, 239);
+}
+
 /* 사이드 바의 공유 버튼을 클릭하면 나오는 모달창 */
 .share-modal-wrap {
   transform-origin: 50% 0;
