@@ -237,7 +237,7 @@ button.kakao{
     grid-column: 1 / 3;
     margin: 0px;
     border: none;
-    background: none #97A38C;
+    background: none  #F7E600;
     font-style: inherit;
     font-variant: inherit;
     font-stretch: inherit;
@@ -260,7 +260,7 @@ button.kakao{
     font-weight: 400;
     box-sizing: border-box;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 a.contact-email{
