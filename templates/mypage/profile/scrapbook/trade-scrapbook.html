@@ -60,6 +60,58 @@
                     <span class="share-text">공유하기</span>
                   </button>
                 </div>
+                <div class="modal-wrap">
+                  <div
+                    class="modal-container"
+                    style="
+                      position: absolute;
+                      z-index: 1000;
+                      transform: translateX(5%);
+                    "
+                  >
+                    <div class="share-modal-wrap">
+                      <div class="share-modal-container">
+                        <!-- 카카오 공유 버튼 -->
+                        <button type="button" class="kakao-share-button">
+                          <img
+                            src="/staticfiles/images/other-sns-logos/kakao-logo.svg"
+                          />
+                        </button>
+                        <!-- 클립보드 복사 버튼 -->
+                        <button type="button" class="cilpboard-button">
+                          <svg
+                            class="icon"
+                            aria-label="주소 복사"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 40 40"
+                            fill="none"
+                            preserveAspectRatio="xMidYMid meet"
+                          >
+                            <circle
+                              cx="20"
+                              cy="20"
+                              r="20"
+                              fill="#EAEDEF"
+                            ></circle>
+                            <path
+                              d="M25.0001 20.65H15.0001V19.35H25.0001V20.65Z"
+                              fill="#2F3438"
+                            ></path>
+                            <path
+                              d="M10.3501 20C10.3501 17.4319 12.432 15.35 15.0001 15.35H18.0001V16.65H15.0001C13.1499 16.65 11.6501 18.1498 11.6501 20C11.6501 21.8501 13.1499 23.35 15.0001 23.35H18.0001V24.65H15.0001C12.432 24.65 10.3501 22.5681 10.3501 20Z"
+                              fill="#2F3438"
+                            ></path>
+                            <path
+                              d="M29.6501 20C29.6501 17.4319 27.5682 15.35 25.0001 15.35H22.0001V16.65H25.0001C26.8503 16.65 28.3501 18.1498 28.3501 20C28.3501 21.8501 26.8503 23.35 25.0001 23.35H22.0001V24.65H25.0001C27.5682 24.65 29.6501 22.5681 29.6501 20Z"
+                              fill="#2F3438"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <!-- 이용자 프로필 이미지 및 닉네임 -->
@@ -153,6 +205,267 @@
                                   ></path>
                                 </svg>
                               </button>
+                              <!-- 카테고리 버튼 클릭하면 나오는 모달창 -->
+                              <div class="modal-wrap" title="대카테고리 모달창">
+                                <div
+                                  class="modal-container"
+                                  style="
+                                    position: absolute;
+                                    z-index: 1000;
+                                    transform: translateX(-31%);
+                                  "
+                                >
+                                  <div
+                                    class="first-category-modal-wrap"
+                                    style="display: none"
+                                  >
+                                    <div
+                                      class="first-category-modal-container"
+                                      title="카테고리"
+                                    >
+                                      <ul class="first-category-list">
+                                        <!-- 전체 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="전체 카테고리"
+                                        >
+                                          <button
+                                            class="first-categories-container selected"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >전체 카테고리</span
+                                              >
+                                            </div>
+                                          </button>
+                                        </li>
+                                        <!-- 식물 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="식물"
+                                        >
+                                          <button
+                                            class="first-categories-container"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >식물</span
+                                              >
+                                              <span class="first-category-count"
+                                                >0</span
+                                              >
+                                              <svg
+                                                class="sub-category-icon"
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 16 16"
+                                                preserveAspectRatio="xMidYMid meet"
+                                              >
+                                                <path
+                                                  fill="currentColor"
+                                                  fill-rule="nonzero"
+                                                  d="M4 13.128l1.5 1.539L12 8 5.5 1.333 4 2.872 9 8z"
+                                                ></path>
+                                              </svg>
+                                            </div>
+                                          </button>
+                                        </li>
+                                        <!-- 수공예품 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="수공예품"
+                                        >
+                                          <button
+                                            class="first-categories-container"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >수공예품</span
+                                              >
+                                              <span class="first-category-count"
+                                                >0</span
+                                              >
+                                              <svg
+                                                class="sub-category-icon"
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 16 16"
+                                                preserveAspectRatio="xMidYMid meet"
+                                              >
+                                                <path
+                                                  fill="currentColor"
+                                                  fill-rule="nonzero"
+                                                  d="M4 13.128l1.5 1.539L12 8 5.5 1.333 4 2.872 9 8z"
+                                                ></path>
+                                              </svg>
+                                            </div>
+                                          </button>
+                                        </li>
+                                        <!-- 기타 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="기타"
+                                        >
+                                          <button
+                                            class="first-categories-container"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >기타</span
+                                              >
+                                              <span class="first-category-count"
+                                                >0</span
+                                              >
+                                              <svg
+                                                class="sub-category-icon"
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 16 16"
+                                                preserveAspectRatio="xMidYMid meet"
+                                              >
+                                                <path
+                                                  fill="currentColor"
+                                                  fill-rule="nonzero"
+                                                  d="M4 13.128l1.5 1.539L12 8 5.5 1.333 4 2.872 9 8z"
+                                                ></path>
+                                              </svg>
+                                            </div>
+                                          </button>
+                                        </li>
+                                      </ul>
+                                      <!-- 대카테고리 모달 내 목록에 mouseover 되면 나오는 모달창 -->
+                                      <div
+                                        class="modal-wrap"
+                                        title="소카테고리 모달창"
+                                      >
+                                        <div
+                                          class="modal-container"
+                                          style="
+                                            position: absolute;
+                                            z-index: 1000;
+                                            transform: translateX(-50%);
+                                          "
+                                        >
+                                          <div
+                                            class="second-category-modal-wrap"
+                                            style="display: none"
+                                          >
+                                            <div
+                                              class="second-category-modal-container"
+                                              title="상품"
+                                            >
+                                              <ul class="second-category-list">
+                                                <!-- 소카테고리 리스트 -->
+                                                <!-- JS 이벤트로 리스트 내용 변경 -->
+                                                <!-- 관엽식물 -->
+                                                <li
+                                                  class="second-categories-wrap"
+                                                  title="관엽식물"
+                                                >
+                                                  <button
+                                                    class="second-categories-container"
+                                                  >
+                                                    <div
+                                                      class="second-category-title-wrap"
+                                                    >
+                                                      <span
+                                                        class="second-caregory-title"
+                                                        >관엽식물</span
+                                                      >
+                                                      <span
+                                                        class="second-category-count"
+                                                        >0</span
+                                                      >
+                                                    </div>
+                                                  </button>
+                                                </li>
+                                                <!-- 침엽식물 -->
+                                                <li
+                                                  class="second-categories-wrap"
+                                                  title="침엽식물"
+                                                >
+                                                  <button
+                                                    class="second-categories-container"
+                                                  >
+                                                    <div
+                                                      class="second-category-title-wrap"
+                                                    >
+                                                      <span
+                                                        class="second-caregory-title"
+                                                        >침엽식물</span
+                                                      >
+                                                      <span
+                                                        class="second-category-count"
+                                                        >0</span
+                                                      >
+                                                    </div>
+                                                  </button>
+                                                </li>
+                                                <!-- 희귀식물 -->
+                                                <li
+                                                  class="second-categories-wrap"
+                                                  title="희귀식물"
+                                                >
+                                                  <button
+                                                    class="second-categories-container"
+                                                  >
+                                                    <div
+                                                      class="second-category-title-wrap"
+                                                    >
+                                                      <span
+                                                        class="second-caregory-title"
+                                                        >희귀식물</span
+                                                      >
+                                                      <span
+                                                        class="second-category-count"
+                                                        >0</span
+                                                      >
+                                                    </div>
+                                                  </button>
+                                                </li>
+                                                <!-- 다육/선인장 -->
+                                                <li
+                                                  class="second-categories-wrap"
+                                                  title="다육/선인장"
+                                                >
+                                                  <button
+                                                    class="second-categories-container"
+                                                  >
+                                                    <div
+                                                      class="second-category-title-wrap"
+                                                    >
+                                                      <span
+                                                        class="second-caregory-title"
+                                                        >다육/선인장</span
+                                                      >
+                                                      <span
+                                                        class="second-category-count"
+                                                        >0</span
+                                                      >
+                                                    </div>
+                                                  </button>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </li>
                         </ul>
@@ -606,203 +919,6 @@
         </div>
         <!-- 나중에 메인 페이지 담당자에게서 받아옴 -->
         <footer style="height: 320px"></footer>
-      </div>
-    </div>
-    <!-- 공유버튼 누르면 나오는 모달창 -->
-    <div class="modal-wrap" title="공유 모달창">
-      <div
-        class="modal-container"
-        style="
-          position: absolute;
-          z-index: 1000;
-          left: 1255.6px;
-          top: 176.75px;
-          transform: translateX(-50%);
-        "
-      >
-        <div class="share-modal-wrap">
-          <div class="share-modal-container">
-            <!-- 카카오 공유 버튼 -->
-            <button type="button" class="kakao-share-button">
-              <img src="/staticfiles/images/other-sns-logos/kakao-logo.svg" />
-            </button>
-            <!-- 클립보드 복사 버튼 -->
-            <button type="button" class="cilpboard-button">
-              <svg
-                class="icon"
-                aria-label="주소 복사"
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="20" cy="20" r="20" fill="#EAEDEF"></circle>
-                <path
-                  d="M25.0001 20.65H15.0001V19.35H25.0001V20.65Z"
-                  fill="#2F3438"
-                ></path>
-                <path
-                  d="M10.3501 20C10.3501 17.4319 12.432 15.35 15.0001 15.35H18.0001V16.65H15.0001C13.1499 16.65 11.6501 18.1498 11.6501 20C11.6501 21.8501 13.1499 23.35 15.0001 23.35H18.0001V24.65H15.0001C12.432 24.65 10.3501 22.5681 10.3501 20Z"
-                  fill="#2F3438"
-                ></path>
-                <path
-                  d="M29.6501 20C29.6501 17.4319 27.5682 15.35 25.0001 15.35H22.0001V16.65H25.0001C26.8503 16.65 28.3501 18.1498 28.3501 20C28.3501 21.8501 26.8503 23.35 25.0001 23.35H22.0001V24.65H25.0001C27.5682 24.65 29.6501 22.5681 29.6501 20Z"
-                  fill="#2F3438"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 카테고리 버튼에 mouseover 되면 나오는 모달창 -->
-    <div class="modal-wrap" title="대카테고리 모달창">
-      <div
-        class="modal-container"
-        style="
-          position: absolute;
-          z-index: 1000;
-          left: 231.1px;
-          top: 414.75px;
-          transform: translateX(-50%);
-        "
-      >
-        <div class="first-category-modal-wrap" style="display: none">
-          <div class="first-category-modal-container" title="카테고리">
-            <ul class="first-category-list">
-              <!-- 전체 카테고리 -->
-              <li class="first-categories-wrap" title="전체 카테고리">
-                <button
-                  class="first-categories-container selected"
-                  type="button"
-                >
-                  <div class="first-category-title-wrap">
-                    <span class="first-caregory-title">전체 카테고리</span>
-                  </div>
-                </button>
-              </li>
-              <!-- 식물 카테고리 -->
-              <li class="first-categories-wrap" title="식물">
-                <button class="first-categories-container" type="button">
-                  <div class="first-category-title-wrap">
-                    <span class="first-caregory-title">식물</span>
-                    <span class="first-category-count">0</span>
-                    <svg
-                      class="sub-category-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      preserveAspectRatio="xMidYMid meet"
-                    >
-                      <path
-                        fill="currentColor"
-                        fill-rule="nonzero"
-                        d="M4 13.128l1.5 1.539L12 8 5.5 1.333 4 2.872 9 8z"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-              </li>
-              <!-- 수공예품 카테고리 -->
-              <li class="first-categories-wrap" title="수공예품">
-                <button class="first-categories-container" type="button">
-                  <div class="first-category-title-wrap">
-                    <span class="first-caregory-title">수공예품</span>
-                    <span class="first-category-count">0</span>
-                    <svg
-                      class="sub-category-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      preserveAspectRatio="xMidYMid meet"
-                    >
-                      <path
-                        fill="currentColor"
-                        fill-rule="nonzero"
-                        d="M4 13.128l1.5 1.539L12 8 5.5 1.333 4 2.872 9 8z"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-              </li>
-              <!-- 기타 카테고리 -->
-              <li class="first-categories-wrap" title="기타">
-                <button class="first-categories-container" type="button">
-                  <div class="first-category-title-wrap">
-                    <span class="first-caregory-title">기타</span>
-                    <span class="first-category-count">0</span>
-                    <svg
-                      class="sub-category-icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      preserveAspectRatio="xMidYMid meet"
-                    >
-                      <path
-                        fill="currentColor"
-                        fill-rule="nonzero"
-                        d="M4 13.128l1.5 1.539L12 8 5.5 1.333 4 2.872 9 8z"
-                      ></path>
-                    </svg>
-                  </div>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 위의 카테고리 모달 내 목록에 mouseover 되면 나오는 모달창 -->
-    <div class="modal-wrap" title="소카테고리 모달창">
-      <div
-        class="modal-container"
-        style="position: absolute; z-index: 1000; left: 325.3px; top: 481.75px"
-      >
-        <div class="second-category-modal-wrap" style="display: none">
-          <div class="second-category-modal-container" title="상품">
-            <ul class="second-category-list">
-              <!-- 소카테고리 리스트 -->
-              <!-- JS 이벤트로 리스트 내용 변경 -->
-              <!-- 관엽식물 -->
-              <li class="second-categories-wrap" title="관엽식물">
-                <button class="second-categories-container">
-                  <div class="second-category-title-wrap">
-                    <span class="second-caregory-title">관엽식물</span>
-                    <span class="second-category-count">0</span>
-                  </div>
-                </button>
-              </li>
-              <!-- 침엽식물 -->
-              <li class="second-categories-wrap" title="침엽식물">
-                <button class="second-categories-container">
-                  <div class="second-category-title-wrap">
-                    <span class="second-caregory-title">침엽식물</span>
-                    <span class="second-category-count">0</span>
-                  </div>
-                </button>
-              </li>
-              <!-- 희귀식물 -->
-              <li class="second-categories-wrap" title="희귀식물">
-                <button class="second-categories-container">
-                  <div class="second-category-title-wrap">
-                    <span class="second-caregory-title">희귀식물</span>
-                    <span class="second-category-count">0</span>
-                  </div>
-                </button>
-              </li>
-              <!-- 다육/선인장 -->
-              <li class="second-categories-wrap" title="다육/선인장">
-                <button class="second-categories-container">
-                  <div class="second-category-title-wrap">
-                    <span class="second-caregory-title">다육/선인장</span>
-                    <span class="second-category-count">0</span>
-                  </div>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   </body>

@@ -867,6 +867,7 @@ figure {
   border-radius: 10px;
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
 }
 
 .first-category-list {
