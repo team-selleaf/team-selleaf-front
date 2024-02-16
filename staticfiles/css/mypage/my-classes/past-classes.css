@@ -587,8 +587,24 @@ a * {
 /* 거래 내역 본문 */
 .classes-item-article-wrap {
   font-size: 14px;
-  line-height: 20px;
-  height: 40px;
+  line-height: 32px;
+  height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #2f3438;
+  transition: 0.1s color;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 0 0 6px;
+  text-align: initial;
+}
+
+.classes-students-wrap {
+  text-decoration: underline;
+  font-size: 12px;
+  line-height: 24px;
+  height: 24px;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #2f3438;

@@ -155,10 +155,17 @@ else {
   noContentWrap.style.display = "none";
 }
 
-// 현재 강의 개수를 상단에 표시
+// 현재 강의 개수를 페이지 상단 메뉴, 편집 눌렀을 때 나오는 전체 개시물 개수에 표시
 const lectureCount = document.querySelector(".lecture");
 
+// 현재 체크된 박스 개수와 전체 게시물 개수를 표시할 태그
+const checkedCount = document.querySelector(".content-count-container");
+
+// 상기한 부분에 현재 게시물 수 표시
 lectureCount.innerText = `강의(${classPosts.length})`;
+
+// 현재 체크된 박스 개수를 실제 화면에 표시 (innerText)
+checkedCount.innerHTML = `<i>0</i> / ${classPosts.length}`;
 
 /*
   2/15 추가 - 삭제 체크박스(delete-box-input) click하면 체크
@@ -175,9 +182,6 @@ const deleteInputs = document.querySelectorAll(".delete-box-input");
 
 // 취소 버튼 옆  삭제 버튼
 const deleteButton = document.querySelector(".content-delete");
-
-// 현재 체크된 박스 개수를 표시할 태그
-const checkedCount = document.querySelector(".content-count-container > i");
 
 // 각 삭제 체크박스에 click 이벤트 부여
 deleteInputs.forEach((input) => {
@@ -213,7 +217,7 @@ deleteInputs.forEach((input) => {
       deleteButton.disabled = true;
     }
 
-    // 현재 체크된 박스 개수를 실제 화면에 표시 (innerText)
-    checkedCount.innerText = checkedBoxes.length;
+    // 현재 체크된 박스 개수를 실제 화면에 표시 (innerHTML)
+    checkedCount.innerHTML = `<i>${checkedBoxes.length}</i> / ${classPosts.length}`;
   });
 });

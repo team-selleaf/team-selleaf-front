@@ -44,6 +44,8 @@ const modalBtn = document.querySelectorAll(".header-entry-button, .entry-link");
 
 // 강사신청 모달창 표시
 modalBtn.forEach((button) => {
+  button.preventDefault;
+
   button.addEventListener("click", () => {
     entryModal.style.display = "block";
   });
