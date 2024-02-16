@@ -20,13 +20,13 @@ body{
     background-color: #FFF;
     width: 372px;
     max-width: 372px;
-    border: 1px solid #BDBDBD;
+    border: 1px solid #000000;
     padding: 57px 73px 221px 73px;
     display: inline-block;
     position: relative;
     margin: 0 auto;
     height: 230px;
-    border-radius: 10%;
+    border-radius: 5%;
 }
 
 .main-login-logo{
