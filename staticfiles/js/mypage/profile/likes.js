@@ -74,3 +74,28 @@ else {
   postWrap.style.display = "flex";
   noContentWrap.style.display = "none";
 }
+
+/*
+  각 게시글 이미지 내 좋아요 버튼 클릭하면, 페이지에서 해당 이미지 삭제
+*/
+
+// 좋아요 버튼
+const likeButton = document.querySelectorAll(".like-button img");
+
+// 좋아요 버튼 - click 이벤트
+likeButton.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    // 클릭하면 해당 버튼이 들어있는 게시물 이미지를 가져옴
+    const targetPost = e.target.closest(".post-container");
+
+    // 이미지를 게시물 목록 전체를 감싸는 div 태그에서 삭제
+    postWrap.removeChild(targetPost);
+
+    // 남은 게시물 개수 검사 실행
+    if (postWrap.children.length === 0) {
+      // 남은 게시물이 없으면 "게시물 없음" 표시
+      postWrap.style.display = "none";
+      noContentWrap.style.display = "block";
+    }
+  });
+});

@@ -1,183 +1,183 @@
 /*
-    email, pw 입력란
+  이메일, 비번 입력창
 
-    이메일 input 클릭하면 처음에는 하늘색의 굵은 반투명 outline 추가
-        -> 이벤트 리스너 click
-        -> focus-visible 클래스 추가
+  - 2/17 수정
 
-    다만, blur 되었을 때, 값이 아무것도 없다면 테두리 빨갛게 변경(아마 red?)
-        -> 이 때 다시 input 클릭하면 위의 클릭 이벤트로 나오는
-           굵은 테두리가 빨간색으로 변경
+  에러 발생(값 입력 X) 시 .error(클래스) 추가 - 테두리 색상 변경
 
-
-    비밀번호 input을 클릭하면 마찬가지로 해당 부분만 하늘색의 굵은 반투명 outline 추가
-
-    단, blur 되었을 때에는 이메일과 비밀번호 input 모두 테두리 빨갛게 변경
-
-    이 상태에서 클릭했을 때에는 비밀번호 input 만 빨간색 굵은 반투명 테두리 추가 
+  비밀번호 입력창에 값이 없다면
+    -> 이메일 창에 값 있는지 검사하고, 없다면 이메일 창에도 .error 추가
+    -> 단, 에러 해제는 이메일 창 상관 없이 비번 창만 해제
 */
 
-// email, password input 객체를 상수에 할당
+// 이메일, 비번 입력창
 const emailInput = document.querySelector(".email-input");
 const passwordInput = document.querySelector(".password-input");
 
-// 로그인 버튼(submit) 객체 가져옴
+// 이메일 입력창 - keyup 이벤트
+emailInput.addEventListener("keyup", (e) => {
+  // 값이 없다면 error 클래스 추가 - 테두리 빨간색으로 변경
+  if (!e.target.value) {
+    if (!emailInput.classList.contains("error")) {
+      emailInput.classList.add("error");
+    }
+
+    return;
+  }
+  // 값이 있다면 테두리 색상 원복
+  emailInput.classList.remove("error");
+});
+
+// 이메일 입력창 - blur 이벤트
+// keyup 이벤트와 기능 동일
+emailInput.addEventListener("blur", (e) => {
+  if (!e.target.value) {
+    if (!emailInput.classList.contains("error")) {
+      emailInput.classList.add("error");
+    }
+
+    return;
+  }
+  emailInput.classList.remove("error");
+});
+
+// 비밀번호 입력창 - keyup 이벤트
+// 값이 없다면, 이메일 입력창에도 값 있는지 동시에 검사
+passwordInput.addEventListener("keyup", (e) => {
+  // 입력값이 있는지 검사
+  if (!e.target.value) {
+    // 없다면 테두리 빨간색으로 변경
+    if (!passwordInput.classList.contains("error")) {
+      passwordInput.classList.add("error");
+    }
+
+    // 이메일 입력창에 값 있는지도 검사
+    if (!emailInput.value) {
+      // 이메일 입력창 테두리가 빨간색이 아닐 때만 error 추가
+      if (!emailInput.classList.contains("error")) {
+        emailInput.classList.add("error");
+      }
+    }
+
+    return;
+  }
+  // 값이 있다면 테두리 색상 원복
+  passwordInput.classList.remove("error");
+});
+
+// 비밀번호 입력창 - blur 이벤트
+passwordInput.addEventListener("blur", (e) => {
+  if (!e.target.value) {
+    if (!passwordInput.classList.contains("error")) {
+      passwordInput.classList.add("error");
+    }
+
+    if (!emailInput.value) {
+      if (!emailInput.classList.contains("error")) {
+        emailInput.classList.add("error");
+      }
+    }
+
+    return;
+  }
+  passwordInput.classList.remove("error");
+});
+
+/*
+  로그인 버튼 클릭 시
+
+  이메일과 비밀번호 입력창 검사 실행
+
+  이메일 입력창에 값이 없다면 - error 추가 및 focus
+  비번 입력창에 값이 없다면 - error 추가만
+
+
+  회원 정보는 나중에 DB와 연결해서 조회할 것이지만,
+  임시로 사용할 아이디와 비번을 설정해서 비교 검사
+
+  불일치(회원 정보 없음) 시, 화면 하단에 모달창으로 메세지 띄우기
+*/
+
+// 로그인 버튼
 const loginButton = document.querySelector(".login-button");
 
-// email input을 클릭했을 때의 이벤트 리스너
-// 스타일은 CSS쪽에서 클래스 선택자로 추가
-emailInput.addEventListener("click", (e) => {
-  e.target.classList.toggle("focus-visible");
-});
+// 임시 이메일 및 비번
+const email = "test@test.com";
+const pw = "12345678";
 
-// email input에 값을 입력했을 때의 이벤트 리스너
-// 스타일은 CSS쪽에서 클래스 선택자로 추가
-emailInput.addEventListener("keyup", (e) => {
-  // 값이 있는지 검사
-  if (e.target.value) {
-    // email-blur 클래스가 있는지(테두리 빨간색인지) 검사
-    if (e.target.classList.contains("email-blur")) {
-      e.target.classList.remove("email-blur");
-      e.target.classList.remove("focus-visible");
-      return;
-    }
+// 로그인 실패 시 뜨는 모달창
+const loginErrorModal = document.querySelector(".login-error-modal-wrap");
 
-    // 없다면 focus-visible 클래스가 있는지 검사
-    if (!e.target.classList.contains("focus-visible")) {
-      // 없을 때 추가
-      e.target.classList.add("focus-visible");
-    }
-    return;
-  }
+// setTimeOut과 애니메이션을 쓰기 위한 변수 선언
+let timeoutId;
+let animationTarget;
 
-  // 값이 없는(없어진) 경우, 엔터를 입력했는지 검사
-});
-
-// email input이 blur 되었을 때의 이벤트 리스너
-// 위 클릭으로 추가된 클래스는 삭제되고, 새로운 클래스 추가
-emailInput.addEventListener("blur", (e) => {
-  // 만약 값이 아무것도 없으면
-  if (!e.target.value) {
-    // email-blur 있는지 확인하고, 없을 때 추가
-    e.target.classList.contains("email-blur")
-      ? ""
-      : e.target.classList.add("email-blur");
-  }
-  // 값 유무 상관 없이 blur 되면 삭제
-  e.target.classList.remove("focus-visible");
-});
-
-// password-input도 같은 방식으로 진행
-// password-input을 클릭했을 때의 이벤트 리스너
-passwordInput.addEventListener("click", (e) => {
-  e.target.classList.toggle("focus-visible");
-});
-
-// password-input에 입력했을 때의 이벤트 리스너
-passwordInput.addEventListener("keyup", (e) => {
-  // password-input에 값 있는지 검사 - 있다면 password-input에만 실행
-  if (e.target.value) {
-    // blur 있는지 검사 - 있다면 blur, focus 제거
-    if (e.target.classList.contains("password-blur")) {
-      e.target.classList.remove("password-blur");
-      e.target.classList.remove("focus-visible");
-      return;
-    }
-
-    // 만약 키를 뗀 시점에서 값이 없다면, focus-visible 있는지 확인
-    if (!e.target.classList.contains("focus-visible")) {
-      // 없으면 추가
-      e.target.classList.add("focus-visible");
-      return;
-    }
-  }
-
-  // 값이 없는(없어진) 경우, blur 있는지 검사 - 없으면 추가
-  if (e.target.classList.contains("password-blur")) {
-    e.target.classList.add("password-blur");
-  }
-  // 나중에 엔터 입력 이벤트 추가할 것
-});
-
-// password input이 blur 되었을 때의 이벤트 리스너
-// email input에도 blur 속성 추가!
-passwordInput.addEventListener("blur", (e) => {
-  // 일단 focus-visible 클래스 제거
-  e.target.classList.remove("focus-visible");
-
-  // 값 있는지 검사 필요 - 없을 때의 경우
-  if (!e.target.value) {
-    // password-blur 있는지 검사 - 없을 때만 추가
-    if (!e.target.classList.contains("password-blur")) {
-      e.target.classList.add("password-blur");
-    }
-
-    // 위와는 별개로(이벤트 리스너 함수 종료 안 하고) 이메일 input 쪽 값 있는지 검사
+// 로그인 버튼 - click 이벤트
+loginButton.addEventListener("click", () => {
+  // 이메일, 비번 중 하나라도 입력값 없으면 if문 안쪽 코드 실행
+  if (!emailInput.value || !passwordInput.value) {
+    // 이메일에 입력값 없으면 테두리 빨간색 + focus
     if (!emailInput.value) {
-      // 만약 값이 없으면 이쪽도 blur(기존에 없었으면) 추가
-      emailInput.classList.contains("email-blur")
-        ? ""
-        : emailInput.classList.add("email-blur");
-      return;
+      emailInput.classList.contains("error")
+        ? false
+        : emailInput.classList.add("error");
+
+      emailInput.focus();
     }
-    // 이메일 input에 값이 있으면 그냥 리턴 - email쪽 이벤트 리스너에서 처리
+
+    // 비번에 입력값 없으면 테두리 빨간색으로 - 이메일 쪽과 별개로 검사
+    if (!passwordInput.value) {
+      passwordInput.classList.contains("error")
+        ? false
+        : passwordInput.classList.add("error");
+    }
+
     return;
   }
 
-  // 비밀번호 input에 무슨 값이든 있을 때의 경우, 일단 blur 삭제
-  e.target.classList.remove("password-blur");
+  // 양쪽 모두 입력값 있으면 회원 정보와 일치하는 지 검사
+  if (emailInput.value !== email || passwordInput.value !== pw) {
+    // 비밀번호 input창 비우고, 테두리 빨간색으로 변경
+    passwordInput.value = "";
 
-  // 마찬가지로 이메일 input에 값 있는지 검사 - 없을 때만 blur 추가
-  if (!emailInput.value) {
-    // 기존 blur 여부 확인하고 - blur 없을 때만 추가
-    emailInput.classList.contains("email-blur")
-      ? ""
-      : emailInput.classList.add("email-blur");
+    passwordInput.classList.contains("error")
+      ? false
+      : passwordInput.classList.add("error");
+
+    // 화면 하단에 모달창 표시
+    showPopup(loginErrorModal);
     return;
   }
-  // 없으면 추가 작업 안 함
+  // 이메일과 회원 정보가 모두 일치하면(조회에 성공하면) 메인 페이지로 이동
 });
 
-/*
-    다른 SNS 로그인 아이콘
+// 모달창 띄우기 함수
+function showPopup(target) {
+  // setTimeOut 해제
+  clearTimeout(timeoutId);
 
-    mouseover 되면 아이콘 색깔 뿌얘짐
-        -> img 태그에 opacity 적용
+  // 애니메이션 적용할 객체가 있을 경우 애니메이션 표시 취소부터 실행
+  if (animationTarget) animationTarget.classList.remove("show-animation");
 
-    mouseout 되면 원상복구
-*/
-const images = document.querySelectorAll(".login-with-sns-wrap > img");
+  // 애니메이션 적용 객체 = 함수의 인자(모달창)
+  animationTarget = target;
 
-images.forEach((image) => {
-  image.addEventListener("mouseover", (e) => {
-    e.target.style.opacity = 0.6;
-  });
+  // 모달창에 표시되게 하는 애니메이션 효과 추가
+  animationTarget.classList.remove("hide-animation");
+  animationTarget.classList.add("show-animation");
 
-  image.addEventListener("mouseout", (e) => {
-    e.target.style.opacity = 1;
-  });
-});
+  // 3초 뒤에 모달창 숨기기 함수 실행
+  timeoutId = setTimeout(() => {
+    hidePopup();
+  }, 3000);
+}
 
-/*
-    footer 쪽 bucketplace~ 글자(a 태그)
+// 모달창 숨기기 함수
+function hidePopup() {
+  // 애니메이션 실행할 객체 없으면 아래 내용 무시
+  if (!animationTarget) return;
 
-    mouseover 되면 text-decoration 다시 생김
-        -> text-decoration: underline
-
-    mouseout 되면 원상복구
-*/
-const aNonDecoration = document.querySelector("footer a");
-
-// mouseover 이벤트 추가
-aNonDecoration.addEventListener("mouseover", (e) => {
-  e.target.style.textDecorationLine = "underline";
-});
-
-// mouseout 이벤트 추가
-aNonDecoration.addEventListener("mouseout", (e) => {
-  e.target.style.textDecorationLine = "none";
-});
-
-// 현재 남은 것들
-// 일부 텍스트 및 svg 아이콘 사이 간격
-// 비회원 주문 조회 삭제
+  // 애니메이션 실행할 객체(모달창) 숨김
+  animationTarget.classList.remove("show-animation");
+  animationTarget.classList.add("hide-animation");
+}
