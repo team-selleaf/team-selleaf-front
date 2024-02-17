@@ -264,7 +264,7 @@
 .main-thirdcontanier-buttonA {
     -moz-align-items: center;
     align-items: center;
-    background-color: #97A38C;
+    background-color: #134F2C;
     border-radius: 4px;
     box-shadow: 0 4px 14px 0 rgba(15,157,200,.26);
     color: #fff;
@@ -286,7 +286,7 @@
 }
 
 .main-thirdcontanier-buttonA:hover{
-    background-color: rgb(99, 112, 88);
+    background-color: #97A38C;
 }
 
 .main-fourthcontanier {

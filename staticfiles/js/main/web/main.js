@@ -18,29 +18,45 @@ searchInput.addEventListener("keydown", (e) => {
 });
 const borderinput = document.querySelector(".header-fourth-inner-thirddiv");
 searchInput.addEventListener("focus", () => {
-  borderinput.style.border = "1px solid #97A38C";
+  borderinput.style.border = "1px solid #134F2C";
 });
 searchInput.addEventListener("blur", () => {
   borderinput.style.border = "1px solid #DADDE0";
 });
+
+// 강사 로그인 시 글쓰기 버튼 눌렀을 때 강의 시작하기가 생겨야함 원래는 없어야하고
+const WriteLetterBtnModal = document.querySelectorAll(".header-content-photo");
+WriteLetterBtnModal[4].style.display = "none";
 
 // 헤더부분에 로그인 | 회원가입 | 고객센터를 로그인이 됬을땐 아이콘 아이콘 아이콘 이런식으로 보여야하기 때문에
 // 그 부분 구현 코드
 const userinfos = document.querySelectorAll(".header-info-each");
 const headerscrap = document.querySelector(".header-scrap-a");
 const headeralarm = document.querySelector(".header-alarm-a");
+const headerWriteLetterBtn = document.querySelector(".header-write-button");
+const headeralarmPointer = document.querySelector(".header-alarm-pointer");
 const headerkakaoIcon = document.querySelector(".header-kakao-button");
-const isLogin = false;
+const isLogin = true;
+const teacherLogin = true;
 
 if (isLogin) {
   userinfos.forEach((info) => {
     info.style.display = "none";
   });
+  if (teacherLogin) {
+    WriteLetterBtnModal[4].style.display = "flex";
+  }
 } else {
+  headerWriteLetterBtn.style.display = "none";
   headerscrap.style.display = "none";
   headeralarm.style.display = "none";
   headerkakaoIcon.style.display = "none";
 }
+
+// 알람 버튼 클릭하면 빨간 동그라미 없어지게 하는 구현 코드
+// headerkakaoIcon.addEventListener("click", () => {
+//   headeralarmPointer.style.display = "none";
+// });
 
 // 카카오 아이콘 눌렀을 때 모달창 구현 코드
 const myPagemodal = document.querySelector(".header-mymenumodal-wrap");
@@ -48,7 +64,6 @@ const myPagemodal = document.querySelector(".header-mymenumodal-wrap");
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".header-mymenumodal-wrap")) {
     if (e.target.closest(".header-kakao-button")) {
-      console.log("들어옴");
       myPagemodal.classList.toggle("myPagemodalOpen");
       return;
     }
