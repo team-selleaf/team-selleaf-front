@@ -37,7 +37,7 @@ const headerWriteLetterBtn = document.querySelector(".header-write-button");
 const headeralarmPointer = document.querySelector(".header-alarm-pointer");
 const headerkakaoIcon = document.querySelector(".header-kakao-button");
 const isLogin = true;
-const teacherLogin = true;
+const teacherLogin = false;
 
 if (isLogin) {
   userinfos.forEach((info) => {
