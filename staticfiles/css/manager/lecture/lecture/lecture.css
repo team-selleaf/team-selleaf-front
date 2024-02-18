@@ -755,7 +755,7 @@ div.compose-button{
 
 /* 체크박스 css */
 input.checkbox-input{
-    margin-right: 25px;
+    margin-right: -10px;
 }
 
 ul.list-content{
@@ -774,6 +774,7 @@ li.list-content{
     align-items: center;
     display: flex;
     border-color: #f3f3f4;
+    justify-content: space-between;
 }
 
 button.text-left{

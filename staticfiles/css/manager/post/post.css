@@ -747,6 +747,17 @@ div.category-inner{
     fill: #1d1d1e;
 }
 
+div.compose-button{
+    gap: 16px;
+    display: flex;
+}
+
+
+/* 체크박스 css */
+input.checkbox-input{
+    margin-right: -35px;
+}
+
 ul.list-content{
     flex-direction: column;
     display: flex;
