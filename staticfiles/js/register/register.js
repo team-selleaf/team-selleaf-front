@@ -913,8 +913,8 @@ const nicknameRegex = /^[A-Za-z0-9ㄱ-ㅎㅏ-ㅣ가-힣]{2,15}$/;
 
 // 오류 메세지 저장
 // 미입력 오류(mustNeededMsg) 메세지는 위에 쓴 거 그대로 사용
-const lessThanTwoMsg = "2자 이상 입력해주세요."; // 2자 이하(1자) 오류
-const moreThanFifteenMsg = "15자 이하로 입력해주세요."; // 15자 초과 오류
+const lessThanTwoMsg = "2자리 이상 입력해주세요."; // 2자 이하(1자) 오류
+const moreThanFifteenMsg = "15자리 이하로 입력해주세요."; // 15자 초과 오류
 
 // 닉네임 입력창에 대한 keyup 이벤트 생성
 nicknameInput.addEventListener("keyup", (e) => {

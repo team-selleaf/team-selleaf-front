@@ -49,3 +49,71 @@ if (isTeacher) {
 } else {
   myClassMenu.style.display = "none";
 }
+
+/* 
+  각 리뷰글에 마우스 올린 경우 제목, 본문, 이미지 투명도 조정
+*/
+
+// 각 리뷰글
+const reviewsItems = document.querySelectorAll(".reviews-history-item-wrap");
+
+// 각 리뷰글에 mouseover, mouseout 이벤트 추가
+reviewsItems.forEach((item) => {
+  // 각 리뷰글의 이미지, 제목, 본문을 변수화
+  const itemImage = item.children[1].children[0];
+  const itemTitle = item.children[1].children[1];
+  const itemArticle = item.children[1].children[2];
+
+  item.addEventListener("mouseover", () => {
+    itemImage.style.opacity = 0.6;
+    itemTitle.style.opacity = 0.6;
+    itemArticle.style.opacity = 0.6;
+  });
+
+  item.addEventListener("mouseout", () => {
+    itemImage.style.opacity = 1;
+    itemTitle.style.opacity = 1;
+    itemArticle.style.opacity = 1;
+  });
+});
+
+/*
+  리뷰 내역의 유무에 따라 표시할 내용 변경
+*/
+
+// 리뷰 내역이 없을 때 보이는 태그
+const noContents = document.querySelector(".no-content-wrap");
+
+// 각 리뷰 내역 사이의 구분선
+const itemsSeperator = document.querySelectorAll(".items-seperator");
+
+// 리뷰 내역이 있을 경우
+if (reviewsItems.length >= 1) {
+  // 리뷰 내역 없을 때 뜨는 텍스트들 안 보이게 함
+  noContents.style.display = "none";
+
+  // 각 리뷰내역 표시
+  reviewsItems.forEach((item) => {
+    item.style.display = "block";
+  });
+
+  // 구분선 표시
+  itemsSeperator.forEach((item) => {
+    item.style.display = "block";
+  });
+}
+// 리뷰 내역이 없을 경우
+else {
+  // 리뷰 내역 없을 때 뜨는 텍스트들을 보이게 함
+  noContents.style.display = "block";
+
+  // 각 리뷰내역 숨김
+  reviewsItems.forEach((item) => {
+    item.style.display = "none";
+  });
+
+  // 구분선 숨김
+  itemsSeperator.forEach((item) => {
+    item.style.display = "none";
+  });
+}

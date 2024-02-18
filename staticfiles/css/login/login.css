@@ -54,7 +54,7 @@ body {
   width: 300px;
 }
 
-/* 아이디, 비밀번호 input을 감싸는 div에 공통 적용 */
+/* 아이디, 비밀번호 입력창을 감싸는 div에 공통 적용 */
 .login-inputs {
   position: relative;
 }
@@ -82,35 +82,31 @@ body {
   border-style: solid;
   border-color: rgb(219, 219, 219);
   border-image: initial;
-}
-
-/* 이메일 입력창이 focus되었을 때 */
-.email-input:focus {
-  z-index: 2;
-  outline: 0;
-}
-
-/* 이메일 입력창이 focus되었을 때 추가되는 클래스로 인한 스타일 */
-.email-input.focus-visible {
-  box-shadow: 0 0 0 3px rgba(90, 112, 88, 0.3);
-}
-
-/* 이메일 입력 창이 각각 blur 되었을 때 */
-.email-blur {
-  border: 1px solid #f77;
-  z-index: 1;
-}
-
-/* 이메일 입력 창이 blur 된 다음, 다시 focus 되었을 때 */
-.email-blur.focus-visible {
-  z-index: 2;
-  box-shadow: 0 0 0 3px rgba(255, 119, 119, 0.3);
+  z-index: 0;
 }
 
 .email-input:hover:not(:focus) {
   background-color: #fafafa;
 }
 
+.email-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(90, 112, 88, 0.3);
+  z-index: 2;
+}
+
+/* 이메일 입력 창에서 에러 발생 시 */
+.email-input.error {
+  border: 1px solid #f77;
+  z-index: 1;
+}
+
+.email-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(255, 119, 119, 0.3);
+  z-index: 2;
+}
+
+/* 비밀번호 입력창 */
 .password-input {
   padding: 13px 15px 14px;
   margin: 0px;
@@ -133,40 +129,28 @@ body {
   border-style: solid;
   border-color: rgb(219, 219, 219);
   border-image: initial;
+  z-index: 0;
 }
 
-/*
-  z-index 우선도
-
-  평소 테두리 < blur < focus(파랑)/blur+focus(빨강)
-  
-*/
-
-/* 비밀번호 입력창이 focus되었을 때 */
 .password-input:focus {
-  z-index: 2;
-  outline: 0;
-}
-
-/* 비밀번호 입력창이 focus되었을 때 추가되는 클래스로 인한 스타일 */
-.password-input.focus-visible {
+  outline: none;
   box-shadow: 0 0 0 3px rgba(90, 112, 88, 0.3);
-}
-
-/* 이메일 입력 창이 각각 blur 되었을 때 */
-.password-blur {
-  border: 1px solid #f77;
-  z-index: 1;
-}
-
-/* 비밀번호 입력 창이 blur 된 다음, 다시 focus 되었을 때 */
-.password-blur.focus-visible {
   z-index: 2;
-  box-shadow: 0 0 0 3px rgba(255, 119, 119, 0.3);
 }
 
 .password-input:hover:not(:focus) {
   background-color: #fafafa;
+}
+
+/* 비밀번호 입력 창에서 에러 발생 시 */
+.password-input.error {
+  border: 1px solid #f77;
+  z-index: 1;
+}
+
+.password-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(255, 119, 119, 0.3);
+  z-index: 2;
 }
 
 .login-button {
@@ -209,13 +193,14 @@ body {
 }
 
 /* 아이디 찾기 */
-.find-id-page {
+.find-id-link {
   margin-left: 0px;
 }
 
 /* 비밀번호 찾기, 회원가입 */
-.sign-up-page {
-  margin-left: 20px;
+.find-password-link,
+.register-link {
+  margin-left: 10px;
 }
 
 .sns-text {
@@ -235,10 +220,15 @@ body {
 }
 
 /* 위 영역 안 아이콘들에 적용 */
-.login-with-sns-wrap > svg {
+.login-with-sns-wrap > img {
   width: 48px;
   height: 48px;
   border-radius: 100%;
+  opacity: 1;
+}
+
+.login-with-sns-wrap > img:hover {
+  opacity: 0.6;
 }
 
 .any-problems {
@@ -288,6 +278,88 @@ body {
 
 .login-footer a {
   width: 90.35px;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* 로그인 실패 시 띄울 모달창 */
+.login-error-modal-wrap {
+  position: fixed;
+  width: 470px;
+  left: calc(50% - 235px);
+  bottom: 40px;
+  z-index: 1400;
+  transform: translateY(200%);
+}
+
+.login-error-modal-container {
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 4px;
+  color: #f7f9fa;
+  background-color: rgb(47, 52, 56);
+  margin-top: 15px;
+}
+
+.error-modal-inner {
+  flex: 1 0 0px;
+  display: flex;
+  min-width: 0px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.error-modal-text {
+  flex: 1 0 0px;
+  min-width: 0px;
+  margin: 0px;
+  text-align: left;
+  white-space: pre-line;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+/* 모달창에 적용할 애니메이션 */
+@keyframes show-toast {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes hide-toast {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+}
+
+/* 위 애니메이션을 활용하기 위한 클래스 */
+.show-animation {
+  animation-name: show-toast;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.hide-animation {
+  animation-name: hide-toast;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
 }
 
 /* 화면 너비가 768px 이상일 때 적용할 미디어 쿼리 */

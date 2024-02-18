@@ -80,8 +80,10 @@
               <!-- 강사 신청 버튼 -->
               <div class="header-entry-button-wrap">
                 <div class="header-entry-button-container">
-                  <a href="#">
-                    <button class="header-entry-button">강사자격 신청</button>
+                  <a href="javascript:void(0)">
+                    <button type="button" class="header-entry-button">
+                      강사자격 신청
+                    </button>
                   </a>
                 </div>
               </div>
@@ -263,7 +265,9 @@
               </div>
             </div>
             <div class="entry-link-wrap">
-              <a href="#" class="entry-link">강사자격 신청하기</a>
+              <a href="javascript:void(0)" class="entry-link">
+                강사자격 신청하기
+              </a>
             </div>
           </div>
         </div>
@@ -289,7 +293,7 @@
             <div class="entry-modal-main-container">
               <div class="entry-input-wrap">
                 <!-- 이메일 -->
-                <div class="email-input-area">
+                <!-- <div class="email-input-area">
                   <div class="entry-input-title-wrap">
                     <div class="entry-input-title">이메일</div>
                   </div>
@@ -318,22 +322,21 @@
                   <div class="error-text" style="display: none">
                     필수 입력 사항입니다.
                   </div>
-                </div>
+                </div> -->
                 <!-- 비밀번호 -->
                 <div class="password-input-area">
                   <div class="entry-input-title-wrap">
-                    <div class="entry-input-title">비밀번호</div>
+                    <div class="entry-input-title">비밀번호 확인</div>
                   </div>
                   <div class="password-input-wrap">
                     <input
                       class="password-input-form"
                       type="password"
                       placeholder="비밀번호"
+                      maxlength="30"
                     />
                   </div>
-                  <div class="error-text" style="display: none">
-                    필수 입력 사항입니다.
-                  </div>
+                  <div class="error-text" style="display: none"></div>
                 </div>
               </div>
             </div>
@@ -341,21 +344,7 @@
           <!-- 강사자격 신청 버튼 -->
           <div class="entry-button-wrap">
             <div class="entry-button-container">
-              <button class="entry-button">강사자격 신청</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 아이디, 비번 인증 버튼 누르면 나오는 최종 확인 모달창 -->
-      <div class="entry-confirm-total-wrap" style="display: none">
-        <div class="entry-confirm-wrap">
-          <div class="entry-confirm-title-container">
-            <p class="entry-confirm-title">강사자격을 신청하시겠습니까?</p>
-          </div>
-          <div class="entry-confirm-button-wrap">
-            <div class="entry-confirm-button-container">
-              <button class="entry-confirm-cancel">취소</button>
-              <button class="entry-confirm">확인</button>
+              <button type="button" class="entry-button">강사자격 신청</button>
             </div>
           </div>
         </div>

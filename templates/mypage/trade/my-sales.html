@@ -27,7 +27,7 @@
         -webkit-font-smoothing: antialiased;
       }
     </style>
-    <link rel="stylesheet" href="../../../staticfiles/css/common.css" />
+    <link rel="stylesheet" href="/staticfiles/css/common.css" />
     <!-- 여기까지는 무조건 고정으로 모든 페이지에 복붙하세요 -->
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
@@ -35,10 +35,7 @@
       href="/staticfiles/images/favicon.png"
       type="image/x-icon"
     />
-    <link
-      rel="stylesheet"
-      href="../../../staticfiles/css/mypage/trade/my-sales.css"
-    />
+    <link rel="stylesheet" href="/staticfiles/css/mypage/trade/my-sales.css" />
     <!-- '마이페이지' 부분은 나중에 DB, 서버 연동으로 (닉네임)님의 판매내역 으로 바꾸기 -->
     <title>Selleaf | 나의 판매내역</title>
   </head>
@@ -62,7 +59,7 @@
                   <a href="#" class="active">거래 내역</a>
                 </li>
                 <li class="main-category-item">
-                  <a href="#">강의 내역</a>
+                  <a href="#">수강 내역</a>
                 </li>
                 <li class="main-category-item teacher">
                   <a href="#">강의 현황</a>
@@ -103,7 +100,7 @@
                       <div class="my-info-wrap">
                         <div class="share-drop-down-wrap">
                           <div class="share-drop-down-container">
-                            <!-- 클릭하면 요소(모달창) 추가. html 태그 위치는 footer 아래 -->
+                            <!-- 클릭하면 요소(모달창) 추가 -->
                             <button
                               class="share-drop-down-button"
                               type="button"
@@ -122,20 +119,78 @@
                                 ></path>
                               </svg>
                             </button>
+                            <div class="modal-wrap">
+                              <div
+                                class="modal-container"
+                                style="
+                                  position: absolute;
+                                  z-index: 1000;
+                                  transform: translateX(-40%);
+                                "
+                              >
+                                <div class="share-modal-wrap">
+                                  <div class="share-modal-container">
+                                    <!-- 카카오 공유 버튼 -->
+                                    <button
+                                      type="button"
+                                      class="kakao-share-button"
+                                    >
+                                      <img
+                                        src="/staticfiles/images/other-sns-logos/kakao-logo.svg"
+                                      />
+                                    </button>
+                                    <!-- 클립보드 복사 버튼 -->
+                                    <button
+                                      type="button"
+                                      class="cilpboard-button"
+                                    >
+                                      <svg
+                                        class="icon"
+                                        aria-label="주소 복사"
+                                        width="40"
+                                        height="40"
+                                        viewBox="0 0 40 40"
+                                        fill="none"
+                                        preserveAspectRatio="xMidYMid meet"
+                                      >
+                                        <circle
+                                          cx="20"
+                                          cy="20"
+                                          r="20"
+                                          fill="#EAEDEF"
+                                        ></circle>
+                                        <path
+                                          d="M25.0001 20.65H15.0001V19.35H25.0001V20.65Z"
+                                          fill="#2F3438"
+                                        ></path>
+                                        <path
+                                          d="M10.3501 20C10.3501 17.4319 12.432 15.35 15.0001 15.35H18.0001V16.65H15.0001C13.1499 16.65 11.6501 18.1498 11.6501 20C11.6501 21.8501 13.1499 23.35 15.0001 23.35H18.0001V24.65H15.0001C12.432 24.65 10.3501 22.5681 10.3501 20Z"
+                                          fill="#2F3438"
+                                        ></path>
+                                        <path
+                                          d="M29.6501 20C29.6501 17.4319 27.5682 15.35 25.0001 15.35H22.0001V16.65H25.0001C26.8503 16.65 28.3501 18.1498 28.3501 20C28.3501 21.8501 26.8503 23.35 25.0001 23.35H22.0001V24.65H25.0001C27.5682 24.65 29.6501 22.5681 29.6501 20Z"
+                                          fill="#2F3438"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div class="my-profile-wrap">
                           <div class="profile-image-wrap">
                             <img
                               class="profile-image"
-                              src="../../../staticfiles/images/mypage/base-profile-image.avif"
+                              src="/staticfiles/images/mypage/base-profile-image.avif"
                             />
                           </div>
                           <div class="personal-info-wrap">
                             <div class="user-nickname">Selleaf Test</div>
                             <div class="follow-settings-wrap">
                               <!-- 나중에 팔로우 페이지랑 연결 -->
-                              <dl class="follow-wrap">
+                              <!-- <dl class="follow-wrap">
                                 <dt class="follow-text">팔로워</dt>
                                 <dd class="follow-count">
                                   <a href="#" class="follow-num">123</a>
@@ -144,7 +199,7 @@
                                 <dd class="follow-count">
                                   <a href="#" class="follow-num">45</a>
                                 </dd>
-                              </dl>
+                              </dl> -->
                               <!-- 나중에 설정 페이지랑 연결 -->
                               <div class="settings-button-wrap">
                                 <a class="settings-button" href="#">설정</a>
@@ -159,7 +214,7 @@
                             <a class="scraps-likes-content-wrap" href="#">
                               <div class="scraps-likes-icon">
                                 <img
-                                  src="../../../staticfiles/images/scrap-off-blk.png"
+                                  src="/staticfiles/images/scrap-off-blk.png"
                                 />
                               </div>
                               <div class="scraps-likes-text">스크랩북</div>
@@ -168,9 +223,7 @@
                             <!-- 좋아요 -->
                             <a class="scraps-likes-content-wrap" href="#">
                               <div class="scraps-likes-icon">
-                                <img
-                                  src="../../../staticfiles/images/like-off.png"
-                                />
+                                <img src="/staticfiles/images/like-off.png" />
                               </div>
                               <div class="scraps-likes-text">좋아요</div>
                               <div class="scraps-likes-count">0</div>
@@ -179,14 +232,14 @@
                             <a class="scraps-likes-content-wrap" href="#">
                               <div class="scraps-likes-icon">
                                 <img
-                                  src="../../../staticfiles/images/maileage/mileage.png"
+                                  src="/staticfiles/images/maileage/mileage.png"
                                 />
                               </div>
                               <div class="scraps-likes-text">마일리지</div>
                               <div class="scraps-likes-count">0</div>
                             </a>
                             <!-- 쿠폰 -->
-                            <a class="scraps-likes-content-wrap" href="#">
+                            <!-- <a class="scraps-likes-content-wrap" href="#">
                               <div class="scraps-likes-icon">
                                 <svg
                                   width="24"
@@ -203,7 +256,7 @@
                               </div>
                               <div class="scraps-likes-text">쿠폰</div>
                               <div class="scraps-likes-count">0</div>
-                            </a>
+                            </a> -->
                           </div>
                         </div>
                       </div>
@@ -251,7 +304,7 @@
                         <div class="trade-item-image-wrap">
                           <img
                             class="trade-item-image"
-                            src="../../../staticfiles/images/blank-image.png"
+                            src="/staticfiles/images/blank-image.png"
                           />
                         </div>
                         <div class="trade-item-title-wrap">
@@ -268,7 +321,7 @@
                               <div class="user-profile-wrap">
                                 <img
                                   class="user-profile-image"
-                                  src="../../../staticfiles/images/mypage/base-profile-image.avif"
+                                  src="/staticfiles/images/mypage/base-profile-image.avif"
                                 />
                               </div>
                               Selleaf 테스트 1
@@ -327,7 +380,7 @@
                         <div class="trade-item-image-wrap">
                           <img
                             class="trade-item-image"
-                            src="../../../staticfiles/images/blank-image.png"
+                            src="/staticfiles/images/blank-image.png"
                           />
                         </div>
                         <div class="trade-item-title-wrap">
@@ -344,7 +397,7 @@
                               <div class="user-profile-wrap">
                                 <img
                                   class="user-profile-image"
-                                  src="../../../staticfiles/images/mypage/base-profile-image.avif"
+                                  src="/staticfiles/images/mypage/base-profile-image.avif"
                                 />
                               </div>
                               Selleaf 테스트 2
@@ -397,56 +450,6 @@
         <footer style="height: 320px"></footer>
       </div>
     </div>
-    <!-- 사이드 바 쪽 모달창 -->
-    <div class="modal-wrap">
-      <div
-        class="modal-container"
-        style="
-          position: absolute;
-          z-index: 1000;
-          left: 435.8px;
-          top: 278.35px;
-          transform: translateX(-50%);
-        "
-      >
-        <div class="share-modal-wrap">
-          <div class="share-modal-container">
-            <!-- 카카오 공유 버튼 -->
-            <button type="button" class="kakao-share-button">
-              <img
-                src="../../../staticfiles/images/other-sns-logos/kakao-logo.svg"
-              />
-            </button>
-            <!-- 클립보드 복사 버튼 -->
-            <button type="button" class="cilpboard-button">
-              <svg
-                class="icon"
-                aria-label="주소 복사"
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="20" cy="20" r="20" fill="#EAEDEF"></circle>
-                <path
-                  d="M25.0001 20.65H15.0001V19.35H25.0001V20.65Z"
-                  fill="#2F3438"
-                ></path>
-                <path
-                  d="M10.3501 20C10.3501 17.4319 12.432 15.35 15.0001 15.35H18.0001V16.65H15.0001C13.1499 16.65 11.6501 18.1498 11.6501 20C11.6501 21.8501 13.1499 23.35 15.0001 23.35H18.0001V24.65H15.0001C12.432 24.65 10.3501 22.5681 10.3501 20Z"
-                  fill="#2F3438"
-                ></path>
-                <path
-                  d="M29.6501 20C29.6501 17.4319 27.5682 15.35 25.0001 15.35H22.0001V16.65H25.0001C26.8503 16.65 28.3501 18.1498 28.3501 20C28.3501 21.8501 26.8503 23.35 25.0001 23.35H22.0001V24.65H25.0001C27.5682 24.65 29.6501 22.5681 29.6501 20Z"
-                  fill="#2F3438"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
-  <script src="../../../staticfiles/js/mypage/trade/my-sales.js"></script>
+  <script src="/staticfiles/js/mypage/trade/my-sales.js"></script>
 </html>

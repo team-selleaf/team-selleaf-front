@@ -27,7 +27,7 @@
         -webkit-font-smoothing: antialiased;
       }
     </style>
-    <link rel="stylesheet" href="../../staticfiles/css/common.css" />
+    <link rel="stylesheet" href="/staticfiles/css/common.css" />
     <!-- 여기까지는 무조건 고정으로 모든 페이지에 복붙하세요 -->
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
@@ -35,7 +35,7 @@
       href="/staticfiles/images/favicon.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="../../staticfiles/css/login/login.css" />
+    <link rel="stylesheet" href="/staticfiles/css/login/login.css" />
     <title>Selleaf | 로그인</title>
   </head>
   <body>
@@ -69,16 +69,14 @@
                 />
               </div>
               <!-- 나중에 클래스(+스타일) 추가할 것 -->
-              <button class="login-button" type="submit">로그인</button>
+              <button class="login-button" type="button">로그인</button>
               <div class="find-and-sign-up-wrap">
                 <!-- 나중에 아이디 찾기 페이지랑 연결 -->
-                <a class="find-id-page" href="#">비밀번호 재설정</a>
+                <a class="find-id-link" href="#">아이디 찾기</a>
                 <!-- 나중에 비밀번호 찾기 페이지랑 연결 -->
-                <!-- <a class="find-password-page" href="#"
-                                    >비밀번호 찾기</a
-                                > -->
+                <a class="find-password-link" href="#">비밀번호 찾기</a>
                 <!-- 나중에 회원가입 페이지랑 연결 -->
-                <a class="sign-up-page" href="#">회원가입</a>
+                <a class="register-link" href="#">회원가입</a>
               </div>
             </form>
             <input type="hidden" name="name[user-email]" />
@@ -89,21 +87,19 @@
               <!-- 나중에 구글과 연동 -->
               <a class="login-with-sns-wrap" datatype="facebook">
                 <img
-                  src="../../staticfiles/images/other-sns-logos/google-logo.svg"
+                  src="/staticfiles/images/other-sns-logos/google-logo.svg"
                 />
               </a>
               <!-- 카카오 간편 로그인 -->
               <!-- 나중에 카카오와 연동 -->
               <a class="login-with-sns-wrap" datatype="kakao">
-                <img
-                  src="../../staticfiles/images/other-sns-logos/kakao-logo.svg"
-                />
+                <img src="/staticfiles/images/other-sns-logos/kakao-logo.svg" />
               </a>
               <!-- 네이버 간편 로그인 -->
               <!-- 나중에 네이버와 연동 -->
               <a class="login-with-sns-wrap" datatype="kakao">
                 <img
-                  src="../../staticfiles/images/other-sns-logos/naver-logo.png"
+                  src="/staticfiles/images/other-sns-logos/naver-logo.png"
                   style="width: 48px; height: 48px"
                 />
               </a>
@@ -127,16 +123,18 @@
           © &nbsp;
           <!-- onmouseover 이벤트로 a 태그 text-decoration 되살릴 필요 있음 -->
           <!-- Ltd. 랑 . All 사이의 간격 수정 필요 -->
-          <a
-            href="https://www.bucketplace.co.kr/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >bucketplace, Co., Ltd.</a
-          >
+          <a href="#">Selleaf.</a>
           . All Rights Reserved
         </footer>
       </div>
     </div>
+    <div class="login-error-modal-wrap">
+      <div class="login-error-modal-container">
+        <div class="error-modal-inner">
+          <div class="error-modal-text">이메일 또는 비밀번호가 틀렸습니다</div>
+        </div>
+      </div>
+    </div>
   </body>
-  <script src="../../staticfiles/js/login/login.js"></script>
+  <script src="/staticfiles/js/login/login.js"></script>
 </html>
