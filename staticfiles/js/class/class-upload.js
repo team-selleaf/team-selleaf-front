@@ -60,6 +60,7 @@ weekdaySelection.forEach((selectedDay) => {
   });
 });
 
+// 시간 반복 클릭
 const timeSelection = document.querySelectorAll(".time-selection");
 timeSelection.forEach((selectedtime) => {
   selectedtime.addEventListener("click", (e) => {
@@ -80,13 +81,9 @@ console.log(today);
 // 오늘 이전의 날짜를 비활성화합니다.
 endDate.setAttribute("min", todayString);
 
-const addButton = document.querySelector(".add-button");
-const addTarget = document.querySelector(".add-diy-kit");
-const cancelButton = document.querySelector(".cancel-button");
-addButton.addEventListener("click", (e) => {
-  addTarget.style.display = "block";
-});
-
-cancelButton.addEventListener("click", (e) => {
-  addTarget.style.display = "none";
+const plantSelections = document.querySelectorAll(".plant-selection");
+plantSelections.forEach((plantSelection) => {
+  plantSelection.addEventListener("click", (e) => {
+    plantSelection.classList.toggle("select-on");
+  });
 });

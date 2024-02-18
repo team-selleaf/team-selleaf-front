@@ -42,6 +42,134 @@
   </head>
   <body>
     <header></header>
+    <div class="declaration-modal-wrap">
+      <div class="declaration-modal-container">
+        <div class="declaration-modal-title-box">
+          <span class="declaration-modal-title">신고 사유를 선택해주세요</span>
+          <button type="button" class="declaration-modal-cancel-btn">
+            <span class="cancel-btn-icon"></span>
+          </button>
+        </div>
+        <div class="declaration-modal-content">
+          <ul class="declaration-list">
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box declaration-choice">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                    checked
+                  />
+                </div>
+                <span class="declaration-text">주제와 맞지 않음</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">정보가 부정확함</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">지나친 광고성 게시물</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">도배 및 중복 게시물</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">저작권 침해가 우려됨</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">욕설/비방이 심함</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">외설적인 게시물</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">개인정보노출</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">기타</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="declaration-btn-wrap">
+          <div class="declaration-btn-container">
+            <button class="declaration-btn">신고하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <a id="top"></a>
     <!-- 스크랩 팝업 -->
     <div class="scrap-popup-wrap">
@@ -313,126 +441,6 @@
                 </div>
               </h1>
               <div class="product-overview-contents-container">
-                <p class="product-contents-review-wrap">
-                  <a href="#" class="product-review">
-                    <span class="rating" aria-label="별점 5점">
-                      <svg
-                        fill="#97a38c"
-                        width="1em"
-                        height="1em"
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 24 24"
-                      >
-                        <defs>
-                          <path
-                            id="star-path-110"
-                            d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"
-                          ></path>
-                          <clipPath id="star-clip-110">
-                            <rect x="0" y="0" width="24" height="24"></rect>
-                          </clipPath>
-                        </defs>
-                        <use xlink:href="#star-path-110" fill="#DBDBDB"></use>
-                        <use
-                          clip-path="url(#star-clip-110)"
-                          xlink:href="#star-path-110"
-                        ></use>
-                      </svg>
-                      <svg
-                        fill="#97a38c"
-                        width="1em"
-                        height="1em"
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 24 24"
-                      >
-                        <defs>
-                          <path
-                            id="star-path-110"
-                            d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"
-                          ></path>
-                          <clipPath id="star-clip-110">
-                            <rect x="0" y="0" width="24" height="24"></rect>
-                          </clipPath>
-                        </defs>
-                        <use xlink:href="#star-path-110" fill="#DBDBDB"></use>
-                        <use
-                          clip-path="url(#star-clip-110)"
-                          xlink:href="#star-path-110"
-                        ></use>
-                      </svg>
-                      <svg
-                        fill="#97a38c"
-                        width="1em"
-                        height="1em"
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 24 24"
-                      >
-                        <defs>
-                          <path
-                            id="star-path-110"
-                            d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"
-                          ></path>
-                          <clipPath id="star-clip-110">
-                            <rect x="0" y="0" width="24" height="24"></rect>
-                          </clipPath>
-                        </defs>
-                        <use xlink:href="#star-path-110" fill="#DBDBDB"></use>
-                        <use
-                          clip-path="url(#star-clip-110)"
-                          xlink:href="#star-path-110"
-                        ></use>
-                      </svg>
-                      <svg
-                        fill="#97a38c"
-                        width="1em"
-                        height="1em"
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 24 24"
-                      >
-                        <defs>
-                          <path
-                            id="star-path-110"
-                            d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"
-                          ></path>
-                          <clipPath id="star-clip-110">
-                            <rect x="0" y="0" width="24" height="24"></rect>
-                          </clipPath>
-                        </defs>
-                        <use xlink:href="#star-path-110" fill="#DBDBDB"></use>
-                        <use
-                          clip-path="url(#star-clip-110)"
-                          xlink:href="#star-path-110"
-                        ></use>
-                      </svg>
-                      <svg
-                        fill="#97a38c"
-                        width="1em"
-                        height="1em"
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 24 24"
-                      >
-                        <defs>
-                          <path
-                            id="star-path-110"
-                            d="M11.9996 19.7201L6.32294 22.1251C5.5626 22.4472 5.005 22.0311 5.0755 21.2188L5.60855 15.0767L1.5671 10.421C1.02579 9.79745 1.24924 9.13855 2.04358 8.95458L8.04973 7.56354L11.2287 2.28121C11.6545 1.57369 12.3502 1.5826 12.7706 2.28121L15.9496 7.56354L21.9557 8.95458C22.7602 9.1409 22.9667 9.8053 22.4322 10.421L18.3907 15.0767L18.9238 21.2188C18.9952 22.0414 18.4271 22.4432 17.6764 22.1251L11.9996 19.7201Z"
-                          ></path>
-                          <clipPath id="star-clip-110">
-                            <rect x="0" y="0" width="24" height="24"></rect>
-                          </clipPath>
-                        </defs>
-                        <use xlink:href="#star-path-110" fill="#DBDBDB"></use>
-                        <use
-                          clip-path="url(#star-clip-110)"
-                          xlink:href="#star-path-110"
-                        ></use>
-                      </svg>
-                    </span>
-                    <span class="review-counting-text">
-                      <span class="review-counting">30</span>
-                      <span class="review-text">개 리뷰</span>
-                    </span>
-                  </a>
-                </p>
                 <div class="product-contents-price-wrap">
                   <span class="product-contents-price-container">
                     <span class="product-price-info"> </span>
@@ -441,25 +449,6 @@
                       <div class="product-final-price-container">
                         <span class="final-price-number">13,500</span>
                         <span class="krw">원</span>
-                        <svg
-                          class="icon"
-                          aria-label="특가"
-                          width="30"
-                          height="20"
-                          viewBox="0 0 30 20"
-                          preserveAspectRatio="xMidYMid meet"
-                        >
-                          <rect
-                            width="30"
-                            height="20"
-                            fill="#F77"
-                            rx="4"
-                          ></rect>
-                          <path
-                            fill="#fff"
-                            d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"
-                          ></path>
-                        </svg>
                       </div>
                     </div>
                   </span>
@@ -531,7 +520,7 @@
             </div>
             <div class="product-ask-link">
               <button type="button" class="user-ask-button">
-                판매자 채팅연결
+                카카오톡 채팅연결
                 <a href="#"></a>
               </button>
             </div>
@@ -551,13 +540,13 @@
                 >
               </li>
               <li>
-                <a class="product-detail-nav-item" href="#product-extra-info">
-                  환불/기타
+                <a class="product-detail-nav-item" href="#product-suggestion">
+                  추천
                 </a>
               </li>
               <li>
-                <a class="product-detail-nav-item" href="#product-suggestion">
-                  추천
+                <a class="product-detail-nav-item" href="#product-extra-info">
+                  반품/기타
                 </a>
               </li>
             </ol>
@@ -637,9 +626,6 @@
                         alt="상품의 상세 설명 이미지"
                       />
                     </p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
                   </div>
                   <!-- 테이블 구성 동일, 내용은 데이터에서 받아야함 -->
                   <table class="detail-info-table">
@@ -652,6 +638,7 @@
                         <th>색상</th>
                         <td>상세페이지 참조</td>
                       </tr>
+
                       <tr>
                         <th>치수</th>
                         <td>상세페이지 참조</td>
@@ -668,10 +655,12 @@
                         <th>제조국</th>
                         <td>국내</td>
                       </tr>
+
                       <tr>
                         <th>세탁방법 및 취급시 주의사항</th>
                         <td>상세페이지 참조</td>
                       </tr>
+                      <a id="product-suggestion"></a>
                       <tr>
                         <th>품질보증기준</th>
                         <td>상세페이지 참조</td>
@@ -684,108 +673,7 @@
                   </table>
                 </div>
               </section>
-              <a id="product-extra-info"></a>
-              <section class="product-extra-info-wrap">
-                <header class="product-extra-info-title">
-                  <h1 class="product-extra-info-title-text">교환/환불</h1>
-                </header>
-                <div class="product-refund-wrap">
-                  <table class="product-info-table">
-                    <tbody>
-                      <tr>
-                        <th>반품배송비</th>
-                        <td>
-                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>교환배송비</th>
-                        <td>6,000원</td>
-                      </tr>
-                      <tr>
-                        <th>보내실 곳</th>
-                        <td>
-                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <h2 class="product-detail-title">
-                    반품/교환 사유에 따른 요청 가능 기간
-                  </h2>
-                  <p class="product-detail-note">
-                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
-                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
-                    바랍니다.
-                  </p>
-                  <ol class="product-detail-list">
-                    <li>
-                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
-                        >(구매자 반품배송비 부담)</small
-                      >
-                    </li>
-                    <li>
-                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
-                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
-                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
-                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
-                    </li>
-                  </ol>
-                  <h2 class="product-detail-title">
-                    반품/교환 사유에 따른 요청 가능 기간
-                  </h2>
-                  <p class="product-detail-note">
-                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
-                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
-                    바랍니다.
-                  </p>
-                  <ol class="product-detail-list">
-                    <li>
-                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
-                        >(구매자 반품배송비 부담)</small
-                      >
-                    </li>
-                    <li>
-                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
-                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
-                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
-                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
-                    </li>
-                  </ol>
-                </div>
-              </section>
-              <section>
-                <header class="product-extra-info-title">
-                  <h1 class="product-extra-info-title-text">판매자 정보</h1>
-                  <button type="button" class="report-button">
-                    신고
-                    <a href="#"></a>
-                  </button>
-                </header>
-                <div class="product-refund-wrap">
-                  <table class="product-info-table">
-                    <tbody>
-                      <tr>
-                        <th>반품배송비</th>
-                        <td>
-                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>교환배송비</th>
-                        <td>6,000원</td>
-                      </tr>
-                      <tr>
-                        <th>보내실 곳</th>
-                        <td>
-                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </section>
-              <a id="product-suggestion"></a>
+
               <div>
                 <section class="product-suggestion-wrap">
                   <header class="product-suggestion-header">
@@ -842,30 +730,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 1
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -954,30 +823,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 2
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -1066,30 +916,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 3
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -1178,30 +1009,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 4
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -1290,30 +1102,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 5
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -1402,30 +1195,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 6
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -1514,30 +1288,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 7
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -1626,30 +1381,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 8
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -1738,30 +1474,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 9
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -1850,30 +1567,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 10
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -1962,30 +1660,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 11
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -2074,30 +1753,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 12
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -2186,30 +1846,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 13
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -2298,30 +1939,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 14
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -2411,30 +2033,11 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
                                   </span>
-                                  <p class="product-contents-review-star">
-                                    <svg
-                                      class="icon"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      preserveAspectRatio="xMidYMid meet"
-                                    >
-                                      <path
-                                        fill="#97a38c"
-                                        fill-rule="evenodd"
-                                        d="M12 19.72l-5.677 2.405c-.76.322-1.318-.094-1.247-.906l.533-6.142-4.042-4.656c-.54-.624-.317-1.283.477-1.467l6.006-1.39L11.23 2.28c.426-.707 1.122-.699 1.542 0l3.179 5.282 6.006 1.391c.805.187 1.011.851.477 1.467l-4.042 4.656.533 6.142c.072.822-.497 1.224-1.247.906L12 19.72z"
-                                      ></path>
-                                    </svg>
-                                    <strong class="avg">5</strong> 리뷰 15
-                                  </p>
+                                  <p class="product-contents-review-star"></p>
                                   <span class="product-suggestion-tag">
                                     <svg
                                       class="icon"
@@ -2585,6 +2188,107 @@
                   </div>
                 </section>
               </div>
+              <a id="product-extra-info"></a>
+              <section class="product-extra-info-wrap">
+                <header class="product-extra-info-title">
+                  <h1 class="product-extra-info-title-text">교환/환불</h1>
+                </header>
+                <div class="product-refund-wrap">
+                  <table class="product-info-table">
+                    <tbody>
+                      <tr>
+                        <th>반품배송비</th>
+                        <td>
+                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>교환배송비</th>
+                        <td>6,000원</td>
+                      </tr>
+                      <tr>
+                        <th>보내실 곳</th>
+                        <td>
+                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2 class="product-detail-title">
+                    반품/교환 사유에 따른 요청 가능 기간
+                  </h2>
+                  <p class="product-detail-note">
+                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
+                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
+                    바랍니다.
+                  </p>
+                  <ol class="product-detail-list">
+                    <li>
+                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
+                        >(구매자 반품배송비 부담)</small
+                      >
+                    </li>
+                    <li>
+                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
+                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
+                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
+                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
+                    </li>
+                  </ol>
+                  <h2 class="product-detail-title">
+                    반품/교환 사유에 따른 요청 가능 기간
+                  </h2>
+                  <p class="product-detail-note">
+                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
+                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
+                    바랍니다.
+                  </p>
+                  <ol class="product-detail-list">
+                    <li>
+                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
+                        >(구매자 반품배송비 부담)</small
+                      >
+                    </li>
+                    <li>
+                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
+                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
+                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
+                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
+                    </li>
+                  </ol>
+                </div>
+              </section>
+              <section>
+                <header class="product-extra-info-title">
+                  <h1 class="product-extra-info-title-text">판매자 정보</h1>
+                  <button type="button" class="report-button">
+                    신고
+                    <a href="#"></a>
+                  </button>
+                </header>
+                <div class="product-refund-wrap">
+                  <table class="product-info-table">
+                    <tbody>
+                      <tr>
+                        <th>반품배송비</th>
+                        <td>
+                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>교환배송비</th>
+                        <td>6,000원</td>
+                      </tr>
+                      <tr>
+                        <th>보내실 곳</th>
+                        <td>
+                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
             </div>
           </div>
         </div>
