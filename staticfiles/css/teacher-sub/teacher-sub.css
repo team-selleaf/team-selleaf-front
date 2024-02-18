@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+}
+
+a * {
+  border: none;
+}
+
+svg:not(:root) {
+  overflow-clip-margin: content-box;
+  overflow: hidden;
+}
+
+/* 페이지 전체를 감싸는 부분 */
+.sub-wrap {
+  height: 100%;
+}
+
+.sub-container {
+  padding-top: 40px;
+  width: calc(100% - 30px);
+  margin: auto;
+}
+
+/* 로고를 제외한 나머지를 감싸는 부분 */
+.except-logo-wrap {
+  width: 100%;
+  margin: 0px auto;
+  padding: 60px 0px;
+}
+
+.sub-text {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+/* 이력 입력란 */
+.record-wrap {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.record-text {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgb(47, 52, 56);
+  letter-spacing: -0.3px;
+  word-break: keep-all;
+}
+
+.record-info {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(130, 140, 148);
+  letter-spacing: -0.3px;
+}
+
+.record-input {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Noto Sans KR, Noto Sans CJK KR, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-size: 15px;
+  line-height: 21px;
+  transition: border-color 0.1s, background-color 0.1s;
+  resize: none;
+  padding: 8px 15px 9px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.record-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 112, 88, 0.5);
+}
+
+/* js로 error 클래스 추가 시 적용 */
+.record-text.error {
+  color: rgb(255, 119, 119);
+}
+
+.record-wrap .record-input.error {
+  border-color: #f77;
+}
+
+.record-wrap .record-input.error:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 119, 119, 0.5);
+}
+
+.record-input::placeholder {
+  color: rgb(194, 200, 204);
+}
+
+.record-input:hover:not(:focus) {
+  background-color: #fafafa;
+}
+
+.record-hidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+/* 강의장소(주소) */
+.address-verify-wrap {
+  margin-bottom: 30px;
+}
+
+.address-verify-text {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgb(47, 52, 56);
+  letter-spacing: -0.3px;
+  word-break: keep-all;
+}
+
+.address-verify-input {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Noto Sans KR, Noto Sans CJK KR, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-size: 15px;
+  line-height: 21px;
+  transition: border-color 0.1s, background-color 0.1s;
+  resize: none;
+  padding: 8px 15px 9px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.address-verify-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 112, 88, 0.5);
+}
+
+/* js로 error 클래스 추가 시 적용 */
+.address-verify-text.error {
+  color: rgb(255, 119, 119);
+}
+
+.address-verify-wrap .record-verify-input.error {
+  border-color: #f77;
+}
+
+.address-verify-wrap .record-verify-input.error:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 119, 119, 0.5);
+}
+
+.address-verify-input::placeholder {
+  color: rgb(194, 200, 204);
+}
+
+.address-verify-input:hover:not(:focus) {
+  background-color: #fafafa;
+}
+
+.address-verify-hidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+/* 강의 설명 입력란 */
+.explanation-wrap {
+  margin-bottom: 30px;
+}
+
+.explanation-text {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgb(47, 52, 56);
+  letter-spacing: -0.3px;
+  word-break: keep-all;
+}
+
+.explanation-info {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(130, 140, 148);
+  letter-spacing: -0.3px;
+}
+
+.explanation-input {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Noto Sans KR, Noto Sans CJK KR, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-size: 15px;
+  line-height: 21px;
+  transition: border-color 0.1s, background-color 0.1s;
+  resize: none;
+  padding: 8px 15px 9px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.explanation-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 112, 88, 0.5);
+}
+
+/* js로 error 클래스 추가 시 적용 */
+.explanation-text.error {
+  color: rgb(255, 119, 119);
+}
+
+.explanation-wrap .explanation-input.error {
+  border-color: #f77;
+}
+
+.explanation-wrap .explanation-input.error:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 119, 119, 0.5);
+}
+
+.explanation-input::placeholder {
+  color: rgb(194, 200, 204);
+}
+
+.explanation-input:hover:not(:focus) {
+  background-color: #fafafa;
+}
+
+.explanation-hidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+/* 회원가입 버튼 */
+.sub-button {
+  user-select: none;
+  display: inline-block;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  background: none;
+  font-family: Noto Sans KR, Noto Sans CJK KR, 맑은 고딕, Malgun Gothic, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.1s, background-color 0.1s, border-color 0.1s;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #97a38c;
+  border-color: #97a38c;
+  color: #fff;
+  padding: 11px 10px;
+  font-size: 17px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+}
+
+.sub-button:hover {
+  border-color: rgb(99, 112, 88);
+  background-color: rgb(99, 112, 88);
+}
+
+body,
+html {
+  font-size: 15px;
+}
+
+.except-logo-wrap {
+  width: 360px;
+}
+
+/* 프로필 이미지 변경 */
+/* 이미지 크기 때문에 클래스 따로 추가해서 width, height 지정 */
+
+.info-items-wrap {
+  display: flex;
+  margin-top: 5px;
+  flex-direction: column;
+}
+
+.info-items-title {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgb(47, 52, 56);
+  letter-spacing: -0.3px;
+  word-break: keep-all;
+  margin-right: 15px;
+}
+
+.user-info-items-container.profile,
+.new-image-container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.user-profile-image-container {
+  display: block;
+}
+
+.new-image-wrap {
+  display: block;
+  margin: 0 0 10px;
+}
+
+.new-image-container {
+  position: relative;
+  min-width: 200px;
+  min-height: 200px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid #dbdbdb;
+  background-color: #d8d8d8;
+  font-size: 0;
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+
+.new-image-container:hover {
+  opacity: 0.7;
+}
+
+.current-profile-image {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-image: url("/staticfiles/images/mypage/base-profile-image.avif");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 파일입력 */
+
+.prev-img-box {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  gap: 30px;
+  z-index: 2;
+  overflow-x: scroll;
+}
+.prev-img-box::-webkit-scrollbar {
+  display: none;
+}
+.prev-img-box-item {
+  position: relative;
+  min-width: 200px;
+  max-width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px;
+  border: 1px solid #dbdbdb;
+}
+.prev-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.cancel-div {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+}
+
+.cancel-btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff00;
+}
+
+.cancel-img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+
+.upload-wrap {
+  margin-top: -20px;
+}
