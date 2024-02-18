@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="../../../staticfiles/css/common.css" />
     <link
       rel="stylesheet"
-      href="../../../staticfiles/css/community/app/post-detail-logout.css"
+      href="../../../staticfiles/css/community/app/post-detail.css"
     />
     <title>게시물 상세보기</title>
   </head>
@@ -213,20 +213,6 @@
                           >#몬스테라
                         </a>
                       </p>
-                    </div>
-                  </div>
-                  <div height="666" class="blind-screen-wrap">
-                    <div height="400" class="blind-screen-gradient"></div>
-                    <div>
-                      <div class="blind-content-box">
-                        <p class="blind-content-text">
-                          이 집이 궁금한가요? 오늘의집 회원이면 수천 개<br />집들이를
-                          모두 볼 수 있어요.
-                        </p>
-                        <button type="button" class="blind-login-btn">
-                          로그인하고 모두 보기
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -798,6 +784,28 @@
         </div>
       </div>
     </div>
+    <!-- 스크랩 팝업 -->
+    <div class="scrap-popup-wrap">
+      <div class="scrap-popup-container">
+        <div class="scrap-popup-inner">
+          <div class="scrap-popup-text">스크랩 했습니다.</div>
+        </div>
+        <div class="scrap-popup-button-container">
+          <!-- 스크랩북 링크삽입 -->
+          <button class="scrap-link-button" type="button">
+            스크랩북 보기
+          </button>
+          <button class="scrap-link-button" type="button">폴더에 담기</button>
+        </div>
+      </div>
+    </div>
+    <div class="scrap-popup-cancel-wrap">
+      <div class="scrap-popup-container">
+        <div class="scrap-popup-inner">
+          <div class="scrap-popup-text">스크랩을 취소하였습니다.</div>
+        </div>
+      </div>
+    </div>
   </body>
-  <script src="../../../staticfiles/js/community/app/post-detail-logout.js"></script>
+  <script src="../../../staticfiles/js/community/app/post-detail.js"></script>
 </html>

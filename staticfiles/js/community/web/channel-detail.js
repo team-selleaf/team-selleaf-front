@@ -52,12 +52,7 @@ function appendItem(post) {
         </div>
       </div>
       <div class="content-content">
-        혹시 지금 오늘의가든에서 키우고 있는 식물이
-        있나요? 영양제와 물을 열심히 주는 오늘의
-        가드너라면 우리 아이의 성장일지를 #오늘의가든
-        채널에서 함께 나누고 소통해봐요 💬 열심히 키워서
-        받은 수확물 자랑도 환영이에요! #식집사성장기
-        #식집사일상
+        제시물 제목
       </div>
       <a class="content-link" href="#"></a>
     </div>
@@ -71,7 +66,7 @@ function appendItem(post) {
           />
         </figure>
         <div class="uploader-name">
-          오늘의집 에디터 뭐뭐뭐입니다
+          작성자
         </div>
       </a>
       <button

@@ -62,12 +62,12 @@
   align-items: center;
 }
 .filter-btn-label:hover {
-  background-color: rgb(234, 237, 239);
+  background-color: #ffeff1;
 }
 .choice {
-  color: rgb(0, 159, 206);
-  background-color: rgb(239, 251, 255);
-  border: 1px solid rgb(0, 159, 206);
+  color: #c06888;
+  background-color: #ffeff1;
+  border: 1px solid #c06888;
 }
 .filter-btn {
   position: absolute;
@@ -134,7 +134,7 @@
   height: 36px;
   position: absolute;
   right: 0px;
-  bottom: 0px;
+  top: 0px;
   z-index: 2;
 }
 .scrap-btn-box {
@@ -330,6 +330,6 @@
   padding: 5px 8px;
   font-size: 16px;
   line-height: 20px;
-  color: #97a38c;
+  color: #c06888;
   font-weight: 700;
 }

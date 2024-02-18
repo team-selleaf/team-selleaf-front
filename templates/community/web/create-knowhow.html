@@ -57,7 +57,7 @@
                   <img
                     src="../../../staticfiles/images/logo-lettering-blk.png"
                     width="72px"
-                    height="32px"
+                    height="25px"
                     alt=""
                   />
                 </a>
@@ -96,7 +96,7 @@
                         <rect
                           width="25"
                           height="25"
-                          fill="#6ADFC4"
+                          fill="#C06888"
                           rx="10"
                         ></rect>
                         <g fill="#FFF" transform="translate(7 8)">
@@ -208,7 +208,7 @@
                         <rect
                           width="26"
                           height="26"
-                          fill="#F8C332"
+                          fill="#FBCCD4"
                           rx="10"
                         ></rect>
                         <g fill="none" stroke="#FFF">
@@ -246,10 +246,10 @@
                     </svg>
                   </div>
                 </button>
-                <div class="expanded open" style="overflow: hidden;">
+                <div class="expanded required-open" style="overflow: hidden;">
                   <div class="required-info-wrap">
                     <div class="required-info-container">
-                      <div class="required-info-item">
+                      <div class="required-info-inner">
                         <div class="required-info-item-title-box">
                           카테고리<span class="required-info-item-title"
                             >*</span
@@ -287,7 +287,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="required-info-item">
+                      <div class="required-info-inner">
                         <div class="required-info-item-title-box">
                           식물 종류<span class="required-info-item-title"
                             >*</span
@@ -328,7 +328,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="required-info-item">
+                      <div class="required-info-inner">
                         <div class="required-info-item-title-box">
                           태그
                         </div>
@@ -353,10 +353,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="required-info-item">
+                      <div class="required-info-inner">
                         <div class="tag-list"></div>
                       </div>
-                      <div class="required-info-item">
+                      <div class="required-info-inner">
                         <div class="required-info-item-title-box">
                           추천 상품 링크
                         </div>
@@ -396,27 +396,6 @@
                                       >
                                         <path
                                           d="M10.8 3.8v5H5.7c-.4 0-.7.3-.7.7 0 .4.3.7.7.7h5.1v5c0 .4.3.7.7.7.4 0 .7-.3.7-.7v-5h5.1c.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7h-5.1v-5c0-.4-.3-.7-.7-.7-.4 0-.7.3-.7.7z"
-                                          fill="#525B61"
-                                          stroke="#525B61"
-                                          stroke-width="0.5"
-                                        ></path>
-                                      </svg>
-                                    </button>
-                                    <button
-                                      type="button"
-                                      title="삭제"
-                                      class="add-and-delete-btn"
-                                    >
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="29"
-                                        height="29"
-                                        viewBox="-3 -11 29 29"
-                                        class="icon"
-                                      >
-                                        <path
-                                          d="M10.8 2.8H5.7c-.4 0-.7.3-.7.7 0 .4.3.7.7.7h11.6c.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7h-6.5z"
-                                          fill="#525B61"
                                           stroke="#525B61"
                                           stroke-width="0.5"
                                         ></path>
@@ -439,17 +418,12 @@
             </div>
             <div class="upload-wrap">
               <div class="prev-img-box">
-                <img
-                  src="../../staticfiles/images/cancel.png"
-                  class="cancel"
-                  width="30px"
-                  height="30px"
-                  alt=""
-                />
+                
               </div>
               <div class="upload-container">
                 <input
                   type="file"
+                  multiple="multiple"
                   id="img-file"
                   name="img-file"
                   style="display: none;"
@@ -460,17 +434,15 @@
                   class="upload-btn"
                 >
                   <p class="top-text-box">
-                    <span class="top-text">커버 사진을 업로드해주세요.</span>
+                    <span class="top-text">사진을 업로드해주세요.</span>
                   </p>
                   <p class="bottom-text-box">
-                    *권장 사이즈<br />모바일: 1920 x 1920, 최소 1400 x 1400(1:1
-                    비율)<br />PC: 1920 x 1080, 최소 1400 x 787(16:9 비율)<br />
+                    *권장 사이즈<br />1920 x 1920, 최소 1400 x 1400(1:1 비율)
                   </p>
-                  <div class="cover-add-coment">커버 사진 추가하기</div>
+                  <div class="cover-add-coment">사진 추가하기</div>
                 </label>
               </div>
             </div>
-
             <div class="title-input-box">
               <input
                 type="text"

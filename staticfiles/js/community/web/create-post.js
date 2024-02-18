@@ -13,12 +13,12 @@ const markIconWrap = document.querySelector(".mark-icon-wrap");
 
 dropBoxGuide.addEventListener("click", () => {
   downArrowIcon[0].classList.toggle("down-arrow-open");
-  dropBoxes[0].classList.toggle("open");
+  dropBoxes[0].classList.toggle("guide-open");
 });
 
 dropBoxRequired.addEventListener("click", () => {
   downArrowIcon[1].classList.toggle("down-arrow-open");
-  dropBoxes[1].classList.toggle("open");
+  dropBoxes[1].classList.toggle("required-open");
 });
 
 titleInput.addEventListener("keyup", (e) => {
@@ -64,38 +64,46 @@ const emptyValue = document.querySelector(".empty-value");
 tagInput.addEventListener("keyup", (e) => {
   let value = e.target.value;
   if (e.keyCode === 13 && e.target.value) {
-    const itemCount = tagList.querySelectorAll(".tag-list > span").length + 1;
-    if (itemCount <= 5) {
+    const items = tagList.querySelectorAll(".tag-list > span");
+    if (items.length + 1 <= 5) {
       e.target.value = "";
       const tagItem = document.createElement("span");
       tagItem.classList.add("tag");
       tagItem.innerHTML = `
-      <span class="tag-text">
-        ${value}
-      </span>
-      <img
-        src="../../staticfiles/images/cancel.png"
-        class="tag-cancel"
-        width="15px"
-        height="15px"
-        alt=""
-      />`;
+      <span class="tag-left-line">#</span>
+        <div class="tag-inner">
+          <span class="tag-text">
+            ${value}
+          </span>
+          <button type="button" class="tag-cancel-btn">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#a2a9b4"
+              viewBox="0 0 14 14"
+              width="10px"
+              height="10px"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+              />
+            </svg>
+          </button>
+        </div>
+        `;
       tagList.appendChild(tagItem);
       const tags = document.querySelectorAll(".tag");
       tags.forEach((item) => {
-        const canceltag = item.querySelector(".tag-cancel");
+        const canceltag = item.querySelector(".tag-cancel-btn");
         canceltag.addEventListener("click", () => {
           item.remove();
         });
       });
     }
-  }
-  if (!tagInput.value && itemCount == 0) {
-    tagInput.style.border = "1px solid red";
-    emptyValue.style.display = "block";
-  } else {
-    tagInput.style.border = "";
-    emptyValue.style.display = "none";
   }
 });
 tagInput.addEventListener("focus", (e) => {

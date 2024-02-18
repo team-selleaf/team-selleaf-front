@@ -3,7 +3,7 @@ const inputContainer = document.querySelector(".input-container");
 const commentInput = document.querySelector(".comment-input");
 
 commentInput.addEventListener("focus", () => {
-  inputContainer.style.border = "1px solid rgb(53, 197, 240)";
+  inputContainer.style.border = "1px solid #c06888";
 });
 commentInput.addEventListener("focusout", () => {
   inputContainer.style.border = "1px solid rgb(218, 221, 224)";
@@ -12,7 +12,7 @@ commentInput.addEventListener("focusout", () => {
 const commentSubmitBtn = document.querySelector(".comment-submit-btn");
 commentInput.addEventListener("keyup", () => {
   commentInput.value
-    ? (commentSubmitBtn.style.color = "rgb(53, 197, 240)")
+    ? (commentSubmitBtn.style.color = "#c06888")
     : (commentSubmitBtn.style.color = "rgb(194, 200, 204)");
 });
 
@@ -35,7 +35,10 @@ stickyBtns.forEach((item) => {
       console.log(imgSrc);
       imgSrc === "../../../staticfiles/images/scrap-off-blk.png"
         ? img.setAttribute("src", "../../../staticfiles/images/scrap-on.png")
-        : img.setAttribute("src", "../../../staticfiles/images/scrap-off-blk.png");
+        : img.setAttribute(
+            "src",
+            "../../../staticfiles/images/scrap-off-blk.png"
+          );
     }
   });
 });
