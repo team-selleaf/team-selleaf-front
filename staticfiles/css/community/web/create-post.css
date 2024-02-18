@@ -66,7 +66,7 @@
   box-sizing: border-box;
   margin: 0px 5px;
   background: rgb(255, 255, 255);
-  border: 1px solid #97a38c;
+  border: 1px solid #c06888;
   border-radius: 4px;
 }
 .storage-btn {
@@ -89,7 +89,7 @@
   font-size: 15px;
   line-height: 20px;
   font-weight: bold;
-  color: #97a38c;
+  color: #c06888;
   transition: opacity 0.1s ease 0s;
   flex: 1 0 0px;
 }
@@ -108,8 +108,8 @@
   box-sizing: border-box;
   margin: 0px 5px;
   padding: 11px 5px 12px;
-  background: #97a38c;
-  border: 1px solid #97a38c;
+  background: #c06888;
+  border: 1px solid #c06888;
   border-radius: 4px;
   font-style: inherit;
   font-variant: inherit;
@@ -241,7 +241,7 @@
   list-style: inside;
 }
 .guide-content-container > li a {
-  color: rgb(53, 197, 240);
+  color: #c06888;
   font-weight: bold;
 }
 .required-info-wrap {
@@ -249,6 +249,11 @@
 }
 .required-info-container {
   padding: 0px 10px;
+}
+.required-info-inner {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 0 12px 0;
 }
 .required-info-item {
   display: flex;
@@ -552,8 +557,11 @@ input.title-input {
   transition: height 0.2s ease 0s;
   height: 0;
 }
-.open {
-  height: 436px;
+.guide-open {
+  height: 430px;
+}
+.required-open {
+  height: 380px;
 }
 .cancel {
   display: none;
@@ -566,27 +574,61 @@ input.title-input {
   top: 15px;
 }
 .tag-list {
-  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 20px;
+  padding-left: 130px;
 }
 .tag {
-  padding: 10px;
-  border: 1px solid #dbdbdb;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0.2rem 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 3px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #585858;
+  overflow: hidden;
+}
+.tag-inner {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.tag-left-line {
+  background-color: #fbccd4;
+  padding: 12px;
+}
+.tag-cancel-btn {
+  background: none;
+  padding: 5px 7px;
+  border-radius: 5px;
   transition: background-color 0.2s ease;
 }
-.tag:hover {
-  background-color: #dbdbdb;
+.tag-cancel-btn svg {
+  color: #8b9099;
+  transition: color 0.2s ease;
 }
-.tag-cancel {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
+.tag-cancel-btn:hover {
+  background-color: #eee;
+}
+.tag-cancel-btn:hover svg {
+  color: #000;
+}
+.icon {
+  width: 29;
+  height: 29;
+}
+input::placeholder {
+  color: #c2c2c2;
+}
+.guide-text {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 16px;
+  color: #c2c2c2;
 }

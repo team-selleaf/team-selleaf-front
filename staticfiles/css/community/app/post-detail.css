@@ -23,6 +23,14 @@
 .post-detail-box {
   position: relative;
 }
+.comment-like-icon-choice::before {
+  font-family: OhouseIcon;
+  vertical-align: top;
+}
+.comment-like-icon-choice:before {
+  content: "\eae8";
+}
+
 .content-wrap {
   position: relative;
   width: 100%;

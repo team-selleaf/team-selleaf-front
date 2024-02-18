@@ -3,7 +3,7 @@ const inputContainer = document.querySelector(".input-container");
 const commentInput = document.querySelector(".comment-input");
 
 commentInput.addEventListener("focus", () => {
-  inputContainer.style.border = "1px solid rgb(53, 197, 240)";
+  inputContainer.style.border = "1px solid #c06888";
 });
 commentInput.addEventListener("focusout", () => {
   inputContainer.style.border = "1px solid rgb(218, 221, 224)";
@@ -12,7 +12,7 @@ commentInput.addEventListener("focusout", () => {
 const commentSubmitBtn = document.querySelector(".comment-submit-btn");
 commentInput.addEventListener("keyup", () => {
   commentInput.value
-    ? (commentSubmitBtn.style.color = "rgb(53, 197, 240)")
+    ? (commentSubmitBtn.style.color = "#c06888")
     : (commentSubmitBtn.style.color = "rgb(194, 200, 204)");
 });
 
@@ -35,7 +35,10 @@ stickyBtns.forEach((item) => {
       console.log(imgSrc);
       imgSrc === "../../../staticfiles/images/scrap-off-blk.png"
         ? img.setAttribute("src", "../../../staticfiles/images/scrap-on.png")
-        : img.setAttribute("src", "../../../staticfiles/images/scrap-off-blk.png");
+        : img.setAttribute(
+            "src",
+            "../../../staticfiles/images/scrap-off-blk.png"
+          );
     }
   });
 });
@@ -51,4 +54,39 @@ paginationBox.addEventListener("click", (e) => {
     });
     pageBtn.classList.add("select");
   }
+});
+//신고 모달
+const declarationLabels = document.querySelectorAll(".declaration-label");
+const declarationInputs = document.querySelectorAll(".declaration-input");
+declarationLabels.forEach((item) => {
+  item.addEventListener("click", () => {
+    declarationInputs.forEach((radio, i) => {
+      if (radio.checked) {
+        radio.parentNode.classList.add("declaration-choice");
+      } else {
+        radio.parentNode.classList.remove("declaration-choice");
+      }
+    });
+  });
+});
+//신고모달 띄우기
+const declarationModalWrap = document.querySelector(".declaration-modal-wrap");
+const contentDeclarationBtn = document.querySelector(
+  ".content-declaration-btn"
+);
+contentDeclarationBtn.addEventListener("click", () => {
+  declarationModalWrap.classList.add("open");
+});
+const commentDeclarationBtns = document.querySelectorAll(
+  ".comment-declaration-btn"
+);
+commentDeclarationBtns.forEach((item) => {
+  item.addEventListener("click", () => {
+    declarationModalWrap.classList.add("open");
+  });
+});
+//신고 모달 없애기
+const declarationBtn = document.querySelector(".declaration-btn");
+declarationBtn.addEventListener("click", () => {
+  declarationModalWrap.classList.remove("open");
 });

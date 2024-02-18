@@ -57,7 +57,7 @@
                   <img
                     src="../../../staticfiles/images/logo-lettering-blk.png"
                     width="72px"
-                    height="32px"
+                    height="25px"
                     alt=""
                   />
                 </a>
@@ -96,7 +96,7 @@
                         <rect
                           width="25"
                           height="25"
-                          fill="#6ADFC4"
+                          fill="#C06888"
                           rx="10"
                         ></rect>
                         <g fill="#FFF" transform="translate(7 8)">
@@ -208,7 +208,7 @@
                         <rect
                           width="26"
                           height="26"
-                          fill="#F8C332"
+                          fill="#FBCCD4"
                           rx="10"
                         ></rect>
                         <g fill="none" stroke="#FFF">
@@ -246,10 +246,48 @@
                     </svg>
                   </div>
                 </button>
-                <div class="expanded open" style="overflow: hidden;">
+                <div class="expanded required-open" style="overflow: hidden;">
                   <div class="required-info-wrap">
                     <div class="required-info-container">
-                      <div class="required-info-item">
+                      <div class="required-info-inner">
+                        <div class="required-info-item-title-box">
+                          카테고리<span class="required-info-item-title"
+                            >*</span
+                          >
+                        </div>
+                        <div class="required-info-item-wrap">
+                          <div class="required-info-item">
+                            <div class="required-info-item-inner">
+                              <span class="required-info-item-box">
+                                <div class="input-group select-input">
+                                  <select name="plant" class="form-control">
+                                    <option value="" disabled selected
+                                      >선택해주세요.</option
+                                    >
+                                    <option value="0">식물 키우기</option>
+                                    <option value="1">관련 제품</option>
+                                    <option value="2">스타일링</option>
+                                  </select>
+                                  <span class="select-input__icon">
+                                    <svg
+                                      width="10"
+                                      height="10"
+                                      preserveAspectRatio="xMidYMid meet"
+                                      style="fill: currentcolor;"
+                                    >
+                                      <path
+                                        fill-rule="evenodd"
+                                        d="M0 3l5 5 5-5z"
+                                      ></path>
+                                    </svg>
+                                  </span>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="required-info-inner">
                         <div class="required-info-item-title-box">
                           식물 종류<span class="required-info-item-title"
                             >*</span
@@ -290,9 +328,9 @@
                           </div>
                         </div>
                       </div>
-                      <div class="required-info-item">
+                      <div class="required-info-inner">
                         <div class="required-info-item-title-box">
-                          태그<span class="required-info-item-title">*</span>
+                          태그
                         </div>
                         <div class="required-info-item-wrap">
                           <div class="required-info-item">
@@ -303,28 +341,30 @@
                                     class="tag-input"
                                     placeholder="# 태그"
                                     name="tags"
-                                    maxlength="25"
+                                    maxlength="10"
                                     value=""
                                   />
                                 </div>
                               </span>
-                              <span class="empty-value" style="display: none;"
-                                >필수 항목 입니다.</span
-                              >
+                              <span class="empty-value" style="display: none;">
+                                필수 항목 입니다.
+                              </span>
                             </div>
                           </div>
                         </div>
                       </div>
+                      <div class="required-info-inner">
+                        <div class="tag-list"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="tag-list"></div>
                 </div>
               </div>
             </div>
             <div class="upload-wrap">
               <div class="prev-img-box">
                 <img
-                  src="../../../staticfiles/images/cancel.png"
+                  src="../../staticfiles/images/cancel.png"
                   class="cancel"
                   width="30px"
                   height="30px"
@@ -413,5 +453,5 @@
       </div>
     </div>
   </body>
-  <script src="../../../staticfiles/js/community/web/create-knowhow.js"></script>
+  <script src="../../../staticfiles/js/community/web/create-post.js"></script>
 </html>

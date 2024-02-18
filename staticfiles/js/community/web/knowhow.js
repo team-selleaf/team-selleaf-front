@@ -9,51 +9,53 @@ async function getPosts() {
 function appendItem(post) {
   const contentLineBox = document.querySelector(".content-line-box");
   const contentItem = document.createElement("a");
-  contentItem.classList.add("similar-post-box");
+  contentItem.setAttribute("href", "javascript:void(0)");
   contentItem.innerHTML = `
-  <div class="content-item-wrap">
-    <div class="content-item-container">
+    <div class="content-item-wrap">
+      <div class="content-item-container">
         <div class="content-img-box">
-        <img
+          <img
             src="../../../staticfiles/images/blank-image.png"
             class="content-img"
-        />
-        <div class="scrap-btn-box">
+          />
+          <div class="scrap-btn-box">
             <button
-            type="button"
-            aria-label="scrap 토글 버튼"
-            class="scrap-btn"
+              type="button"
+              aria-label="scrap 토글 버튼"
+              class="scrap-btn"
             >
-            <span class="scrap-icon-box">
+              <span class="scrap-icon-box">
                 <img
-                src="../../../staticfiles/images/scrap-off.png"
-                alt=""
+                  src="../../../staticfiles/images/scrap-off.png"
+                  alt=""
                 />
-            </span>
+              </span>
             </button>
-        </div>
+          </div>
         </div>
         <p class="content-title">
-        집에서 가장 바쁜 집순이의 다채로운 10평 투룸
+        노하우 게시물 제목이 들어갈 공간
         </p>
-        <div class="content-uploader">
-        <div class="uploader-img-box">
-            <img
-            src="../../../staticfiles/images/blank-image.png"
-            class="uploader-img"
-            />
+        <div class="content-bottom-box">
+          <div class="content-uploader">
+            <div class="uploader-img-box">
+              <img
+                src="../../../staticfiles/images/blank-image.png"
+                class="uploader-img"
+              />
+            </div>
+            <span class="uploader-name">작성자</span>
+          </div>
+          <div class="content-data-box">
+            <span class="content-data"
+              >스크랩 <span>3</span>
+            </span>
+            <span class="content-data"
+              >조회 <span>153</span>
+            </span>
+          </div>
         </div>
-        <span class="uploader-name">다채롭솔</span>
-        </div>
-        <div class="content-data-box">
-        <span class="content-data"
-            >스크랩 <span>3</span></span
-        >
-        <span class="content-data"
-            >조회 <span>153</span></span
-        >
-        </div>
-    </div>
+      </div>
     </div>
   `;
   contentLineBox.appendChild(contentItem);
@@ -123,9 +125,10 @@ function hidePopup() {
   animationTarget.classList.add("hide-animation");
 }
 
-const filterItems = document.querySelectorAll(".filter-item");
-filterItems.forEach((item) => {
+const filterSelecters = document.querySelectorAll(".filter-selecter");
+filterSelecters.forEach((item) => {
   const modal = item.querySelector(".filter-modal");
+  if (!modal) return;
   item.addEventListener("mouseenter", () => {
     modal.classList.add("open");
   });
@@ -139,10 +142,54 @@ filterItems.forEach((item) => {
       modalMenuBtns.forEach((btn) => {
         btn.classList.remove("choice");
       });
-      const filterIcon = `<span class="filter-btn-icon"></span>`;
-      e.target.closest(".filter-modal").previousElementSibling.innerHTML =
-        btn.innerText + filterIcon;
-      e.target.closest(".modal-menu-btn").classList.add("choice");
+      btn.classList.add("choice");
+      const targetFilterBtn = e.target
+        .closest(".filter-selecter")
+        .querySelector(".filter-btn");
+      targetFilterBtn.style.color = "#c06888";
+      targetFilterBtn.style.backgroundColor = " #ffeef1";
     });
   });
 });
+
+const options = document.querySelectorAll(".option");
+options.forEach((option) => {
+  option.addEventListener("click", (e) => {
+    e.target.closest(".option").classList.toggle("choice");
+    if (option.classList.contains("choice")) {
+      const optionValue = option.innerText;
+      createOptionElement(optionValue);
+    } else {
+      const optionItems = document.querySelectorAll(".option-item");
+      optionItems.forEach((item) => {
+        console.log(item.innerText);
+        if (item.innerText == e.target.innerText) {
+          item.remove();
+        }
+      });
+    }
+  });
+});
+const optionResetBtn = document.querySelector(".option-reset-btn");
+function createOptionElement(optionValue) {
+  const optionItem = document.createElement("span");
+  optionItem.classList.add("option-item");
+  optionItem.innerHTML = `
+  <button class="option-cancel-btn">
+    ${optionValue}<svg
+      class="option-cancel-btn-icon"
+      width="12"
+      height="12"
+      fill="currentColor"
+      size="16"
+      name="dismiss_thick"
+    >
+      <path
+        d="M6 4.94 3.879 2.817l-1.061 1.06L4.939 6 2.818 8.121l1.06 1.061L6 7.061l2.121 2.121 1.061-1.06L7.061 6l2.121-2.121-1.06-1.061L6 4.939zM6 12A6 6 0 1 1 6 0a6 6 0 0 1 0 12z"
+      ></path>
+    </svg>
+  </button>
+  `;
+  const parentElement = optionResetBtn.parentNode;
+  parentElement.insertBefore(optionItem, optionResetBtn);
+}

@@ -90,7 +90,15 @@
   text-align: left;
   background: none;
 }
-
+.uploader-sub-description {
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
+  color: rgb(130, 140, 148);
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  margin-top: 2px;
+}
 .uploader-img-box {
   display: inline-block;
   background: url("/staticfiles/images/blank-image.png") 50% center / cover
@@ -364,7 +372,7 @@
 }
 .comment-count {
   margin-left: 6px;
-  color: rgb(53, 197, 240);
+  color: #c06888;
 }
 .comment-input-wrap {
   margin-bottom: 40px;
@@ -718,11 +726,11 @@
 }
 
 .select {
-  background: none rgb(53, 197, 240);
+  background: none #c06888;
   color: #fff;
 }
 .select:hover {
-  background-color: rgb(0, 159, 206);
+  background-color: #c06888;
 }
 .pagination-next-btn {
   margin: 0px;
@@ -956,7 +964,6 @@
 .blind-content-text {
   font-weight: 700;
   color: rgb(47, 52, 56);
-  white-space: pre-wrap;
   text-align: center;
   font-size: 20px;
   line-height: 28px;
@@ -965,7 +972,7 @@
 .blind-login-btn {
   margin: 0px;
   border: none;
-  background: none #97a38c;
+  background: none #c06888;
   font-style: inherit;
   font-variant: inherit;
   font-stretch: inherit;
@@ -991,5 +998,5 @@
   color: rgb(255, 255, 255);
 }
 .blind-login-btn:hover {
-  background: none rgb(99, 112, 88);
+  background: none #fbccd4;
 }
