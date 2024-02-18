@@ -439,6 +439,7 @@ textarea.compose-content{
     line-height: 22px;
     color: #1d1d1e;
     fill: #1d1d1e;
+    resize: none;
 }
 
 textarea.compose-content::placeholder{

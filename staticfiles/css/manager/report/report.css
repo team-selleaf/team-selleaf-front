@@ -742,6 +742,33 @@ span.function-btn-text{
     padding-bottom: 12px;
 }
 
+div.category-benner{
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    column-gap: 24px;
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+    border-color: #e6e6e7;
+}
+
+div.category-inner{
+    width: 100px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-shrink: 0;
+    display: flex;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #1d1d1e;
+    fill: #1d1d1e;
+}
+
 ul.list-content{
     flex-direction: column;
     display: flex;
