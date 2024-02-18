@@ -70,12 +70,12 @@ a * {
 
 /* 메인 카테고리 중에서 현재 active 클래스를 가진 요소에 적용 */
 .main-category-item > a.active {
-  color: #97a38c;
+  color: #134f2c;
 }
 
 /* active 클래스를 가지지 않은 요소들은 hover되면 같은 스타일 적용 */
 .main-category-item > a:not(.active):hover {
-  color: #97a38c;
+  color: #134f2c;
 }
 
 /* 메인 카테고리들 중 첫 번째 요소(프로필)이 아닌 객체들에 적용 */
@@ -153,12 +153,12 @@ a * {
 
 /* 서브 카테고리 중에서 현재 active 클래스를 가진 요소에 적용 */
 .sub-category-item > a.active {
-  color: #97a38c;
+  color: #134f2c;
 }
 
 /* active 클래스를 가지지 않은 요소들은 hover되면 같은 스타일 적용 */
 .sub-category-item > a:not(.active):hover {
-  color: #97a38c;
+  color: #134f2c;
 }
 
 /* active 클래스를 가지면 가상요소 생성. 거기에 적용되는 스타일 */
@@ -168,7 +168,7 @@ a * {
   display: block;
   width: 100%;
   height: 4px;
-  background: #97a38c;
+  background: #134f2c;
   left: 0;
   bottom: 0;
 }
@@ -513,7 +513,7 @@ a * {
 }
 
 .classes-history-wrap {
-  padding: 80px 0px 30px;
+  padding: 30px 0px;
   text-align: center;
 }
 
@@ -538,6 +538,7 @@ a * {
   display: block;
   box-sizing: border-box;
   padding: 30px 16px;
+  border-bottom: 1px solid rgb(234, 237, 239);
 }
 
 .classes-history-item-wrap::after {
@@ -587,8 +588,8 @@ a * {
 /* 거래 내역 본문 */
 .classes-item-article-wrap {
   font-size: 14px;
-  line-height: 20px;
-  height: 40px;
+  line-height: 32px;
+  height: 32px;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #2f3438;
@@ -598,6 +599,46 @@ a * {
   -webkit-box-orient: vertical;
   margin: 0 0 6px;
   text-align: initial;
+}
+
+/* 수강생 목록 보기 버튼 */
+.students-list-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
+.students-list-button {
+  user-select: none;
+  display: inline-block;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic",
+    sans-serif;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border-width: 2px;
+  border-style: solid;
+  border-image: initial;
+  background: none;
+  text-decoration: none;
+  transition: color 0.1s ease 0s, background-color 0.1s ease 0s,
+    border-color 0.1s ease 0s;
+  border-radius: 4px;
+  background-color: #fff;
+  border-color: #134f2c;
+  color: #134f2c;
+  padding: 8px;
+  font-size: 12px;
+  line-height: 12px;
+  -webkit-font-smoothing: antialiased;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.students-list-button:hover {
+  color: #97a38c;
+  border-color: #97a38c;
 }
 
 /* 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 */
@@ -706,7 +747,6 @@ a * {
   padding: 0px;
   height: 1px;
   border: none;
-  background-color: rgb(234, 237, 239);
 }
 
 /* 사이드 바의 공유 버튼을 클릭하면 나오는 모달창 */

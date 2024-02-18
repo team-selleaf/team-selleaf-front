@@ -70,12 +70,12 @@ a * {
 
 /* 메인 카테고리 중에서 현재 active 클래스를 가진 요소에 적용 */
 .main-category-item > a.active {
-  color: #97a38c;
+  color: #134f2c;
 }
 
 /* active 클래스를 가지지 않은 요소들은 hover되면 같은 스타일 적용 */
 .main-category-item > a:not(.active):hover {
-  color: #97a38c;
+  color: #134f2c;
 }
 
 /* 메인 카테고리들 중 첫 번째 요소(프로필)이 아닌 객체들에 적용 */
@@ -456,6 +456,7 @@ a * {
   margin: 40px 0px;
   padding: 0px 0px 10px;
   border-bottom: 1px solid rgb(237, 237, 237);
+  margin-bottom: 12px;
 }
 
 .lecture-page-link {
@@ -476,8 +477,8 @@ a * {
   transition: color 0.1s ease 0s, background-color 0.1s ease 0s,
     border-color 0.1s ease 0s;
   border-radius: 4px;
-  background-color: #97a38c;
-  border-color: #97a38c;
+  background-color: #134f2c;
+  border-color: #134f2c;
   color: #fff;
   padding: 9px 10px;
   font-size: 15px;
@@ -488,12 +489,12 @@ a * {
 }
 
 .lecture-page-link:hover {
-  border-color: rgb(99, 112, 88);
-  background-color: rgb(99, 112, 88);
+  border-color: #97a38c;
+  background-color: #97a38c;
 }
 
 .lecture-history-wrap {
-  padding: 80px 0px 30px;
+  padding: 0 0 30px;
   text-align: center;
 }
 
@@ -518,6 +519,7 @@ a * {
   display: block;
   box-sizing: border-box;
   padding: 30px 16px;
+  border-bottom: 1px solid rgb(234, 237, 239);
 }
 
 .lecture-history-item-wrap::after {
@@ -567,10 +569,9 @@ a * {
 /* 거래 내역 본문 */
 .lecture-item-article-wrap {
   font-size: 14px;
-  line-height: 20px;
-  height: 40px;
+  line-height: 32px;
+  height: 32px;
   overflow: hidden;
-  text-overflow: ellipsis;
   color: #2f3438;
   transition: 0.1s color;
   display: -webkit-box;
@@ -578,6 +579,48 @@ a * {
   -webkit-box-orient: vertical;
   margin: 0 0 6px;
   text-align: initial;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 수강생 목록 보기 버튼 */
+.write-review-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
+.write-review-button {
+  user-select: none;
+  display: inline-block;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic",
+    sans-serif;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border-width: 2px;
+  border-style: solid;
+  border-image: initial;
+  background: none;
+  text-decoration: none;
+  transition: color 0.1s ease 0s, background-color 0.1s ease 0s,
+    border-color 0.1s ease 0s;
+  border-radius: 4px;
+  background-color: #fff;
+  border-color: #134f2c;
+  color: #134f2c;
+  padding: 8px;
+  font-size: 12px;
+  line-height: 12px;
+  -webkit-font-smoothing: antialiased;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.write-review-button:hover {
+  color: #97a38c;
+  border-color: #97a38c;
 }
 
 /* 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 */
@@ -686,7 +729,6 @@ a * {
   padding: 0px;
   height: 1px;
   border: none;
-  background-color: rgb(234, 237, 239);
 }
 
 /* 사이드 바의 공유 버튼을 클릭하면 나오는 모달창 */

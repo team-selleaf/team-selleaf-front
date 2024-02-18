@@ -495,6 +495,7 @@ a * {
   padding-left: 10px;
   padding-right: 10px;
   width: 66.6667%;
+  margin-top: 30px;
 }
 
 .no-content-wrap {
@@ -523,6 +524,8 @@ a * {
   display: block;
   box-sizing: border-box;
   padding: 30px 16px;
+  border-bottom: 1px solid rgb(234, 237, 239);
+  padding-bottom: 20px;
 }
 
 .comments-history-item-wrap::after {
@@ -572,17 +575,17 @@ a * {
 /* 거래 내역 본문 */
 .comments-item-article-wrap {
   font-size: 14px;
-  line-height: 20px;
-  height: 40px;
+  line-height: 32px;
+  height: 32px;
   overflow: hidden;
-  text-overflow: ellipsis;
   color: #2f3438;
   transition: 0.1s color;
-  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   margin: 0 0 6px;
   text-align: initial;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 */
@@ -691,7 +694,6 @@ a * {
   padding: 0px;
   height: 1px;
   border: none;
-  background-color: rgb(234, 237, 239);
 }
 
 /* 사이드 바의 공유 버튼을 클릭하면 나오는 모달창 */

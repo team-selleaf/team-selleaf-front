@@ -921,7 +921,7 @@ figure {
   align-items: center;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  padding-right: 25px;
+  padding-right: 10px;
 }
 
 .first-caregory-title {
@@ -955,13 +955,6 @@ figure {
   color: #97a38c;
   font-weight: 700;
   text-align: right;
-}
-
-.first-category-title-wrap > .sub-category-icon {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 /* 카테고리 모달창 내 각 카테고리에 mouseover 되면 나오는, 소카테고리 모달창 */

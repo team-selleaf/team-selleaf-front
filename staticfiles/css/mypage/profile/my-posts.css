@@ -632,8 +632,9 @@ a * {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  margin-left: 12px;
+
   margin: 0;
+  margin-left: -9px;
 }
 
 .post-contents-header {

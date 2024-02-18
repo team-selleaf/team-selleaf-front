@@ -63,7 +63,7 @@
                   <a href="#">거래 내역</a>
                 </li>
                 <li class="main-category-item">
-                  <a href="#">강의 내역</a>
+                  <a href="#">수강 내역</a>
                 </li>
                 <li class="main-category-item">
                   <a href="#" class="active">강의 현황</a>
@@ -194,7 +194,7 @@
                             <div class="user-nickname">Selleaf Test</div>
                             <div class="follow-settings-wrap">
                               <!-- 나중에 팔로우 페이지랑 연결 -->
-                              <dl class="follow-wrap">
+                              <!-- <dl class="follow-wrap">
                                 <dt class="follow-text">팔로워</dt>
                                 <dd class="follow-count">
                                   <a href="#" class="follow-num">123</a>
@@ -203,7 +203,7 @@
                                 <dd class="follow-count">
                                   <a href="#" class="follow-num">45</a>
                                 </dd>
-                              </dl>
+                              </dl> -->
                               <!-- 나중에 설정 페이지랑 연결 -->
                               <div class="settings-button-wrap">
                                 <a class="settings-button" href="#">설정</a>
@@ -243,7 +243,7 @@
                               <div class="scraps-likes-count">0</div>
                             </a>
                             <!-- 쿠폰 -->
-                            <a class="scraps-likes-content-wrap" href="#">
+                            <!-- <a class="scraps-likes-content-wrap" href="#">
                               <div class="scraps-likes-icon">
                                 <svg
                                   width="24"
@@ -260,7 +260,7 @@
                               </div>
                               <div class="scraps-likes-text">쿠폰</div>
                               <div class="scraps-likes-count">0</div>
-                            </a>
+                            </a> -->
                           </div>
                         </div>
                       </div>
@@ -296,8 +296,10 @@
                           <span>강의 내역 본문 예시입니다.</span>
                         </div>
                         <!-- 수강생 목록 바로가기 버튼 - 평소에 하던 버튼으로 제작 -->
-                        <div class="classes-students-wrap">
-                          <a href="#">수강생 목록 바로 가기</a>
+                        <div class="students-list-wrap">
+                          <a href="#" class="students-list-button">
+                            수강생 목록 보기
+                          </a>
                         </div>
                         <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
                         <div class="classes-item-info-wrap">
@@ -312,10 +314,10 @@
                               </div>
                               Selleaf Test
                             </div>
-                            <!-- 올린 시간, 조회수, 지역 -->
+                            <!-- 진행한 시간, 조회수, 지역 -->
                             <div class="item-info-wrap">
-                              <div class="item-infos">1일 전</div>
-                              <div class="item-infos">조회 8</div>
+                              <div class="item-infos">2024년 02월 19일</div>
+                              <div class="item-infos">수강생 50</div>
                               <div class="item-infos">경기도 용인시</div>
                             </div>
                           </div>
@@ -357,8 +359,81 @@
                         </div>
                       </div>
                     </div>
-                    <!-- 각 내역 사이의 구분선 -->
-                    <hr class="items-seperator" />
+                    <!-- 새로운 내역 -->
+                    <div class="classes-history-item-wrap">
+                      <a href="#" class="classes-history-link"></a>
+                      <div class="classes-history-item-container">
+                        <div class="classes-item-image-wrap">
+                          <img
+                            class="classes-item-image"
+                            src="/staticfiles/images/blank-image.png"
+                          />
+                        </div>
+                        <div class="classes-item-title-wrap">
+                          <span>강의 테스트 1</span>
+                        </div>
+                        <div class="classes-item-article-wrap">
+                          <span>강의 내역 본문 예시입니다.</span>
+                        </div>
+                        <div class="students-list-wrap">
+                          <a href="#" class="students-list-button">
+                            수강생 목록 보기
+                          </a>
+                        </div>
+                        <div class="classes-item-info-wrap">
+                          <div class="article-info-wrap">
+                            <div class="user-info-wrap">
+                              <div class="user-profile-wrap">
+                                <img
+                                  class="user-profile-image"
+                                  src="/staticfiles/images/mypage/base-profile-image.avif"
+                                />
+                              </div>
+                              Selleaf Test
+                            </div>
+                            <div class="item-info-wrap">
+                              <div class="item-infos">2024년 02월 20일</div>
+                              <div class="item-infos">수강생 35</div>
+                              <div class="item-infos">경기도 용인시</div>
+                            </div>
+                          </div>
+                          <div class="item-tags-wrap">
+                            <ul class="item-tags-container">
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    온라인
+                                  </button>
+                                </div>
+                              </li>
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    테라리움
+                                  </button>
+                                </div>
+                              </li>
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    DIY 키트
+                                  </button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <!-- 새로운 내역 -->
                     <div class="classes-history-item-wrap">
                       <a href="#" class="classes-history-link"></a>
@@ -373,12 +448,15 @@
                           <span>강의 테스트 2</span>
                         </div>
                         <div class="classes-item-article-wrap">
-                          <span>강의 내역 2 본문 예시입니다.</span>
+                          <span>강의 내역 본문 예시입니다.</span>
                         </div>
-                        <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
+                        <div class="students-list-wrap">
+                          <a href="#" class="students-list-button">
+                            수강생 목록 보기
+                          </a>
+                        </div>
                         <div class="classes-item-info-wrap">
                           <div class="article-info-wrap">
-                            <!-- 작성자 -->
                             <div class="user-info-wrap">
                               <div class="user-profile-wrap">
                                 <img
@@ -388,14 +466,12 @@
                               </div>
                               Selleaf Test
                             </div>
-                            <!-- 올린 시간, 조회수, 지역 -->
                             <div class="item-info-wrap">
-                              <div class="item-infos">2달 전</div>
-                              <div class="item-infos">조회 100</div>
-                              <div class="item-infos">경기도 용인시</div>
+                              <div class="item-infos">2024년 02월 19일</div>
+                              <div class="item-infos">수강생 40</div>
+                              <div class="item-infos">온라인</div>
                             </div>
                           </div>
-                          <!-- 태그 -->
                           <div class="item-tags-wrap">
                             <ul class="item-tags-container">
                               <li class="item-tags">
@@ -404,18 +480,17 @@
                                     class="item-tags-button"
                                     type="button"
                                   >
-                                    테스트 태그 1
+                                    테스트1
                                   </button>
                                 </div>
                               </li>
-
                               <li class="item-tags">
                                 <div>
                                   <button
                                     class="item-tags-button"
                                     type="button"
                                   >
-                                    테스트 태그 2
+                                    테스트2
                                   </button>
                                 </div>
                               </li>
@@ -424,8 +499,136 @@
                         </div>
                       </div>
                     </div>
-                    <!-- 각 내역 사이의 구분선 -->
-                    <hr class="items-seperator" />
+                    <!-- 새로운 내역 -->
+                    <div class="classes-history-item-wrap">
+                      <a href="#" class="classes-history-link"></a>
+                      <div class="classes-history-item-container">
+                        <div class="classes-item-image-wrap">
+                          <img
+                            class="classes-item-image"
+                            src="/staticfiles/images/blank-image.png"
+                          />
+                        </div>
+                        <div class="classes-item-title-wrap">
+                          <span>강의 테스트 2</span>
+                        </div>
+                        <div class="classes-item-article-wrap">
+                          <span>강의 내역 본문 예시입니다.</span>
+                        </div>
+                        <div class="students-list-wrap">
+                          <a href="#" class="students-list-button">
+                            수강생 목록 보기
+                          </a>
+                        </div>
+                        <div class="classes-item-info-wrap">
+                          <div class="article-info-wrap">
+                            <div class="user-info-wrap">
+                              <div class="user-profile-wrap">
+                                <img
+                                  class="user-profile-image"
+                                  src="/staticfiles/images/mypage/base-profile-image.avif"
+                                />
+                              </div>
+                              Selleaf Test
+                            </div>
+                            <div class="item-info-wrap">
+                              <div class="item-infos">2024년 02월 20일</div>
+                              <div class="item-infos">수강생 40</div>
+                              <div class="item-infos">온라인</div>
+                            </div>
+                          </div>
+                          <div class="item-tags-wrap">
+                            <ul class="item-tags-container">
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    테스트1
+                                  </button>
+                                </div>
+                              </li>
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    테스트2
+                                  </button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 새로운 내역 -->
+                    <div class="classes-history-item-wrap">
+                      <a href="#" class="classes-history-link"></a>
+                      <div class="classes-history-item-container">
+                        <div class="classes-item-image-wrap">
+                          <img
+                            class="classes-item-image"
+                            src="/staticfiles/images/blank-image.png"
+                          />
+                        </div>
+                        <div class="classes-item-title-wrap">
+                          <span>강의 테스트 2</span>
+                        </div>
+                        <div class="classes-item-article-wrap">
+                          <span>강의 내역 본문 예시입니다.</span>
+                        </div>
+                        <div class="students-list-wrap">
+                          <a href="#" class="students-list-button">
+                            수강생 목록 보기
+                          </a>
+                        </div>
+                        <div class="classes-item-info-wrap">
+                          <div class="article-info-wrap">
+                            <div class="user-info-wrap">
+                              <div class="user-profile-wrap">
+                                <img
+                                  class="user-profile-image"
+                                  src="/staticfiles/images/mypage/base-profile-image.avif"
+                                />
+                              </div>
+                              Selleaf Test
+                            </div>
+                            <div class="item-info-wrap">
+                              <div class="item-infos">2024년 02월 21일</div>
+                              <div class="item-infos">수강생 40</div>
+                              <div class="item-infos">온라인</div>
+                            </div>
+                          </div>
+                          <div class="item-tags-wrap">
+                            <ul class="item-tags-container">
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    테스트1
+                                  </button>
+                                </div>
+                              </li>
+                              <li class="item-tags">
+                                <div>
+                                  <button
+                                    class="item-tags-button"
+                                    type="button"
+                                  >
+                                    테스트2
+                                  </button>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

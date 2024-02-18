@@ -510,6 +510,7 @@ a * {
   margin: 40px 0px;
   padding: 0px 0px 10px;
   border-bottom: 1px solid rgb(237, 237, 237);
+  margin-bottom: 12px;
 }
 
 .trades-tab {
@@ -635,17 +636,17 @@ a * {
 /* 거래 내역 본문 */
 .trade-item-article-wrap {
   font-size: 14px;
-  line-height: 20px;
-  height: 40px;
+  line-height: 32px;
+  height: 32px;
   overflow: hidden;
-  text-overflow: ellipsis;
   color: #2f3438;
   transition: 0.1s color;
-  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   margin: 0 0 6px;
   text-align: initial;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 */

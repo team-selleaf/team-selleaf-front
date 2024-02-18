@@ -63,7 +63,7 @@
                   <a href="#">거래 내역</a>
                 </li>
                 <li class="main-category-item">
-                  <a href="#" class="active">강의 내역</a>
+                  <a href="#" class="active">수강 내역</a>
                 </li>
                 <li class="main-category-item teacher">
                   <a href="#">강의 현황</a>
@@ -181,7 +181,7 @@
                             <div class="user-nickname">Selleaf Test</div>
                             <div class="follow-settings-wrap">
                               <!-- 나중에 팔로우 페이지랑 연결 -->
-                              <dl class="follow-wrap">
+                              <!-- <dl class="follow-wrap">
                                 <dt class="follow-text">팔로워</dt>
                                 <dd class="follow-count">
                                   <a href="#" class="follow-num">123</a>
@@ -190,7 +190,7 @@
                                 <dd class="follow-count">
                                   <a href="#" class="follow-num">45</a>
                                 </dd>
-                              </dl>
+                              </dl> -->
                               <!-- 나중에 설정 페이지랑 연결 -->
                               <div class="settings-button-wrap">
                                 <a class="settings-button" href="#">설정</a>
@@ -230,7 +230,7 @@
                               <div class="scraps-likes-count">0</div>
                             </a>
                             <!-- 쿠폰 -->
-                            <a class="scraps-likes-content-wrap" href="#">
+                            <!-- <a class="scraps-likes-content-wrap" href="#">
                               <div class="scraps-likes-icon">
                                 <svg
                                   width="24"
@@ -247,7 +247,7 @@
                               </div>
                               <div class="scraps-likes-text">쿠폰</div>
                               <div class="scraps-likes-count">0</div>
-                            </a>
+                            </a> -->
                           </div>
                         </div>
                       </div>
@@ -259,24 +259,13 @@
                 <div class="content-seperator"></div>
               </div>
               <!-- 사진 등의 내용물이 표시되는 공간 -->
-              <!-- 이 부분은 복붙하면서 내용물 교체 -->
               <div class="main-content-wrap">
-                <!-- 구매, 판매 페이지 서식은 공통 -->
                 <div class="main-content-container">
                   <div class="menu-bar-wrap">
                     <div class="lecture-page-link-wrap">
                       <a href="#" class="lecture-page-link">강의 바로가기</a>
                     </div>
                   </div>
-                  <!-- 왜 있는 건지는 아직 모르겠음 -->
-                  <div
-                    class="empty-space"
-                    style="
-                      padding-top: 0px;
-                      padding-bottom: 0px;
-                      transform: translateY(0px);
-                    "
-                  ></div>
                   <div class="lecture-history-wrap">
                     <!-- 아무것도 없을 때 표시할 태그 -->
                     <h1>아직 신청한 강의가 없어요.</h1>
@@ -297,6 +286,11 @@
                         <div class="lecture-item-article-wrap">
                           <span>강의 내역 본문 예시입니다.</span>
                         </div>
+                        <div class="write-review-wrap">
+                          <a href="#" class="write-review-button">
+                            강의 리뷰 쓰기
+                          </a>
+                        </div>
                         <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
                         <div class="lecture-item-info-wrap">
                           <div class="article-info-wrap">
@@ -312,9 +306,11 @@
                             </div>
                             <!-- 올린 시간, 조회수, 지역 -->
                             <div class="item-info-wrap">
-                              <div class="item-infos">1시간 전</div>
-                              <div class="item-infos">조회 3</div>
-                              <div class="item-infos">경기도 성남시</div>
+                              <div class="item-infos">
+                                2024년 02월 15일 수강
+                              </div>
+                              <div class="item-infos">9:30</div>
+                              <div class="item-infos">온라인</div>
                             </div>
                           </div>
                           <!-- 태그 -->
@@ -345,75 +341,6 @@
                         </div>
                       </div>
                     </div>
-                    <!-- 각 내역 사이의 구분선 -->
-                    <hr class="items-seperator" />
-                    <!-- 새로운 내역 -->
-                    <div class="lecture-history-item-wrap">
-                      <a href="#" class="lecture-history-link"></a>
-                      <div class="lecture-history-item-container">
-                        <div class="lecture-item-image-wrap">
-                          <img
-                            class="lecture-item-image"
-                            src="/staticfiles/images/blank-image.png"
-                          />
-                        </div>
-                        <div class="lecture-item-title-wrap">
-                          <span>강의 테스트 2</span>
-                        </div>
-                        <div class="lecture-item-article-wrap">
-                          <span>강의 내역 2 본문 예시입니다.</span>
-                        </div>
-                        <!-- 작성자, 조회수, 지역, 태그까지 모두 감싸는 부분 -->
-                        <div class="lecture-item-info-wrap">
-                          <div class="article-info-wrap">
-                            <!-- 작성자 -->
-                            <div class="user-info-wrap">
-                              <div class="user-profile-wrap">
-                                <img
-                                  class="user-profile-image"
-                                  src="/staticfiles/images/mypage/base-profile-image.avif"
-                                />
-                              </div>
-                              Selleaf 테스트 2
-                            </div>
-                            <!-- 올린 시간, 조회수, 지역 -->
-                            <div class="item-info-wrap">
-                              <div class="item-infos">20시간 전</div>
-                              <div class="item-infos">조회 25</div>
-                              <div class="item-infos">서울특별시 송파구</div>
-                            </div>
-                          </div>
-                          <!-- 태그 -->
-                          <div class="item-tags-wrap">
-                            <ul class="item-tags-container">
-                              <li class="item-tags">
-                                <div>
-                                  <button
-                                    class="item-tags-button"
-                                    type="button"
-                                  >
-                                    테스트 태그 1
-                                  </button>
-                                </div>
-                              </li>
-
-                              <li class="item-tags">
-                                <div>
-                                  <button
-                                    class="item-tags-button"
-                                    type="button"
-                                  >
-                                    테스트 태그 2
-                                  </button>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- 각 내역 사이의 구분선 -->
-                    <hr class="items-seperator" />
                   </div>
                 </div>
               </div>

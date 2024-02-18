@@ -572,8 +572,8 @@ a * {
 /* 거래 내역 본문 */
 .reviews-item-article-wrap {
   font-size: 14px;
-  line-height: 20px;
-  height: 40px;
+  line-height: 32px;
+  height: 32px;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #2f3438;
