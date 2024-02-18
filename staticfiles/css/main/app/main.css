@@ -49,7 +49,7 @@ p {
 }
 
 .main-body-adverWrap {
-    padding: 0 16px;
+    padding: 0 16px 14px 16px;
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;

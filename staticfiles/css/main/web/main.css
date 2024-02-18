@@ -191,7 +191,7 @@ p {
     font-size: 18px;
     line-height: 1;
     font-weight: bold;
-    color: #2F3438;
+    /* color: #2F3438; */
     outline: none;
     /* color: #35C5F0;
     color: #35C5F0; */
@@ -219,7 +219,7 @@ p {
     font-size: 18px;
     line-height: 1;
     font-weight: bold;
-    color: #2F3438;
+    color: #134F2C;
     outline: none;
 }
 
@@ -431,7 +431,7 @@ p {
 }
 
 .hearder-inner-thirddiv-input:focus{
-    border-color: #97A38C;
+    border-color: #134F2C;
     outline: none;
 }
 
@@ -510,7 +510,7 @@ input::-webkit-input-placeholder {
     padding: 6px;
     /* margin: 3px 1px; */
     margin: 9px 1px;
-    color: #2F3438;
+    color: #134F2C;
     line-height: 0;
     outline: none;
 }
@@ -591,6 +591,7 @@ input::-webkit-input-placeholder {
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
+    /* display: none; */
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
@@ -607,12 +608,12 @@ input::-webkit-input-placeholder {
     box-sizing: border-box;
     text-align: center;
     color: #FFFFFF;
-    background-color: #97A38C;
+    background-color: #134F2C;
     outline: none;
     overflow: hidden;
 }
 .header-write-button:hover{
-    background-color: rgb(99, 112, 88);
+    background-color: #97A38C;
 }
 .header-write-content {
     vertical-align: middle;
@@ -769,7 +770,7 @@ input::-webkit-input-placeholder {
     display: inline-block;
     padding: 6px;
     margin: 9px 1px;
-    color: #2F3438;
+    color: #134F2C;
     line-height: 0;
     outline: none;
     /* margin: 3px 1px; */
@@ -798,7 +799,7 @@ input::-webkit-input-placeholder {
     display: inline-block;
     padding: 6px;
     /* margin: 3px 1px; */
-    color: #2F3438;
+    color: #134F2C;
     line-height: 0;
     outline: none;
     margin: 9px 1px;
@@ -806,6 +807,18 @@ input::-webkit-input-placeholder {
 
 .header-alarm-a:hover{
     color:#97A38C;
+}
+
+.header-alarm-pointer{
+    position: absolute;
+    left:-2%;
+    top: 5%;
+    width: 10px;
+    height: 10px;
+    background-color: #DB4455;
+    border-radius: 50%;
+    z-index: 1;
+    /* display: none; */
 }
 
 .header-alarm-span {
@@ -826,6 +839,7 @@ input::-webkit-input-placeholder {
 
 .header-kakao-wrap {
     line-height: 0;
+    position: relative;
 }
 
 .header-kakao-button {
@@ -844,7 +858,7 @@ input::-webkit-input-placeholder {
 }
 
 .header-kakao-button:hover{
-    outline: 2px solid #97A38C;
+    outline: 2px solid #134F2C;
 }
 /* .header-kakao-button::after{
     content: '';
@@ -1238,7 +1252,7 @@ input::-webkit-input-placeholder {
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
-    color:#97A38C;
+    color:#134F2C;
     cursor: pointer;
 }
 
@@ -1378,8 +1392,8 @@ realmain-plantRecommend-photocontentdiv::after{
     padding: 8px;
     font-size: 0px;
     z-index: 1;
-    right: 0px;
-    bottom: 0px;
+    right: 1px;
+    top: -6px;
 }
 
 .realmain-plantRecommend-scrapbutton {
@@ -1672,7 +1686,7 @@ realmain-plantRecommend-photocontentdiv::after{
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
-    color:#97A38C;
+    color:#134F2C;
     cursor: pointer;
 }
 
@@ -1742,8 +1756,8 @@ realmain-plantRecommend-photocontentdiv::after{
     padding: 8px;
     font-size: 0px;
     z-index: 1;
-    right: 0px;
-    bottom: 0px;
+    right: 1px;
+    top: -6px;
 }
 
 .realmain-lecture-scrapbutton {
@@ -1817,7 +1831,7 @@ realmain-plantRecommend-photocontentdiv::after{
 }
 
 .realmain-lecture-explanationSpan {
-    color: #97A38C;
+    color: #134F2C;
     font-weight: 700;
 }
 
@@ -1999,8 +2013,8 @@ realmain-plantRecommend-photocontentdiv::after{
     border: none;
     z-index: 2;
     transition: opacity .1s;
-    bottom: 12px;
-    right: 12px;
+    top: 9px;
+    right: 9px;
 }
 
 .realmain-todayHotdeal-scrapbutton>.realmain-todayHotdeal-scrapimg {
@@ -2047,7 +2061,7 @@ realmain-plantRecommend-photocontentdiv::after{
 .realmain-todayHotdeal-productSpan {
     display: block;
     font-size: 11px;
-    color: #97A38C;
+    color: #134F2C;
 }
 
 .realmain-todayHotdeal-productSpanS {
@@ -2109,7 +2123,7 @@ realmain-plantRecommend-photocontentdiv::after{
 }
 
 .realmain-todayHotdeal-priceWrapfirst {
-    color: #97A38C;
+    color: #134F2C;
     margin-right: 4px;
 }
 
@@ -2134,7 +2148,7 @@ realmain-plantRecommend-photocontentdiv::after{
     width: 1.1em;
     height: 1.1em;
     margin-right: 1px;
-    color: #97A38C;
+    color: #134F2C;
     vertical-align: -2px;
 }
 
@@ -2146,10 +2160,19 @@ realmain-plantRecommend-photocontentdiv::after{
 
 .realmain-todayHotdeal-boxWrap {
     display: flex;
-    margin-top: 6px;
+    margin-top: 3px;
 }
 
-.realmain-todayHotdeal-boxWrap>.Deliveryicon {
+.realmain-todayHotdeal-boxWrapSpan{
+    padding: 5px 6px;
+    border-radius: 4px;
+    background-color: #134F2C;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.realmain-todayHotdeal-boxWrap>.realmain-todayHotdeal-boxWrapSpan {
     margin-right: 4px;
 }
 
@@ -2629,7 +2652,7 @@ realmain-plantRecommend-photocontentdiv::after{
     padding-right: 12px;
     line-height: 0;
     color: rgb(255, 255, 255);
-    background-color: #97A38C;
+    background-color: #134F2C;
     cursor: pointer;
 }
 
@@ -2680,7 +2703,7 @@ realmain-plantRecommend-photocontentdiv::after{
 /* 베스트 상품 카테고리 버튼 토글하려고 만들어 놓은 클래스 */
 .active{
     color: rgb(255, 255, 255);
-    background-color: #97A38C;
+    background-color: #134F2C;
 }
 
 .realmain-bestproduct-realphotoWrap {
@@ -2740,7 +2763,7 @@ realmain-plantRecommend-photocontentdiv::after{
 }
 
 .realmain-bestproduct-realPhotoScrapbtn {
-    bottom: 12px;
+    top: 12px;
     right: 12px;
     position: absolute;
     /* bottom: 8px;
@@ -2783,10 +2806,10 @@ realmain-plantRecommend-photocontentdiv::after{
 
 .realmain-bestproduct-contenthead-brand {
     display: block;
-    color: #757575;
+    color: #134F2C;
     word-break: break-all;
     font-size: 11px;
-    font-weight: 400;
+    font-weight: 800;
     line-height: 13px;
 }
 
@@ -2819,7 +2842,7 @@ realmain-plantRecommend-photocontentdiv::after{
 }
 
 .realmain-bestproduct-pricerate {
-    color: #97A38C;
+    color: #134F2C;
     margin-right: 4px;
 }
 
@@ -2830,16 +2853,17 @@ realmain-plantRecommend-photocontentdiv::after{
 
 .realmain-bestproduct-infoP {
     font-size: 12px;
-    color: #97A38C;
+    color: #134F2C;
     line-height: 16px;
     font-weight: 700;
+    margin-top: 2px;
 }
 
 .realmain-bestproduct-infoP>.bestporductStaricon {
     width: 1.1em;
     height: 1.1em;
     margin-right: 1px;
-    color: #97A38C;
+    color: #134F2C;
     vertical-align: -2px;
 }
 
@@ -2858,9 +2882,16 @@ realmain-plantRecommend-photocontentdiv::after{
 }
 
 .realmain-bestproduct-realphotoArticle .realmain-bestproduct-salepriceSpan {
-    margin: 8px 0 0;
+    margin: 3px 0 0;
 }
-
+.realmain-bestproduct-tagSpan {
+    padding: 5px 6px;
+    border-radius: 4px;
+    background-color: #134F2C;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 600;
+}
 .realmain-bestproduct-rankdiv {
     display: inline-block;
     font-size: 0px;
@@ -3229,6 +3260,6 @@ realmain-plantRecommend-photocontentdiv::after{
     padding: 5px 8px;
     font-size: 16px;
     line-height: 20px;
-    color: #97a38c;
+    color: #97A38C;
     font-weight: 700;
   }
