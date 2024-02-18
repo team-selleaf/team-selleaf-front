@@ -393,6 +393,21 @@ html {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px;
   border: 1px solid #dbdbdb;
 }
+.plus-img-box-item {
+  position: relative;
+  min-width: 200px;
+  max-width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px;
+  border: 1px solid #dbdbdb;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
 .prev-img {
   width: 100%;
   height: 100%;
@@ -423,4 +438,12 @@ html {
 
 .upload-wrap {
   margin-top: -20px;
+}
+
+.plus-img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 23%;
+  top: 23%;
 }
