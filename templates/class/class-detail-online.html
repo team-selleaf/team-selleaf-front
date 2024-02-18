@@ -24,7 +24,7 @@
         -webkit-font-smoothing: antialiased;
       }
     </style>
-    <link rel="stylesheet" href="../../staticfiles/css/common.css" />
+    <link rel="stylesheet" href="/staticfiles/css/common.css" />
     <!-- 여기까지는 무조건 고정으로 모든 페이지에 복붙하세요 -->
     <!-- 여기는 각자 css 파일 link하시면 됩니다 -->
     <link
@@ -32,22 +32,149 @@
       href="/staticfiles/images/favicon.png"
       type="image/x-icon"
     />
-    <link
-      rel="stylesheet"
-      href="../../staticfiles/css/class/class-detail.css"
-    />
+    <link rel="stylesheet" href="/staticfiles/css/class/class-detail.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>온라인강의상세</title>
+    <title>온라인 상세</title>
   </head>
   <body>
+    <div class="declaration-modal-wrap">
+      <div class="declaration-modal-container">
+        <div class="declaration-modal-title-box">
+          <span class="declaration-modal-title">신고 사유를 선택해주세요</span>
+          <button type="button" class="declaration-modal-cancel-btn">
+            <span class="cancel-btn-icon"></span>
+          </button>
+        </div>
+        <div class="declaration-modal-content">
+          <ul class="declaration-list">
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box declaration-choice">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                    checked
+                  />
+                </div>
+                <span class="declaration-text">주제와 맞지 않음</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">정보가 부정확함</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">지나친 광고성 게시물</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">도배 및 중복 게시물</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">저작권 침해가 우려됨</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">욕설/비방이 심함</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">외설적인 게시물</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">개인정보노출</span>
+              </label>
+            </li>
+            <li class="declaration-item">
+              <label class="declaration-label">
+                <div class="declaration-input-box">
+                  <input
+                    type="radio"
+                    class="declaration-input"
+                    name="declaration"
+                  />
+                </div>
+                <span class="declaration-text">기타</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="declaration-btn-wrap">
+          <div class="declaration-btn-container">
+            <button class="declaration-btn">신고하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <a id="top"></a>
     <div class="product-selling-wrap">
       <div class="product-overview-wrap">
         <nav class="product-category-wrap">
           <ol class="product-category-container">
             <li class="product-category-inner">
-              <a href="#" class="link">대구분</a>
+              <a href="/templates/class/class-total.html" class="link"
+                >대구분</a
+              >
               <svg
                 class="icon"
                 width="8"
@@ -62,7 +189,9 @@
               </svg>
             </li>
             <li class="product-category-inner">
-              <a href="#" class="link">중분류</a>
+              <a href="/templates/class/class-total.html" class="link"
+                >중분류</a
+              >
               <svg
                 class="icon"
                 width="8"
@@ -77,7 +206,9 @@
               </svg>
             </li>
             <li class="product-category-inner">
-              <a href="#" class="link">소분류</a>
+              <a href="/templates/class/class-total.html" class="link"
+                >소분류</a
+              >
               <svg
                 class="icon"
                 width="8"
@@ -92,7 +223,7 @@
               </svg>
             </li>
             <li class="product-category-inner">
-              <a href="#" class="link">제품</a>
+              <a href="/templates/class/class-total.html" class="link">제품</a>
             </li>
           </ol>
         </nav>
@@ -124,7 +255,7 @@
                         class="product-cover-image"
                         tabindex="0"
                         src="/staticfiles/images/blank-image.png"
-                        alt="강의서브이미지"
+                        alt="상품서브이미지"
                       />
                     </div>
                     <div
@@ -138,37 +269,9 @@
                         class="product-cover-image"
                         tabindex="0"
                         src="/staticfiles/images/blank-image.png"
-                        alt="강의서브이미지"
+                        alt="상품서브이미지"
                       />
                     </div>
-                    <!-- <div
-                      class="carousel-list-container"
-                      role="group"
-                      aria-roledescription="slide"
-                      aria-label="3 of 4"
-                      style="width: 100%"
-                    >
-                      <img
-                        class="product-cover-image"
-                        tabindex="0"
-                        src="/staticfiles/images/blank-image.png"
-                        alt="강의서브이미지"
-                      />
-                    </div>
-                    <div
-                      class="carousel-list-container"
-                      role="group"
-                      aria-roledescription="slide"
-                      aria-label="4 of 4"
-                      style="width: 100%"
-                    >
-                      <img
-                        class="product-cover-image"
-                        tabindex="0"
-                        src="/staticfiles/images/blank-image.png"
-                        alt="강의서브이미지"
-                      />
-                    </div> -->
                   </div>
                 </div>
                 <ul class="product-small-image-list">
@@ -181,7 +284,7 @@
                       <img
                         class="product-small-image"
                         src="/staticfiles/images/blank-image.png"
-                        alt="강의 이미지"
+                        alt="상품 이미지"
                       />
                     </button>
                   </li>
@@ -194,7 +297,7 @@
                       <img
                         class="product-small-image"
                         src="/staticfiles/images/blank-image.png"
-                        alt="강의 이미지"
+                        alt="상품 이미지"
                       />
                     </button>
                   </li>
@@ -207,7 +310,7 @@
                       <img
                         class="product-small-image"
                         src="/staticfiles/images/blank-image.png"
-                        alt="강의 이미지"
+                        alt="상품 이미지"
                       />
                     </button>
                   </li>
@@ -220,7 +323,7 @@
                       <img
                         class="product-small-image"
                         src="/staticfiles/images/blank-image.png"
-                        alt="강의 이미지"
+                        alt="상품 이미지"
                       />
                     </button>
                   </li>
@@ -248,7 +351,9 @@
             <div class="product-overview-contents-header">
               <h1 class="product-overview-contents-title">
                 <p class="product-overview-user-wrap">
-                  <a href="#" class="product-overview-user">유저이름</a>
+                  <a href="해당유저페이지" class="product-overview-user"
+                    >유저이름</a
+                  >
                 </p>
                 <div class="product-overview-title">
                   <span class="product-title">제목을 입력하세요.</span>
@@ -282,10 +387,10 @@
               </h1>
               <div class="product-overview-contents-container">
                 <p class="product-contents-review-wrap">
-                  <a href="#" class="product-review">
+                  <a href="#product-review" class="product-review">
                     <span class="rating" aria-label="별점 5점">
                       <svg
-                        fill="#97a38c"
+                        fill="#134F2C"
                         width="1em"
                         height="1em"
                         preserveAspectRatio="xMidYMid meet"
@@ -307,7 +412,7 @@
                         ></use>
                       </svg>
                       <svg
-                        fill="#97a38c"
+                        fill="#134F2C"
                         width="1em"
                         height="1em"
                         preserveAspectRatio="xMidYMid meet"
@@ -329,7 +434,7 @@
                         ></use>
                       </svg>
                       <svg
-                        fill="#97a38c"
+                        fill="#134F2C"
                         width="1em"
                         height="1em"
                         preserveAspectRatio="xMidYMid meet"
@@ -351,7 +456,7 @@
                         ></use>
                       </svg>
                       <svg
-                        fill="#97a38c"
+                        fill="#134F2C"
                         width="1em"
                         height="1em"
                         preserveAspectRatio="xMidYMid meet"
@@ -373,7 +478,7 @@
                         ></use>
                       </svg>
                       <svg
-                        fill="#97a38c"
+                        fill="#134F2C"
                         width="1em"
                         height="1em"
                         preserveAspectRatio="xMidYMid meet"
@@ -403,65 +508,14 @@
                 </p>
                 <div class="product-contents-price-wrap">
                   <span class="product-contents-price-container">
-                    <span class="product-price-discount">
-                      <span class="discount-number">20</span>
-                      <span class="percent">%</span>
-                    </span>
-                    <del class="product-price-original">
-                      <span class="original-price-number">35,000</span>
-                      <span class="krw">원</span>
-                    </del>
                     <span class="product-price-info">
-                      <button class="product-price-info-button">
-                        <svg
-                          class="information-icon"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          preserveAspectRatio="xMidYMid meet"
-                        >
-                          <path
-                            d="M8 6.45C7.58579 6.45 7.25 6.11421 7.25 5.7V5.63333C7.25 5.21912 7.58579 4.88333 8 4.88333C8.41421 4.88333 8.75 5.21912 8.75 5.63333V5.7C8.75 6.11421 8.41421 6.45 8 6.45Z"
-                            fill="#C2C8CC"
-                          ></path>
-                          <path
-                            d="M7.25 10.5C7.25 10.9142 7.58579 11.25 8 11.25C8.41421 11.25 8.75 10.9142 8.75 10.5L8.75 7.7C8.75 7.28579 8.41421 6.95 8 6.95C7.58579 6.95 7.25 7.28579 7.25 7.7L7.25 10.5Z"
-                            fill="#C2C8CC"
-                          ></path>
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M8.00016 14.6668C11.6821 14.6668 14.6668 11.6821 14.6668 8.00016C14.6668 4.31826 11.6821 1.3335 8.00016 1.3335C4.31826 1.3335 1.3335 4.31826 1.3335 8.00016C1.3335 11.6821 4.31826 14.6668 8.00016 14.6668ZM8.00016 13.1668C10.8536 13.1668 13.1668 10.8536 13.1668 8.00016C13.1668 5.14669 10.8536 2.8335 8.00016 2.8335C5.14669 2.8335 2.8335 5.14669 2.8335 8.00016C2.8335 10.8536 5.14669 13.1668 8.00016 13.1668Z"
-                            fill="#C2C8CC"
-                          ></path>
-                        </svg>
-                      </button>
+                      <button class="product-price-info-button"></button>
                     </span>
                     <span class="product-price-separator"></span>
                     <div class="product-final-price-wrap">
                       <div class="product-final-price-container">
                         <span class="final-price-number">13,500</span>
                         <span class="krw">원</span>
-                        <svg
-                          class="icon"
-                          aria-label="특가"
-                          width="30"
-                          height="20"
-                          viewBox="0 0 30 20"
-                          preserveAspectRatio="xMidYMid meet"
-                        >
-                          <rect
-                            width="30"
-                            height="20"
-                            fill="#F77"
-                            rx="4"
-                          ></rect>
-                          <path
-                            fill="#fff"
-                            d="M12.83 7.93v-.97H7.93v-.555h5.228v-.991H6.655v4.063h6.59v-.992H7.928V7.93h4.901zm-6.295 3.747v1.002h5.326v2.037h1.274v-3.04h-6.6zm7.733-.588v-1.024H5.5v1.024h8.768zM23.91 9.782V8.725h-1.405V5H21.24v9.705h1.264V9.782h1.405zm-3.954-3.79h-4.53v1.056h3.147c-.174 1.938-1.623 3.975-3.736 4.945l.773.958c2.974-1.612 4.259-4.03 4.346-6.96z"
-                          ></path>
-                        </svg>
                       </div>
                     </div>
                   </span>
@@ -492,7 +546,7 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="user-info-link">
+              <a href="유저페이지 이동링크" class="user-info-link">
                 <div class="user-link-name-wrap">
                   <svg
                     width="24"
@@ -536,104 +590,104 @@
                 <div class="product-option-inner">
                   <div class="product-option-input">
                     <div class="product-option-first-wrap">
-                      <select class="product-option-first">
-                        <option value disabled selected>날짜 선택</option>
-                        <option value="0">선택 1</option>
-                        <option value="1">선택 2</option>
-                        <option value="2">선택 3</option>
-                        <option value="3">선택 4</option>
-                        <option value="4">선택 5</option>
-                      </select>
-                      <span class="select-input-icon">
-                        <svg
-                          class="icon"
-                          width="10"
-                          height="10"
-                          preserveAspectRatio="xMidYMid meet"
-                          style="fill: currentcolor"
-                        >
-                          <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
-                        </svg>
+                      <span class="info-dropdown-box">
+                        <span class="info-title">날짜 선택</span>
+                        <div class="info-dropdown-wrap">
+                          <div class="weekday-selection">
+                            <span>2023-02-12 월</span>
+                          </div>
+                          <div class="weekday-selection">
+                            <span>2023-02-13 화</span>
+                          </div>
+                          <div class="weekday-selection">
+                            <span>2023-02-14 수</span>
+                          </div>
+                          <div class="weekday-selection">
+                            <span>2023-02-15 목</span>
+                          </div>
+                          <div class="weekday-selection">
+                            <span>2023-02-16 금</span>
+                          </div>
+                          <div class="weekday-selection">
+                            <span>2023-02-17 토</span>
+                          </div>
+                          <div class="weekday-selection">
+                            <span>2023-02-18 일</span>
+                          </div>
+                        </div>
                       </span>
                     </div>
-                    <div class="product-option-second-wrap">
-                      <select class="product-option-second">
-                        <option value disabled selected>시간 선택</option>
-                        <option value="0">선택 1</option>
-                        <option value="1">선택 2</option>
-                        <option value="2">선택 3</option>
-                        <option value="3">선택 4</option>
-                        <option value="4">선택 5</option>
-                      </select>
-                      <span class="select-input-icon">
-                        <svg
-                          class="icon"
-                          width="10"
-                          height="10"
-                          preserveAspectRatio="xMidYMid meet"
-                          style="fill: currentcolor"
-                        >
-                          <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
-                        </svg>
-                      </span>
-                    </div>
-                    <div class="product-option-third-wrap">
-                      <select class="product-option-third">
-                        <option value disabled selected>키트 선택</option>
-                        <option value="0">선택 1</option>
-                        <option value="1">선택 2</option>
-                      </select>
-                      <span class="select-input-icon">
-                        <svg
-                          class="icon"
-                          width="10"
-                          height="10"
-                          preserveAspectRatio="xMidYMid meet"
-                          style="fill: currentcolor"
-                        >
-                          <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
-                        </svg>
+                    <div
+                      class="product-option-second-wrap"
+                      style="display: none"
+                    >
+                      <span class="info-dropdown-box">
+                        <span class="info-title">DIY 키트 선택</span>
+                        <div class="info-dropdown-wrap">
+                          <div class="kit-selection">
+                            <div>키트 이름</div>
+                            <div>강사가 입력한 키트 소개</div>
+                          </div>
+                          <div class="kit-selection">
+                            <div>키트 이름</div>
+                            <div>강사가 입력한 키트 소개</div>
+                          </div>
+                        </div>
                       </span>
                     </div>
                   </div>
-                  <ul class="selected-product-list-wrap">
+                  <article
+                    class="selected-product-list-container"
+                    style="display: none"
+                  >
+                    <h2 class="selected-product-name">
+                      날짜: 선택한날짜 / 키트: 선택한 키트
+                    </h2>
+                    <button
+                      class="delete-button-wrap"
+                      aria-label="삭제"
+                      type="button"
+                    >
+                      <span class="delete-button-container">
+                        <img src="/staticfiles/images/cancel.png" alt="" />
+                      </span>
+                    </button>
+                    <div class="student-count-title">인원</div>
+                    <div class="selected-product-botton-wrap">
+                      <div class="selected-product-count">
+                        <span class="sub-count">
+                          <img src="/staticfiles/images/sub.png" alt="" />
+                        </span>
+                        <button class="counted-number">0</button>
+                        <span class="add-count">
+                          <img src="/staticfiles/images/add.png" alt="" />
+                        </span>
+                      </div>
+                      <div class="selected-price-wrap">
+                        <span class="selected-price">32,000</span>
+                        <span class="won">원</span>
+                      </div>
+                    </div>
+                  </article>
+                  <ul class="selected-student-list-wrap" style="display: none">
                     <li>
-                      <article class="selected-product-list-container">
-                        <h2 class="selected-product-name">
-                          OPTION1: NAME / OPTION2:NAME/ OPTION3/NAME
-                        </h2>
-                        <button
-                          class="delete-button-wrap"
-                          aria-label="삭제"
-                          type="button"
-                        >
-                          <span class="delete-button-container">
-                            <img src="/staticfiles/images/cancel.png" alt="" />
-                          </span>
-                        </button>
-                        <div class="selected-product-botton-wrap">
-                          <div class="selected-product-count">
-                            <span class="sub-count">
-                              <img src="/staticfiles/images/sub.png" alt="" />
-                            </span>
-                            <button class="counted-number">1</button>
-                            <span class="add-count">
-                              <img src="/staticfiles/images/add.png" alt="" />
-                            </span>
-                          </div>
-                          <div class="selected-price-wrap">
-                            <span class="selected-price">32,000</span>
-                            <span class="won">원</span>
+                      <div class="each-info">
+                        <div class="info-title">예약자 이름</div>
+                        <div class="info-dropdown-wrap">
+                          <div class="info-dropdown-container">
+                            <div class="student-info-inner"></div>
                           </div>
                         </div>
-                      </article>
+                      </div>
                     </li>
                   </ul>
                 </div>
               </section>
               <p class="product-total-price">
                 <span class="product-order-text">주문금액</span>
-                <span class="product-order-price"> <span>32,000</span>원 </span>
+                <span class="product-order-price">
+                  <span class="total-price">32,000</span>원
+                </span>
               </p>
               <div class="product-order-button-wrap">
                 <button class="add-cart-button" type="button">장바구니</button>
@@ -652,7 +706,7 @@
             <ol class="product-detail-nav-list">
               <li>
                 <a class="product-detail-nav-item active" href="#detail-info">
-                  강의정보</a
+                  상품정보</a
                 >
               </li>
               <li>
@@ -667,13 +721,13 @@
                 </a>
               </li>
               <li>
-                <a class="product-detail-nav-item" href="#product-extra-info">
-                  환불/기타
+                <a class="product-detail-nav-item" href="#product-suggestion">
+                  추천
                 </a>
               </li>
               <li>
-                <a class="product-detail-nav-item" href="#product-suggestion">
-                  추천
+                <a class="product-detail-nav-item" href="#product-extra-info">
+                  반품/기타
                 </a>
               </li>
             </ol>
@@ -687,7 +741,7 @@
               <a id="detail-info"></a>
               <section class="detail-info-wrap">
                 <header class="detail-info-title">
-                  <h1 class="detail-info-title-text">강의정보</h1>
+                  <h1 class="detail-info-title-text">상품정보</h1>
                 </header>
                 <div class="detail-info-contents-wrap">
                   <div class="detail-info-contents-thumbnail">
@@ -730,7 +784,7 @@
                     <p>
                       <img
                         src="https://prs.ohou.se/apne2/any/uploads/productions/descriptions/url/v1-207409409667200.jpg"
-                        alt="강의의 상세 설명 이미지"
+                        alt="상품의 상세 설명 이미지"
                       />
                     </p>
                     <p>&nbsp;</p>
@@ -743,19 +797,20 @@
                     <p>
                       <img
                         src="https://prs.ohou.se/apne2/any/uploads/productions/descriptions/url/v1-207409409667200.jpg"
-                        alt="강의의 상세 설명 이미지"
+                        alt="상품의 상세 설명 이미지"
                       />
                     </p>
                     <p>
                       <img
                         src="https://prs.ohou.se/apne2/any/uploads/productions/descriptions/url/v1-207409409667200.jpg"
-                        alt="강의의 상세 설명 이미지"
+                        alt="상품의 상세 설명 이미지"
                       />
                     </p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                   </div>
+
                   <table class="detail-info-table">
                     <tbody>
                       <tr>
@@ -778,10 +833,12 @@
                         <th>제조자, 수입품의 경우 수입자를 함께 표기</th>
                         <td>그래이불</td>
                       </tr>
+
                       <tr>
                         <th>제조국</th>
                         <td>국내</td>
                       </tr>
+
                       <tr>
                         <th>세탁방법 및 취급시 주의사항</th>
                         <td>상세페이지 참조</td>
@@ -817,7 +874,7 @@
                       <div class="product-review-feed-total-rating">
                         <span class="icon" aria-label="별점 4.8점">
                           <svg
-                            fill="#97a38c"
+                            fill="#135f2c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -842,7 +899,7 @@
                             ></use>
                           </svg>
                           <svg
-                            fill="#97a38c"
+                            fill="#135f2c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -867,7 +924,7 @@
                             ></use>
                           </svg>
                           <svg
-                            fill="#97a38c"
+                            fill="#135f2c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -892,7 +949,7 @@
                             ></use>
                           </svg>
                           <svg
-                            fill="#97a38c"
+                            fill="#135f2c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -917,7 +974,7 @@
                             ></use>
                           </svg>
                           <svg
-                            fill="#97a38c"
+                            fill="#135f2c"
                             width="1em"
                             height="1em"
                             preserveAspectRatio="xMidYMid meet"
@@ -948,6 +1005,7 @@
                           </svg> </span
                         ><span class="total-rating">4.8</span>
                       </div>
+
                       <div class="detail-rating-wrap">
                         <div class="detail-rating-contianer">
                           <div class="detail-rating-inner">
@@ -1048,33 +1106,14 @@
                                 d="M15.821 3a.67.67 0 0 1 .679.672v10.656a.67.67 0 0 1-.679.672H2.18a.67.67 0 0 1-.679-.672V3.672c0-.375.3-.672.679-.672H15.82zm-.679 1.344H2.858v8.14L7.01 7.781c.094-.125.284-.125.394 0l2.321 2.657c.048.046.063.109.048.156l-.3 1.375c-.016.11.11.172.173.094l2.369-2.579a.202.202 0 0 1 .284 0l2.842 3.094V4.344zm-2.526 3.61a1.1 1.1 0 0 1-1.105-1.095 1.1 1.1 0 0 1 1.105-1.093 1.1 1.1 0 0 1 1.105 1.093 1.1 1.1 0 0 1-1.105 1.094z"
                               ></path>
                             </svg>
-                            사진리뷰
+                            <div>사진리뷰</div>
                           </button>
                         </div>
                         <ul class="review-filter-list-button">
                           <li class="review-filter-list-rating">
                             <div class="review-filter-rating">
                               <button class="review-rating-button">
-                                별점
-                                <svg
-                                  class="icon"
-                                  width="12"
-                                  height="12"
-                                  viewBox="0 0 12 12"
-                                  fill="currentColor"
-                                  preserveAspectRatio="xMidYMid meet"
-                                >
-                                  <path
-                                    d="M6.069 6.72l4.123-3.783 1.216 1.326-5.32 4.881L.603 4.273l1.196-1.346z"
-                                  ></path>
-                                </svg>
-                              </button>
-                            </div>
-                          </li>
-                          <li class="review-filter-list-rating">
-                            <div class="review-filter-rating">
-                              <button class="review-rating-button">
-                                옵션
+                                별점순
                                 <svg
                                   class="icon"
                                   width="12"
@@ -1098,12 +1137,13 @@
                     <div class="product-review-list-container">
                       <article class="product-review-list-inner">
                         <div class="product-review-user-wrap">
-                          <a href="#"
+                          <a href="/사용자 마이페이지"
                             ><img
                               src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-users-profile_images-169503542042594135.jpeg/80/80"
                               class="product-reveiw-user-img"
                               alt=""
                           /></a>
+                          <a id="product-ask"></a>
                           <div class="product-review-user-info-wrap">
                             <p class="product-review-user-name">유저이름</p>
                             <button
@@ -1115,7 +1155,7 @@
                                 aria-label="별점 4.0점"
                               >
                                 <svg
-                                  fill="#97a38c"
+                                  fill="#135f2c"
                                   width="1em"
                                   height="1em"
                                   preserveAspectRatio="xMidYMid meet"
@@ -1145,7 +1185,7 @@
                                   ></use>
                                 </svg>
                                 <svg
-                                  fill="#97a38c"
+                                  fill="#135f2c"
                                   width="1em"
                                   height="1em"
                                   preserveAspectRatio="xMidYMid meet"
@@ -1175,7 +1215,7 @@
                                   ></use>
                                 </svg>
                                 <svg
-                                  fill="#97a38c"
+                                  fill="#135f2c"
                                   width="1em"
                                   height="1em"
                                   preserveAspectRatio="xMidYMid meet"
@@ -1205,7 +1245,7 @@
                                   ></use>
                                 </svg>
                                 <svg
-                                  fill="#97a38c"
+                                  fill="#135f2c"
                                   width="1em"
                                   height="1em"
                                   preserveAspectRatio="xMidYMid meet"
@@ -1235,7 +1275,7 @@
                                   ></use>
                                 </svg>
                                 <svg
-                                  fill="#97a38c"
+                                  fill="#135f2c"
                                   width="1em"
                                   height="1em"
                                   preserveAspectRatio="xMidYMid meet"
@@ -1330,6 +1370,7 @@
                         </svg>
                       </button>
                     </li>
+                    <a id="product-suggestion"></a>
                     <li>
                       <button
                         class="product-review-page selected-page"
@@ -1391,7 +1432,7 @@
                   </ul>
                 </div>
               </section>
-              <a id="product-ask"></a>
+
               <section class="product-ask-wrap">
                 <header class="product-ask-container">
                   <h1 class="product-ask-title">문의</h1>
@@ -1402,108 +1443,11 @@
                   </div>
                 </header>
               </section>
-              <a id="product-extra-info"></a>
-              <section class="product-extra-info-wrap">
-                <header class="product-extra-info-title">
-                  <h1 class="product-extra-info-title-text">교환/환불</h1>
-                </header>
-                <div class="product-refund-wrap">
-                  <table class="product-info-table">
-                    <tbody>
-                      <tr>
-                        <th>반품배송비</th>
-                        <td>
-                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>교환배송비</th>
-                        <td>6,000원</td>
-                      </tr>
-                      <tr>
-                        <th>보내실 곳</th>
-                        <td>
-                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <h2 class="product-detail-title">
-                    반품/교환 사유에 따른 요청 가능 기간
-                  </h2>
-                  <p class="product-detail-note">
-                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
-                    반품지 주소 등을 협의하신 후 반품강의을 발송해 주시기
-                    바랍니다.
-                  </p>
-                  <ol class="product-detail-list">
-                    <li>
-                      구매자 단순 변심은 강의 수령 후 7일 이내&nbsp;<small
-                        >(구매자 반품배송비 부담)</small
-                      >
-                    </li>
-                    <li>
-                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 강의 수령
-                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
-                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
-                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
-                    </li>
-                  </ol>
-                  <h2 class="product-detail-title">
-                    반품/교환 사유에 따른 요청 가능 기간
-                  </h2>
-                  <p class="product-detail-note">
-                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
-                    반품지 주소 등을 협의하신 후 반품강의을 발송해 주시기
-                    바랍니다.
-                  </p>
-                  <ol class="product-detail-list">
-                    <li>
-                      구매자 단순 변심은 강의 수령 후 7일 이내&nbsp;<small
-                        >(구매자 반품배송비 부담)</small
-                      >
-                    </li>
-                    <li>
-                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 강의 수령
-                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
-                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
-                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
-                    </li>
-                  </ol>
-                </div>
-              </section>
-              <section>
-                <header class="product-extra-info-title">
-                  <h1 class="product-extra-info-title-text">판매자 정보</h1>
-                </header>
-                <div class="product-refund-wrap">
-                  <table class="product-info-table">
-                    <tbody>
-                      <tr>
-                        <th>반품배송비</th>
-                        <td>
-                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>교환배송비</th>
-                        <td>6,000원</td>
-                      </tr>
-                      <tr>
-                        <th>보내실 곳</th>
-                        <td>
-                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </section>
-              <a id="product-suggestion"></a>
+
               <div>
                 <section class="product-suggestion-wrap">
                   <header class="product-suggestion-header">
-                    <h1 class="product-suggestion-title">비슷한 강의추천</h1>
+                    <h1 class="product-suggestion-title">비슷한 상품추천</h1>
                   </header>
                   <div class="product-suggestion-scroller-wrap">
                     <div class="product-suggestion-scroller-container">
@@ -1517,7 +1461,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -1554,10 +1498,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -1629,7 +1569,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -1666,10 +1606,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -1741,7 +1677,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -1778,10 +1714,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -1853,7 +1785,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -1890,10 +1822,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -1965,7 +1893,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -2002,10 +1930,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -2077,7 +2001,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -2114,10 +2038,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -2189,7 +2109,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -2226,10 +2146,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -2301,7 +2217,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -2338,10 +2254,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -2413,7 +2325,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -2450,10 +2362,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -2525,7 +2433,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -2562,10 +2470,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -2637,7 +2541,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -2674,10 +2578,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -2749,7 +2649,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -2786,10 +2686,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -2861,7 +2757,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -2898,10 +2794,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -2973,7 +2865,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -3010,10 +2902,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -3086,7 +2974,7 @@
                               <article class="product-suggestion-contents-wrap">
                                 <a
                                   class="product-suggestion-contents-overlay"
-                                  href="#"
+                                  href="/productions/1978932/selling"
                                 ></a>
                                 <div class="product-suggestion-contents-image">
                                   <img
@@ -3123,10 +3011,6 @@
                                     </span>
                                   </h1>
                                   <span class="product-suggestion-price-wrap">
-                                    <span class="product-suggestion-discount">
-                                      64
-                                      <span class="percentage">% </span>
-                                    </span>
                                     <span class="product-suggestion-price">
                                       107,800
                                     </span>
@@ -3297,6 +3181,104 @@
                   </div>
                 </section>
               </div>
+              <a id="product-extra-info"></a>
+              <section class="product-extra-info-wrap">
+                <header class="product-extra-info-title">
+                  <h1 class="product-extra-info-title-text">교환/환불</h1>
+                </header>
+                <div class="product-refund-wrap">
+                  <table class="product-info-table">
+                    <tbody>
+                      <tr>
+                        <th>반품배송비</th>
+                        <td>
+                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>교환배송비</th>
+                        <td>6,000원</td>
+                      </tr>
+                      <tr>
+                        <th>보내실 곳</th>
+                        <td>
+                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2 class="product-detail-title">
+                    반품/교환 사유에 따른 요청 가능 기간
+                  </h2>
+                  <p class="product-detail-note">
+                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
+                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
+                    바랍니다.
+                  </p>
+                  <ol class="product-detail-list">
+                    <li>
+                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
+                        >(구매자 반품배송비 부담)</small
+                      >
+                    </li>
+                    <li>
+                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
+                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
+                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
+                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
+                    </li>
+                  </ol>
+                  <h2 class="product-detail-title">
+                    반품/교환 사유에 따른 요청 가능 기간
+                  </h2>
+                  <p class="product-detail-note">
+                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
+                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
+                    바랍니다.
+                  </p>
+                  <ol class="product-detail-list">
+                    <li>
+                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
+                        >(구매자 반품배송비 부담)</small
+                      >
+                    </li>
+                    <li>
+                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
+                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
+                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
+                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
+                    </li>
+                  </ol>
+                </div>
+              </section>
+              <section>
+                <header class="product-extra-info-title">
+                  <h1 class="product-extra-info-title-text">판매자 정보</h1>
+                  <button type="button" class="report-button">신고</button>
+                </header>
+                <div class="product-refund-wrap">
+                  <table class="product-info-table">
+                    <tbody>
+                      <tr>
+                        <th>반품배송비</th>
+                        <td>
+                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>교환배송비</th>
+                        <td>6,000원</td>
+                      </tr>
+                      <tr>
+                        <th>보내실 곳</th>
+                        <td>
+                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
             </div>
           </div>
           <!-- 사이드바 -->
@@ -3319,90 +3301,14 @@
                 <section class="sidebar-contents-wrap">
                   <div class="sidebar-content-container">
                     <section class="sidebar-option-list-wrap">
-                      <div class="sidebar-option-list-container">
-                        <div class="sidebar-option-select-input">
-                          <div class="sidebar-select-opton-1 focused">
-                            <select class="sidebar-option-list empty">
-                              <option value="" disabled selected>
-                                날짜 선택
-                              </option>
-                              <option value="0">옵션 1</option>
-                              <option value="1">옵션 2</option>
-                              <option value="2">옵션 3</option>
-                              <option value="3">옵션 4</option>
-                              <option value="4">옵션 5</option>
-                            </select>
-                            <span class="sidebar-option-list-icon">
-                              <svg
-                                class="icon"
-                                width="10"
-                                height="10"
-                                preserveAspectRatio="xMidYMid meet"
-                                style="fill: currentcolor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M0 3l5 5 5-5z"
-                                ></path>
-                              </svg>
-                            </span>
-                          </div>
-                          <div class="sidebar-select-opton-2">
-                            <select class="sidebar-option-list empty">
-                              <option value="" disabled selected>
-                                시간 선택
-                              </option>
-                              <option value="0">옵션 1</option>
-                              <option value="1">옵션 2</option>
-                              <option value="2">옵션 3</option>
-                              <option value="3">옵션 4</option>
-                              <option value="4">옵션 5</option>
-                            </select>
-                            <span class="sidebar-option-list-icon">
-                              <svg
-                                class="icon"
-                                width="10"
-                                height="10"
-                                preserveAspectRatio="xMidYMid meet"
-                                style="fill: currentcolor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M0 3l5 5 5-5z"
-                                ></path>
-                              </svg>
-                            </span>
-                          </div>
-                          <div class="sidebar-select-opton-extra">
-                            <select class="sidebar-option-list empty">
-                              <option value="" disabled selected>
-                                키트 선택
-                              </option>
-                              <option value="0">옵션 1</option>
-                              <option value="1">옵션 2</option>
-                            </select>
-                            <span class="sidebar-option-list-icon">
-                              <svg
-                                class="icon"
-                                width="10"
-                                height="10"
-                                preserveAspectRatio="xMidYMid meet"
-                                style="fill: currentcolor"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  d="M0 3l5 5 5-5z"
-                                ></path>
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
                       <ul class="sidebar-selected-product-wrap">
                         <li>
-                          <article class="sidebar-selected-product-container">
+                          <article
+                            class="sidebar-selected-product-container"
+                            style="display: none"
+                          >
                             <h2 class="sidebar-selected-product-option">
-                              option1/ name: selection / option2: name
+                              날짜/ 선택한날짜 / 키트: 선택한키트
                             </h2>
                             <button
                               type="button"
@@ -3416,12 +3322,13 @@
                                 />
                               </span>
                             </button>
+                            <div class="sidebar-student-count-title">인원</div>
                             <div class="sidebar-selected-botton-wrap">
                               <div class="sidebar-selected-count-wrap">
                                 <span class="sidebar-sub-count">
                                   <img src="/staticfiles/images/sub.png" />
                                 </span>
-                                <button class="sidebar-count-number">1</button>
+                                <button class="sidebar-count-number">0</button>
                                 <span class="sidebar-add-count">
                                   <img
                                     src="/staticfiles/images/add.png"
@@ -3431,7 +3338,7 @@
                               </div>
                               <div class="sidebar-selected-price-wrap">
                                 <span class="sidebar-selected-price"
-                                  >32,000원</span
+                                  >32,000</span
                                 >
                               </div>
                             </div>
@@ -3461,7 +3368,7 @@
           </div>
         </div>
       </div>
-      <a href="#">
+      <a href="#top">
         <div class="top-button-wrap">
           <button type="button" class="top-button-container">
             <span class="arrow-up">

@@ -242,7 +242,7 @@
     box-sizing: border-box;
     margin: 0px 5px;
     background: rgb(255, 255, 255);
-    border: 1px solid #97a38c;
+    border: 1px solid #135f2c;
     border-radius: 4px;
 }
 
@@ -267,7 +267,7 @@
     font-size: 15px;
     line-height: 20px;
     font-weight: bold;
-    color: #97a38c;
+    color: #135f2c;
     transition: opacity 0.1s ease 0s;
     flex: 1 0 0px;
 }
@@ -290,8 +290,8 @@
     box-sizing: border-box;
     margin: 0px 5px;
     padding: 11px 5px 12px;
-    background: #97a38c;
-    border: 1px solid #97a38c;;
+    background: #135f2c;
+    border: 1px solid #135f2c;;
     border-radius: 4px;
     font-style: inherit;
     font-variant: inherit;
@@ -458,7 +458,7 @@
 }
 
 .guide-list>li a{
-    color: #97a38c;
+    color: #135f2c;
     font-weight: bold;
 }
 
@@ -815,3 +815,24 @@
     cursor: pointer;
   }
   
+
+  .plant-selection {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 2.5px;
+    padding: 8px 12px;
+    border:  1px solid #135f2c;
+    /* background-color: rgba(33, 38, 41, 0.8); */
+    color: #135f2c;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    border-radius: 4px;
+    transition: background-color 0.1s ease 0s;
+  }
+
+  div.select-on{
+    border:  1px solid #135f2c;
+    background-color: #135f2d;
+    color: #fff;
+  }

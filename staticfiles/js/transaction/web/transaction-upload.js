@@ -48,3 +48,10 @@ cancel.addEventListener("click", (e) => {
   e.target.style.display = "none";
   imgFileInput.value = "";
 });
+
+const plantSelections = document.querySelectorAll(".plant-selection");
+plantSelections.forEach((plantSelection) => {
+  plantSelection.addEventListener("click", (e) => {
+    plantSelection.classList.toggle("select-on");
+  });
+});

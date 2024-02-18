@@ -15,7 +15,7 @@ filterItems.forEach((item) => {
       modalMenuBtns.forEach((btn) => {
         btn.classList.remove("choice");
       });
-      const filterIcon = `<span class="filter-btn-icon"></span>`;
+      const filterIcon = `<div class="filter-tags"></div>`;
       e.target.closest(".filter-modal").previousElementSibling.innerHTML =
         btn.innerText + filterIcon;
       e.target.closest(".modal-menu-btn").classList.add("choice");
@@ -51,4 +51,12 @@ scrapBtn.addEventListener("click", (e) => {
     animationTarget.classList.remove("show-animation");
     animationTarget.classList.add("hide-animation");
   }, 3000);
+});
+
+const plantSelections = document.querySelectorAll(".plant-selection");
+plantSelections.forEach((plantSelection) => {
+  plantSelection.addEventListener("click", (e) => {
+    plantSelection.classList.toggle("select-on");
+    plantSelection.innerHTML = `<img>`;
+  });
 });

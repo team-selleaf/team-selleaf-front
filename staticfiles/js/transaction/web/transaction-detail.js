@@ -63,3 +63,42 @@ scrapButton.forEach((scrap) => {
     //   : (scrapPopup.style.display = "none");
   });
 });
+
+// 퀵네비 클릭시 색변하도록
+const navs = document.querySelectorAll(".product-detail-nav-item");
+navs.forEach((nav, index) => {
+  nav.addEventListener("click", (e) => {
+    navs.forEach((otherNav, otherIndex) => {
+      if (index !== otherIndex) {
+        otherNav.classList.remove("active");
+      }
+    });
+    nav.classList.add("active");
+  });
+});
+//신고 모달
+const declarationLabels = document.querySelectorAll(".declaration-label");
+const declarationInputs = document.querySelectorAll(".declaration-input");
+declarationLabels.forEach((item) => {
+  item.addEventListener("click", () => {
+    declarationInputs.forEach((radio, i) => {
+      if (radio.checked) {
+        radio.parentNode.classList.add("declaration-choice");
+      } else {
+        radio.parentNode.classList.remove("declaration-choice");
+      }
+    });
+  });
+});
+//신고모달 띄우기
+const declarationModalWrap = document.querySelector(".declaration-modal-wrap");
+const contentDeclarationBtn = document.querySelector(".report-button");
+contentDeclarationBtn.addEventListener("click", () => {
+  declarationModalWrap.classList.add("open");
+});
+
+//신고 모달 없애기
+const declarationBtn = document.querySelector(".declaration-btn");
+declarationBtn.addEventListener("click", () => {
+  declarationModalWrap.classList.remove("open");
+});
