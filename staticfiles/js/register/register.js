@@ -1429,3 +1429,111 @@ snsCheckInput.addEventListener("click", (e) => {
   allCheckWrap.classList.remove("enabled");
   allCheckContainer.classList.remove("enabled");
 });
+
+/*
+  이메일 인증번호
+
+  제한시간 3분
+  3분 지나면 자동으로 버튼 disabled + 입력값 있어도 disabled 유지
+  
+  재발급받으면 3분 타이머 초기화, 입력하면 disabled 해제됨
+
+
+  인증 완료 시, 이메일 인증버튼 내 텍스트가 "이메일 인증완료" 로 변경
+  이메일 입력창 비활성화
+*/
+
+// 인증번호 입력칸 전체
+const emailCodeWrap = document.querySelector(".email-code-wrap");
+
+// 인증번호 입력창, 입력창을 감싸는 테두리
+const codeInput = document.querySelector(".code-input");
+const codeWrap = document.querySelector(".code-input-wrap");
+
+// 타이머
+let leftTime = document.querySelector(".left-time");
+
+// 확인 버튼
+const confirmButton = document.querySelector(".confirm-button");
+
+// 에러 텍스트를 표시할 div 태그
+const errorArea = document.querySelector(".error-text");
+
+// 이메일 재전송 버튼(a 태그)
+const resend = document.querySelector(".resend");
+
+// 상황별 에러 텍스트
+const invalidMsg = "올바른 인증 번호가 아닙니다.";
+const timeoverMsg = "유효시간이 지났어요. '이메일 재전송하기'를 눌러주세요.";
+
+// 올바른 인증번호(임시)
+const correctCode = "123456";
+
+// 이메일 인증 버튼 - click 이벤트(활성화 상태일 때만)
+emailVerifyBtn.addEventListener("click", () => {
+  // 활성화 상태인지 검사
+  if (emailVerifyBtn.classList.contains("enabled")) {
+    // 인증버튼 비활성화
+    emailVerifyBtn.classList.remove("enabled");
+    emailVerifyBtn.disabled = true;
+
+    // 인증번호 입력칸 표시
+    emailCodeWrap.style.height = "143px";
+    emailCodeWrap.style.marginBottom = "20px";
+  }
+});
+
+// 타이머 이벤트
+
+// 인증번호 입력창 - keyup 이벤트
+codeInput.addEventListener("keyup", (e) => {
+  // 입력창이 눌릴 때마다, 값이 있는지 검사
+  if (e.target.value) {
+    // 테두리 색상 원복
+    codeWrap.classList.remove("error");
+
+    // 에러 텍스트 숨김
+    errorArea.style.display = "none";
+
+    // 값이 있으면 타이머의 남은 시간이 있는지 검사 - 나중에
+    // 있으면 버튼 disabled 해제
+    confirmButton.disabled = false;
+    return;
+  }
+  // 값이 없거나, 타이머의 시간이 다 되었으면 버튼 disabled
+  confirmButton.disabled = true;
+});
+
+// 확인 버튼 - click 이벤트
+confirmButton.addEventListener("click", () => {
+  // 클릭 시점에서 인증번호랑 입력값 비교
+  if (codeInput.value === correctCode) {
+    // 일치 시, 인증버튼 텍스트 변경
+    emailVerifyBtn.innerText = "이메일 인증 완료";
+
+    // 이메일 입력창 disabled
+    emailForm.forEach((input) => {
+      input.disabled = true;
+    });
+
+    // 이메일 입력창 숨김
+    emailCodeWrap.style.height = 0;
+    emailCodeWrap.style.marginBottom = 0;
+  }
+  // 불일치 시, 테두리 색상 빨간색으로
+  if (!codeWrap.classList.contains("error")) {
+    codeWrap.classList.add("error");
+  }
+
+  // 에러 텍스트 지정 및 표시
+  errorArea.innerText = invalidMsg;
+  errorArea.style.display = "block";
+});
+
+// 재전송 버튼 - click 이벤트
+resend.addEventListener("click", (e) => {
+  // a 태그의 링크 이동 기능 방지
+  e.preventDefault;
+
+  // 여기서 타이머 리셋
+});

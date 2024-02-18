@@ -177,6 +177,185 @@
           >
             <div class="sticky-container" style="position: relative">
               <div class="edit-menu-wrap">
+                <!-- 카테고리 필터 버튼 및 모달 -->
+                <div class="category-filter-wrap">
+                  <div class="category-filter-container">
+                    <div class="category-filter">
+                      <div class="category-list-wrap">
+                        <ul class="category-list-container">
+                          <li class="category-button-wrap">
+                            <div class="category-button-container">
+                              <!-- JS 이벤트로 버튼 자체, 텍스트, 아이콘, hover 시 색깔 전부 변경 -->
+                              <!-- innerText는 JS 이벤트에서의 선택에 따라 변경 -->
+                              <button class="category-list-button">
+                                카테고리
+                                <svg
+                                  class="icon"
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 12 12"
+                                  fill="currentColor"
+                                  preserveAspectRatio="xMidYMid meet"
+                                >
+                                  <path
+                                    d="M6.069 6.72l4.123-3.783 1.216 1.326-5.32 4.881L.603 4.273l1.196-1.346z"
+                                  ></path>
+                                </svg>
+                              </button>
+                              <!-- 카테고리 버튼 클릭하면 나오는 모달창 -->
+                              <div class="modal-wrap" title="대카테고리 모달창">
+                                <div
+                                  class="modal-container"
+                                  style="
+                                    position: absolute;
+                                    z-index: 1000;
+                                    transform: translateX(-31%);
+                                  "
+                                >
+                                  <div
+                                    class="first-category-modal-wrap"
+                                    style="display: none"
+                                  >
+                                    <div
+                                      class="first-category-modal-container"
+                                      title="카테고리"
+                                    >
+                                      <ul class="first-category-list">
+                                        <!-- 전체 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="전체 카테고리"
+                                        >
+                                          <button
+                                            class="first-categories-container selected"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >전체 카테고리</span
+                                              >
+                                            </div>
+                                          </button>
+                                        </li>
+                                        <!-- 관엽식물 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="관엽식물"
+                                        >
+                                          <button
+                                            class="first-categories-container"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >관엽식물</span
+                                              >
+                                              <span class="first-category-count"
+                                                >0</span
+                                              >
+                                            </div>
+                                          </button>
+                                        </li>
+                                        <!-- 침엽식물 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="침엽식물"
+                                        >
+                                          <button
+                                            class="first-categories-container"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >침엽식물</span
+                                              >
+                                              <span class="first-category-count"
+                                                >0</span
+                                              >
+                                            </div>
+                                          </button>
+                                        </li>
+                                        <!-- 희귀식물 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="희귀식물"
+                                        >
+                                          <button
+                                            class="first-categories-container"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >희귀식물</span
+                                              >
+                                              <span class="first-category-count"
+                                                >0</span
+                                              >
+                                            </div>
+                                          </button>
+                                        </li>
+                                        <!-- 다육/선인장 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="다육/선인장"
+                                        >
+                                          <button
+                                            class="first-categories-container"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >다육/선인장</span
+                                              >
+                                              <span class="first-category-count"
+                                                >0</span
+                                              >
+                                            </div>
+                                          </button>
+                                        </li>
+                                        <!-- 기타 카테고리 -->
+                                        <li
+                                          class="first-categories-wrap"
+                                          title="기타"
+                                        >
+                                          <button
+                                            class="first-categories-container"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="first-category-title-wrap"
+                                            >
+                                              <span class="first-caregory-title"
+                                                >기타</span
+                                              >
+                                              <span class="first-category-count"
+                                                >0</span
+                                              >
+                                            </div>
+                                          </button>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <!-- 스크랩한 컨텐츠의 개수를 표시하는 부분 -->
                 <div class="content-count-wrap">
                   <!-- JS의 클릭 이벤트로 이 부분의 display 속성이 변화 - 평소에는 none -->
