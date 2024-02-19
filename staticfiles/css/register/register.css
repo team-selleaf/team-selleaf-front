@@ -13,6 +13,10 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 500px whitesmoke inset !important;
+}
+
 /* 페이지 전체를 감싸는 부분 */
 .register-wrap {
   height: 100%;
@@ -150,7 +154,7 @@ svg:not(:root) {
   color: rgb(194, 200, 204);
 }
 
-.email-form-control:hover {
+.email-form-control:not(:disabled):hover {
   background-color: #fafafa;
   border-color: #bdbdbd;
 }
@@ -169,6 +173,12 @@ svg:not(:root) {
   color: #757575;
   -webkit-text-fill-color: #757575;
   opacity: 1;
+}
+
+/* 입력창 자체가 disabled 되었을 때 적용 */
+.email-form-control:disabled {
+  color: #424242;
+  background-color: whitesmoke;
 }
 
 /* email-form-control 내 option 태그들에 적용 */
@@ -228,6 +238,7 @@ svg:not(:root) {
   background: rgb(247, 248, 250);
   color: rgb(194, 200, 204);
   border-color: rgb(218, 220, 224);
+  cursor: default;
 }
 
 /* 이메일 양식 만족으로 인해 enabled 되었을 때 */
@@ -235,6 +246,7 @@ svg:not(:root) {
   background-color: #fff;
   border-color: #97a38c;
   color: #97a38c;
+  cursor: pointer;
 }
 
 .email-verify-button.enabled:hover {

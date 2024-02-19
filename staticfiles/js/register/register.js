@@ -1450,7 +1450,7 @@ const emailCodeWrap = document.querySelector(".email-code-wrap");
 const codeInput = document.querySelector(".code-input");
 const codeWrap = document.querySelector(".code-input-wrap");
 
-// 타이머
+// 타이머 표시할 span 태그
 let leftTime = document.querySelector(".left-time");
 
 // 확인 버튼
@@ -1480,29 +1480,110 @@ emailVerifyBtn.addEventListener("click", () => {
     // 인증번호 입력칸 표시
     emailCodeWrap.style.height = "143px";
     emailCodeWrap.style.marginBottom = "20px";
+
+    // 인증 타이머 시작
+    validationTimer();
   }
 });
 
-// 타이머 이벤트
+/*
+  타이머 이벤트
+  
+  인증 버튼 or 재발급 버튼 눌렀을 때 작동할 3분 타이머
+*/
+// 아래에서 setInterval 기능을 할당할 변수 - 선언
+let timerInterval;
 
-// 인증번호 입력창 - keyup 이벤트
-codeInput.addEventListener("keyup", (e) => {
+// 타이머 함수
+function validationTimer() {
+  // 타이머 작동시, 기존에 작동중이던 타이머 종료
+  clearInterval(timerInterval);
+
+  // 에러 메세지 삭제 및 테두리 색상 원복
+  codeWrap.classList.remove("error");
+  errorArea.style.display = "none";
+
+  // 인증번호 입력칸에 keyup 이벤트 부여
+  codeInput.addEventListener("keyup", inputKeyupEvent);
+
+  // 현재 입력창 안에 입력값이 있다면 버튼 활성화
+  document.querySelector(".code-input").value
+    ? (confirmButton.disabled = false)
+    : false;
+
+  // 타이머의 초기 설정 시간(초)
+  // 버튼 누르고 1초 뒤에 실행되므로, 타이머 초기 시간은 2분 59초로
+  let time = 179;
+
+  // 남은 분, 초를 담을 변수를 빈 문자열로 선언
+  let min = "";
+  let sec = "";
+
+  // setInterval 기능을 변수에 할당 - 새로운 타이머 실행
+  // clearInterval로 이전에 작동 중이던 타이머를 초기화하기 위함
+  timerInterval = setInterval(() => {
+    /*
+      남은 시간 표시
+
+      분 - 남은 시간(초) / 60
+      초 - 남은 시간 / 60 하고 남은 나머지(0~59)
+
+      공통 - 숫자 값이 10 미만이면 앞에 "0"을 붙여줌
+    */
+    min = parseInt(time / 60);
+    min = min < 10 ? "0" + min : min;
+
+    sec = time % 60;
+    sec = sec < 10 ? "0" + sec : sec;
+
+    // 남은 시간을 표시하는 span 태그 안에 "분:초" 형식으로 표기
+    leftTime.innerText = min + ":" + sec;
+
+    // 남은 시간 - 1초
+    --time;
+
+    // 만약 시간이 다 되었다면
+    if (time < 0) {
+      // 타이머 기능 종료
+      clearInterval(timerInterval);
+
+      // 입력창 keyup 이벤트 삭제
+      // 유효 시간이 지났으면, 값을 입력해도 확인 버튼이 비활성화 상태로 유지되도록 하기 위함
+      codeInput.removeEventListener("keyup", inputKeyupEvent);
+
+      // 인증번호 입력란 테두리 빨간색으로
+      if (!codeWrap.classList.contains("error")) {
+        codeWrap.classList.add("error");
+      }
+
+      // 인증번호 확인 버튼 비활성화
+      confirmButton.disabled = true;
+
+      // 에러 텍스트 표시
+      errorArea.innerText = timeoverMsg;
+      errorArea.style.display = "block";
+    }
+  }, 1000);
+}
+
+// 인증번호 입력창 - keyup 이벤트에 사용할 함수
+const inputKeyupEvent = (e) => {
   // 입력창이 눌릴 때마다, 값이 있는지 검사
   if (e.target.value) {
+    // 값이 있을 때 실행
     // 테두리 색상 원복
     codeWrap.classList.remove("error");
 
     // 에러 텍스트 숨김
     errorArea.style.display = "none";
 
-    // 값이 있으면 타이머의 남은 시간이 있는지 검사 - 나중에
-    // 있으면 버튼 disabled 해제
+    // 버튼 disabled 해제
     confirmButton.disabled = false;
     return;
   }
-  // 값이 없거나, 타이머의 시간이 다 되었으면 버튼 disabled
+  // 값이 없으면 버튼 disabled
   confirmButton.disabled = true;
-});
+};
 
 // 확인 버튼 - click 이벤트
 confirmButton.addEventListener("click", () => {
@@ -1510,6 +1591,9 @@ confirmButton.addEventListener("click", () => {
   if (codeInput.value === correctCode) {
     // 일치 시, 인증버튼 텍스트 변경
     emailVerifyBtn.innerText = "이메일 인증 완료";
+
+    // 타이머 종료
+    clearInterval(timerInterval);
 
     // 이메일 입력창 disabled
     emailForm.forEach((input) => {
@@ -1519,6 +1603,8 @@ confirmButton.addEventListener("click", () => {
     // 이메일 입력창 숨김
     emailCodeWrap.style.height = 0;
     emailCodeWrap.style.marginBottom = 0;
+
+    return;
   }
   // 불일치 시, 테두리 색상 빨간색으로
   if (!codeWrap.classList.contains("error")) {
@@ -1535,5 +1621,6 @@ resend.addEventListener("click", (e) => {
   // a 태그의 링크 이동 기능 방지
   e.preventDefault;
 
-  // 여기서 타이머 리셋
+  // 여기서 타이머 리셋 - 함수 사용
+  validationTimer();
 });

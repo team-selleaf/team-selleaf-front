@@ -192,15 +192,14 @@ body {
   text-align: center;
 }
 
-/* 아이디 찾기 */
-.find-id-link {
+/* 비번 재설정 */
+.password-update-link {
   margin-left: 0px;
 }
 
-/* 비밀번호 찾기, 회원가입 */
-.find-password-link,
+/* 회원가입 */
 .register-link {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .sns-text {
