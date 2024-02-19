@@ -23,33 +23,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//마일리지 수정 버튼 누르면 뜨는 모달창
+// 마일리지 버튼 눌러서 해당 마일리지 수정해주는 js코드
 document.addEventListener("DOMContentLoaded", function () {
   const editButtons = document.querySelectorAll("button.edit-button");
-  const mileageInput = document.querySelector("input.content-detail-num");
+
   editButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const btnAttribute = e.target
         .closest("button")
         .getAttribute("aria-label");
       if (btnAttribute == "mileage button") {
+        const parentLi = e.target.closest("li");
+        const mileageInput = parentLi.querySelector("input.content-detail-num");
         mileageInput.disabled = false;
         mileageInput.style.outline = "1px solid #c06888";
       }
     });
   });
 
-  mileageInput.addEventListener("blur", () => {
-    // input disabled 시키는 로직
-    mileageInput.disabled = true;
-    mileageInput.style.outline = "none";
-  });
-  // Enter를 누르면 값 확정
-  mileageInput.addEventListener("keyup", (e) => {
-    if (e.keyCode == 13) {
-      mileageInput.disabled = true;
-      mileageInput.style.outline = "none";
-    }
+  const mileageInputs = document.querySelectorAll("input.content-detail-num");
+  mileageInputs.forEach((input) => {
+    input.addEventListener("blur", () => {
+      input.disabled = true;
+      input.style.outline = "none";
+    });
+
+    input.addEventListener("keyup", (e) => {
+      if (e.keyCode == 13) {
+        input.disabled = true;
+        input.style.outline = "none";
+      }
+    });
   });
 });
 
@@ -127,8 +131,6 @@ catebtns.forEach((btn, i) => {
   });
 });
 
-const mileageEditBtn = document.querySelector(".edit-button[");
-
 // 체크박스 js
 const allCheck = document.querySelector(".all-check");
 const checkboxes = document.querySelectorAll(".checkbox-input");
@@ -163,5 +165,71 @@ checkboxes.forEach(function (checkbox) {
       }
     });
     allCheck.checked = allChecked;
+  });
+});
+
+// 위에 버튼으로 한번에 마일리지 수정하기
+document.addEventListener("DOMContentLoaded", function () {
+  const editButtons = document.querySelectorAll("button.edit-button");
+
+  editButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const btnAttribute = e.target
+        .closest("button")
+        .getAttribute("aria-label");
+      if (btnAttribute == "mileage button") {
+        const parentLi = e.target.closest("li");
+        const mileageInput = parentLi.querySelector("input.content-detail-num");
+        mileageInput.disabled = false;
+        mileageInput.style.outline = "1px solid #c06888";
+      }
+    });
+  });
+
+  const mileageInputs = document.querySelectorAll("input.content-detail-num");
+  mileageInputs.forEach((input) => {
+    input.addEventListener("blur", () => {
+      input.disabled = true;
+      input.style.outline = "none";
+    });
+
+    input.addEventListener("keyup", (e) => {
+      if (e.keyCode == 13) {
+        input.disabled = true;
+        input.style.outline = "none";
+      }
+    });
+  });
+
+  // 수정된 마일리지 값을 저장할 함수
+  function saveMileage(mileageInput) {
+    // 여기에 수정된 마일리지 값을 저장하는 로직을 추가합니다.
+    console.log("마일리지가 수정되었습니다: ", mileageInput.value);
+  }
+
+  // 체크된 항목에 대해 마일리지 수정 버튼 클릭 시 이벤트 처리
+  const checkboxInputs = document.querySelectorAll("input.checkbox-input");
+  checkboxInputs.forEach((checkbox) => {
+    checkbox.addEventListener("change", (e) => {
+      const parentLi = e.target.closest("li");
+      const mileageInput = parentLi.querySelector("input.content-detail-num");
+      const editButton = parentLi.querySelector("button.edit-button");
+
+      if (checkbox.checked) {
+        // 체크된 항목에 대해서만 수정 버튼 활성화
+        editButton.disabled = false;
+        editButton.classList.remove("disabled");
+
+        editButton.addEventListener("click", () => {
+          // 수정 버튼 클릭 시 해당 항목의 마일리지 수정 가능
+          mileageInput.disabled = false;
+          mileageInput.style.outline = "1px solid #c06888";
+        });
+      } else {
+        // 체크 해제된 항목에 대해서는 수정 버튼 비활성화
+        editButton.disabled = true;
+        editButton.classList.add("disabled");
+      }
+    });
   });
 });
