@@ -133,15 +133,13 @@ contentLineBox.addEventListener("click", handleScrapButtonClick);
 function handleScrapButtonClick(e) {
   const target = e.target.closest(".scrap-btn");
   if (!target) return; // 스크랩 버튼이 아닌 경우 무시
-
   const img = target.querySelector("img");
   const imgSrc = img.getAttribute("src");
-
-  if (imgSrc === "../../../staticfiles/images/scrap-off.png") {
-    img.setAttribute("src", "../../../staticfiles/images/scrap-on.png");
+  if (imgSrc === "../../../staticfiles/images/scrap-off-pink.png") {
+    img.setAttribute("src", "../../../staticfiles/images/scrap-on-pink.png");
     showPopup(scrapPopup);
   } else {
-    img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
+    img.setAttribute("src", "../../../staticfiles/images/scrap-off-pink.png");
     showPopup(scrapCancel);
   }
 }

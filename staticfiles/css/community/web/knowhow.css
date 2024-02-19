@@ -161,7 +161,7 @@
   border: none;
 }
 .modal-menu-btn:hover {
-  background: #ffeef1;
+  background: none #f0f0f0;
 }
 .menu-choice {
   width: 100%;
@@ -171,7 +171,7 @@
 }
 .choice {
   color: #c06888;
-  background-color: #ffeef1;
+  background-color: #f0f0f0;
   font-weight: 600;
 }
 .option-reset-btn {
@@ -247,7 +247,7 @@
   line-height: 14px;
   padding: 0 6px;
   color: #ffffff;
-  background-color: #ff7777;
+  background-color: #c06888;
   display: inline-block;
   font-weight: 700;
   height: 20px;
@@ -380,6 +380,9 @@
   -webkit-justify-content: center;
   justify-content: center;
   margin-top: 8px;
+}
+.content-data-box span + span {
+  margin-right: 0;
 }
 .scrap-data {
   font-size: 14px;

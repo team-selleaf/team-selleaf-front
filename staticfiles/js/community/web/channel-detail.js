@@ -30,7 +30,7 @@ function appendItem(post) {
         >
           <span class="scrap-btn-box"
             ><img
-              src="../../../staticfiles/images/scrap-off.png"
+              src="../../../staticfiles/images/scrap-off-pink.png"
               alt=""
             />
           </span>
@@ -152,11 +152,11 @@ function handleScrapButtonClick(e) {
   const img = target.querySelector("img");
   const imgSrc = img.getAttribute("src");
 
-  if (imgSrc === "../../../staticfiles/images/scrap-off.png") {
-    img.setAttribute("src", "../../../staticfiles/images/scrap-on.png");
+  if (imgSrc === "../../../staticfiles/images/scrap-off-pink.png") {
+    img.setAttribute("src", "../../../staticfiles/images/scrap-on-pink.png");
     showPopup(scrapPopup);
   } else {
-    img.setAttribute("src", "../../../staticfiles/images/scrap-off.png");
+    img.setAttribute("src", "../../../staticfiles/images/scrap-off-pink.png");
     showPopup(scrapCancel);
   }
 }
