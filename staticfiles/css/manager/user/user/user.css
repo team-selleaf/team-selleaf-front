@@ -808,6 +808,7 @@ button.text-left{
     text-align: left;
     width: 280px;
     display: block;
+    margin: -180px;
 }
 
 div.list-content-wrap{
