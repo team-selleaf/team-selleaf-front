@@ -101,6 +101,10 @@ deleteBtns.forEach((deleteBtn) => {
 // 날짜 선택 시 색 변하게
 const days = document.querySelectorAll(".weekday-selection");
 const timeSection = document.querySelector(".product-option-second-wrap");
+const inputTarget = document.querySelector(".selected-product-name");
+const sidebarInputTarget = document.querySelector(
+  ".sidebar-selected-product-option"
+);
 days.forEach((day) => {
   day.addEventListener("click", (e) => {
     // 모든 요일에서 clicked 클래스를 제거
@@ -109,6 +113,11 @@ days.forEach((day) => {
     });
     // 클릭된 요일에만 clicked 클래스 추가
     day.classList.add("clicked");
+    const selectedDay = day.querySelector("span").textContent;
+    var inner = inputTarget.querySelector(".selected-date");
+    var sidebarInner = sidebarInputTarget.querySelector(".selected-date");
+    inner.innerHTML = `${selectedDay}`;
+    sidebarInner.innerHTML = `${selectedDay}`;
     // 시간 섹션을 보이거나 숨김
     if (day.classList.contains("clicked")) {
       timeSection.style.display = "block";
@@ -133,7 +142,11 @@ times.forEach((time) => {
 
     // 클릭된 시간에만 clicked 클래스 추가
     time.classList.add("clicked");
-
+    const selectedTime = time.querySelector("span").textContent;
+    var inner = inputTarget.querySelector(".selected-time");
+    var sidebarInner = sidebarInputTarget.querySelector(".selected-time");
+    inner.innerHTML = `${selectedTime}`;
+    sidebarInner.innerHTML = `${selectedTime}`;
     // 체크 요소를 보이거나 숨김
     if (time.classList.contains("clicked")) {
       check.style.display = "block";
@@ -294,6 +307,12 @@ kits.forEach((kit) => {
     });
     // 클릭된 요일에만 clicked 클래스 추가
     kit.classList.add("clicked");
+    console.log(kit);
+    const selectedKit = kit.querySelector(".kit-title").textContent;
+    var inner = inputTarget.querySelector(".selected-kit");
+    var sidebarInner = sidebarInputTarget.querySelector(".selected-kit");
+    inner.innerHTML = `${selectedKit}`;
+    sidebarInner.innerHTML = `${selectedKit}`;
     // 시간 섹션을 보이거나 숨김
     if (kit.classList.contains("clicked")) {
       infoContainer.style.display = "block";
