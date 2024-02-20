@@ -44,7 +44,40 @@
       <header></header>
       <!-- 전체 목록 -->
       <div class="notice-container">
-        <h1 class="notice-title">수강생 목록</h1>
+        <div style="display: flex; justify-content: space-between">
+          <h1 class="notice-title">수강생 목록</h1>
+          <!-- 검색창 -->
+          <div class="header-fourth-inner-firstdiv">
+            <div
+              id="global-search-combobox"
+              role="combobox"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              class="header-fourth-inner-seconddiv"
+            >
+              <div class="header-fourth-inner-thirddiv">
+                <span class="hearder-inner-thirddiv-span"> </span>
+                <input
+                  type="text"
+                  placeholder="이름 검색"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  class="hearder-inner-thirddiv-input"
+                  value=""
+                />
+                <div class="hearder-inner-thirddiv-div">
+                  <button
+                    type="button"
+                    tabindex="0"
+                    class="header-input-xbutton"
+                  >
+                    <span class="header-input-xbutton-span"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="notice-wrap">
           <!--  -->
           <section>
