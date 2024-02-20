@@ -97,3 +97,40 @@ catebtns.forEach((btn, i) => {
     cateUnder[i].classList.add("underbar-checked");
   });
 });
+
+// 체크박스 js
+const allCheck = document.querySelector(".all-check");
+const checkboxes = document.querySelectorAll(".checkbox-input");
+
+// all-check 체크 여부에 따라 checkbox-input 체크 여부 조절
+allCheck.addEventListener("change", function () {
+  checkboxes.forEach(function (checkbox) {
+    checkbox.checked = allCheck.checked;
+  });
+});
+
+// checkbox-input 중 하나라도 체크가 해제되면 all-check 체크 해제
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    let allChecked = true;
+    checkboxes.forEach(function (checkbox) {
+      if (!checkbox.checked) {
+        allChecked = false;
+      }
+    });
+    allCheck.checked = allChecked;
+  });
+});
+
+// checkbox-input 모두 체크되면 all-check 체크
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    let allChecked = true;
+    checkboxes.forEach(function (checkbox) {
+      if (!checkbox.checked) {
+        allChecked = false;
+      }
+    });
+    allCheck.checked = allChecked;
+  });
+});
