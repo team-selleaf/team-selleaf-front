@@ -22,6 +22,7 @@ svg:not(:root) {
   padding-top: 40px;
   width: calc(100% - 30px);
   margin: auto;
+  position: relative;
 }
 
 /* 로고를 제외한 나머지를 감싸는 부분 */
@@ -209,6 +210,16 @@ svg:not(:root) {
   letter-spacing: -0.3px;
 }
 
+.picture-explanation {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(130, 140, 148);
+  letter-spacing: -0.3px;
+  position: absolute;
+  top: 557px;
+}
+
 .explanation-input {
   display: inline-block;
   width: 100%;
@@ -311,6 +322,7 @@ html {
 }
 
 .info-items-title {
+  position: absolute;
   display: block;
   margin-bottom: 12px;
   font-size: 16px;
@@ -373,14 +385,30 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  gap: 30px;
+  gap: 10px;
   z-index: 2;
   overflow-x: scroll;
+  position: absolute;
+  top: 100%;
+  left: 30%;
 }
 .prev-img-box::-webkit-scrollbar {
   display: none;
 }
 .prev-img-box-item {
+  position: relative;
+  min-width: 100px;
+  max-width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px;
+  border: 1px solid #dbdbdb;
+}
+.plus-img-box-item {
   position: relative;
   min-width: 200px;
   max-width: 200px;
@@ -392,6 +420,8 @@ html {
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px;
   border: 1px solid #dbdbdb;
+  transform: rotate(90deg);
+  cursor: pointer;
 }
 .prev-img {
   width: 100%;
@@ -423,4 +453,49 @@ html {
 
 .upload-wrap {
   margin-top: -20px;
+}
+
+.plus-img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 23%;
+  top: 23%;
+}
+
+.plus-img-small {
+  position: absolute;
+  left: 100%;
+  top: -10%;
+}
+
+.plus-txt {
+  position: absolute;
+  left: 43%;
+  top: 90%;
+}
+
+.cover-add-coment {
+  width: 85px;
+  height: 22px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 532px;
+  left: 43%;
+  background-color: rgba(33, 38, 41, 0.8);
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  border-radius: 4px;
+  transition: background-color 0.1s ease 0s;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+}
+
+.cover-add-coment:hover,
+.cover-add-coment:active {
+  background-color: rgb(164, 172, 179);
 }

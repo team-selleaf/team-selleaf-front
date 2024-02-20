@@ -23,33 +23,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//마일리지 수정 버튼 누르면 뜨는 모달창
+// 마일리지 버튼 눌러서 해당 마일리지 수정해주는 js코드
 document.addEventListener("DOMContentLoaded", function () {
   const editButtons = document.querySelectorAll("button.edit-button");
-  const mileageInput = document.querySelector("input.content-detail-num");
+
   editButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const btnAttribute = e.target
         .closest("button")
         .getAttribute("aria-label");
       if (btnAttribute == "mileage button") {
+        const parentLi = e.target.closest("li");
+        const mileageInput = parentLi.querySelector("input.content-detail-num");
         mileageInput.disabled = false;
         mileageInput.style.outline = "1px solid #c06888";
       }
     });
   });
 
-  mileageInput.addEventListener("blur", () => {
-    // input disabled 시키는 로직
-    mileageInput.disabled = true;
-    mileageInput.style.outline = "none";
-  });
-  // Enter를 누르면 값 확정
-  mileageInput.addEventListener("keyup", (e) => {
-    if (e.keyCode == 13) {
-      mileageInput.disabled = true;
-      mileageInput.style.outline = "none";
-    }
+  const mileageInputs = document.querySelectorAll("input.content-detail-num");
+  mileageInputs.forEach((input) => {
+    input.addEventListener("blur", () => {
+      input.disabled = true;
+      input.style.outline = "none";
+    });
+
+    input.addEventListener("keyup", (e) => {
+      if (e.keyCode == 13) {
+        input.disabled = true;
+        input.style.outline = "none";
+      }
+    });
   });
 });
 
@@ -127,4 +131,39 @@ catebtns.forEach((btn, i) => {
   });
 });
 
-const mileageEditBtn = document.querySelector(".edit-button[");
+// 체크박스 js
+const allCheck = document.querySelector(".all-check");
+const checkboxes = document.querySelectorAll(".checkbox-input");
+
+// all-check 체크 여부에 따라 checkbox-input 체크 여부 조절
+allCheck.addEventListener("change", function () {
+  checkboxes.forEach(function (checkbox) {
+    checkbox.checked = allCheck.checked;
+  });
+});
+
+// checkbox-input 중 하나라도 체크가 해제되면 all-check 체크 해제
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    let allChecked = true;
+    checkboxes.forEach(function (checkbox) {
+      if (!checkbox.checked) {
+        allChecked = false;
+      }
+    });
+    allCheck.checked = allChecked;
+  });
+});
+
+// checkbox-input 모두 체크되면 all-check 체크
+checkboxes.forEach(function (checkbox) {
+  checkbox.addEventListener("change", function () {
+    let allChecked = true;
+    checkboxes.forEach(function (checkbox) {
+      if (!checkbox.checked) {
+        allChecked = false;
+      }
+    });
+    allCheck.checked = allChecked;
+  });
+});

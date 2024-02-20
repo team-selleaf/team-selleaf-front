@@ -91,13 +91,13 @@ body {
 
 .email-input:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(90, 112, 88, 0.3);
+  box-shadow: 0 0 0 3px rgba(19, 79, 44, 0.3);
   z-index: 2;
 }
 
 /* 이메일 입력 창에서 에러 발생 시 */
 .email-input.error {
-  border: 1px solid #f77;
+  border: 1px solid #d1180b;
   z-index: 1;
 }
 
@@ -134,7 +134,7 @@ body {
 
 .password-input:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(90, 112, 88, 0.3);
+  box-shadow: 0 0 0 3px rgba(19, 79, 44, 0.3);
   z-index: 2;
 }
 
@@ -144,7 +144,7 @@ body {
 
 /* 비밀번호 입력 창에서 에러 발생 시 */
 .password-input.error {
-  border: 1px solid #f77;
+  border: 1px solid #d1180b;
   z-index: 1;
 }
 
@@ -161,8 +161,8 @@ body {
   line-height: 20px;
   font-size: 17px;
   min-height: 50px;
-  background-color: #97a38c;
-  border-color: #97a38c;
+  background-color: #134f2c;
+  border-color: #134f2c;
   color: #fff;
   user-select: none;
   position: relative;
@@ -183,8 +183,8 @@ body {
 }
 
 .login-button:hover {
-  border-color: rgb(99, 112, 88);
-  background-color: rgb(99, 112, 88);
+  border-color: #97a38c;
+  background-color: #97a38c;
 }
 
 .find-and-sign-up-wrap {
@@ -192,15 +192,14 @@ body {
   text-align: center;
 }
 
-/* 아이디 찾기 */
-.find-id-link {
+/* 비번 재설정 */
+.password-update-link {
   margin-left: 0px;
 }
 
-/* 비밀번호 찾기, 회원가입 */
-.find-password-link,
+/* 회원가입 */
 .register-link {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .sns-text {

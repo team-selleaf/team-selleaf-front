@@ -305,6 +305,32 @@
                 <div class="content-box">
                   <div class="header">
                     <h1 class="header-name">신고 관리</h1>
+                    <div>
+                      <div class="compose-button">
+                        <button
+                          class="delete-button"
+                          aria-label="delete button"
+                          type="button"
+                        >
+                          <svg
+                            class="edit-button"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M10 15.6a.7.7 0 0 1-.7-.7v-3.6a.7.7 0 0 1 1.4 0v3.6a.7.7 0 0 1-.7.7ZM14 15.6a.7.7 0 0 1-.7-.7v-3.6a.7.7 0 1 1 1.4 0v3.6a.7.7 0 0 1-.7.7Z"
+                            ></path>
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M9.6 3.8h4.6c.22 0 .4.178.4.4v1.4H9.2V4.2c0-.222.179-.4.4-.4Zm-2 .4a2 2 0 0 1 2-2h4.6a2 2 0 0 1 2 2v1.4h3.5a.8.8 0 0 1 0 1.6H19v10.4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7.2h-.7a.8.8 0 1 1 0-1.6h3.3V4.2Zm-1 3h10.8v10.4A2.4 2.4 0 0 1 15 20H9a2.4 2.4 0 0 1-2.4-2.4V7.2Z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                   <div class="header-function-container">
                     <ul class="header-function-inner">
@@ -319,7 +345,7 @@
                             <div class="flex">
                               <p class="review-info">강의신고</p>
                               <div class="review-info-num">
-                                <p class="review-info-num">2</p>
+                                <p class="review-info-num">3</p>
                               </div>
                             </div>
                           </div>
@@ -421,7 +447,7 @@
                   <div class="all-list">
                     <div>
                       <span class="all-name">전체</span>
-                      <span class="all-num">2</span>
+                      <span class="all-num">3</span>
                     </div>
                     <div class="list-order">
                       <div class="search-bar">
@@ -452,12 +478,14 @@
                   </div>
                 </div>
                 <div class="category-benner">
-                  <div class="category-inner" style="width: 610px">제목</div>
+                  <input type="checkbox" class="all-check" />
+                  <div class="category-inner" style="width: 735px">제목</div>
                   <div class="category-inner" style="width: 75px">신고자</div>
                   <div class="category-inner">신고일</div>
                 </div>
                 <ul class="list-content">
                   <li class="list-content">
+                    <input type="checkbox" class="checkbox-input" />
                     <button class="text-left">
                       <div class="list-content-wrap">
                         <div class="list-content-container">
@@ -479,32 +507,9 @@
                         <p class="content-detail-num">2024.02.05</p>
                       </div>
                     </div>
-                    <div class="modify-remove">
-                      <button
-                        class="delete-button"
-                        aria-label="delete button"
-                        type="button"
-                      >
-                        <svg
-                          class="edit-button"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M10 15.6a.7.7 0 0 1-.7-.7v-3.6a.7.7 0 0 1 1.4 0v3.6a.7.7 0 0 1-.7.7ZM14 15.6a.7.7 0 0 1-.7-.7v-3.6a.7.7 0 1 1 1.4 0v3.6a.7.7 0 0 1-.7.7Z"
-                          ></path>
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M9.6 3.8h4.6c.22 0 .4.178.4.4v1.4H9.2V4.2c0-.222.179-.4.4-.4Zm-2 .4a2 2 0 0 1 2-2h4.6a2 2 0 0 1 2 2v1.4h3.5a.8.8 0 0 1 0 1.6H19v10.4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7.2h-.7a.8.8 0 1 1 0-1.6h3.3V4.2Zm-1 3h10.8v10.4A2.4 2.4 0 0 1 15 20H9a2.4 2.4 0 0 1-2.4-2.4V7.2Z"
-                          ></path>
-                        </svg>
-                      </button>
-                    </div>
                   </li>
                   <li class="list-content">
+                    <input type="checkbox" class="checkbox-input" />
                     <button class="text-left">
                       <div class="list-content-wrap">
                         <div class="list-content-container">
@@ -526,29 +531,29 @@
                         <p class="content-detail-num">2024.02.05</p>
                       </div>
                     </div>
-                    <div class="modify-remove">
-                      <button
-                        class="delete-button"
-                        aria-label="delete button"
-                        type="button"
-                      >
-                        <svg
-                          class="edit-button"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M10 15.6a.7.7 0 0 1-.7-.7v-3.6a.7.7 0 0 1 1.4 0v3.6a.7.7 0 0 1-.7.7ZM14 15.6a.7.7 0 0 1-.7-.7v-3.6a.7.7 0 1 1 1.4 0v3.6a.7.7 0 0 1-.7.7Z"
-                          ></path>
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M9.6 3.8h4.6c.22 0 .4.178.4.4v1.4H9.2V4.2c0-.222.179-.4.4-.4Zm-2 .4a2 2 0 0 1 2-2h4.6a2 2 0 0 1 2 2v1.4h3.5a.8.8 0 0 1 0 1.6H19v10.4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V7.2h-.7a.8.8 0 1 1 0-1.6h3.3V4.2Zm-1 3h10.8v10.4A2.4 2.4 0 0 1 15 20H9a2.4 2.4 0 0 1-2.4-2.4V7.2Z"
-                          ></path>
-                        </svg>
-                      </button>
+                  </li>
+                  <li class="list-content">
+                    <input type="checkbox" class="checkbox-input" />
+                    <button class="text-left">
+                      <div class="list-content-wrap">
+                        <div class="list-content-container">
+                          <div class="list-content-inner">
+                            <div class="content-name">
+                              <p class="content-name">신고 제목 3</p>
+                            </div>
+                            <p class="content-name-detail">신고 내용 3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                    <div class="content-open-wrap"></div>
+                    <div class="content-detail">
+                      <div class="content-detail-b">
+                        <p class="content-detail-num">조은종</p>
+                      </div>
+                      <div class="content-detail-c">
+                        <p class="content-detail-num">2024.02.05</p>
+                      </div>
                     </div>
                   </li>
                 </ul>
