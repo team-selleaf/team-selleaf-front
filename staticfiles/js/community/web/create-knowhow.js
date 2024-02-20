@@ -36,7 +36,7 @@ contentTextArea.addEventListener("click", () => {
 const prevImgBox = document.querySelector(".prev-img-box");
 const inputs = document.querySelectorAll("input[type=file]");
 
-inputs.forEach((input, index) => {
+inputs.forEach((input) => {
   input.addEventListener("change", (e) => {
     const targetInput = e.target;
     const file = targetInput.files[0];
