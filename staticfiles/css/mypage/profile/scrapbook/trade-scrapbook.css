@@ -208,12 +208,12 @@ figure {
 
 /* 활성화된 카테고리 메뉴에만 다른 텍스트 컬러 적용 */
 .category-button.active {
-  color: #97a38c;
+  color: #134f2c;
 }
 
 /* 활성화되지 않았어도 hover되면 텍스트 색 변경 */
 .category-button:not(.active):hover {
-  color: #97a38c;
+  color: #134f2c;
 }
 
 /* 각 카테고리 텍스트 아래에 추가되는 가상요소 */
@@ -226,7 +226,7 @@ figure {
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: #97a38c;
+  background-color: #134f2c;
   transition: color 0.2s, transform 0.2s;
   transform: scale(0);
 }
@@ -333,14 +333,14 @@ figure {
 /* '전체 카테고리' 외 다른 요소를 선택하면 */
 /* sorted 클래스가 추가됨에 따라 버튼의 스타일 변경 */
 .category-list-button.sorted {
-  background-color: #e8f4fb;
-  border-color: #e8f4fb;
-  color: #97a38c;
+  background-color: #f6faf1;
+  border-color: #134f2c;
+  color: #134f2c;
 }
 
 .category-list-button.sorted:hover {
-  background-color: #dff0f9;
-  border-color: #dff0f9;
+  color: #97a38c;
+  border-color: #97a38c;
 }
 
 /* 스크랩한 컨텐츠의 개수를 표시하는 부분 */
@@ -353,7 +353,7 @@ figure {
 
 .content-count-wrap i {
   font-style: normal;
-  color: #97a38c;
+  color: #134f2c;
 }
 
 /* 페이지를 처음 열었을 때 표시되는 편집 버튼 */
@@ -369,7 +369,7 @@ figure {
   font-size: 14px;
   line-height: 18px;
   padding: 0 6px;
-  color: #97a38c;
+  color: #134f2c;
   font-weight: 700;
 }
 
@@ -547,8 +547,8 @@ figure {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  margin-left: 12px;
   margin: 0;
+  margin-left: -9px;
 }
 
 .post-contents-header {
@@ -628,8 +628,8 @@ figure {
 
 .post-tag-icon {
   border-radius: 4px;
-  border: 4px solid #97a38c;
-  background-color: #97a38c;
+  border: 4px solid #134f2c;
+  background-color: #134f2c;
   color: white;
   font-size: 11px;
   overflow-clip-margin: content-box;
@@ -665,7 +665,7 @@ figure {
 }
 
 .delete-box-container.enabled {
-  background-color: #97a38c;
+  background-color: #134f2c;
 }
 
 .delete-box-container.enabled:hover {
@@ -831,7 +831,7 @@ figure {
   height: 40px;
 }
 
-/* 카테고리 버튼에 마우스 올리면 나오는 모달창 */
+/* 카테고리 버튼 클릭하면 나오는 모달창 */
 .first-category-modal-wrap {
   transform-origin: 50% 0;
   box-sizing: border-box;
@@ -911,7 +911,7 @@ figure {
 }
 
 .first-categories-container.selected {
-  color: #97a38c;
+  color: #134f2c;
   font-weight: 700;
 }
 
@@ -952,7 +952,7 @@ figure {
   -webkit-box-flex: 0;
   flex: 0 1 auto;
   margin-left: 5px;
-  color: #97a38c;
+  color: #134f2c;
   font-weight: 700;
   text-align: right;
 }
@@ -1010,7 +1010,7 @@ figure {
 }
 
 .second-categories-container.selected {
-  color: #97a38c;
+  color: #134f2c;
   font-weight: 700;
 }
 
@@ -1058,7 +1058,7 @@ figure {
   -webkit-box-flex: 0;
   flex: 0 1 auto;
   margin-left: 5px;
-  color: #97a38c;
+  color: #134f2c;
   font-weight: 700;
   text-align: right;
 }

@@ -774,6 +774,7 @@ a * {
   display: block;
   box-sizing: border-box;
   padding: 30px 16px;
+  border-bottom: 1px solid rgb(234, 237, 239);
 }
 
 .reviews-history-item-wrap::after {
@@ -943,7 +944,6 @@ a * {
   padding: 0px;
   height: 1px;
   border: none;
-  background-color: rgb(234, 237, 239);
 }
 
 /* 사이드 바의 공유 버튼을 클릭하면 나오는 모달창 */

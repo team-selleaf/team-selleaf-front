@@ -13,6 +13,10 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 500px whitesmoke inset !important;
+}
+
 /* 페이지 전체를 감싸는 부분 */
 .register-wrap {
   height: 100%;
@@ -126,7 +130,7 @@ svg:not(:root) {
 /* 이메일, 사이트 입력창 양쪽 다 적용 */
 .email-input-local .email-form-control.error,
 .email-input-domain .email-form-control.error {
-  border-color: #f77;
+  border-color: #d1180b;
 }
 
 .email-input-local .email-form-control.error:focus,
@@ -150,7 +154,7 @@ svg:not(:root) {
   color: rgb(194, 200, 204);
 }
 
-.email-form-control:hover {
+.email-form-control:not(:disabled):hover {
   background-color: #fafafa;
   border-color: #bdbdbd;
 }
@@ -169,6 +173,12 @@ svg:not(:root) {
   color: #757575;
   -webkit-text-fill-color: #757575;
   opacity: 1;
+}
+
+/* 입력창 자체가 disabled 되었을 때 적용 */
+.email-form-control:disabled {
+  color: #424242;
+  background-color: whitesmoke;
 }
 
 /* email-form-control 내 option 태그들에 적용 */
@@ -228,6 +238,7 @@ svg:not(:root) {
   background: rgb(247, 248, 250);
   color: rgb(194, 200, 204);
   border-color: rgb(218, 220, 224);
+  cursor: default;
 }
 
 /* 이메일 양식 만족으로 인해 enabled 되었을 때 */
@@ -235,10 +246,129 @@ svg:not(:root) {
   background-color: #fff;
   border-color: #97a38c;
   color: #97a38c;
+  cursor: pointer;
 }
 
 .email-verify-button.enabled:hover {
   background-color: rgb(99, 112, 88);
+}
+
+/* 인증번호 입력칸 */
+/* 열리면 높이 143px, margin-bottom 20px 추가 */
+.email-code-wrap {
+  overflow: hidden;
+  height: 0;
+  transition: 0.2s ease;
+}
+
+.email-code-container {
+  min-height: 143px;
+  box-sizing: border-box;
+  background: rgb(247, 249, 250);
+  padding: 20px 16px;
+}
+
+.email-code-info {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgb(47, 52, 56);
+  margin-bottom: 10px;
+}
+
+.code-input-wrap {
+  border: 1px solid rgb(218, 221, 224);
+  min-height: 40px;
+  padding: 0px 12px;
+  background: rgb(255, 255, 255);
+  margin-bottom: 4px;
+  border-radius: 4px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.code-input-container {
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.code-input {
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+  width: 100%;
+}
+
+.code-input-wrap.error {
+  border-color: #d1180b;
+}
+
+.left-time {
+  color: #d1180b;
+  margin-right: 16px;
+}
+
+.confirm-button {
+  display: inline-block;
+  margin: 0px;
+  border: none;
+  background: none transparent;
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+  font-stretch: inherit;
+  font-family: inherit;
+  font-optical-sizing: inherit;
+  font-kerning: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0px 6px;
+  color: rgb(194, 200, 204);
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.confirm-button:not(:disabled) {
+  color: #134f2c;
+}
+
+.confirm-button:not(:disabled):hover {
+  color: #97a38c;
+  background-color: rgb(247, 249, 250);
+}
+
+.error-text {
+  font-size: 12px;
+  line-height: 16px;
+  color: #d1180b;
+}
+
+.resend-wrap {
+  margin-top: 10px;
+}
+
+.resend-container {
+  font-size: 12px;
+  color: rgb(130, 140, 148);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.resend {
+  text-decoration: underline;
+  font-weight: 500;
+  margin-left: 4px;
 }
 
 /* 비밀번호 입력란 */
@@ -295,7 +425,7 @@ svg:not(:root) {
 }
 
 .password-wrap .password-input.error {
-  border-color: #f77;
+  border-color: #d1180b;
 }
 
 .password-wrap .password-input.error:focus {
@@ -365,7 +495,7 @@ svg:not(:root) {
 }
 
 .password-verify-wrap .password-verify-input.error {
-  border-color: #f77;
+  border-color: #d1180b;
 }
 
 .password-verify-wrap .password-verify-input.error:focus {
@@ -544,7 +674,7 @@ svg:not(:root) {
 }
 
 .nickname-wrap .nickname-input.error {
-  border-color: #f77;
+  border-color: #d1180b;
 }
 
 .nickname-wrap .nickname-input.error:focus {

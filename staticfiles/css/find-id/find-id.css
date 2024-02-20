@@ -94,21 +94,21 @@ input:-webkit-autofill:active {
   transition: color 0.1s, background-color 0.1s, border-color 0.1s;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #97a38c;
-  border-color: #97a38c;
+  background-color: #134f2c;
+  border-color: #134f2c;
   color: #fff;
 }
 
 .email-input-button:disabled {
-  background-color: #c4cebb;
-  border-color: #c4cebb;
-  color: #fff;
+  background-color: #fff;
+  border-color: #134f2c;
+  color: #134f2c;
   cursor: default;
 }
 
 .email-input-button:hover:not(:disabled) {
-  border-color: rgb(99, 112, 88);
-  background-color: rgb(99, 112, 88);
+  border-color: #97a38c;
+  background-color: #97a38c;
 }
 
 .not-verified {
@@ -138,8 +138,8 @@ input:-webkit-autofill:active {
   text-align: center;
   transition: color 0.1s, background-color 0.1s, border-color 0.1s;
   border-radius: 4px;
-  background-color: #97a38c;
-  border-color: #97a38c;
+  background-color: #134f2c;
+  border-color: #134f2c;
   color: #fff;
   -webkit-font-smoothing: antialiased;
   width: 100%;
@@ -148,15 +148,15 @@ input:-webkit-autofill:active {
 }
 
 .verify-button:disabled {
-  background-color: #c4cebb;
-  border-color: #c4cebb;
-  color: #fff;
+  background-color: #fff;
+  border-color: #134f2c;
+  color: #134f2c;
   cursor: default;
 }
 
 .verify-button:hover:not(:disabled) {
-  border-color: rgb(99, 112, 88);
-  background-color: rgb(99, 112, 88);
+  border-color: #97a38c;
+  background-color: #97a38c;
 }
 
 .need-help-wrap {
@@ -175,7 +175,7 @@ input:-webkit-autofill:active {
 }
 
 .need-help {
-  color: #97a38c;
+  color: #134f2c;
   font-size: 12px;
   line-height: 20px;
   font-weight: bold;
