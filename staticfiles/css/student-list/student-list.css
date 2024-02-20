@@ -62,9 +62,15 @@ html {
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  font-size: 14px;
   color: #2f3438;
   line-height: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .student-list-title-wrap::after {
@@ -75,19 +81,6 @@ html {
   bottom: 0;
   height: 1px;
   background: #eaedef;
-}
-
-.student-list-title-container {
-  width: 100%;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
-  font-size: 17px;
-  font-weight: 700;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
 }
 
 .list-titles {
