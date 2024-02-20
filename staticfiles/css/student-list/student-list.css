@@ -1,0 +1,177 @@
+.layout,
+.page,
+body,
+html {
+  height: 100%;
+}
+
+.layout {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout > * {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+/* 전체 목록 */
+.notice-container {
+  margin: 40px auto;
+  width: 100%;
+  max-width: 920px;
+}
+
+.notice-title {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #2f3438;
+  padding: 0 16px;
+}
+
+.notice-wrap {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  transform: translateY(0px);
+}
+
+/* 각 컬럼의 제목 부분들 */
+.student-list-title-wrap {
+  min-height: 60px;
+  padding: 18px 24px;
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #2f3438;
+  line-height: 20px;
+}
+
+.student-list-title-wrap::after {
+  left: 0;
+  right: 0;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  background: #eaedef;
+}
+
+.student-list-title-container {
+  width: 100%;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.list-titles {
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* 각각의 수강 내역/수강 예약들 */
+.class-histories-wrap {
+  min-height: 65px;
+  padding: 18px 24px;
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #2f3438;
+  line-height: 20px;
+  border-bottom: 1px solid #eaedef;
+}
+
+.class-histories-content-box {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr;
+  -webkit-box-pack: justify;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  place-items: center;
+  font-size: 15px;
+}
+
+.class-history-items {
+  margin-bottom: 6px;
+  display: block;
+  color: #2f3438;
+}
+
+/* .class-histories-wrap::after {
+  left: 0;
+  right: 0;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  background: #eaedef;
+} */
+
+.update-reservation {
+  user-select: none;
+  display: inline-block;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic",
+    sans-serif;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  margin: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: initial;
+  background: none;
+  text-decoration: none;
+  transition: color 0.1s ease 0s, background-color 0.1s ease 0s,
+    border-color 0.1s ease 0s;
+  border-radius: 4px;
+  background-color: #134f2c;
+  border-color: #134f2c;
+  color: #fff;
+  padding: 5px 8px;
+  line-height: 15px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 12px;
+  max-width: 100px;
+  z-index: 1;
+}
+
+.update-reservation:hover {
+  background-color: #97a38c;
+  border-color: #97a38c;
+}
