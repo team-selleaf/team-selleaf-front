@@ -210,6 +210,16 @@ svg:not(:root) {
   letter-spacing: -0.3px;
 }
 
+.picture-explanation {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(130, 140, 148);
+  letter-spacing: -0.3px;
+  position: absolute;
+  top: 557px;
+}
+
 .explanation-input {
   display: inline-block;
   width: 100%;
@@ -375,11 +385,11 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  gap: 30px;
+  gap: 10px;
   z-index: 2;
   overflow-x: scroll;
   position: absolute;
-  top: 95%;
+  top: 100%;
   left: 30%;
 }
 .prev-img-box::-webkit-scrollbar {
@@ -457,4 +467,35 @@ html {
   position: absolute;
   left: 100%;
   top: -10%;
+}
+
+.plus-txt {
+  position: absolute;
+  left: 43%;
+  top: 90%;
+}
+
+.cover-add-coment {
+  width: 85px;
+  height: 22px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 532px;
+  left: 43%;
+  background-color: rgba(33, 38, 41, 0.8);
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  border-radius: 4px;
+  transition: background-color 0.1s ease 0s;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+}
+
+.cover-add-coment:hover,
+.cover-add-coment:active {
+  background-color: rgb(164, 172, 179);
 }
