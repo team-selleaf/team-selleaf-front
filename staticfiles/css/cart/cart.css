@@ -1518,3 +1518,49 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.selected-product-count{
+  width: 70px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 7px 6px;
+  background: rgb(255, 255, 255);
+  color: rgb(47, 52, 56);
+  border: 1px solid rgb(218, 221, 224);
+  border-radius: 4px;
+  /* margin-top: 12px; */
+}
+
+.sub-count{
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.sub-count>img{
+  width: 10px;
+  margin-bottom: 5.5px;
+}
+
+.counted-number{
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0px;
+  border: 0px;
+  background: none;
+  color: rgb(2, 2, 2);
+}
+
+.add-count{
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.add-count>img{
+  width: 10px;
+  margin-bottom: 1px;
+}
