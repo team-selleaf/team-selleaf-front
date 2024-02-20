@@ -390,16 +390,16 @@ html {
   overflow-x: scroll;
   position: absolute;
   top: 100%;
-  left: 30%;
+  left: 35%;
 }
 .prev-img-box::-webkit-scrollbar {
   display: none;
 }
 .prev-img-box-item {
   position: relative;
-  min-width: 100px;
-  max-width: 100px;
-  height: 100px;
+  min-width: 60px;
+  max-width: 63px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -453,6 +453,8 @@ html {
 
 .upload-wrap {
   margin-top: -20px;
+  width: 360px;
+  height: 200px;
 }
 
 .plus-img {
@@ -475,14 +477,33 @@ html {
   top: 90%;
 }
 
-.cover-add-coment {
+.cover-add-coment1 {
   width: 85px;
   height: 22px;
   text-align: center;
   display: block;
   position: absolute;
-  top: 532px;
-  left: 43%;
+  top: 50%;
+  left: 93px;
+  background-color: rgba(33, 38, 41, 0.8);
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  border-radius: 4px;
+  transition: background-color 0.1s ease 0s;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+}
+.cover-add-coment2 {
+  width: 85px;
+  height: 22px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 93px;
   background-color: rgba(33, 38, 41, 0.8);
   color: rgb(255, 255, 255);
   font-size: 14px;
@@ -495,7 +516,43 @@ html {
   text-align: center;
 }
 
-.cover-add-coment:hover,
-.cover-add-coment:active {
+.cover-add-coment1:hover,
+.cover-add-coment1:active {
   background-color: rgb(164, 172, 179);
+}
+
+.upload-btn {
+  position: relative;
+}
+
+.picture-explanation1 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(130, 140, 148);
+  letter-spacing: -0.3px;
+  position: absolute;
+  top: 557px;
+}
+.picture-explanation2 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(130, 140, 148);
+  letter-spacing: -0.3px;
+  position: absolute;
+  top: 700px;
+}
+
+.info-items-title2 {
+  position: absolute;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgb(47, 52, 56);
+  letter-spacing: -0.3px;
+  word-break: keep-all;
+  margin-right: 15px;
 }
