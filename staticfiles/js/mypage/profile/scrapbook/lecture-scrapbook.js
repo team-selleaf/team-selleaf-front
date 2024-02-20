@@ -79,6 +79,7 @@ window.addEventListener("scroll", () => {
 // 필요한 객체 가져오기
 // 편집 버튼 클릭하면 숨겨지는 요소
 const editButton = document.querySelector(".edit-button");
+const categoryFilter = document.querySelector(".category-filter-wrap");
 
 // 편집 버튼 클릭하면 보이게 되는 요소들
 const contentCount = document.querySelector(".content-count-container");
@@ -103,6 +104,7 @@ editButton.addEventListener("click", (e) => {
 
   // 기존 편집 버튼과 카테고리 리스트 숨김
   e.target.style.display = "none";
+  categoryFilter.style.display = "none";
 });
 
 // 취소 버튼 눌렀을 때 다시 편집 버튼과 카테고리 메뉴를 보이게 하는 이벤트
@@ -128,6 +130,49 @@ cancelButton.addEventListener("click", () => {
 
   // 편집 버튼 표시
   editButton.style.display = "inline-block";
+  categoryFilter.style.display = "block";
+});
+
+/*
+  카테고리 버튼(category-filter-wrap) 클릭하면 대카테고리 모달창 표시
+  카테고리 버튼 or 다른 곳 클릭하면 다시 안 보이게 변경
+*/
+
+// 필요한 객체 가져오기 - 대카테고리 모달창
+const categoryModal = document.querySelector(".first-category-modal-wrap");
+
+// 각 이미지 별 a 태그
+const postLinks = document.querySelectorAll(".post-link");
+
+// click 이벤트 - 대카테고리 모달창 표시/숨김
+// 버튼 or 모달창 이외의 장소에 클릭하면 모달창 닫힘
+document.addEventListener("click", (e) => {
+  // 만약 대카테고리 모달창 이외의 장소를 클릭한 경우
+  if (!e.target.closest(".first-category-modal-wrap")) {
+    // 카테고리 버튼을 클릭했다면
+    if (e.target.closest(".category-filter-wrap")) {
+      // 대카테고리 모달창에 enabled 클래스 추가함으로서 표시
+      // 카테고리 버튼 한 번 더 누르면 닫힘
+      categoryModal.style.display =
+        categoryModal.style.display == "none" ? "block" : "none";
+
+      // 2/19 추가 - 게시물 이미지 z-index 조정
+      postLinks.forEach((post) => {
+        post.style.zIndex = -1;
+      });
+
+      // 아래쪽 실행 안 하고 함수 종료
+      return;
+    }
+    // 대카테고리 모달창, 카테고리 버튼 이외의 장소를 클릭한 경우 대카테고리 모달창 숨김
+    categoryModal.style.display = "none";
+
+    // 이미지 z-index 원복
+    postLinks.forEach((post) => {
+      post.style.zIndex = 1;
+    });
+  }
+  // 대카테고리 모달창 클릭한 경우 아무 것도 실행 안함(상태 유지)
 });
 
 /*

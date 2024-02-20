@@ -269,6 +269,35 @@
         <!-- 나중에 메인 페이지에서 작업하면 추가 -->
         <footer style="height: 320px"></footer>
       </div>
+      <!-- 경고 모달 -->
+      <div class="confirm-total-wrap withdrawal-warning" style="display: none">
+        <div class="confirm-wrap">
+          <div class="confirm-title-container">
+            <p class="confirm-title">
+              정말로 Selleaf에서 회원탈퇴 하시겠습니까?
+            </p>
+          </div>
+          <div class="confirm-button-wrap">
+            <div class="confirm-button-container">
+              <button class="confirm-cancel">취소</button>
+              <button class="confirm">확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 탈퇴완료 시 띄울 모달 -->
+      <div class="confirm-total-wrap withdrawal-complete" style="display: none">
+        <div class="confirm-wrap">
+          <div class="confirm-title-container">
+            <p class="confirm-title">탈퇴가 완료되었습니다.</p>
+          </div>
+          <div class="confirm-button-wrap">
+            <div class="confirm-button-container">
+              <button class="confirm withdrawal-confirm">확인</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script src="/staticfiles/js/mypage/settings/user-info-update.js"></script>

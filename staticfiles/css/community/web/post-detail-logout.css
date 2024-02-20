@@ -529,17 +529,10 @@
 }
 .comment-like-icon {
   display: inline-block;
-  font-size: 16px;
-  line-height: 1;
+  width: 12px;
   margin-right: 3px;
 }
-.comment-like-icon::before {
-  font-family: OhouseIcon;
-  vertical-align: top;
-}
-.comment-like-icon:before {
-  content: "\eae9";
-}
+
 .comment-like-text {
   padding: 0px;
   background-color: transparent;

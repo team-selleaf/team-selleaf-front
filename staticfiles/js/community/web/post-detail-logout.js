@@ -63,21 +63,17 @@ const stickyBtns = document.querySelectorAll(".sticky-btn");
 stickyBtns.forEach((item) => {
   item.addEventListener("click", () => {
     if (item.getAttribute("title") === "좋아요") {
-      console.log(item);
       const img = item.querySelector("img");
       const imgSrc = img.getAttribute("src");
-      console.log(imgSrc);
       imgSrc === "../../../staticfiles/images/like-off.png"
         ? img.setAttribute("src", "../../../staticfiles/images/like-on.png")
         : img.setAttribute("src", "../../../staticfiles/images/like-off.png");
     }
     if (item.getAttribute("title") === "저장") {
-      console.log(item);
       const img = item.querySelector("img");
       const imgSrc = img.getAttribute("src");
-      console.log(imgSrc);
       imgSrc === "../../../staticfiles/images/scrap-off-blk.png"
-        ? img.setAttribute("src", "../../../staticfiles/images/scrap-on.png")
+        ? img.setAttribute("src", "../../../staticfiles/images/scrap-on-pink.png")
         : img.setAttribute(
             "src",
             "../../../staticfiles/images/scrap-off-blk.png"

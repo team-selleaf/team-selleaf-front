@@ -161,3 +161,46 @@ if (isTeacher) {
 } else {
   myClassMenu.style.display = "none";
 }
+
+/*
+  2/19 추가 - 회원탈퇴 클릭하면 확인 모달창 표시
+*/
+
+// 탈퇴 버튼과 탈퇴 확인 모달
+const widthdrawButton = document.querySelector(".user-withdrawal");
+const confirmModal = document.querySelector(".withdrawal-warning");
+
+// 탈퇴 완료 모달과 그 안의 확인 버튼
+const completeModal = document.querySelector(".withdrawal-complete");
+const completeButton = document.querySelector(".withdrawal-confirm");
+
+// 회원탈퇴 텍스트 - click 이벤트
+widthdrawButton.addEventListener("click", (e) => {
+  // a 태그의 링크 이동 기능 방지
+  e.preventDefault;
+
+  // 삭제 버튼을 누를 때 확인 모달 표시
+  confirmModal.style.display = "block";
+
+  // 확인 버튼 이벤트
+  const confirmAction = document.querySelector(".confirm");
+  confirmAction.addEventListener("click", () => {
+    // 확인 모달 숨김
+    confirmModal.style.display = "none";
+
+    // 여기서 모달 한 번 더 띄우기?
+    completeModal.style.display = "block";
+
+    // 확인 버튼 클릭하면 모달창 닫힘
+    completeButton.addEventListener("click", () => {
+      completeModal.style.display = "none";
+    });
+  });
+
+  // 취소 버튼 이벤트
+  const cancelAction = document.querySelector(".confirm-cancel");
+  cancelAction.addEventListener("click", () => {
+    // 취소를 누르면 confirm 모달 숨김
+    confirmModal.style.display = "none";
+  });
+});
