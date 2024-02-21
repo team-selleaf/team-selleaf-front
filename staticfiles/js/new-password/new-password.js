@@ -1,137 +1,126 @@
-// 이벤트에 필요한 객체를 전부 const에 저장
-const emailWrap = document.querySelector(".email-input-wrap");
-const emailContainer = document.querySelector(".email-input-container");
-const emailInput = document.querySelector(".email-input-area");
-const emailButton = document.querySelector(".email-input-button");
-const verifyButton = document.querySelector(".verify-button");
+// 비밀번호 변경 페이지 js 파일
 
-// 이벤트에 사용할 상수도 저장
-const complete = "확인완료";
-const valueNone = "필수 입력 항목입니다.";
-const notRegistered = "등록된 이메일 주소가 아닙니다.";
+/*
+    입력창 에러 이벤트 처리(keyup, blur)
 
-const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+    비밀번호(new-password 클래스) - 영문 + 숫자 8자리 이상 15자리 이하
+    비밀번호 확인(password-confirm 클래스) - 비밀번호와 동일한 값인지 비교
 
-// email-input의 keyup 이벤트
-emailInput.addEventListener("keyup", (e) => {
-  // 만약 input 창에 value가 없다면
-  if (!e.target.value) {
-    // 아래에서 새로운 div를 추가하기 전에, 해당 div가 기존에 있는지 확인
-    if (!document.querySelector(".not-verified")) {
-      // 없다면 메세지 객체(div) 추가
-      newDiv = document.createElement("div");
+    에러 발생 시
+        - input 태그에 error 클래스 추가
+        - input 아래에 있는 에러 텍스트(div) 태그의 display = block으로 변경
+*/
 
-      // 오류 메세지 추가
-      newDiv.innerText = valueNone;
+// 필요한 객체 가져오기
+const passwordInput = document.querySelector(".new-password");
+const confirmInput = document.querySelector(".password-confirm");
 
-      // 스타일을 받을 수 있게 클래스 추가
-      newDiv.classList.add("not-verified");
+const passwordErrorTag = document.querySelector(".password-error-text");
+const confirmErrorTag = document.querySelector(".confirm-error-text");
 
-      // email-input-wrap의 마지막에 추가
-      emailWrap.appendChild(newDiv);
+// 에러 상황에 표시할 메세지 변수화 - 비밀번호 입력창만
+const mustNeededMsg = "필수 입력 항목입니다."; // 미입력 오류
+const passwordErrorMsg =
+  "비밀번호는 영문, 숫자를 포함하여 8자 이상이어야 합니다."; // 비밀번호 양식 오류
+
+// 비밀번호 양식
+const passwordRegex = /^[A-Za-z0-9]{8,15}$/;
+
+// 비밀번호 입력창 - keyup 이벤트
+passwordInput.addEventListener("keyup", (e) => {
+  // 만약 키가 눌린 시점에 값이 없거나 양식이 안 지켜져 있다면
+  if (!e.target.value || !passwordRegex.test(e.target.value)) {
+    // 입력창에 error 클래스 추가
+    // 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
     }
-    // 없다면 email-wrap의 border 스타일 변경
-    emailWrap.style.border = "1px solid rgb(255, 119, 119)";
 
-    // 이메일 버튼 기능 정지
-    emailButton.disabled = true;
+    // 입력창 아래의 에러 텍스트 표시
+    // 값 없음 - "필수 입력", 값은 있음 - "양식 오류"
+    const errorMsg = !e.target.value ? mustNeededMsg : passwordErrorMsg;
+
+    // 위 분기로 얻은 에러 메세지를 포함한 내용을 div 태그에 추가
+    passwordErrorTag.innerHTML = `<img src="../../../staticfiles/images/settings/error-icon.svg"
+                                    class="error-icon"/>
+                                    ${errorMsg}`;
+
+    // 에러 텍스트 표시
+    passwordErrorTag.style.display = "block";
+
+    // 아래쪽 경우의 수(양식에 맞춰 입력한 경우) 실행 안하고 함수 종료
     return;
   }
+  // 만약 양식에 맞춰서 값을 입력한 경우
 
-  // 만약 어떤 값이라도 있다면
-  else {
-    // value가 있다면 스타일 원복
-    emailWrap.style.border = "1px solid rgb(219, 219, 219)";
+  // 입력창의 error 클래스 삭제
+  e.target.classList.remove("error");
 
-    // 이메일 버튼 활성화
-    emailButton.disabled = false;
-
-    // not-verifild 클래스 가진 div(에러 메세지) 삭제
-    emailWrap.removeChild(document.querySelector(".not-verified"));
-  }
+  // 에러 텍스트 숨김
+  passwordErrorTag.style.display = "none";
 });
 
-// email-input의 블러 이벤트
-emailInput.addEventListener("blur", (e) => {
-  // 만약 value 가 없다면
-  if (!e.target.value) {
-    // 아래에서 새로운 div를 추가하기 전에, 해당 div가 기존에 있는지 확인
-    if (!document.querySelector(".not-verified")) {
-      // 없다면 메세지 객체(div) 추가
-      newDiv = document.createElement("div");
-
-      // 오류 메세지 추가
-      newDiv.innerText = valueNone;
-
-      // 스타일을 받을 수 있게 클래스 추가
-      newDiv.classList.add("not-verified");
-
-      // email-input-wrap의 마지막에 추가
-      emailWrap.appendChild(newDiv);
+// 비밀번호 입력창 - blur 이벤트
+// keyup 이벤트와 구조 동일
+passwordInput.addEventListener("blur", (e) => {
+  if (!e.target.value || !passwordRegex.test(e.target.value)) {
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
     }
-    // 없다면 email-wrap의 border 스타일 변경
-    emailWrap.style.border = "1px solid rgb(255, 119, 119)";
 
-    // 이메일 버튼 기능 정지
-    emailButton.disabled = true;
+    const errorMsg = !e.target.value ? mustNeededMsg : passwordErrorMsg;
+    passwordErrorTag.innerHTML = `<img src="../../../staticfiles/images/settings/error-icon.svg"
+                                    class="error-icon"/>
+                                    ${errorMsg}`;
+    passwordErrorTag.style.display = "block";
+
     return;
   }
-
-  // value 가 있을 때
-  // 만약 어떤 값이라도 있다면
-  else {
-    // value가 있다면 스타일 원복
-    emailWrap.style.border = "1px solid rgb(219, 219, 219)";
-
-    // 이메일 버튼 활성화
-    emailButton.disabled = false;
-
-    // not-verifild 클래스 가진 div(에러 메세지) 삭제
-    emailWrap.removeChild(document.querySelector(".not-verified"));
-  }
+  e.target.classList.remove("error");
+  passwordErrorTag.style.display = "none";
 });
 
-// email-input-button 클릭 이벤트
-emailButton.addEventListener("click", (e) => {
-  // 만약 input에 입력한 값이 정규식을 만족한다면
-  if (emailRegex.test(emailInput.value)) {
-    // 아래쪽 인증 버튼 활성화
-    verifyButton.disabled = false;
+// 비밀번호 확인 입력창 - keyup 이벤트
+confirmInput.addEventListener("keyup", (e) => {
+  // 키가 눌릴 때마다 비밀번호 입력창의 현재 value를 변수에 할당
+  let correctValue = passwordInput.value;
 
-    // "확인" 버튼 안 글자를 "확인완료" 로 변경
-    e.target.innerText = "확인완료";
+  // 만약 키가 눌린 시점에 값이 없거나 다르다면
+  if (!e.target.value || e.target.value !== correctValue) {
+    // 입력창에 error 클래스 추가
+    // 클래스의 중첩을 막기 위해, 기존에 error 클래스가 없는지부터 확인
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
+    }
 
-    // input과 확인 버튼 부분 비활성화
-    // wrap, input 부분 배경색 변경
-    console.log(emailInput.style);
-    emailWrap.style.background = "rgb(247, 248, 250)";
-    emailInput.style.webkitBoxShadow = "0 0 0 30px rgb(247, 248, 250) inset";
-    e.target.disabled = true;
-    emailInput.disabled = true;
+    // 에러 텍스트 표시
+    confirmErrorTag.style.display = "block";
+
+    // 아래쪽 경우의 수(value가 일치한 경우) 실행 안하고 함수 종료
+    return;
+  }
+  // value가 일치한 경우
+  // 입력창의 error 클래스 삭제
+  e.target.classList.remove("error");
+
+  // 에러 텍스트 숨김
+  confirmErrorTag.style.display = "none";
+});
+
+// 비밀번호 확인 입력창 - blur 이벤트
+// keyup 이벤트와 구조 동일
+confirmInput.addEventListener("blur", (e) => {
+  let correctValue = passwordInput.value;
+
+  if (!e.target.value || e.target.value !== correctValue) {
+    if (!e.target.classList.contains("error")) {
+      e.target.classList.add("error");
+    }
+
+    confirmErrorTag.style.display = "block";
 
     return;
   }
-
-  // 만약 조건식을 만족하지 않는다면 확인 버튼 비활성화
-  e.target.disabled = true;
-
-  // 위 이벤트들과는 다른 오류 메세지 추가
-  // 아래에서 새로운 div를 추가하기 전에, 해당 div가 기존에 있는지 확인
-  if (!document.querySelector(".not-verified")) {
-    // 없다면 메세지 객체(div) 추가
-    newDiv = document.createElement("div");
-
-    // 오류 메세지 추가
-    newDiv.innerText = notRegistered;
-
-    // 스타일을 받을 수 있게 클래스 추가
-    newDiv.classList.add("not-verified");
-
-    // email-input-wrap의 마지막에 추가
-    emailWrap.appendChild(newDiv);
-  }
-  // 없다면 email-wrap의 border 스타일 변경
-  emailWrap.style.border = "1px solid rgb(255, 119, 119)";
-
-  return;
+  e.target.classList.remove("error");
+  confirmErrorTag.style.display = "none";
 });
