@@ -65,7 +65,7 @@ html {
   color: #2f3438;
   line-height: 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   font-size: 17px;
   font-weight: 700;
   text-align: center;
@@ -103,20 +103,22 @@ html {
   color: #2f3438;
   line-height: 20px;
   border-bottom: 1px solid #eaedef;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
 }
-
+/* 
 .class-histories-content-box {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   -webkit-box-pack: justify;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  place-items: center;
-}
+} */
 
 .class-history-items {
   margin-bottom: 6px;

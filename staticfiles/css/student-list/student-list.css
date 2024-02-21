@@ -103,19 +103,10 @@ html {
   color: #2f3438;
   line-height: 20px;
   border-bottom: 1px solid #eaedef;
-}
-
-.class-histories-content-box {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  -webkit-box-pack: justify;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   place-items: center;
+  cursor: pointer;
 }
 
 .class-history-items {
@@ -305,4 +296,35 @@ input::-webkit-input-placeholder {
 .header-input-xbutton-span::before {
   font-family: OhouseIcon;
   vertical-align: top;
+}
+
+/* 각 내역을 누르면 펼쳐지는 동반 수강생 전체 목록 */
+.student-list-wrap {
+  height: 0;
+  width: inherit;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+.student-list-wrap.open {
+  height: 80px;
+}
+
+.student-list-container {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  text-align: center;
+  white-space: pre-line;
+  color: #2f3438;
+  padding: 10px 0;
+}
+
+.student-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.student-list-items {
+  display: inline-block;
 }
