@@ -307,6 +307,33 @@
     letter-spacing: -.3px;
 }
 
+.update-button{
+    display: inline-block;
+    margin: 0 3px;
+    padding: 5px 4px 0;
+    background: none;
+    border: none;
+    text-align: center;
+    transition: opacity .1s;
+    line-height: 0;
+    z-index: 2;
+    vertical-align: top;
+}
+
+.update-button>.update-icon{
+    width:25px;
+    height: 27px;
+}
+
+.update-label{
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: #424242;
+    line-height: 14px;
+    font-weight: 500;
+}
+
 .share-button-wrap{
     position: relative;
     display: inline-block;
