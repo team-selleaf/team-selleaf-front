@@ -120,3 +120,10 @@ prevImgBox.addEventListener("mousemove", (e) => {
   const walk = (x - startX) * 1;
   prevImgBox.scrollLeft = scrollLeft - walk;
 });
+
+const plantSelections = document.querySelectorAll(".plant-selection");
+plantSelections.forEach((plantSelection) => {
+  plantSelection.addEventListener("click", (e) => {
+    plantSelection.classList.toggle("select-on");
+  });
+});
