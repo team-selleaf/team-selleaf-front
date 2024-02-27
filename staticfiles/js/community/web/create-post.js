@@ -112,3 +112,9 @@ tagInput.addEventListener("focus", (e) => {
 tagInput.addEventListener("blur", (e) => {
   e.target.style.boxShadow = "";
 });
+const plantSelections = document.querySelectorAll(".plant-selection");
+plantSelections.forEach((plantSelection) => {
+  plantSelection.addEventListener("click", (e) => {
+    plantSelection.classList.toggle("select-on");
+  });
+});

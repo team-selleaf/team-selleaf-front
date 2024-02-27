@@ -36,7 +36,7 @@ contentTextArea.addEventListener("click", () => {
 const prevImgBox = document.querySelector(".prev-img-box");
 const inputs = document.querySelectorAll("input[type=file]");
 
-inputs.forEach((input, index) => {
+inputs.forEach((input) => {
   input.addEventListener("change", (e) => {
     const targetInput = e.target;
     const file = targetInput.files[0];
@@ -260,4 +260,10 @@ recommendedBox.addEventListener("click", (e) => {
   if (itemTitle === "삭제") {
     e.target.closest(".double-item-box").remove();
   }
+});
+const plantSelections = document.querySelectorAll(".plant-selection");
+plantSelections.forEach((plantSelection) => {
+  plantSelection.addEventListener("click", (e) => {
+    plantSelection.classList.toggle("select-on");
+  });
 });

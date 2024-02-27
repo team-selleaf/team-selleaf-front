@@ -15,11 +15,6 @@
   flex: 1;
   width: 100%;
 }
-.channel-detail-main-img {
-  width: 100%;
-  display: block;
-  height: 25vw;
-}
 .channel-detail-main-wrap {
   max-width: 1256px;
   margin: 0px auto;
@@ -285,7 +280,7 @@
   text-overflow: ellipsis;
   text-align: start;
 }
-.like-btn {
+.like-box {
   -webkit-box-align: center;
   border: none;
   background: none;
