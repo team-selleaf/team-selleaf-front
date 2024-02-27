@@ -413,6 +413,13 @@
                 <div class="product-overview-title">
                   <span class="product-title">제목을 입력하세요.</span>
                   <div class="product-title-icon-wrap">
+                    <button class="update-button" type="button">
+                      <img
+                        class="update-icon"
+                        src="/staticfiles/images/update_icon.png"
+                      />
+                      <span class="update-label">수정</span>
+                    </button>
                     <button class="scrap-button" type="button">
                       <img
                         class="scrap-off"
@@ -546,7 +553,7 @@
               </li>
               <li>
                 <a class="product-detail-nav-item" href="#product-extra-info">
-                  반품/기타
+                  회원 정보
                 </a>
               </li>
             </ol>
@@ -627,50 +634,6 @@
                       />
                     </p>
                   </div>
-                  <!-- 테이블 구성 동일, 내용은 데이터에서 받아야함 -->
-                  <table class="detail-info-table">
-                    <tbody>
-                      <tr>
-                        <th>제품 소재</th>
-                        <td>상세페이지 참조</td>
-                      </tr>
-                      <tr>
-                        <th>색상</th>
-                        <td>상세페이지 참조</td>
-                      </tr>
-
-                      <tr>
-                        <th>치수</th>
-                        <td>상세페이지 참조</td>
-                      </tr>
-                      <tr>
-                        <th>제품구성</th>
-                        <td>상세페이지 참조</td>
-                      </tr>
-                      <tr>
-                        <th>제조자, 수입품의 경우 수입자를 함께 표기</th>
-                        <td>그래이불</td>
-                      </tr>
-                      <tr>
-                        <th>제조국</th>
-                        <td>국내</td>
-                      </tr>
-
-                      <tr>
-                        <th>세탁방법 및 취급시 주의사항</th>
-                        <td>상세페이지 참조</td>
-                      </tr>
-                      <a id="product-suggestion"></a>
-                      <tr>
-                        <th>품질보증기준</th>
-                        <td>상세페이지 참조</td>
-                      </tr>
-                      <tr>
-                        <th>A/S 책임자와 전화번호</th>
-                        <td>010.3565.3997</td>
-                      </tr>
-                    </tbody>
-                  </table>
                 </div>
               </section>
 
@@ -2189,75 +2152,6 @@
                 </section>
               </div>
               <a id="product-extra-info"></a>
-              <section class="product-extra-info-wrap">
-                <header class="product-extra-info-title">
-                  <h1 class="product-extra-info-title-text">교환/환불</h1>
-                </header>
-                <div class="product-refund-wrap">
-                  <table class="product-info-table">
-                    <tbody>
-                      <tr>
-                        <th>반품배송비</th>
-                        <td>
-                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>교환배송비</th>
-                        <td>6,000원</td>
-                      </tr>
-                      <tr>
-                        <th>보내실 곳</th>
-                        <td>
-                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <h2 class="product-detail-title">
-                    반품/교환 사유에 따른 요청 가능 기간
-                  </h2>
-                  <p class="product-detail-note">
-                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
-                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
-                    바랍니다.
-                  </p>
-                  <ol class="product-detail-list">
-                    <li>
-                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
-                        >(구매자 반품배송비 부담)</small
-                      >
-                    </li>
-                    <li>
-                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
-                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
-                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
-                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
-                    </li>
-                  </ol>
-                  <h2 class="product-detail-title">
-                    반품/교환 사유에 따른 요청 가능 기간
-                  </h2>
-                  <p class="product-detail-note">
-                    반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비,
-                    반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기
-                    바랍니다.
-                  </p>
-                  <ol class="product-detail-list">
-                    <li>
-                      구매자 단순 변심은 상품 수령 후 7일 이내&nbsp;<small
-                        >(구매자 반품배송비 부담)</small
-                      >
-                    </li>
-                    <li>
-                      표시/광고와 상이, 계약내용과 다르게 이행된 경우 상품 수령
-                      후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터
-                      30일 이내.<br />둘 중 하나 경과 시 반품/교환
-                      불가&nbsp;<small>(판매자 반품배송비 부담)</small>
-                    </li>
-                  </ol>
-                </div>
-              </section>
               <section>
                 <header class="product-extra-info-title">
                   <h1 class="product-extra-info-title-text">판매자 정보</h1>
@@ -2270,20 +2164,12 @@
                   <table class="product-info-table">
                     <tbody>
                       <tr>
-                        <th>반품배송비</th>
-                        <td>
-                          3,000원 (최초 배송비가 무료인 경우 6,000원 부과)
-                        </td>
+                        <th>회원소개</th>
+                        <td>회원소개멘트</td>
                       </tr>
                       <tr>
-                        <th>교환배송비</th>
-                        <td>6,000원</td>
-                      </tr>
-                      <tr>
-                        <th>보내실 곳</th>
-                        <td>
-                          (42697) 대구 달서구 성서로68길 39 (갈산동) 그래이불
-                        </td>
+                        <th>주 거래지</th>
+                        <td>주 거래지</td>
                       </tr>
                     </tbody>
                   </table>
