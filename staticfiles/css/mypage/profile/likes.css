@@ -528,7 +528,12 @@ a * {
 }
 
 /* 좋아요 한 각각의 커뮤니티 게시글 */
+.post-box {
+  display: flex;
+  flex-direction: column;
+}
 .post-wrap {
+  position: relative;
   display: flex;
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
@@ -738,4 +743,196 @@ a * {
   .content-seperator {
     display: none;
   }
+}
+
+.filter-box {
+  position: absolute;
+  top: -25px;
+  right: 5px;
+  font-size: 13px;
+  line-height: 18px;
+  cursor: pointer;
+  text-align: end;
+  color: rgb(130, 140, 148);
+}
+.filter-box button {
+  outline: none;
+  background: none;
+  border: none;
+}
+.filter-drop-down-icon {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  margin-left: 4px;
+}
+.filter-drop-down-icon::before {
+  font-family: OhouseIcon;
+  vertical-align: top;
+  content: "\e96c";
+}
+.filter-modal-wrap {
+  display: none;
+  position: absolute;
+  width: 270px;
+  right: 0px;
+  z-index: 3;
+}
+.filter-modal-container {
+  border-radius: 4px;
+  overflow-y: auto;
+  z-index: 1;
+  border: 1px solid rgb(234, 237, 239);
+  background-color: rgb(255, 255, 255);
+}
+.filter-modal-content-item {
+  padding: 16px;
+  color: rgb(47, 52, 56);
+  font-size: 16px;
+  line-height: 20px;
+  transition: background-color 0.2s ease-in-out 0s;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+.filter-modal-content-item:hover {
+  background-color: rgb(247, 249, 250);
+}
+.filter-modal-open {
+  display: block;
+}
+
+.comment-item-box {
+  margin: 30px 0px;
+}
+.comment-item {
+  display: flex;
+  align-items: flex-start;
+  margin: 16px 0px;
+}
+.comment-user-img-wrap {
+  cursor: pointer;
+}
+.comment-user-img-container {
+  display: inline-block;
+  background: url("/staticfiles/images/blank-image.png") 50% center / cover
+    no-repeat;
+  border-radius: 50%;
+  width: 30px;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+.comment-user-img {
+  height: 0px;
+  display: block;
+  visibility: hidden;
+  padding-top: 100%;
+}
+.comment-content-box {
+  flex: 1 1 0%;
+}
+.comment-user-name-box {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.commment-user-name {
+  font-size: 16px;
+  line-height: 20px;
+  color: rgb(33, 38, 41);
+  margin-right: 5px;
+  cursor: pointer;
+}
+.comment {
+  margin: 8px 0px;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+  word-break: break-word;
+  color: rgb(47, 52, 56);
+}
+.comment-data {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: rgb(130, 140, 148);
+}
+.time-before {
+  color: rgb(130, 140, 148);
+}
+.comment-like-btn-box {
+  display: flex;
+}
+.comment-split {
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.comment-like-btn {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(130, 140, 148);
+  padding: 0px;
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.comment-like-icon {
+  display: inline-block;
+  width: 12px;
+  margin-right: 3px;
+}
+.comment-like-text {
+  padding: 0px;
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.comment-like-text:hover {
+  text-decoration: underline;
+}
+.comment-comment-btn-box {
+  display: flex;
+}
+.comment-comment-btn {
+  color: rgb(130, 140, 148);
+  padding: 0px;
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.comment-comment-btn:hover {
+  text-decoration: underline;
+}
+
+.comment-declaration-btn-box {
+  display: flex;
+}
+.comment-declaration-btn {
+  color: rgb(130, 140, 148);
+  padding: 0px;
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.comment-declaration-btn:hover {
+  text-decoration: underline;
 }

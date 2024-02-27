@@ -54,10 +54,9 @@ function appendItem(post) {
           작성자
         </div>
       </a>
-      <button
-        type="button"
-        name="좋아요 버튼"
-        class="like-btn"
+      <div
+  
+        class="like-box"
       >
         <svg
           class="like-icon"
@@ -71,7 +70,7 @@ function appendItem(post) {
           />
         </svg>
         <span class="like-count">1K</span>
-      </button>
+      </div>
     </div>
   </div>
   `;

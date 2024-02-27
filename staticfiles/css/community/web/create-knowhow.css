@@ -626,8 +626,9 @@ input.title-input {
   gap: 7px;
 }
 .tag-left-line {
-  background-color: #fbccd4;
+  background-color: #c06888;
   padding: 12px;
+  color: #fff;
 }
 .tag-cancel-btn {
   background: none;
@@ -766,4 +767,27 @@ input::placeholder {
   font-size: 13px;
   line-height: 16px;
   color: #c2c2c2;
+}
+.info-dropdown-inner {
+  margin: -3px 0px;
+}
+.plant-selection {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 2.5px;
+  padding: 8px 12px;
+  border: 1px solid #c06888;
+  /* background-color: rgba(33, 38, 41, 0.8); */
+  color: #c06888;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  border-radius: 4px;
+  transition: background-color 0.1s ease 0s;
+}
+
+.select-on {
+  border: 1px solid #c06888;
+  background-color: #c06888;
+  color: #fff;
 }
